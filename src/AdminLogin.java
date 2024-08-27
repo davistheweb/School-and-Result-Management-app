@@ -150,13 +150,14 @@ public class AdminLogin extends javax.swing.JFrame {
         
         if(USERNAME.equals("groupworker") && PASSWORD.equals("groupadmin")){
                 AdminMenu admin = new AdminMenu();
-                admin.setVisible(true);
+                boolean Value = true;
+                admin.setVisible(Value);
         }else{
             JOptionPane.showMessageDialog(null, "Unauthroized access for Admin Menu!!", "Denied, Can't Login", JOptionPane.WARNING_MESSAGE);
         }
     }
     void cancelAdminLogin(){
-        this.dispose();
+        System.exit(0);
     }
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:

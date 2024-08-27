@@ -57,7 +57,6 @@ public class AdminLogin extends javax.swing.JFrame {
         username.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
 
         password.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        password.setForeground(new java.awt.Color(255, 255, 255));
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
@@ -157,8 +156,7 @@ public class AdminLogin extends javax.swing.JFrame {
         }
     }
     void cancelAdminLogin(){
-        AdminLogin cancelLogin = new AdminLogin();
-        cancelLogin.setVisible(false);
+        this.dispose();
     }
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:

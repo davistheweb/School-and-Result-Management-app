@@ -145,16 +145,23 @@ public class AdminLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     void adminLogin(){
-        String USERNAME = username.getText();
-        String PASSWORD = password.getText();
+         if ("".equals(username.getText()) || "".equals(password.getText())){
+            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "No empty field allowed", JOptionPane.WARNING_MESSAGE);
+            return;
+         }
+         
+            String USERNAME = username.getText();
+            char[] passWrd = password.getPassword();
+            String PASSWORD = new String(passWrd);
         
-        if(USERNAME.equals("groupworker") && PASSWORD.equals("groupadmin")){
+            if(USERNAME.equals("groupworker") && PASSWORD.equals("groupadmin")){
                 AdminMenu admin = new AdminMenu();
                 boolean Value = true;
                 admin.setVisible(Value);
-        }else{
-            JOptionPane.showMessageDialog(null, "Unauthroized access for Admin Menu!!", "Denied, Can't Login", JOptionPane.WARNING_MESSAGE);
-        }
+            }else{
+            JOptionPane.showMessageDialog(this, "Unauthroized access for Admin Menu!!", "Denied, Can't Login", JOptionPane.WARNING_MESSAGE);
+            }
+        
     }
     void cancelAdminLogin(){
         System.exit(0);

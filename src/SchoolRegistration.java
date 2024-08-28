@@ -6,7 +6,7 @@
 //Hello world
 /**
  *
- * @author HP Folio 1040 G2
+ * 
  */
 public class SchoolRegistration extends javax.swing.JFrame {
 

@@ -79,6 +79,20 @@ public class NewJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+public class Main {
+    public static void main(String[] args) {
+        int number = 123456;
+        String numberStr = Integer.toString(number);
+        // Get the last three characters
+        String lastThreeDigitsStr = numberStr.length() > 3 
+            ? numberStr.substring(numberStr.length() - 3) 
+            : numberStr;
+        
+        // Convert back to integer and print
+        int lastThreeDigits = Integer.parseInt(lastThreeDigitsStr);
+        System.out.println(lastThreeDigits);
+    }
+}
 
     /**
      * @param args the command line arguments

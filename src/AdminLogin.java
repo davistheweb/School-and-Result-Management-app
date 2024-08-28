@@ -124,13 +124,13 @@ public class AdminLogin extends javax.swing.JFrame {
             char[] passWrd = password.getPassword();
             String PASSWORD = new String(passWrd);
         
-            if(USERNAME.equals("groupworker") && PASSWORD.equals("groupadmin")){
-                AdminMenuPage admin = new AdminMenuPage();
-                boolean Value = true;
-                admin.setVisible(Value);
-            }else{
-            JOptionPane.showMessageDialog(this, "Unauthroized access for Admin Menu!!", "Denied, Can't Login", JOptionPane.WARNING_MESSAGE);
-            }
+//            if(USERNAME.equals("groupworker") && PASSWORD.equals("groupadmin")){
+//                AdminMenuPage admin = new AdminMenuPage();
+//                boolean Value = true;
+//                admin.setVisible(Value);
+//            }else{
+//            JOptionPane.showMessageDialog(this, "Unauthroized access for Admin Menu!!", "Denied, Can't Login", JOptionPane.WARNING_MESSAGE);
+//            }
         
     }
     void cancelAdminLogin(){

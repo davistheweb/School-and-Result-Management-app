@@ -9,12 +9,12 @@ import javax.swing.JFrame;
  *
  * @author GOI
  */
-public class AdminLogin extends javax.swing.JFrame {
+public class AdminLoginPage extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminLogin
      */
-    public AdminLogin() {
+    public AdminLoginPage() {
         initComponents();
     }
 
@@ -155,7 +155,7 @@ public class AdminLogin extends javax.swing.JFrame {
             String PASSWORD = new String(passWrd);
         
             if(USERNAME.equals("groupworker") && PASSWORD.equals("groupadmin")){
-                AdminMenu admin = new AdminMenu();
+                AdminMenuPage admin = new AdminMenuPage();
                 boolean Value = true;
                 admin.setVisible(Value);
             }else{
@@ -199,20 +199,21 @@ public class AdminLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLoginPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminLogin().setVisible(true);
+                new AdminLoginPage().setVisible(true);
             }
         });
     }

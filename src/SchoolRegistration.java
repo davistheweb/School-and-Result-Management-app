@@ -85,6 +85,11 @@ public class SchoolRegistration extends javax.swing.JFrame {
 
         SaveButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         SaveButton.setText("SAVE");
+        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveButtonActionPerformed(evt);
+            }
+        });
 
         UpdateButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         UpdateButton.setText("UPDATE");
@@ -322,7 +327,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
 
     private void uploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadButtonActionPerformed
 
-        upLoadDetails();
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_uploadButtonActionPerformed
 
@@ -333,6 +338,11 @@ public class SchoolRegistration extends javax.swing.JFrame {
     private void levelOnEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_levelOnEntryActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_levelOnEntryActionPerformed
+
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+            upLoadDetails();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SaveButtonActionPerformed
 
     /**
      * @param args the command line arguments

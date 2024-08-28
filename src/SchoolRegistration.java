@@ -94,6 +94,11 @@ public class SchoolRegistration extends javax.swing.JFrame {
         jButton3.setToolTipText("");
 
         levelOnEntry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100 LEVEL", "200 LEVEL", "300 LEVEL", "400 LEVEL", "500 LEVEL ", "600 LEVEL", " " }));
+        levelOnEntry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                levelOnEntryActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel8.setText("AGE");
@@ -287,6 +292,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
             pstm.setString(4, country.getText());
             pstm.setString(5, dateOnEntry.getText());
             String LevelOnEntry = levelOnEntry.getSelectedItem().toString();
+            
             pstm.setString (6,LevelOnEntry );
             int studentAge = Integer.parseInt(age.getText());
             pstm.setInt(7,studentAge);
@@ -323,6 +329,10 @@ public class SchoolRegistration extends javax.swing.JFrame {
     private void ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ageActionPerformed
+
+    private void levelOnEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_levelOnEntryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_levelOnEntryActionPerformed
 
     /**
      * @param args the command line arguments

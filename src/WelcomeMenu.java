@@ -109,16 +109,16 @@ public class WelcomeMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
   
-        void login(){
+        void Continue(){
         AdminLogin adminLogged = new AdminLogin();
         adminLogged.setVisible(true);
-    }
+         }
 
     void cancel(){
         this.dispose();
     }
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        login();
+        Continue();
         // TODO add your handling code here:
     }//GEN-LAST:event_loginActionPerformed
 

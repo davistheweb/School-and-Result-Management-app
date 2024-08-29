@@ -44,10 +44,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel1" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="jScrollPane1" min="-2" pref="1256" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -122,12 +119,12 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="state" min="-2" pref="84" max="-2" attributes="0"/>
                           <Component id="age" min="-2" pref="84" max="-2" attributes="0"/>
-                          <Component id="Sex" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="gender" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
                           <Component id="dateOnLeaving" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
                           <Component id="levelLastCompleted" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="626" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -143,7 +140,7 @@
                               <Component id="jLabel5" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel10" alignment="3" pref="26" max="32767" attributes="0"/>
-                                  <Component id="Sex" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="gender" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -187,11 +184,13 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="dateOnEntry" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="dateOnLeaving" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="dateOnEntry" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -426,7 +425,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="Sex">
+        <Component class="javax.swing.JComboBox" name="gender">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
@@ -455,6 +454,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="levelLastCompletedKeyTyped"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -483,18 +485,18 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="12" rowCount="0">
-                <Column editable="true" title="id" type="java.lang.Object"/>
-                <Column editable="true" title="regNum" type="java.lang.Object"/>
-                <Column editable="true" title="Name" type="java.lang.Object"/>
-                <Column editable="true" title="dob" type="java.lang.Object"/>
-                <Column editable="true" title="nationality" type="java.lang.Object"/>
-                <Column editable="true" title="date_on_entry" type="java.lang.Object"/>
-                <Column editable="true" title="class_on_entry" type="java.lang.Object"/>
-                <Column editable="true" title="age" type="java.lang.Object"/>
-                <Column editable="true" title="state" type="java.lang.Object"/>
-                <Column editable="true" title="sex" type="java.lang.Object"/>
-                <Column editable="true" title="date_on_leaving" type="java.lang.Object"/>
-                <Column editable="true" title="last_class_completed" type="java.lang.Object"/>
+                <Column editable="false" title="id" type="java.lang.Object"/>
+                <Column editable="false" title="REG.Number" type="java.lang.Object"/>
+                <Column editable="false" title="Name" type="java.lang.Object"/>
+                <Column editable="false" title="DateOfBirth" type="java.lang.Object"/>
+                <Column editable="false" title="Nationality" type="java.lang.Object"/>
+                <Column editable="false" title="Date On Entry" type="java.lang.Object"/>
+                <Column editable="false" title="Level On Entry" type="java.lang.Object"/>
+                <Column editable="false" title="Age" type="java.lang.Object"/>
+                <Column editable="false" title="State" type="java.lang.Object"/>
+                <Column editable="false" title="Gender" type="java.lang.Object"/>
+                <Column editable="false" title="Date On leaving" type="java.lang.Object"/>
+                <Column editable="false" title="Last Class Completed" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -565,6 +567,10 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="displayUserInTableMouseClicked"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="displayUserInTableKeyPressed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

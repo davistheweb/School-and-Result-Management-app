@@ -9,8 +9,8 @@
  */
 public class Users {
     private int id, 	age;
-    private String regNum, Name, dob, nationality, date_on_entry, class_on_entry,state,	sex, date_on_leaving,last_class_completed;
-    public Users(int id, int age, String regNum, String Name, String dob, String nationality, String date_on_entry, String class_on_entry, String state, String sex, String date_on_leaving, String last_class_completed){
+    private String regNum, Name, dob, nationality, date_on_entry, class_on_entry,state,	gender, date_on_leaving,last_class_completed;
+    public Users(int id, int age, String regNum, String Name, String dob, String nationality, String date_on_entry, String class_on_entry, String state, String gender, String date_on_leaving, String last_class_completed){
         this.id=id;
         this.age=age;
         this.regNum=regNum;
@@ -20,7 +20,7 @@ public class Users {
         this.date_on_entry=date_on_entry;
         this.class_on_entry=class_on_entry;
         this.state=state;
-        this.sex=sex;
+        this.gender=gender;
         this.date_on_leaving=date_on_leaving;
         this.last_class_completed=last_class_completed;
     }
@@ -52,8 +52,8 @@ public class Users {
      public String getstate(){
          return state;
      }
-     public String getsex(){
-         return sex;
+     public String getgender(){
+         return gender;
      }public String getdate_on_leaving(){
          return date_on_leaving;
      }

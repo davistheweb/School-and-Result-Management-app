@@ -48,20 +48,23 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="studentReg" pref="181" max="32767" attributes="0"/>
                               <Component id="schoolReg" max="32767" attributes="0"/>
-                              <Component id="closeMenu" max="32767" attributes="0"/>
+                              <Component id="studentReg" pref="357" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                          <Component id="closeMenu" min="-2" pref="226" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -85,14 +88,17 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
+              <Font name="Arial Black" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Welcome to Admin menu, pls choose a page to continue"/>
+            <Property name="text" type="java.lang.String" value="WELCOME TO ADMIN MENU, PLEASE CHOOSE A PAGE TO CONTINUE."/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="studentReg">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Student Registration"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="STUDENT REGISTRATION"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="studentRegActionPerformed"/>
@@ -100,7 +106,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="schoolReg">
           <Properties>
-            <Property name="text" type="java.lang.String" value="School Registration"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SCHOOL REGISTRATION"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="schoolRegActionPerformed"/>
@@ -108,7 +117,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="closeMenu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Close"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CLOSE"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="closeMenuActionPerformed"/>

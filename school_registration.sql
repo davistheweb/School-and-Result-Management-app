@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2024 at 02:52 PM
+-- Generation Time: Aug 29, 2024 at 04:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,25 +28,39 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `school_registration` (
+  `id` int(11) NOT NULL,
   `regNum` text NOT NULL,
   `Name` text NOT NULL,
   `dob` text NOT NULL,
   `nationality` text NOT NULL,
-  `date_on_entry` varchar(127) NOT NULL,
-  `class_on_entry` text NOT NULL,
+  `date_on_entry` text NOT NULL,
+  `class_on_entry` varchar(127) NOT NULL,
   `age` int(127) NOT NULL,
   `state` text NOT NULL,
-  `sex` text NOT NULL,
-  `date on leaving` varchar(127) NOT NULL,
+  `gender` text NOT NULL,
+  `date_on_leaving` varchar(127) NOT NULL,
   `last_class_completed` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `school_registration`
+-- Indexes for dumped tables
 --
 
-INSERT INTO `school_registration` (`regNum`, `Name`, `dob`, `nationality`, `date_on_entry`, `class_on_entry`, `age`, `state`, `sex`, `date on leaving`, `last_class_completed`) VALUES
-('e', 'EFS', 'efs', 'fes', 'ef', '100 LEVEL', 22, 'ABIA', 'MALE', 'eda', '100 LEVEL');
+--
+-- Indexes for table `school_registration`
+--
+ALTER TABLE `school_registration`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `school_registration`
+--
+ALTER TABLE `school_registration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

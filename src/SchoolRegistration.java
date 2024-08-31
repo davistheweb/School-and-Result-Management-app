@@ -26,8 +26,8 @@ public class SchoolRegistration extends javax.swing.JFrame {
         initComponents();
         showTables();
     }
-    public ArrayList<Users> userList(){
-         ArrayList<Users> usersList = new ArrayList();
+    public ArrayList<RegisteredStudents> userList(){
+         ArrayList<RegisteredStudents> RegisteredStudentList = new ArrayList();
          String url = "jdbc:MySql://localhost:3306/govt_school";
           String username = "root";
           String password = "";
@@ -37,10 +37,10 @@ public class SchoolRegistration extends javax.swing.JFrame {
             String query2 = "SELECT * FROM school_registration";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(query2);
-            Users user;
+            RegisteredStudents RegisteredStudentS;
             while(rst.next()){{
-                user = new Users(rst.getInt("id"), rst.getInt("age"),  rst.getString("regNum"), rst.getString("Name"),rst.getString("dob"),rst.getString("nationality"),rst.getString("date_on_entry"),rst.getString("class_on_entry"),rst.getString("state"),rst.getString("gender"),rst.getString("date_on_leaving"),rst.getString("last_class_completed"));
-                usersList.add(user);
+                RegisteredStudentS = new RegisteredStudents(rst.getInt("id"), rst.getInt("age"),  rst.getString("regNum"), rst.getString("Name"),rst.getString("dob"),rst.getString("nationality"),rst.getString("date_on_entry"),rst.getString("class_on_entry"),rst.getString("state"),rst.getString("gender"),rst.getString("date_on_leaving"),rst.getString("last_class_completed"));
+                RegisteredStudentList.add(RegisteredStudentS);
             }}
           
           }
@@ -48,11 +48,11 @@ public class SchoolRegistration extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message", JOptionPane.WARNING_MESSAGE);
             
         }
-          return usersList;
+          return RegisteredStudentList;
     }
     
     public void showTables(){
-        ArrayList<Users> table = userList();
+        ArrayList<RegisteredStudents> table = userList();
         DefaultTableModel model = (DefaultTableModel)displayUserInTable.getModel();
         Object[] row =  new Object[12];
         for(int i = 0; i<table.size();  i++){

@@ -7,10 +7,10 @@
  *
  * @author GOI
  */
-public class Users {
+public class RegisteredStudents {
     private int id, 	age;
     private String regNum, Name, dob, nationality, date_on_entry, class_on_entry,state,	gender, date_on_leaving,last_class_completed;
-    public Users(int id, int age, String regNum, String Name, String dob, String nationality, String date_on_entry, String class_on_entry, String state, String gender, String date_on_leaving, String last_class_completed){
+    public RegisteredStudents(int id, int age, String regNum, String Name, String dob, String nationality, String date_on_entry, String class_on_entry, String state, String gender, String date_on_leaving, String last_class_completed){
         this.id=id;
         this.age=age;
         this.regNum=regNum;

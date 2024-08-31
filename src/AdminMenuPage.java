@@ -120,6 +120,8 @@ public class AdminMenuPage extends javax.swing.JFrame {
     void openSchoolRegPage(){
         SchoolRegistration schoolReg = new SchoolRegistration();
         schoolReg.setVisible(true);
+        ContentReading contents = new ContentReading(); 
+        contents.setVisible(true);
     }
     private void studentRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentRegActionPerformed
         openStudentRegPage();

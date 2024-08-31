@@ -45,7 +45,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
           
           }
           catch(SQLException ex){
-            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message, (Service Provider is unAvaliable)", JOptionPane.WARNING_MESSAGE);
             
         }
           return RegisteredStudentList;

@@ -236,8 +236,8 @@ public class StudentRegistration extends javax.swing.JFrame {
          psmt.setString(4, StudentRegNum.getText().toUpperCase());
          psmt.setString(5, studentName.getText().toUpperCase());
          psmt.setString(6,NumInLevel.getText());
-         int gradePoint = Integer.parseInt(gpInLevel.getText());
-         psmt.setInt(7, gradePoint);
+         double gradePoint = Double.parseDouble(gpInLevel.getText());
+         psmt.setDouble(7, gradePoint);
          int studentLevel = Integer.parseInt(stuLevel.getText());
          psmt.setInt(8,studentLevel);
          

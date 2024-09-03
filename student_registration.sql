@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2024 at 04:29 PM
+-- Generation Time: Sep 01, 2024 at 04:25 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,7 +34,7 @@ CREATE TABLE `student_registration` (
   `reg_number` text NOT NULL,
   `name_of_student` text NOT NULL,
   `number_in_level` int(255) NOT NULL,
-  `gp_in_level` int(255) NOT NULL,
+  `gp_in_level` double NOT NULL,
   `lvl` int(255) NOT NULL,
   `average` float NOT NULL,
   `fee` varchar(127) NOT NULL

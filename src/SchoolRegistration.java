@@ -380,13 +380,18 @@ public class SchoolRegistration extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     void upLoadDetails(){
+        
+         if ("".equals(regNum.getText()) || "".equals(studentName.getText()) || "".equals(dob.getText()) || "".equals(country.getText()) || "".equals(dateOnEntry.getText()) || "".equals(levelOnEntry.getSelectedItem().toString()) || "".equals( state.getSelectedItem().toString()) || "".equals(gender.getSelectedItem().toString()) || "".equals( dateOnLeaving.getText()) || "".equals( levelLastCompleted.getSelectedItem().toString())){
+            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "No empty field allowed", JOptionPane.WARNING_MESSAGE);
+            return;
+         }
         
         String url = "jdbc:MySql://localhost:3306/govt_school";
         String username = "root";
@@ -717,3 +722,53 @@ public class SchoolRegistration extends javax.swing.JFrame {
     private javax.swing.JTextField studentName;
     // End of variables declaration//GEN-END:variables
 }
+
+
+/* import java.util.HashMap;
+import java.util.Map;
+
+Map<String, Integer> stateIndexMap = new HashMap<>();
+stateIndexMap.put("ABIA", 0);
+stateIndexMap.put("ADAMAWA", 1);
+stateIndexMap.put("AKWA-IBOM", 2);
+stateIndexMap.put("ANAMBRA", 3);
+stateIndexMap.put("BAUCHI", 4);
+stateIndexMap.put("BAYELSA", 5);
+stateIndexMap.put("BENUE", 6);
+stateIndexMap.put("BORNO", 7);
+stateIndexMap.put("CROSS-RIVER", 8);
+stateIndexMap.put("DELTA", 9);
+stateIndexMap.put("EBONYI", 10);
+stateIndexMap.put("EDO", 11);
+stateIndexMap.put("EKITI", 12);
+stateIndexMap.put("ENUGU", 13);
+stateIndexMap.put("GOMBE", 14);
+stateIndexMap.put("IMO", 15);
+stateIndexMap.put("JIGAWA", 16);
+stateIndexMap.put("KADUNA", 17);
+stateIndexMap.put("KASTINA", 18);
+stateIndexMap.put("KEBBI", 19);
+stateIndexMap.put("KOGI", 20);
+stateIndexMap.put("KWARA", 21);
+stateIndexMap.put("LAGOS", 22);
+stateIndexMap.put("NASSARAWA", 23);
+stateIndexMap.put("NIGER", 24);
+stateIndexMap.put("OGUN", 25);
+stateIndexMap.put("OSUN", 26);
+stateIndexMap.put("OYO", 27);
+stateIndexMap.put("PLATEAU", 28);
+stateIndexMap.put("RIVERS", 29);
+stateIndexMap.put("SOKOTO", 30);
+stateIndexMap.put("TARABA", 31);
+stateIndexMap.put("ZAMFARA", 32);
+stateIndexMap.put("F.C.T", 33);
+
+String studentState = tableModel.getValueAt(i, 8).toString();
+Integer index = stateIndexMap.get(studentState);
+if (index != null) {
+    state.setSelectedIndex(index);
+} else {
+    // Handle case where the state is not found in the map
+    // e.g., state.setSelectedIndex(-1);
+}
+ */

@@ -165,7 +165,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
             }
         });
 
-        levelOnEntry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100 LEVEL", "200 LEVEL", "300 LEVEL", "400 LEVEL", "500 LEVEL ", "600 LEVEL", " " }));
+        levelOnEntry.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT LEVEL", "100 LEVEL", "200 LEVEL", "300 LEVEL", "400 LEVEL", "500 LEVEL ", "600 LEVEL", " " }));
         levelOnEntry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 levelOnEntryActionPerformed(evt);
@@ -193,16 +193,21 @@ public class SchoolRegistration extends javax.swing.JFrame {
             }
         });
 
-        state.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ABIA", "ADAMAWA", "AKWA-IBOM", "ANAMBRA", "BAUCHI", "BAYELSA", "BENUE", "BORNO", "CROSS-RIVER", "DELTA", "EBONYI", "EDO", "EKITI", "ENUGU", "GOMBE", "IMO", "JIGAWA", "KADUNA", "KASTINA", "KEBBI", "KOGI", "KWARA", "LAGOS", "NASSARAWA", "NIGER", "OGUN", "OSUN", "OYO", "PLATEAU", "RIVERS", "SOKOTO", "TARABA", "ZAMFARA", "F.C.T" }));
+        state.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT STATE", "ABIA", "ADAMAWA", "AKWA-IBOM", "ANAMBRA", "BAUCHI", "BAYELSA", "BENUE", "BORNO", "CROSS-RIVER", "DELTA", "EBONYI", "EDO", "EKITI", "ENUGU", "GOMBE", "IMO", "JIGAWA", "KADUNA", "KASTINA", "KEBBI", "KOGI", "KWARA", "LAGOS", "NASSARAWA", "NIGER", "OGUN", "OSUN", "OYO", "PLATEAU", "RIVERS", "SOKOTO", "TARABA", "ZAMFARA", "F.C.T" }));
         state.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stateActionPerformed(evt);
             }
         });
 
-        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MALE", "FEMALE", "CHOOSE NOT TO SAY" }));
+        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose", "MALE", "FEMALE", "CHOOSE NOT TO SAY" }));
+        gender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                genderActionPerformed(evt);
+            }
+        });
 
-        levelLastCompleted.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "100 LEVEL", "200 LEVEL", "300 LEVEL", "400 LEVEL", "500 LEVEL", "600 LEVEL" }));
+        levelLastCompleted.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT LEVEL", "100 LEVEL", "200 LEVEL", "300 LEVEL", "400 LEVEL", "500 LEVEL", "600 LEVEL" }));
         levelLastCompleted.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 levelLastCompletedKeyTyped(evt);
@@ -267,7 +272,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
                         .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(dateOnLeaving, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(levelLastCompleted, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 626, Short.MAX_VALUE))
+                .addGap(0, 607, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,54 +385,80 @@ public class SchoolRegistration extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    void upLoadDetails(){
-        
-         if ("".equals(regNum.getText()) || "".equals(studentName.getText()) || "".equals(dob.getText()) || "".equals(country.getText()) || "".equals(dateOnEntry.getText()) || "".equals(levelOnEntry.getSelectedItem().toString()) || "".equals( state.getSelectedItem().toString()) || "".equals(gender.getSelectedItem().toString()) || "".equals( dateOnLeaving.getText()) || "".equals( levelLastCompleted.getSelectedItem().toString())){
-            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "No empty field allowed", JOptionPane.WARNING_MESSAGE);
-            return;
-         }
-        
-        String url = "jdbc:MySql://localhost:3306/govt_school";
-        String username = "root";
-        String password = "";
-        String statement = "INSERT INTO school_registration(regNum, Name, dob, nationality, date_on_entry, class_on_entry, age, state, gender, date_on_leaving, last_class_completed)VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-        try{
-            Connection conn = DriverManager.getConnection(url,username,password);
-            PreparedStatement pstm = conn.prepareStatement(statement);
-            pstm.setString(1,regNum.getText().toUpperCase());
-            pstm.setString(2, studentName.getText().toUpperCase());
-            pstm.setString(3, dob.getText());
-            pstm.setString(4, country.getText());
-            pstm.setString(5, dateOnEntry.getText());
-            String LevelOnEntry = levelOnEntry.getSelectedItem().toString();
-            
-            pstm.setString (6,LevelOnEntry );
-            int studentAge = Integer.parseInt(age.getText());
-            pstm.setInt(7,studentAge);
-            String State = state.getSelectedItem().toString();
-            pstm.setString(8, State);
-            String Gender = gender.getSelectedItem().toString();
-            pstm.setString(9, Gender);
-            pstm.setString(10, dateOnLeaving.getText());
-            String LevelLastCompleted = levelLastCompleted.getSelectedItem().toString();
-            pstm.setString(11, LevelLastCompleted);
-            
-            int statementReport = pstm.executeUpdate();
-            
-            if(statementReport> 0){
-                JOptionPane.showMessageDialog(this, "Inserted Successfully", "Completed", JOptionPane.INFORMATION_MESSAGE);
+    public void upLoadDetails() {
+    // Check for empty fields
+    if ("".equals(regNum.getText()) || "".equals(studentName.getText()) || "".equals(dob.getText()) || "".equals(country.getText()) || "".equals(dateOnEntry.getText()) || "".equals(dateOnLeaving.getText())) {
+        JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "No empty field allowed", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if("SELECT LEVEL".equals(levelOnEntry.getSelectedItem().toString())){
+        JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL ON ENTRY", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+     if("SELECT LEVEL".equals(levelLastCompleted.getSelectedItem().toString())){
+        JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL COMPLETED", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if("Choose".equals(gender.getSelectedItem().toString())){
+        JOptionPane.showMessageDialog(this, "PLEASE SELECT GENDER", "INVALID GENDER", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if("SELECT STATE".equals(state.getSelectedItem().toString())){
+        JOptionPane.showMessageDialog(this, "PLEASE SELECT STATE", "INVALID STATE", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    String url = "jdbc:mysql://localhost:3306/govt_school";
+    String username = "root";
+    String password = "";
+    String regNumValue = regNum.getText().toUpperCase();
+    
+    // SQL queries
+    String checkStatement = "SELECT * FROM school_registration WHERE regNum = ?";
+    String insertStatement = "INSERT INTO school_registration(regNum, Name, dob, nationality, date_on_entry, class_on_entry, age, state, gender, date_on_leaving, last_class_completed) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+    
+    try (Connection conn = DriverManager.getConnection(url, username, password)) {
+        // Check for duplicate registration number
+        try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
+            checkPstm.setString(1, regNumValue);
+            try (ResultSet rs = checkPstm.executeQuery()) {
+                if (rs.next() && rs.getInt(1) > 0) {
+                    JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
             }
-            DefaultTableModel model = (DefaultTableModel)displayUserInTable.getModel();
-            model.setRowCount(0);
-            showTables();
-            
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message", JOptionPane.WARNING_MESSAGE);
-            
         }
         
+        // Insert the new record if no duplicate found
+        try (PreparedStatement insertPstm = conn.prepareStatement(insertStatement)) {
+            insertPstm.setString(1, regNumValue);
+            insertPstm.setString(2, studentName.getText().toUpperCase());
+            insertPstm.setString(3, dob.getText());
+            insertPstm.setString(4, country.getText());
+            insertPstm.setString(5, dateOnEntry.getText());
+            insertPstm.setString(6, levelOnEntry.getSelectedItem().toString());
+            int studentAge = Integer.parseInt(age.getText());
+            insertPstm.setInt(7, studentAge);
+            insertPstm.setString(8, state.getSelectedItem().toString());
+            insertPstm.setString(9, gender.getSelectedItem().toString());
+            insertPstm.setString(10, dateOnLeaving.getText());
+            insertPstm.setString(11, levelLastCompleted.getSelectedItem().toString());
+            
+            int statementReport = insertPstm.executeUpdate();
+            
+            if (statementReport > 0) {
+                JOptionPane.showMessageDialog(this, "Inserted Successfully", "Completed", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
+            model.setRowCount(0);
+            showTables();
+        }
+        
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message", JOptionPane.WARNING_MESSAGE);
     }
-    
+}
+
     void fetchDetailsByRegNum() {
     String url = "jdbc:MySql://localhost:3306/govt_school";
     String username = "root";
@@ -646,6 +677,10 @@ public class SchoolRegistration extends javax.swing.JFrame {
     private void levelLastCompletedKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_levelLastCompletedKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_levelLastCompletedKeyTyped
+
+    private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_genderActionPerformed
 
     /**
      * @param args the command line arguments

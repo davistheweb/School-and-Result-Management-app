@@ -272,9 +272,8 @@ public class SchoolRegistration extends javax.swing.JFrame {
                         .addComponent(state, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(age)
                         .addComponent(gender, 0, 1, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(dateOnLeaving, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(levelLastCompleted, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(dateOnLeaving)
+                        .addComponent(levelLastCompleted, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(0, 606, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

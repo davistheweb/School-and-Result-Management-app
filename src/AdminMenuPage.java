@@ -112,16 +112,16 @@ public class AdminMenuPage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+ 
     void openStudentRegPage(){
         StudentRegistration studentReg = new StudentRegistration();
         studentReg .setVisible(true);
+        this.setVisible(false);
     }
     void openSchoolRegPage(){
         SchoolRegistration schoolReg = new SchoolRegistration();
         schoolReg.setVisible(true);
-        ContentReading contents = new ContentReading(); 
-        contents.setVisible(true);
+        this.setVisible(false);
     }
     private void studentRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentRegActionPerformed
         openStudentRegPage();

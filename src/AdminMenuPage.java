@@ -114,7 +114,7 @@ public class AdminMenuPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
  
     void openStudentRegPage(){
-        StudentRegistration studentReg = new StudentRegistration();
+        Level1_Semester1 studentReg = new Level1_Semester1();
         studentReg .setVisible(true);
         this.setVisible(false);
     }

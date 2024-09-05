@@ -128,8 +128,9 @@ public class AdminLogin extends javax.swing.JFrame {
                 AdminMenuPage admin = new AdminMenuPage();
                 boolean Value = true;
                 admin.setVisible(true);
+                this.setVisible(false);
             }else{
-            JOptionPane.showMessageDialog(this, "Unauthroized access for Admin Menu!!", "Denied, Can't Login", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Unauthroized access to Admin Menu Page!!!", "Access Denied", JOptionPane.WARNING_MESSAGE);
             }
         
     }

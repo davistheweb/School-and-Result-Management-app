@@ -73,10 +73,14 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel1" min="-2" pref="318" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel5" alignment="0" pref="71" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel5" alignment="0" pref="71" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Component id="dateOnEntry" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -94,8 +98,7 @@
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="dateOnEntry" pref="115" max="32767" attributes="0"/>
-                                  <Component id="country" max="32767" attributes="0"/>
+                                  <Component id="country" pref="115" max="32767" attributes="0"/>
                                   <Component id="dob" max="32767" attributes="0"/>
                                   <Component id="UpdateButton" min="-2" max="-2" attributes="0"/>
                                   <Component id="regNum" max="32767" attributes="0"/>
@@ -103,7 +106,7 @@
                               </Group>
                               <Component id="levelOnEntry" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel8" min="-2" pref="47" max="-2" attributes="0"/>
                               <Component id="jLabel9" min="-2" pref="95" max="-2" attributes="0"/>
@@ -116,15 +119,17 @@
                   <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="deleteButton" min="-2" pref="87" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="state" min="-2" pref="84" max="-2" attributes="0"/>
-                          <Component id="age" min="-2" pref="84" max="-2" attributes="0"/>
-                          <Component id="gender" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
-                          <Component id="dateOnLeaving" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
-                          <Component id="levelLastCompleted" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="state" alignment="0" max="32767" attributes="0"/>
+                          <Component id="age" alignment="0" max="32767" attributes="0"/>
+                          <Component id="gender" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="dateOnLeaving" alignment="0" max="32767" attributes="0"/>
+                              <Component id="levelLastCompleted" alignment="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="607" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="606" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -185,12 +190,14 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="dateOnLeaving" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="dateOnEntry" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="dateOnLeaving" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel6" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="jLabel11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
+                      <Component id="dateOnEntry" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">

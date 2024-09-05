@@ -112,6 +112,7 @@ public class WelcomeMenu extends javax.swing.JFrame {
         void Continue(){
         AdminLogin adminLogged = new AdminLogin();
         adminLogged.setVisible(true);
+        this.setVisible(false);
          }
 
     void cancel(){

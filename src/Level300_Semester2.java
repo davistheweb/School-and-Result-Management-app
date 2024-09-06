@@ -179,15 +179,20 @@ public class Level300_Semester2 extends javax.swing.JFrame {
         CSC_201.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         CSC_201.setText("CSC  302");
 
-        jLabel14.setText("CSC 223");
+        jLabel14.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        jLabel14.setText("CSC 304");
 
-        jLabel15.setText("CSC 232");
+        jLabel15.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        jLabel15.setText("CSC 342");
 
-        jLabel16.setText("CSC 223");
+        jLabel16.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        jLabel16.setText("CSC 362");
 
-        jLabel17.setText("CSC 218");
+        jLabel17.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        jLabel17.setText("CSC 318");
 
-        jLabel18.setText("CSC 242");
+        jLabel18.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        jLabel18.setText("CSC 342");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel19.setText("SCORE");

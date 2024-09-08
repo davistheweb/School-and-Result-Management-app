@@ -132,6 +132,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 1000));
@@ -163,6 +164,12 @@ public class Level100_Semester1 extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel6.setText("REG NUMBER");
+
+        StudentRegNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StudentRegNumActionPerformed(evt);
+            }
+        });
 
         PHY101_SCORE.setEnabled(false);
         PHY101_SCORE.addActionListener(new java.awt.event.ActionListener() {
@@ -397,6 +404,8 @@ public class Level100_Semester1 extends javax.swing.JFrame {
 
         jLabel24.setText("2");
 
+        jLabel8.setText("eg:202110848885eg");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -538,16 +547,13 @@ public class Level100_Semester1 extends javax.swing.JFrame {
                                         .addGap(61, 61, 61)
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(StudentRegNum, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(6, 6, 6)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(6, 6, 6)
-                                                .addComponent(uploadPhoto))
-                                            .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(StudentRegNum, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                            .addComponent(uploadPhoto)
+                                            .addComponent(jLabel8)))))))
                     .addComponent(GST_105, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -570,7 +576,9 @@ public class Level100_Semester1 extends javax.swing.JFrame {
                             .addComponent(lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(StudentRegNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(53, 53, 53)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1023,10 +1031,18 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
         // TODO add your handling code here:
     }//GEN-LAST:event_gpInLevelActionPerformed
 
+    private void StudentRegNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentRegNumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StudentRegNumActionPerformed
+
     void uploadData() {
         if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
             return;
+        }
+        if(StudentRegNum.getText().length() != 14){
+            JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+        return;
         }
         if ("".equals(CSC101_CA_SCORE.getText().trim()) || "".equals(CSC101_EXAMSCORE.getText().trim())  ||
         "".equals(MAT101_CA_SCORE.getText().trim()) || "".equals(MAT101_EXAM_SCORE.getText().trim()) ||
@@ -1053,9 +1069,9 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
         String password = "";
         String checkStatement = "SELECT * FROM level1_semester1 WHERE reg_number = ?";
         String statement = "INSERT INTO level1_semester1(session, semester, level, reg_number, name_of_student, "
-                + "fee, passport, csc101_score, csc101_grade, mat101_score, mat101_grade, phy101_score, phy101_grade,"
+                + "fee, passport,course1, course2, course3, course4, course5, course6, course7, course8, csc101_score, csc101_grade, mat101_score, mat101_grade, phy101_score, phy101_grade,"
                 + " sta111_score, sta111_grade, phy105_score, phy105_grade, bio101_score, bio101_grade, gst105_score, "
-                + "gst105_grade, mgt101_score, mgt101_grade, gpa) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                + "gst105_grade, mgt101_score, mgt101_grade, gpa) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         String regNumValue = StudentRegNum.getText().toUpperCase();
 
         try (Connection conn = DriverManager.getConnection(url, username, password)) {
@@ -1082,32 +1098,39 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
         psmt.setString(5, studentName.getText().toUpperCase());
         psmt.setString(6, feesStatus.getSelectedItem().toString());
         psmt.setBinaryStream(7, fis, (int) new File(filename).length());
+        psmt.setString(8, CSC_201.getText());
+        psmt.setString(9, MAT_101.getText());
+        psmt.setString(10, PHY_101.getText());
+        psmt.setString(11, STA_111.getText());
+        psmt.setString(12, PHY_105.getText());
+        psmt.setString(13, BIO_101.getText());
+        psmt.setString(14, GST_105.getText());
+        psmt.setString(15, MGT_101.getText());
+        psmt.setInt(16, Integer.parseInt(CSC101_FINALSCORE.getText().trim()));
+        psmt.setString(17, CSC101_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(8, Integer.parseInt(CSC101_FINALSCORE.getText().trim()));
-        psmt.setString(9, CSC101_GRADE.getSelectedItem().toString());
+        psmt.setInt(18, Integer.parseInt(MAT_101_SCORE.getText().trim()));
+        psmt.setString(19, MAT101_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(10, Integer.parseInt(MAT_101_SCORE.getText().trim()));
-        psmt.setString(11, MAT101_GRADE.getSelectedItem().toString());
+        psmt.setInt(20, Integer.parseInt(PHY101_SCORE.getText().trim()));
+        psmt.setString(21, PHY101_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(12, Integer.parseInt(PHY101_SCORE.getText().trim()));
-        psmt.setString(13, PHY101_GRADE.getSelectedItem().toString());
+        psmt.setInt(22, Integer.parseInt(STA111_SCORE.getText().trim()));
+        psmt.setString(23, STA111_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(14, Integer.parseInt(STA111_SCORE.getText().trim()));
-        psmt.setString(15, STA111_GRADE.getSelectedItem().toString());
+        psmt.setInt(24, Integer.parseInt(PYH105_SCORE.getText().trim()));
+        psmt.setString(25, PHY105_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(16, Integer.parseInt(PYH105_SCORE.getText().trim()));
-        psmt.setString(17, PHY105_GRADE.getSelectedItem().toString());
+        psmt.setInt(26, Integer.parseInt(BIO101_SCORE.getText().trim()));
+        psmt.setString(27, BIO101_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(18, Integer.parseInt(BIO101_SCORE.getText().trim()));
-        psmt.setString(19, BIO101_GRADE.getSelectedItem().toString());
+        psmt.setInt(28, Integer.parseInt(GST105_SCORE.getText().trim()));
+        psmt.setString(29, GST105_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(20, Integer.parseInt(GST105_SCORE.getText().trim()));
-        psmt.setString(21, GST105_GRADE.getSelectedItem().toString());
+        psmt.setInt(30, Integer.parseInt(MGT101_SCORE.getText().trim()));
+        psmt.setString(31, MGT101_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(22, Integer.parseInt(MGT101_SCORE.getText().trim()));
-        psmt.setString(23, MGT101_GRADE.getSelectedItem().toString());
-
-        psmt.setDouble(24, Double.parseDouble(gpInLevel.getText().trim()));
+        psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
 
         int updateToDB = psmt.executeUpdate();
         if (updateToDB != 0) {
@@ -1246,6 +1269,7 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;

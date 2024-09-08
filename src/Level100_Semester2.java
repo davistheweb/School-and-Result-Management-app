@@ -551,7 +551,8 @@ public class Level100_Semester2 extends javax.swing.JFrame {
                 .addGap(0, 352, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(1041, 1250));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed

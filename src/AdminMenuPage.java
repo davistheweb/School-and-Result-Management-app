@@ -33,6 +33,7 @@ public class AdminMenuPage extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel1.setText("WELCOME TO ADMIN MENU, PLEASE CHOOSE A PAGE TO CONTINUE.");
@@ -122,7 +123,8 @@ public class AdminMenuPage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pack();
+        setSize(new java.awt.Dimension(667, 373));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
  
     void openStudentRegPage(){

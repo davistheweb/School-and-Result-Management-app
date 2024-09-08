@@ -78,7 +78,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
         uploadAll = new javax.swing.JButton();
         passport = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        CSC_201 = new javax.swing.JLabel();
+        CSC_101 = new javax.swing.JLabel();
         MAT_101 = new javax.swing.JLabel();
         PHY_101 = new javax.swing.JLabel();
         STA_111 = new javax.swing.JLabel();
@@ -219,8 +219,8 @@ public class Level100_Semester1 extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel13.setText("COURSES");
 
-        CSC_201.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        CSC_201.setText("CSC 101");
+        CSC_101.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        CSC_101.setText("CSC 101");
 
         MAT_101.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         MAT_101.setText("MAT 101");
@@ -461,7 +461,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
                             .addContainerGap()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(CSC_201, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(CSC_101, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                     .addGap(6, 6, 6)
@@ -606,7 +606,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CSC101_FINALSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CSC_201, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CSC_101, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CSC101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CSC101_EXAMSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CSC101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1101,7 +1101,7 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
         psmt.setString(5, studentName.getText().toUpperCase());
         psmt.setString(6, feesStatus.getSelectedItem().toString());
         psmt.setBinaryStream(7, fis, (int) new File(filename).length());
-        psmt.setString(8, CSC_201.getText());
+        psmt.setString(8, CSC_101.getText());
         psmt.setString(9, MAT_101.getText());
         psmt.setString(10, PHY_101.getText());
         psmt.setString(11, STA_111.getText());
@@ -1213,7 +1213,7 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
     private javax.swing.JTextField CSC101_EXAMSCORE;
     private javax.swing.JTextField CSC101_FINALSCORE;
     private javax.swing.JComboBox<String> CSC101_GRADE;
-    private javax.swing.JLabel CSC_201;
+    private javax.swing.JLabel CSC_101;
     private javax.swing.JTextField GST105_CA_SCORE;
     private javax.swing.JTextField GST105_EXAM_SCORE;
     private javax.swing.JComboBox<String> GST105_GRADE;

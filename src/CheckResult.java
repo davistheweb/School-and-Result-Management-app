@@ -276,7 +276,32 @@ public class CheckResult extends javax.swing.JFrame {
                     gpa = String.valueOf(rs.getDouble("gpa"));
                     break;
                 case "YEAR 2 1ST SEMESTER":
-                    // Handle scores and grades for this semester
+                    score1 = String.valueOf(rs.getInt("csc231_score"));
+                    grade1 = rs.getString("csc231_grade");
+
+                    score2 = String.valueOf(rs.getInt("mat211_score"));
+                    grade2 = rs.getString("mat211_grade");
+
+                    score3 = String.valueOf(rs.getInt("csc241_score"));
+                    grade3 = rs.getString("csc241_grade");
+
+                    score4 = String.valueOf(rs.getInt("acc203_score"));
+                    grade4 = rs.getString("acc203_grade");
+
+                    score5 = String.valueOf(rs.getInt("gst223_score"));
+                    grade5 = rs.getString("gst223_grade");
+
+                    score6 = String.valueOf(rs.getInt("csc205_score"));
+                    grade6 = rs.getString("csc205_grade");
+
+                    score7 = String.valueOf(rs.getInt("sta201_score"));
+                    grade7 = rs.getString("sta201_grade");
+
+                    score8 = String.valueOf(rs.getInt("csc207_score"));
+                    grade8 = rs.getString("csc207_grade");
+
+                    gpa = String.valueOf(rs.getDouble("gpa"));
+
                     break;
                 case "YEAR 2 2ND SEMESTER":
                     // Handle scores and grades for this semester

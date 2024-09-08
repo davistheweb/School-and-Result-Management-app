@@ -982,19 +982,19 @@ PYH152_SCORE.setText(String.valueOf(phy105Total));
     int gst104unit = 2;
     
     // Grade calculation for CSC101
-    int csc101pointvalue = getPointValue(CSC102_GRADE.getSelectedItem().toString());
-    int mat101pointvalue = getPointValue(MAT102_GRADE.getSelectedItem().toString());
-    int phy101pointvalue = getPointValue(PHY102_GRADE.getSelectedItem().toString());
-    int sta111pointvalue = getPointValue(STA112_GRADE.getSelectedItem().toString());
-    int gst105pointvalue = getPointValue(GST108_GRADE.getSelectedItem().toString());
-    int bio101pointvalue = getPointValue(CHE102_GRADE.getSelectedItem().toString());
-    int mgt101pointvalue = getPointValue(GST104_GRADE.getSelectedItem().toString());
-    int phy105pointvalue = getPointValue(PHY152_GRADE.getSelectedItem().toString());
+    int CSC102pointvalue = getPointValue(CSC102_GRADE.getSelectedItem().toString());
+    int MAT102pointvalue = getPointValue(MAT102_GRADE.getSelectedItem().toString());
+    int PHY102pointvalue = getPointValue(PHY102_GRADE.getSelectedItem().toString());
+    int STA112pointvalue = getPointValue(STA112_GRADE.getSelectedItem().toString());
+    int GST108pointvalue = getPointValue(GST108_GRADE.getSelectedItem().toString());
+    int CHE102pointvalue = getPointValue(CHE102_GRADE.getSelectedItem().toString());
+    int GST104pointvalue = getPointValue(GST104_GRADE.getSelectedItem().toString());
+    int PHY152pointvalue = getPointValue(PHY152_GRADE.getSelectedItem().toString());
     
-     int totalPoints = (csc101pointvalue * csc102unit) + (mat101pointvalue * mat102unit) +
-                        (phy101pointvalue * phy102unit) + (sta111pointvalue * sta112Unit) +
-                        (phy105pointvalue * phy152unit) + (bio101pointvalue * gst108unit) +
-                        (gst105pointvalue * che102unit) + (mgt101pointvalue * gst104unit);
+     int totalPoints = (CSC102pointvalue * csc102unit) + (MAT102pointvalue * mat102unit) +
+                        (PHY102pointvalue * phy102unit) + (STA112pointvalue * sta112Unit) +
+                        (PHY152pointvalue * phy152unit) + (CHE102pointvalue * gst108unit) +
+                        (GST108pointvalue * che102unit) + (GST104pointvalue * gst104unit);
      int totalUnits = csc102unit + mat102unit + phy102unit + sta112Unit + phy152unit + gst108unit + che102unit + gst104unit;
      double gpa = (double) totalPoints / totalUnits;
      double roundedGpa = Math.round(gpa * 100.0) / 100.0;

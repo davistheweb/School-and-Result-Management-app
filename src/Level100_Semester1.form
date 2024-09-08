@@ -121,7 +121,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel13" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
-                                      <Component id="CSC_201" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="CSC_101" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
@@ -305,7 +305,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="CSC101_FINALSCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CSC_201" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="CSC_101" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                           <Component id="CSC101_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="CSC101_EXAMSCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="CSC101_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -579,7 +579,7 @@
                 <Property name="text" type="java.lang.String" value="COURSES"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="CSC_201">
+            <Component class="javax.swing.JLabel" name="CSC_101">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="12" style="1"/>

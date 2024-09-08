@@ -162,6 +162,9 @@ public class Level100_Semester1 extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel5.setText("LEVEL");
 
+        lvl.setText("100");
+        lvl.setEnabled(false);
+
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel6.setText("REG NUMBER");
 

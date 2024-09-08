@@ -5,6 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
+import javax.imageio.ImageIO;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -136,7 +142,7 @@ public class CheckResult extends javax.swing.JFrame {
     private void regNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regNumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_regNumberActionPerformed
-    public void CheckResultSlip(){
+   public void CheckResultSlip() {
     if ("".equals(regNumber.getText())) {
         JOptionPane.showMessageDialog(this, "Field cannot be empty!", "Error", JOptionPane.INFORMATION_MESSAGE);
         return;
@@ -187,7 +193,7 @@ public class CheckResult extends javax.swing.JFrame {
     String url = "jdbc:MySql://localhost:3306/imo_state_university";
     String username = "root";
     String password = "";
-    
+
     // Updated to use tableName instead of selectedSemester
     String fetchByRegNumber = "SELECT * FROM " + tableName + " WHERE reg_number = ?";
     
@@ -200,7 +206,6 @@ public class CheckResult extends javax.swing.JFrame {
         
         if (rs.next()) {
             String feeStatus = rs.getString("fee");
-           
             String semester = rs.getString("semester");
             String level = String.valueOf(rs.getInt("level"));
             String regNum = rs.getString("reg_number");
@@ -213,27 +218,101 @@ public class CheckResult extends javax.swing.JFrame {
             String course6 = rs.getString("course6");
             String course7 = rs.getString("course7");
             String course8 = rs.getString("course8");
-            String score1 = String.valueOf(rs.getInt("csc101_score"));
-            String grade1 = rs.getString("csc101_grade");
-            String score2 = String.valueOf(rs.getInt("mat101_score"));
-            String grade2 = rs.getString("mat101_grade");
-            String score3 = String.valueOf(rs.getInt("phy101_score"));
-            String grade3 = rs.getString("phy101_grade");
-            String score4 = String.valueOf(rs.getInt("sta111_score"));
-            String grade4 = rs.getString("sta111_grade");
-            String score5= String.valueOf(rs.getInt("phy105_score"));
-            String grade5 = rs.getString("phy105_grade");
-            String score6 = String.valueOf(rs.getInt("bio101_score"));
-            String grade6 = rs.getString("bio101_grade");
-            String score7 = String.valueOf(rs.getInt("gst105_score"));
-            String grade7 = rs.getString("gst105_grade");
-            String score8 = String.valueOf(rs.getInt("mgt101_score"));
-            String grade8 = rs.getString("mgt101_grade");
-            String gpa = String.valueOf(rs.getDouble("gpa"));
+            String score1 = "";
+            String grade1 = "";
+            String score2 = "";
+            String grade2 = "";
+            String score3 = "";
+            String grade3 = "";
+            String score4 = "";
+            String grade4 = "";
+            String score5 = "";
+            String grade5 = "";
+            String score6 = "";
+            String grade6 = "";
+            String score7 = "";
+            String grade7 = "";
+            String score8 = "";
+            String grade8 = "";
+            String gpa = "";
             
+            switch (selectedSemester) {
+                case "YEAR 1 1ST SEMESTER":
+                    score1 = String.valueOf(rs.getInt("csc101_score"));
+                    grade1 = rs.getString("csc101_grade");
+                    score2 = String.valueOf(rs.getInt("mat101_score"));
+                    grade2 = rs.getString("mat101_grade");
+                    score3 = String.valueOf(rs.getInt("phy101_score"));
+                    grade3 = rs.getString("phy101_grade");
+                    score4 = String.valueOf(rs.getInt("sta111_score"));
+                    grade4 = rs.getString("sta111_grade");
+                    score5 = String.valueOf(rs.getInt("phy105_score"));
+                    grade5 = rs.getString("phy105_grade");
+                    score6 = String.valueOf(rs.getInt("bio101_score"));
+                    grade6 = rs.getString("bio101_grade");
+                    score7 = String.valueOf(rs.getInt("gst105_score"));
+                    grade7 = rs.getString("gst105_grade");
+                    score8 = String.valueOf(rs.getInt("mgt101_score"));
+                    grade8 = rs.getString("mgt101_grade");
+                    gpa = String.valueOf(rs.getDouble("gpa"));
+                    break;
+                case "YEAR 1 2ND SEMESTER":
+                    score1 = String.valueOf(rs.getInt("csc102_score"));
+                    grade1 = rs.getString("csc102_grade");
+                    score2 = String.valueOf(rs.getInt("mat102_score"));
+                    grade2 = rs.getString("mat102_grade");
+                    score3 = String.valueOf(rs.getInt("phy102_score"));
+                    grade3 = rs.getString("phy102_grade");
+                    score4 = String.valueOf(rs.getInt("sta112_score"));
+                    grade4 = rs.getString("sta112_grade");
+                    score5 = String.valueOf(rs.getInt("phy152_score"));
+                    grade5 = rs.getString("phy152_grade");
+                    score6 = String.valueOf(rs.getInt("gst108_score"));
+                    grade6 = rs.getString("gst108_grade");
+                    score7 = String.valueOf(rs.getInt("che102_score"));
+                    grade7 = rs.getString("che102_grade");
+                    score8 = String.valueOf(rs.getInt("gst104_score"));
+                    grade8 = rs.getString("gst104_grade");
+                    gpa = String.valueOf(rs.getDouble("gpa"));
+                    break;
+                case "YEAR 2 1ST SEMESTER":
+                    // Handle scores and grades for this semester
+                    break;
+                case "YEAR 2 2ND SEMESTER":
+                    // Handle scores and grades for this semester
+                    break;
+                case "YEAR 3 1ST SEMESTER":
+                    // Handle scores and grades for this semester
+                    break;
+                case "YEAR 3 2ND SEMESTER":
+                    // Handle scores and grades for this semester
+                    break;
+                case "YEAR 4 1ST SEMESTER":
+                    // Handle scores and grades for this semester
+                    break;
+                case "YEAR 4 2ND SEMESTER":
+                    // Handle scores and grades for this semester
+                    break;
+            }
+
+            // Retrieve passport image
+            Blob blob = rs.getBlob("passport");
+            ImageIcon passportIcon = null;
+            if (blob != null) {
+                try (InputStream inputStream = blob.getBinaryStream()) {
+                    BufferedImage image = ImageIO.read(inputStream);
+                    if (image != null) {
+                        passportIcon = new ImageIcon(image);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Image could not be read", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(this, "Error reading image: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
 
             // Now you can use each string independently or process them further
-             if("UNPAID".equals(feeStatus)){
+            if ("UNPAID".equals(feeStatus)) {
                 JOptionPane.showMessageDialog(this, "You can't check result until you Pay Your fees", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
@@ -272,6 +351,14 @@ public class CheckResult extends javax.swing.JFrame {
 
             // Set GPA
             rp.gpa.setText(gpa);
+
+            // Set passport image if available
+            if (passportIcon != null) {
+                rp.passportLabel.setIcon(passportIcon);
+            } else {
+                rp.passportLabel.setIcon(null); // Optionally set a default image or placeholder
+            }
+
             rp.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "It does not exist", "Error", JOptionPane.ERROR_MESSAGE);
@@ -280,6 +367,7 @@ public class CheckResult extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
+
 
     private void checkResultSlipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkResultSlipActionPerformed
        CheckResultSlip();

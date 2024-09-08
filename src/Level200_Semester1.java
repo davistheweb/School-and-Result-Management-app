@@ -33,6 +33,18 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         BIO101_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
         GST105_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
         MGT101_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
+        // TOOLTIP FOR GRADE
+        CSC101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        MAT101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        PHY101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        STA111_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        PHY105_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        BIO101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        GST105_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        MGT101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        
+        //TOOTIP FOR GP
+        gpInLevel.setToolTipText("GP CALCULATES AUTOMATICALLY FROM TOTAL SCORE AND UNIT!!");
     }
 
     /**
@@ -61,16 +73,8 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         PYH105_SCORE = new javax.swing.JTextField();
         BIO101_SCORE = new javax.swing.JTextField();
         studentName = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        NumInLevel = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        gpInLevel = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         feesStatus = new javax.swing.JComboBox<>();
-        stuLevel = new javax.swing.JTextField();
-        average = new javax.swing.JTextField();
         uploadAll = new javax.swing.JButton();
         passport = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -91,14 +95,6 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         MGT_101 = new javax.swing.JLabel();
         GST105_SCORE = new javax.swing.JTextField();
         MGT101_SCORE = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jComboBox8 = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         CSC101_CA_SCORE = new javax.swing.JTextField();
@@ -118,14 +114,24 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         GST105_EXAM_SCORE = new javax.swing.JTextField();
         MGT101_EXAM_SCORE = new javax.swing.JTextField();
         cal_score = new javax.swing.JButton();
-        jComboBox9 = new javax.swing.JComboBox<>();
-        jComboBox10 = new javax.swing.JComboBox<>();
-        jComboBox11 = new javax.swing.JComboBox<>();
-        jComboBox12 = new javax.swing.JComboBox<>();
-        jComboBox13 = new javax.swing.JComboBox<>();
-        jComboBox14 = new javax.swing.JComboBox<>();
-        jComboBox15 = new javax.swing.JComboBox<>();
-        jComboBox16 = new javax.swing.JComboBox<>();
+        CSC101_GRADE = new javax.swing.JComboBox<>();
+        MAT101_GRADE = new javax.swing.JComboBox<>();
+        PHY101_GRADE = new javax.swing.JComboBox<>();
+        STA111_GRADE = new javax.swing.JComboBox<>();
+        PHY105_GRADE = new javax.swing.JComboBox<>();
+        BIO101_GRADE = new javax.swing.JComboBox<>();
+        GST105_GRADE = new javax.swing.JComboBox<>();
+        MGT101_GRADE = new javax.swing.JComboBox<>();
+        gpInLevel = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 1000));
@@ -135,7 +141,7 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         jScrollPane3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setText("SELECT BY SESSION, SEMESTER, LEVEL AND REG NUMBER");
+        jLabel2.setText("100 LEVEL 1ST SEMESTER RESULT POSTING SYSTEM");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel3.setText("SESSION");
@@ -150,6 +156,7 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         jLabel4.setText("SEMESTER");
 
         Semester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ST", "2ND" }));
+        Semester.setEnabled(false);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel5.setText("LEVEL");
@@ -183,37 +190,13 @@ public class Level200_Semester1 extends javax.swing.JFrame {
 
         BIO101_SCORE.setEnabled(false);
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        jLabel8.setText("NO. IN LEVEL");
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        jLabel9.setText("G.P IN LEVEL");
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        jLabel10.setText("LEVEL");
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        jLabel11.setText("AVERAGE");
-
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel12.setText("FEES");
 
         feesStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PAID", "UNPAID" }));
 
-        stuLevel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stuLevelActionPerformed(evt);
-            }
-        });
-
-        average.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                averageActionPerformed(evt);
-            }
-        });
-
         uploadAll.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        uploadAll.setText("INSERT");
+        uploadAll.setText("POST RESULT");
         uploadAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadAllActionPerformed(evt);
@@ -290,32 +273,6 @@ public class Level200_Semester1 extends javax.swing.JFrame {
 
         MGT101_SCORE.setEnabled(false);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
-            }
-        });
-
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-
         jLabel14.setText("CA SCORE");
 
         jLabel15.setText("EXAM SCORE");
@@ -381,168 +338,84 @@ public class Level200_Semester1 extends javax.swing.JFrame {
             }
         });
 
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F" }));
-        jComboBox9.addActionListener(new java.awt.event.ActionListener() {
+        CSC101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        CSC101_GRADE.setEnabled(false);
+        CSC101_GRADE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox9ActionPerformed(evt);
+                CSC101_GRADEActionPerformed(evt);
             }
         });
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F" }));
+        MAT101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        MAT101_GRADE.setEnabled(false);
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F" }));
+        PHY101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        PHY101_GRADE.setEnabled(false);
 
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F" }));
+        STA111_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        STA111_GRADE.setEnabled(false);
 
-        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F" }));
+        PHY105_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        PHY105_GRADE.setEnabled(false);
 
-        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F" }));
+        BIO101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        BIO101_GRADE.setEnabled(false);
+        BIO101_GRADE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BIO101_GRADEActionPerformed(evt);
+            }
+        });
 
-        jComboBox15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F" }));
+        GST105_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        GST105_GRADE.setEnabled(false);
 
-        jComboBox16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F" }));
+        MGT101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        MGT101_GRADE.setEnabled(false);
+
+        gpInLevel.setEnabled(false);
+        gpInLevel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gpInLevelActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("GPA");
+
+        jLabel10.setText("2");
+
+        jLabel11.setText("3");
+
+        jLabel16.setText("3");
+
+        jLabel17.setText("2");
+
+        jLabel18.setText("1");
+
+        jLabel22.setText("3");
+
+        jLabel23.setText("2");
+
+        jLabel24.setText("2");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(115, 115, 115)
+                .addComponent(studentName, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MGT_101)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(11, 11, 11)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jComboBox15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jComboBox16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(29, 29, 29)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGap(59, 59, 59)
-                                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(26, 26, 26))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                                .addGap(299, 299, 299)
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(average, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(58, 58, 58)
-                                                        .addComponent(feesStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(18, 18, 18)
-                                                        .addComponent(Session, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(53, 53, 53)
-                                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(Semester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addGap(30, 30, 30)
-                                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(lvl, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(stuLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(12, 12, 12)))))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(StudentRegNum, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(GST_105))
-                .addGap(0, 185, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addComponent(cal_score)
-                .addGap(129, 129, 129)
-                .addComponent(uploadAll, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(495, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CSC_201, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(CSC101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel14)
-                                            .addComponent(MAT101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(PHY101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(STA111_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(PHY105_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(BIO101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(GST105_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(MGT101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(CSC101_EXAMSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel15)
-                                    .addComponent(MAT101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PHY101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(STA111_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PHY105_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BIO101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(GST105_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MGT101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(115, 115, 115)
-                                    .addComponent(studentName, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(NumInLevel)
-                                        .addComponent(gpInLevel)))))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
+                                .addGap(49, 49, 49)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(CSC101_FINALSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(MAT_101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -553,8 +426,11 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                                     .addComponent(GST105_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(MGT101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(gpInLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 628, Short.MAX_VALUE))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -562,12 +438,118 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                             .addComponent(PHY_101, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(STA_111)
                             .addComponent(PHY_105, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BIO_101))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(uploadPhoto)
-                    .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(176, 176, 176))
+                            .addComponent(BIO_101)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(cal_score)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CSC_201, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(CSC101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel14)
+                                        .addComponent(MAT101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(PHY101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(STA111_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(PHY105_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(BIO101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(GST105_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(MGT101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(CSC101_EXAMSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel15)
+                                .addComponent(MAT101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(PHY101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(STA111_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(PHY105_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BIO101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(GST105_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(MGT101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(393, 393, 393)
+                        .addComponent(uploadAll, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(MGT_101)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel20)
+                                                .addComponent(CSC101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(MAT101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(PHY101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(STA111_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(PHY105_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(BIO101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(GST105_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(MGT101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(feesStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(32, 32, 32)))
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(68, 68, 68)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel11)
+                                                    .addComponent(jLabel16)
+                                                    .addComponent(jLabel17)
+                                                    .addComponent(jLabel18)
+                                                    .addComponent(jLabel22)
+                                                    .addComponent(jLabel23)
+                                                    .addComponent(jLabel24)
+                                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(50, 50, 50)
+                                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(48, 48, 48))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                        .addComponent(Session, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(58, 58, 58)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(Semester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lvl, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(61, 61, 61)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(uploadPhoto))
+                                            .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(StudentRegNum, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                    .addComponent(GST_105, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -591,28 +573,10 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                         .addGap(53, 53, 53)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stuLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(NumInLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(average, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel11)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(gpInLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(feesStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(feesStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(110, 110, 110))
                     .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(uploadPhoto)
@@ -632,10 +596,10 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CSC101_FINALSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CSC_201, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CSC101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CSC101_EXAMSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CSC101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -670,28 +634,28 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                             .addComponent(BIO101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(MAT101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(PHY101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PHY101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(STA111_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(STA111_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(PYH105_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PHY105_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BIO101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(BIO101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -703,18 +667,20 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(MGT_101)
                             .addComponent(MGT101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(MGT101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(MGT101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(MGT101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(GST105_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(GST105_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel23)))
                 .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uploadAll, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cal_score))
+                    .addComponent(cal_score)
+                    .addComponent(jLabel9)
+                    .addComponent(gpInLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(450, Short.MAX_VALUE))
         );
 
@@ -724,10 +690,10 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -759,10 +725,6 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_uploadAllActionPerformed
 
-    private void stuLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stuLevelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stuLevelActionPerformed
-
     private void STA111_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_STA111_SCOREActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_STA111_SCOREActionPerformed
@@ -770,14 +732,6 @@ public class Level200_Semester1 extends javax.swing.JFrame {
     private void SessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SessionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SessionActionPerformed
-
-    private void averageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_averageActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_averageActionPerformed
-
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
 
     private void CSC101_CA_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC101_CA_SCOREActionPerformed
         // TODO add your handling code here:
@@ -814,7 +768,7 @@ public class Level200_Semester1 extends javax.swing.JFrame {
     private void MAT101_EXAM_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MAT101_EXAM_SCOREActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MAT101_EXAM_SCOREActionPerformed
-    private void CalScore() {
+    public void CalScore() {
          
     // Check if any of the text fields are empty
     if ("".equals(CSC101_CA_SCORE.getText().trim()) || "".equals(CSC101_EXAMSCORE.getText().trim())  ||
@@ -843,29 +797,203 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "CA Score can't be greater than 30 and Exam Score can't be greater than 70", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
         return;
     }
-        int csc101Total = Integer.parseInt(CSC101_CA_SCORE.getText().trim()) + Integer.parseInt(CSC101_EXAMSCORE.getText().trim());
-        CSC101_FINALSCORE.setText(String.valueOf(csc101Total));
+//    
+//    if(CSC101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || MAT101_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
+//       PHY101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || STA111_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
+//       BIO101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || GST105_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
+//       MGH101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || PHY105_UNIT.getSelectedItem().toString() == "SELECT UNIT" ){
+//        JOptionPane.showMessageDialog(this, "PLS FILL THE UNIT COMBO", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
+//        return;
+//    }
+                // Calculate total and set final score for each course
+int csc101Total = Integer.parseInt(CSC101_CA_SCORE.getText().trim()) + Integer.parseInt(CSC101_EXAMSCORE.getText().trim());
+CSC101_FINALSCORE.setText(String.valueOf(csc101Total));
 
-         int mat101Total = Integer.parseInt(MAT101_CA_SCORE.getText().trim()) + Integer.parseInt(MAT101_EXAM_SCORE.getText().trim());
-        MAT_101_SCORE.setText(String.valueOf(mat101Total));
+int mat101Total = Integer.parseInt(MAT101_CA_SCORE.getText().trim()) + Integer.parseInt(MAT101_EXAM_SCORE.getText().trim());
+MAT_101_SCORE.setText(String.valueOf(mat101Total));
 
-        int phy101Total = Integer.parseInt(PHY101_CA_SCORE.getText().trim()) + Integer.parseInt(PHY101_EXAM_SCORE.getText().trim());
-        PHY101_SCORE.setText(String.valueOf(phy101Total));
+int phy101Total = Integer.parseInt(PHY101_CA_SCORE.getText().trim()) + Integer.parseInt(PHY101_EXAM_SCORE.getText().trim());
+PHY101_SCORE.setText(String.valueOf(phy101Total));
 
-        int sta111Total = Integer.parseInt(STA111_CA_SCORE.getText().trim()) + Integer.parseInt(STA111_EXAM_SCORE.getText().trim());
-        STA111_SCORE.setText(String.valueOf(sta111Total));
+int sta111Total = Integer.parseInt(STA111_CA_SCORE.getText().trim()) + Integer.parseInt(STA111_EXAM_SCORE.getText().trim());
+STA111_SCORE.setText(String.valueOf(sta111Total));
 
-        int gst105Total = Integer.parseInt(GST105_CA_SCORE.getText().trim()) + Integer.parseInt(GST105_EXAM_SCORE.getText().trim());
-        GST105_SCORE.setText(String.valueOf(gst105Total));
+int gst105Total = Integer.parseInt(GST105_CA_SCORE.getText().trim()) + Integer.parseInt(GST105_EXAM_SCORE.getText().trim());
+GST105_SCORE.setText(String.valueOf(gst105Total));
 
-        int bio101Total = Integer.parseInt(BIO101_CA_SCORE.getText().trim()) + Integer.parseInt(BIO101_EXAM_SCORE.getText().trim());
-        BIO101_SCORE.setText(String.valueOf(bio101Total));
+int bio101Total = Integer.parseInt(BIO101_CA_SCORE.getText().trim()) + Integer.parseInt(BIO101_EXAM_SCORE.getText().trim());
+BIO101_SCORE.setText(String.valueOf(bio101Total));
 
-        int mgt101Total = Integer.parseInt(MGT101_CA_SCORE.getText().trim()) + Integer.parseInt(MGT101_EXAM_SCORE.getText().trim());
-        MGT101_SCORE.setText(String.valueOf(mgt101Total));
-        int phy105Total = Integer.parseInt(PHY105_CA_SCORE.getText().trim()) + Integer.parseInt(PHY105_EXAM_SCORE.getText().trim());
-        PYH105_SCORE.setText(String.valueOf(phy105Total));
+int mgt101Total = Integer.parseInt(MGT101_CA_SCORE.getText().trim()) + Integer.parseInt(MGT101_EXAM_SCORE.getText().trim());
+MGT101_SCORE.setText(String.valueOf(mgt101Total));
+
+int phy105Total = Integer.parseInt(PHY105_CA_SCORE.getText().trim()) + Integer.parseInt(PHY105_EXAM_SCORE.getText().trim());
+PYH105_SCORE.setText(String.valueOf(phy105Total));
+
+// Grade calculation for CSC101
+    if (csc101Total >= 70) {
+    CSC101_GRADE.setSelectedIndex(1);
+    } else if (csc101Total >= 60 && csc101Total <= 69) {
+    CSC101_GRADE.setSelectedIndex(2);
+    } else if (csc101Total >= 50 && csc101Total <= 59) {
+    CSC101_GRADE.setSelectedIndex(3);
+    } else if (csc101Total >= 45 && csc101Total <= 49) {
+    CSC101_GRADE.setSelectedIndex(4);
+    } else if (csc101Total >= 40 && csc101Total <= 44) {
+    CSC101_GRADE.setSelectedIndex(5);
+    } else if (csc101Total >= 0 && csc101Total <= 39) {
+    CSC101_GRADE.setSelectedIndex(6);
     }
+
+        // Grade calculation for MAT101
+    if (mat101Total >= 70) {
+    MAT101_GRADE.setSelectedIndex(1);
+    } else if (mat101Total >= 60 && mat101Total <= 69) {
+    MAT101_GRADE.setSelectedIndex(2);
+    } else if (mat101Total >= 50 && mat101Total <= 59) {
+    MAT101_GRADE.setSelectedIndex(3);
+    } else if (mat101Total >= 45 && mat101Total <= 49) {
+    MAT101_GRADE.setSelectedIndex(4);
+    } else if (mat101Total >= 40 && mat101Total <= 44) {
+    MAT101_GRADE.setSelectedIndex(5);
+    } else if (mat101Total >= 0 && mat101Total <= 39) {
+    MAT101_GRADE.setSelectedIndex(6);
+    }
+
+// Grade calculation for PHY101
+    if (phy101Total >= 70) {
+        PHY101_GRADE.setSelectedIndex(1);
+    } else if (phy101Total >= 60 && phy101Total <= 69) {
+        PHY101_GRADE.setSelectedIndex(2);
+    } else if (phy101Total >= 50 && phy101Total <= 59) {
+        PHY101_GRADE.setSelectedIndex(3);
+    } else if (phy101Total >= 45 && phy101Total <= 49) {
+        PHY101_GRADE.setSelectedIndex(4);
+    } else if (phy101Total >= 40 && phy101Total <= 44) {
+        PHY101_GRADE.setSelectedIndex(5);
+    } else if (phy101Total >= 0 && phy101Total <= 39) {
+        PHY101_GRADE.setSelectedIndex(6);
+    }
+
+    // Grade calculation for STA111
+    if (sta111Total >= 70) {
+        STA111_GRADE.setSelectedIndex(1);
+    } else if (sta111Total >= 60 && sta111Total <= 69) {
+        STA111_GRADE.setSelectedIndex(2);
+    } else if (sta111Total >= 50 && sta111Total <= 59) {
+        STA111_GRADE.setSelectedIndex(3);
+    } else if (sta111Total >= 45 && sta111Total <= 49) {
+        STA111_GRADE.setSelectedIndex(4);
+    } else if (sta111Total >= 40 && sta111Total <= 44) {
+        STA111_GRADE.setSelectedIndex(5);
+    } else if (sta111Total >= 0 && sta111Total <= 39) {
+        STA111_GRADE.setSelectedIndex(6);
+    }
+
+    // Grade calculation for GST105
+    if (gst105Total >= 70) {
+        GST105_GRADE.setSelectedIndex(1);
+    } else if (gst105Total >= 60 && gst105Total <= 69) {
+        GST105_GRADE.setSelectedIndex(2);
+    } else if (gst105Total >= 50 && gst105Total <= 59) {
+        GST105_GRADE.setSelectedIndex(3);
+    } else if (gst105Total >= 45 && gst105Total <= 49) {
+        GST105_GRADE.setSelectedIndex(4);
+    } else if (gst105Total >= 40 && gst105Total <= 44) {
+        GST105_GRADE.setSelectedIndex(5);
+    } else if (gst105Total >= 0 && gst105Total <= 39) {
+        GST105_GRADE.setSelectedIndex(6);
+    }
+
+    // Grade calculation for BIO101
+    if (bio101Total >= 70) {
+        BIO101_GRADE.setSelectedIndex(1);
+    } else if (bio101Total >= 60 && bio101Total <= 69) {
+        BIO101_GRADE.setSelectedIndex(2);
+    } else if (bio101Total >= 50 && bio101Total <= 59) {
+        BIO101_GRADE.setSelectedIndex(3);
+    } else if (bio101Total >= 45 && bio101Total <= 49) {
+        BIO101_GRADE.setSelectedIndex(4);
+    } else if (bio101Total >= 40 && bio101Total <= 44) {
+        BIO101_GRADE.setSelectedIndex(5);
+    } else if (bio101Total >= 0 && bio101Total <= 39) {
+        BIO101_GRADE.setSelectedIndex(6);
+    }
+
+    // Grade calculation for MGT101
+    if (mgt101Total >= 70) {
+        MGT101_GRADE.setSelectedIndex(1);
+    } else if (mgt101Total >= 60 && mgt101Total <= 69) {
+        MGT101_GRADE.setSelectedIndex(2);
+    } else if (mgt101Total >= 50 && mgt101Total <= 59) {
+        MGT101_GRADE.setSelectedIndex(3);
+    } else if (mgt101Total >= 45 && mgt101Total <= 49) {
+        MGT101_GRADE.setSelectedIndex(4);
+    } else if (mgt101Total >= 40 && mgt101Total <= 44) {
+        MGT101_GRADE.setSelectedIndex(5);
+    } else if (mgt101Total >= 0 && mgt101Total <= 39) {
+        MGT101_GRADE.setSelectedIndex(6);
+    }
+
+    // Grade calculation for PHY105
+    if (phy105Total >= 70) {
+        PHY105_GRADE.setSelectedIndex(1);
+    } else if (phy105Total >= 60 && phy105Total <= 69) {
+        PHY105_GRADE.setSelectedIndex(2);
+    } else if (phy105Total >= 50 && phy105Total <= 59) {
+        PHY105_GRADE.setSelectedIndex(3);
+    } else if (phy105Total >= 45 && phy105Total <= 49) {
+        PHY105_GRADE.setSelectedIndex(4);
+    } else if (phy105Total >= 40 && phy105Total <= 44) {
+        PHY105_GRADE.setSelectedIndex(5);
+    } else if (phy105Total >= 0 && phy105Total <= 39) {
+        PHY105_GRADE.setSelectedIndex(6);
+    }
+    
+    int csc101unit = 2;
+    int mat101unit = 3;
+    int phy101unit = 3;
+    int sta111Unit = 2;
+    int phy105unit = 1;
+    int bio101unit = 3;
+    int gst105unit = 2;
+    int mgt101unit = 2;
+    
+    // Grade calculation for CSC101
+    int csc101pointvalue = getPointValue(CSC101_GRADE.getSelectedItem().toString());
+    int mat101pointvalue = getPointValue(MAT101_GRADE.getSelectedItem().toString());
+    int phy101pointvalue = getPointValue(PHY101_GRADE.getSelectedItem().toString());
+    int sta111pointvalue = getPointValue(STA111_GRADE.getSelectedItem().toString());
+    int gst105pointvalue = getPointValue(GST105_GRADE.getSelectedItem().toString());
+    int bio101pointvalue = getPointValue(BIO101_GRADE.getSelectedItem().toString());
+    int mgt101pointvalue = getPointValue(MGT101_GRADE.getSelectedItem().toString());
+    int phy105pointvalue = getPointValue(PHY105_GRADE.getSelectedItem().toString());
+    
+     int totalPoints = (csc101pointvalue * csc101unit) + (mat101pointvalue * mat101unit) +
+                        (phy101pointvalue * phy101unit) + (sta111pointvalue * sta111Unit) +
+                        (phy105pointvalue * phy105unit) + (bio101pointvalue * bio101unit) +
+                        (gst105pointvalue * gst105unit) + (mgt101pointvalue * mgt101unit);
+     int totalUnits = csc101unit + mat101unit + phy101unit + sta111Unit + phy105unit + bio101unit + gst105unit + mgt101unit;
+     double gpa = (double) totalPoints / totalUnits;
+     double roundedGpa = Math.round(gpa * 100.0) / 100.0;
+     gpInLevel.setText(String.valueOf(roundedGpa));
+     
+}
+    public int getPointValue(String grade) {
+    switch (grade) {
+        case "A": return 5;
+        case "B": return 4;
+        case "C": return 3;
+        case "D": return 2;
+        case "E": return 1;
+        case "F": return 0;
+        default: return 0;
+               
+                
+                
+    }
+}
+
     private void cal_scoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cal_scoreActionPerformed
         CalScore();
 // TODO add your handling code here:
@@ -879,20 +1007,24 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MAT_101_SCOREActionPerformed
 
-    private void jComboBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox9ActionPerformed
+    private void CSC101_GRADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC101_GRADEActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox9ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_CSC101_GRADEActionPerformed
 
     private void PYH105_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PYH105_SCOREActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PYH105_SCOREActionPerformed
 
+    private void BIO101_GRADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIO101_GRADEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BIO101_GRADEActionPerformed
+
+    private void gpInLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gpInLevelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gpInLevelActionPerformed
+
     void uploadData() {
-        if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(NumInLevel.getText()) || "".equals(gpInLevel.getText()) || "".equals(stuLevel.getText()) || "".equals(average.getText()) || filename == null) {
+        if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
             return;
         }
@@ -919,8 +1051,11 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         String url = "jdbc:MySql://localhost:3306/imo_state_university";
         String username = "root";
         String password = "";
-        String checkStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
-        String statement = "INSERT INTO student_registration(session,semester,level,reg_number,name_of_student,number_in_level,gp_in_level,lvl,average,fee,passport) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String checkStatement = "SELECT * FROM level1_semester1 WHERE reg_number = ?";
+        String statement = "INSERT INTO level1_semester1(session, semester, level, reg_number, name_of_student, "
+                + "fee, passport, csc101_score, csc101_grade, mat101_score, mat101_grade, phy101_score, phy101_grade,"
+                + " sta111_score, sta111_grade, phy105_score, phy105_grade, bio101_score, bio101_grade, gst105_score, "
+                + "gst105_grade, mgt101_score, mgt101_grade, gpa) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         String regNumValue = StudentRegNum.getText().toUpperCase();
 
         try (Connection conn = DriverManager.getConnection(url, username, password)) {
@@ -929,7 +1064,7 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                 checkPstm.setString(1, regNumValue);
                 try (ResultSet rs = checkPstm.executeQuery()) {
                     if (rs.next() && rs.getInt(1) > 0) {
-                        JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Posting!!", JOptionPane.WARNING_MESSAGE);
                         return;
                     }
                 }
@@ -938,30 +1073,48 @@ public class Level200_Semester1 extends javax.swing.JFrame {
             // Insert the data along with the image
             try (PreparedStatement psmt = conn.prepareStatement(statement); FileInputStream fis = new FileInputStream(filename)) {
 
-                int session = Integer.parseInt(Session.getText());
-                psmt.setInt(1, session);
-                psmt.setString(2, Semester.getSelectedItem().toString());
-                int level = Integer.parseInt(lvl.getText());
-                psmt.setInt(3, level);
-                psmt.setString(4, StudentRegNum.getText().toUpperCase());
-                psmt.setString(5, studentName.getText().toUpperCase());
-                psmt.setString(6, NumInLevel.getText());
-                double gradePoint = Double.parseDouble(gpInLevel.getText());
-                psmt.setDouble(7, gradePoint);
-                int studentLevel = Integer.parseInt(stuLevel.getText());
-                psmt.setInt(8, studentLevel);
-                double Average = Double.parseDouble(average.getText());
-                psmt.setDouble(9, Average);
-                psmt.setString(10, feesStatus.getSelectedItem().toString());
+        int session = Integer.parseInt(Session.getText());
+        psmt.setInt(1, session);
+        psmt.setString(2, Semester.getSelectedItem().toString());
+        int level = Integer.parseInt(lvl.getText());
+        psmt.setInt(3, level);
+        psmt.setString(4, StudentRegNum.getText().toUpperCase());
+        psmt.setString(5, studentName.getText().toUpperCase());
+        psmt.setString(6, feesStatus.getSelectedItem().toString());
+        psmt.setBinaryStream(7, fis, (int) new File(filename).length());
 
-                // Set the image file as a binary stream
-                psmt.setBinaryStream(11, fis, (int) new File(filename).length());
+        psmt.setInt(8, Integer.parseInt(CSC101_FINALSCORE.getText().trim()));
+        psmt.setString(9, CSC101_GRADE.getSelectedItem().toString());
 
-                int updateToDB = psmt.executeUpdate();
-                if (updateToDB != 0) {
-                    JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
+        psmt.setInt(10, Integer.parseInt(MAT_101_SCORE.getText().trim()));
+        psmt.setString(11, MAT101_GRADE.getSelectedItem().toString());
+
+        psmt.setInt(12, Integer.parseInt(PHY101_SCORE.getText().trim()));
+        psmt.setString(13, PHY101_GRADE.getSelectedItem().toString());
+
+        psmt.setInt(14, Integer.parseInt(STA111_SCORE.getText().trim()));
+        psmt.setString(15, STA111_GRADE.getSelectedItem().toString());
+
+        psmt.setInt(16, Integer.parseInt(PYH105_SCORE.getText().trim()));
+        psmt.setString(17, PHY105_GRADE.getSelectedItem().toString());
+
+        psmt.setInt(18, Integer.parseInt(BIO101_SCORE.getText().trim()));
+        psmt.setString(19, BIO101_GRADE.getSelectedItem().toString());
+
+        psmt.setInt(20, Integer.parseInt(GST105_SCORE.getText().trim()));
+        psmt.setString(21, GST105_GRADE.getSelectedItem().toString());
+
+        psmt.setInt(22, Integer.parseInt(MGT101_SCORE.getText().trim()));
+        psmt.setString(23, MGT101_GRADE.getSelectedItem().toString());
+
+        psmt.setDouble(24, Double.parseDouble(gpInLevel.getText().trim()));
+
+        int updateToDB = psmt.executeUpdate();
+        if (updateToDB != 0) {
+            JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
         } catch (SQLException | IOException exceptionMessage) {
             JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -1007,13 +1160,13 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Level200_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Level200_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Level200_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Level200_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         /* Create and display the form */
@@ -1027,60 +1180,50 @@ public class Level200_Semester1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField BIO101_CA_SCORE;
     private javax.swing.JTextField BIO101_EXAM_SCORE;
+    private javax.swing.JComboBox<String> BIO101_GRADE;
     private javax.swing.JTextField BIO101_SCORE;
     private javax.swing.JLabel BIO_101;
     private javax.swing.JTextField CSC101_CA_SCORE;
     private javax.swing.JTextField CSC101_EXAMSCORE;
     private javax.swing.JTextField CSC101_FINALSCORE;
+    private javax.swing.JComboBox<String> CSC101_GRADE;
     private javax.swing.JLabel CSC_201;
     private javax.swing.JTextField GST105_CA_SCORE;
     private javax.swing.JTextField GST105_EXAM_SCORE;
+    private javax.swing.JComboBox<String> GST105_GRADE;
     private javax.swing.JTextField GST105_SCORE;
     private javax.swing.JLabel GST_105;
     private javax.swing.JTextField MAT101_CA_SCORE;
     private javax.swing.JTextField MAT101_EXAM_SCORE;
+    private javax.swing.JComboBox<String> MAT101_GRADE;
     private javax.swing.JLabel MAT_101;
     private javax.swing.JTextField MAT_101_SCORE;
     private javax.swing.JTextField MGT101_CA_SCORE;
     private javax.swing.JTextField MGT101_EXAM_SCORE;
+    private javax.swing.JComboBox<String> MGT101_GRADE;
     private javax.swing.JTextField MGT101_SCORE;
     private javax.swing.JLabel MGT_101;
-    private javax.swing.JTextField NumInLevel;
     private javax.swing.JTextField PHY101_CA_SCORE;
     private javax.swing.JTextField PHY101_EXAM_SCORE;
+    private javax.swing.JComboBox<String> PHY101_GRADE;
     private javax.swing.JTextField PHY101_SCORE;
     private javax.swing.JTextField PHY105_CA_SCORE;
     private javax.swing.JTextField PHY105_EXAM_SCORE;
+    private javax.swing.JComboBox<String> PHY105_GRADE;
     private javax.swing.JLabel PHY_101;
     private javax.swing.JLabel PHY_105;
     private javax.swing.JTextField PYH105_SCORE;
     private javax.swing.JTextField STA111_CA_SCORE;
     private javax.swing.JTextField STA111_EXAM_SCORE;
+    private javax.swing.JComboBox<String> STA111_GRADE;
     private javax.swing.JTextField STA111_SCORE;
     private javax.swing.JLabel STA_111;
     private javax.swing.JComboBox<String> Semester;
     private javax.swing.JTextField Session;
     private javax.swing.JTextField StudentRegNum;
-    private javax.swing.JTextField average;
     private javax.swing.JButton cal_score;
     private javax.swing.JComboBox<String> feesStatus;
     private javax.swing.JTextField gpInLevel;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox12;
-    private javax.swing.JComboBox<String> jComboBox13;
-    private javax.swing.JComboBox<String> jComboBox14;
-    private javax.swing.JComboBox<String> jComboBox15;
-    private javax.swing.JComboBox<String> jComboBox16;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JComboBox<String> jComboBox9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1088,22 +1231,26 @@ public class Level200_Semester1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField lvl;
     private javax.swing.JLabel passport;
-    private javax.swing.JTextField stuLevel;
     private javax.swing.JTextField studentName;
     private javax.swing.JButton uploadAll;
     private javax.swing.JButton uploadPhoto;

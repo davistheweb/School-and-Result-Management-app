@@ -6,7 +6,7 @@
 /**
  *
  * @author GOI
- */
+ *///final
 public class AdminAndUserPage extends javax.swing.JFrame {
 
     /**

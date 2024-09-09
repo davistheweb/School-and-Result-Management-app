@@ -165,22 +165,6 @@ public class ResultProcess extends javax.swing.JFrame {
 
         lvl.setText("LVL");
 
-        course1.setText("jLabel23");
-
-        course2.setText("jLabel24");
-
-        course3.setText("jLabel25");
-
-        course4.setText("jLabel26");
-
-        course5.setText("jLabel27");
-
-        course6.setText("jLabel28");
-
-        course7.setText("jLabel29");
-
-        course8.setText("jLabel30");
-
         jLabel31.setText("SN");
 
         jLabel32.setText("1");
@@ -198,40 +182,6 @@ public class ResultProcess extends javax.swing.JFrame {
         jLabel38.setText("7");
 
         jLabel39.setText("8");
-
-        score1.setText("jLabel40");
-
-        score2.setText("jLabel41");
-
-        score3.setText("jLabel42");
-
-        score4.setText("jLabel43");
-
-        score5.setText("jLabel44");
-
-        score6.setText("jLabel45");
-
-        score7.setText("jLabel46");
-
-        score8.setText("jLabel47");
-
-        grade1.setText("jLabel48");
-
-        grade2.setText("jLabel49");
-
-        grade3.setText("jLabel50");
-
-        grade4.setText("jLabel51");
-
-        grade5.setText("jLabel52");
-
-        grade6.setText("jLabel53");
-
-        grade7.setText("jLabel54");
-
-        grade8.setText("jLabel55");
-
-        gpa.setText("jLabel16");
 
         jLabel16.setText("GPA");
 

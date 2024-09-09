@@ -1069,6 +1069,10 @@ CSC207_SCORE.setText(String.valueOf(phy105Total));
         JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
         return;
     }
+         if(StudentRegNum.getText().length() != 14){
+            JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+        return;
+        }
         String url = "jdbc:MySql://localhost:3306/imo_state_university";
         String username = "root";
         String password = "";

@@ -7,6 +7,18 @@
  *
  * @author GOI
  */
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
+import javax.imageio.ImageIO;
 public class ResultProcess extends javax.swing.JFrame {
 
     /**

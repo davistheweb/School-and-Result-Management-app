@@ -73,25 +73,22 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jLabel19" min="-2" pref="85" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="CSC101_FINALSCORE" min="-2" pref="53" max="-2" attributes="0"/>
-                                          <Component id="MAT_101_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                          <Component id="PHY101_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                          <Component id="STA111_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                          <Component id="PYH105_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                          <Component id="BIO101_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                          <Component id="GST105_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                          <Component id="MGT101_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="gpInLevel" min="-2" pref="107" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabel19" min="-2" pref="85" max="-2" attributes="0"/>
+                                          <Component id="CSC206_FINALSCORE" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Component id="CSC_202_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Component id="CSC242_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Component id="CSC262_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Component id="CSC204_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Component id="MAT232_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Component id="CSC232_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                          <Component id="ECO202_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                               <EmptySpace min="0" pref="628" max="32767" attributes="0"/>
@@ -103,11 +100,11 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="MAT_101" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                                  <Component id="PHY_101" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                                  <Component id="STA_111" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PHY_105" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                                  <Component id="BIO_101" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC_202" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                  <Component id="CSC_242" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                  <Component id="CSC_262" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC_204" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                  <Component id="MAT_232" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
@@ -121,38 +118,38 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel13" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
-                                      <Component id="CSC_201" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
+                                      <Component id="CSC_206" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                          <Component id="CSC101_CA_SCORE" min="-2" pref="55" max="-2" attributes="0"/>
+                                          <Component id="CSC206_CA_SCORE" min="-2" pref="55" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                              <Component id="MAT101_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="PHY101_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="STA111_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="PHY105_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="BIO101_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="GST105_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
-                                              <Component id="MGT101_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                                              <Component id="CSC202_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                                              <Component id="CSC242_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                                              <Component id="CSC262_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                                              <Component id="CSC204_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                                              <Component id="MAT232_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                                              <Component id="CSC232_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                                              <Component id="ECO202_CA_SCORE" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="CSC101_EXAMSCORE" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="CSC206_EXAMSCORE" min="-2" pref="56" max="-2" attributes="0"/>
                                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                      <Component id="MAT101_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
-                                      <Component id="PHY101_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
-                                      <Component id="STA111_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
-                                      <Component id="PHY105_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
-                                      <Component id="BIO101_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
-                                      <Component id="GST105_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
-                                      <Component id="MGT101_EXAM_SCORE" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="CSC202_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="CSC242_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="CSC262_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="CSC204_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="MAT232_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="CSC232_EXAM_SCORE" alignment="1" min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="ECO202_EXAM_SCORE" min="-2" pref="56" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -168,7 +165,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="MGT_101" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ECO_202" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel7" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
                                   <Component id="jLabel3" alignment="1" min="-2" pref="59" max="-2" attributes="0"/>
                               </Group>
@@ -182,14 +179,14 @@
                                               <Group type="103" groupAlignment="1" attributes="0">
                                                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                                       <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="CSC101_GRADE" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="MAT101_GRADE" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="PHY101_GRADE" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="STA111_GRADE" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="PHY105_GRADE" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="BIO101_GRADE" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="GST105_GRADE" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="MGT101_GRADE" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="CSC206_GRADE" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="CSC202_GRADE" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="CSC242_GRADE" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="CSC262_GRADE" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="CSC204_GRADE" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="MAT232_GRADE" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="CSC232_GRADE" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="ECO202_GRADE" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <Component id="feesStatus" min="-2" max="-2" attributes="0"/>
@@ -237,16 +234,14 @@
                                               <Component id="uploadPhoto" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="passport" min="-2" pref="130" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="StudentRegNum" min="-2" pref="111" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="StudentRegNum" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="GST_105" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="CSC_232" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -288,7 +283,6 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -297,15 +291,16 @@
                               <Component id="jLabel13" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                               <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="CSC101_FINALSCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CSC_201" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="CSC101_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CSC101_EXAMSCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="CSC101_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CSC206_FINALSCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CSC_206" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="CSC206_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CSC206_EXAMSCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CSC206_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -314,68 +309,68 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="MAT_101" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                                          <Component id="MAT101_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="MAT101_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CSC_202" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                          <Component id="CSC202_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CSC202_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="MAT_101_SCORE" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CSC_202_SCORE" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="PHY_101" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="PHY101_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PHY101_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC_242" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="CSC242_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC242_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="STA_111" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                                  <Component id="STA111_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="STA111_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC_262" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Component id="CSC262_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC262_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="PHY_105" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="PHY105_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PHY105_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC_204" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="CSC204_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC204_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="BIO_101" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                  <Component id="BIO101_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="BIO101_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAT_232" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="MAT232_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAT232_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="MAT101_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC202_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="PHY101_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PHY101_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC242_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC242_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="STA111_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="STA111_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC262_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC262_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="PYH105_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PHY105_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC204_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC204_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="BIO101_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="BIO101_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAT232_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MAT232_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -384,23 +379,23 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="GST_105" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="GST105_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="GST105_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC_232" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC232_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CSC232_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="MGT_101" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="MGT101_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="MGT101_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="MGT101_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="MGT101_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ECO_202" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ECO202_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ECO202_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ECO202_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ECO202_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="GST105_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="GST105_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="CSC232_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="CSC232_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -480,12 +475,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="StudentRegNum">
             </Component>
-            <Component class="javax.swing.JTextField" name="PHY101_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC242_SCORE">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PHY101_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC242_SCOREActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
@@ -496,23 +491,23 @@
                 <Property name="text" type="java.lang.String" value="NAME OF STUDENT"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="STA111_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC262_SCORE">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="STA111_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC262_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="PYH105_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC204_SCORE">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PYH105_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC204_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="BIO101_SCORE">
+            <Component class="javax.swing.JTextField" name="MAT232_SCORE">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -569,52 +564,52 @@
                 <Property name="text" type="java.lang.String" value="COURSES"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="CSC_201">
+            <Component class="javax.swing.JLabel" name="CSC_206">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CSC 101"/>
+                <Property name="text" type="java.lang.String" value="CSC 206"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="MAT_101">
+            <Component class="javax.swing.JLabel" name="CSC_202">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="MAT 101"/>
+                <Property name="text" type="java.lang.String" value="CSC 202"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="PHY_101">
+            <Component class="javax.swing.JLabel" name="CSC_242">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PHY 101"/>
+                <Property name="text" type="java.lang.String" value="CSC 242"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="STA_111">
+            <Component class="javax.swing.JLabel" name="CSC_262">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="STA 111"/>
+                <Property name="text" type="java.lang.String" value="CSC 262"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="PHY_105">
+            <Component class="javax.swing.JLabel" name="CSC_204">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="PHY 105"/>
+                <Property name="text" type="java.lang.String" value="CSC 204"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="BIO_101">
+            <Component class="javax.swing.JLabel" name="MAT_232">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Emoji" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="BIO 101"/>
+                <Property name="text" type="java.lang.String" value="MAT 232"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
@@ -649,20 +644,20 @@
                 <Property name="text" type="java.lang.String" value="UNIT"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="CSC101_FINALSCORE">
+            <Component class="javax.swing.JTextField" name="CSC206_FINALSCORE">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC101_FINALSCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC206_FINALSCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="MAT_101_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC_202_SCORE">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MAT_101_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC_202_SCOREActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="uploadPhoto">
@@ -673,28 +668,31 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uploadPhotoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="GST_105">
+            <Component class="javax.swing.JLabel" name="CSC_232">
               <Properties>
-                <Property name="text" type="java.lang.String" value="GST 105"/>
+                <Property name="text" type="java.lang.String" value="CSC 232"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="MGT_101">
+            <Component class="javax.swing.JLabel" name="ECO_202">
               <Properties>
-                <Property name="text" type="java.lang.String" value="MGT 101"/>
+                <Property name="text" type="java.lang.String" value="ECO 202"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="GST105_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC232_SCORE">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GST105_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC232_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="MGT101_SCORE">
+            <Component class="javax.swing.JTextField" name="ECO202_SCORE">
               <Properties>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ECO202_SCOREActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
@@ -706,63 +704,69 @@
                 <Property name="text" type="java.lang.String" value="EXAM SCORE"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="CSC101_CA_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC206_CA_SCORE">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC101_CA_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC206_CA_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="MAT101_CA_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC202_CA_SCORE">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MAT101_CA_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC202_CA_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="PHY101_CA_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC242_CA_SCORE">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PHY101_CA_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC242_CA_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="STA111_CA_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC262_CA_SCORE">
             </Component>
-            <Component class="javax.swing.JTextField" name="PHY105_CA_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC204_CA_SCORE">
             </Component>
-            <Component class="javax.swing.JTextField" name="BIO101_CA_SCORE">
+            <Component class="javax.swing.JTextField" name="MAT232_CA_SCORE">
             </Component>
-            <Component class="javax.swing.JTextField" name="GST105_CA_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC232_CA_SCORE">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GST105_CA_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC232_CA_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="MGT101_CA_SCORE">
+            <Component class="javax.swing.JTextField" name="ECO202_CA_SCORE">
             </Component>
-            <Component class="javax.swing.JTextField" name="CSC101_EXAMSCORE">
+            <Component class="javax.swing.JTextField" name="CSC206_EXAMSCORE">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC101_EXAMSCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC206_EXAMSCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="MAT101_EXAM_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC202_EXAM_SCORE">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MAT101_EXAM_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC202_EXAM_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="PHY101_EXAM_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC242_EXAM_SCORE">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PHY101_EXAM_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC242_EXAM_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="STA111_EXAM_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC262_EXAM_SCORE">
             </Component>
-            <Component class="javax.swing.JTextField" name="PHY105_EXAM_SCORE">
-            </Component>
-            <Component class="javax.swing.JTextField" name="BIO101_EXAM_SCORE">
+            <Component class="javax.swing.JTextField" name="CSC204_EXAM_SCORE">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BIO101_EXAM_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC204_EXAM_SCOREActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="GST105_EXAM_SCORE">
-            </Component>
-            <Component class="javax.swing.JTextField" name="MGT101_EXAM_SCORE">
+            <Component class="javax.swing.JTextField" name="MAT232_EXAM_SCORE">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MGT101_EXAM_SCOREActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MAT232_EXAM_SCOREActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="CSC232_EXAM_SCORE">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC232_EXAM_SCOREActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="ECO202_EXAM_SCORE">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ECO202_EXAM_SCOREActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="cal_score">
@@ -773,7 +777,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cal_scoreActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="CSC101_GRADE">
+            <Component class="javax.swing.JComboBox" name="CSC206_GRADE">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="7">
@@ -789,13 +793,13 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC101_GRADEActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC206_GRADEActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="MAT101_GRADE">
+            <Component class="javax.swing.JComboBox" name="CSC202_GRADE">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="7">
@@ -814,7 +818,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="PHY101_GRADE">
+            <Component class="javax.swing.JComboBox" name="CSC242_GRADE">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="7">
@@ -833,7 +837,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="STA111_GRADE">
+            <Component class="javax.swing.JComboBox" name="CSC262_GRADE">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="7">
@@ -852,7 +856,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="PHY105_GRADE">
+            <Component class="javax.swing.JComboBox" name="CSC204_GRADE">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="7">
@@ -871,7 +875,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="BIO101_GRADE">
+            <Component class="javax.swing.JComboBox" name="MAT232_GRADE">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="7">
@@ -887,13 +891,13 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BIO101_GRADEActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MAT232_GRADEActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="GST105_GRADE">
+            <Component class="javax.swing.JComboBox" name="CSC232_GRADE">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="7">
@@ -908,11 +912,14 @@
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CSC232_GRADEActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JComboBox" name="MGT101_GRADE">
+            <Component class="javax.swing.JComboBox" name="ECO202_GRADE">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="7">
@@ -927,6 +934,9 @@
                 </Property>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ECO202_GRADEActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -951,12 +961,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="3"/>
+                <Property name="text" type="java.lang.String" value="2"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
-                <Property name="text" type="java.lang.String" value="3"/>
+                <Property name="text" type="java.lang.String" value="1"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
@@ -966,12 +976,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
-                <Property name="text" type="java.lang.String" value="1"/>
+                <Property name="text" type="java.lang.String" value="2"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
-                <Property name="text" type="java.lang.String" value="3"/>
+                <Property name="text" type="java.lang.String" value="2"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel23">

@@ -1078,9 +1078,9 @@ PYH152_SCORE.setText(String.valueOf(phy105Total));
         JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
         return;
     }
-        String url = "jdbc:MySql://localhost:3306/imo_state_university";
-        String username = "root";
-        String password = "";
+       String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+        String username = "sql8730305";
+        String password = "VGxAU93HkA";
         String checkStatement = "SELECT * FROM level1_semester2 WHERE reg_number = ?";
         String statement = "INSERT INTO level1_semester2(session, semester, level, reg_number, name_of_student, "
                 + "fee, passport, course1, course2, course3, course4, course5, course6, course7, course8, "
@@ -1156,8 +1156,12 @@ PYH152_SCORE.setText(String.valueOf(phy105Total));
     }
 
         } catch (SQLException | IOException exceptionMessage) {
+        if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+            JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+        } else {
             JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
     }
 
     public void UploadPicture() {

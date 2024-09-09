@@ -190,9 +190,9 @@ public class CheckResult extends javax.swing.JFrame {
     }
 
     String registrationNumber = regNumber.getText().toUpperCase();
-    String url = "jdbc:MySql://localhost:3306/imo_state_university";
-    String username = "root";
-    String password = "";
+     String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+    String username = "sql8730305";
+    String password = "VGxAU93HkA";
 
     // Updated to use tableName instead of selectedSemester
     String fetchByRegNumber = "SELECT * FROM " + tableName + " WHERE reg_number = ?";
@@ -304,16 +304,90 @@ public class CheckResult extends javax.swing.JFrame {
 
                     break;
                 case "YEAR 2 2ND SEMESTER":
-                    // Handle scores and grades for this semester
+                    score1 = String.valueOf(rs.getInt("csc206_score"));
+                    grade1 = rs.getString("csc206_grade");
+
+                    score2 = String.valueOf(rs.getInt("csc202_score"));
+                    grade2 = rs.getString("csc202_grade");
+
+                    score3 = String.valueOf(rs.getInt("csc242_score"));
+                    grade3 = rs.getString("csc242_grade");
+
+                    score4 = String.valueOf(rs.getInt("csc262_score"));
+                    grade4 = rs.getString("csc262_grade");
+
+                    score5 = String.valueOf(rs.getInt("csc232_score"));
+                    grade5 = rs.getString("csc232_grade");
+
+                    score6 = String.valueOf(rs.getInt("mat232_score"));
+                    grade6 = rs.getString("mat232_grade");
+
+                    score7 = String.valueOf(rs.getInt("eco202_score"));
+                    grade7 = rs.getString("eco202_grade");
+
+                    score8 = String.valueOf(rs.getInt("csc204_score"));
+                    grade8 = rs.getString("csc204_grade");
+
+                    gpa = String.valueOf(rs.getDouble("gpa"));
+
                     break;
                 case "YEAR 3 1ST SEMESTER":
-                    // Handle scores and grades for this semester
+                    score1 = String.valueOf(rs.getInt("csc361_score"));
+                    grade1 = rs.getString("csc361_grade");
+
+                    score2 = String.valueOf(rs.getInt("csc341_score"));
+                    grade2 = rs.getString("csc341_grade");
+
+                    score3 = String.valueOf(rs.getInt("csc351_score"));
+                    grade3 = rs.getString("csc351_grade");
+
+                    score4 = String.valueOf(rs.getInt("csc367_score"));
+                    grade4 = rs.getString("csc367_grade");
+
+                    score5 = String.valueOf(rs.getInt("csc371_score"));
+                    grade5 = rs.getString("csc371_grade");
+
+                    score6 = String.valueOf(rs.getInt("csc381_score"));
+                    grade6 = rs.getString("csc381_grade");
+
+                    score7 = String.valueOf(rs.getInt("csc315_score"));
+                    grade7 = rs.getString("csc315_grade");
+
+                    score8 = String.valueOf(rs.getInt("csc323_score"));
+                    grade8 = rs.getString("csc323_grade");
+
+                    gpa = String.valueOf(rs.getDouble("gpa"));
                     break;
                 case "YEAR 3 2ND SEMESTER":
                     // Handle scores and grades for this semester
                     break;
                 case "YEAR 4 1ST SEMESTER":
-                    // Handle scores and grades for this semester
+                    score1 = String.valueOf(rs.getInt("csc401_score"));
+                    grade1 = rs.getString("csc401_grade");
+
+                    score2 = String.valueOf(rs.getInt("csc421_score"));
+                    grade2 = rs.getString("csc421_grade");
+
+                    score3 = String.valueOf(rs.getInt("csc429_score"));
+                    grade3 = rs.getString("csc429_grade");
+
+                    score4 = String.valueOf(rs.getInt("csc461_score"));
+                    grade4 = rs.getString("csc461_grade");
+
+                    score5 = String.valueOf(rs.getInt("csc467_score"));
+                    grade5 = rs.getString("csc467_grade");
+
+                    score6 = String.valueOf(rs.getInt("csc415_score"));
+                    grade6 = rs.getString("csc415_grade");
+
+                    score7 = String.valueOf(rs.getInt("csc473_score"));
+                    grade7 = rs.getString("csc473_grade");
+
+                    score8 = String.valueOf(rs.getInt("csc411_score"));
+                    grade8 = rs.getString("csc411_grade");
+
+                    gpa = String.valueOf(rs.getDouble("gpa"));
+
                     break;
                 case "YEAR 4 2ND SEMESTER":
                     // Handle scores and grades for this semester
@@ -388,8 +462,12 @@ public class CheckResult extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "It does not exist", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }catch (SQLException exceptionMessage) {
+        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+            JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
 

@@ -125,7 +125,7 @@ public class AdminLogin extends javax.swing.JFrame {
             char[] passWrd = password.getPassword();
             String PASSWORD = new String(passWrd);
         
-            if(USERNAME.equals("groupworker") && PASSWORD.equals("groupadmin")){
+            if(USERNAME.equals("imsuworker") && PASSWORD.equals("imsuadmin")){
                 AdminMenuPage admin = new AdminMenuPage();
                 boolean Value = true;
                 admin.setVisible(true);

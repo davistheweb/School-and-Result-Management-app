@@ -279,9 +279,9 @@ void uploadData() {
         return;
     }
 
-    String url = "jdbc:MySql://localhost:3306/govt_school";
-    String username = "root";
-    String password = "";
+    String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+    String username = "sql8730305";
+    String password = "VGxAU93HkA";
     String checkStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
     String statement = "INSERT INTO student_registration(session,semester,level,reg_number,name_of_student,number_in_level,gp_in_level,lvl,average,fee) VALUES(?,?,?,?,?,?,?,?,?,?)";
     String regNumValue = StudentRegNum.getText().toUpperCase();
@@ -323,7 +323,11 @@ void uploadData() {
         }
 
     } catch (SQLException exceptionMessage) {
-        JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.ERROR_MESSAGE);
+        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
 

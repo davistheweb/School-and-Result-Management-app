@@ -1116,8 +1116,12 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
     }
 
         } catch (SQLException | IOException exceptionMessage) {
+        if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+            JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+        } else {
             JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
     }
 
     public void UploadPicture() {

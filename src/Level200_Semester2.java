@@ -1092,14 +1092,14 @@ CSC204_SCORE.setText(String.valueOf(phy105Total));
            JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
         return;
         }
-        String url = "jdbc:MySql://localhost:3306/imo_state_university";
-        String username = "root";
-        String password = "";
+        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+        String username = "sql8730305";
+        String password = "VGxAU93HkA";
         String checkStatement = "SELECT * FROM level2_semester2 WHERE reg_number = ?";
         String statement = "INSERT INTO level2_semester2(session, semester, level, reg_number, name_of_student, "
                 + "fee, passport, course1, course2, course3, course4, course5, course6, course7, course8, csc206_score, "
-                + "csc206_grade, csc202_score, csc202_grade, csc242_score, csc242_grade, csc262_score, csc262_grade, csc232_score, "
-                + "csc232_grade, mat232_score, mat232_grade, eco202_score, eco202_grade, csc204_score, csc204_grade, gpa,) "
+                + "csc206_grade, csc202_score, csc202_grade, csc242_score, csc242_grade, csc262_score, csc262_grade, csc232_score,"
+                + "csc232_grade, mat232_score, mat232_grade, eco202_score, eco202_grade, csc204_score, csc204_grade, gpa) "
                 + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         String regNumValue = StudentRegNum.getText().toUpperCase();
 
@@ -1168,8 +1168,12 @@ CSC204_SCORE.setText(String.valueOf(phy105Total));
     }
 
         } catch (SQLException | IOException exceptionMessage) {
+        if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+            JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+        } else {
             JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
         }
+    }
     }
 
     public void UploadPicture() {

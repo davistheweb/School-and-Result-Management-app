@@ -24,9 +24,9 @@ public class SchoolRegistration extends javax.swing.JFrame {
     }
     public ArrayList<RegisteredStudents> studentsList(){
          ArrayList<RegisteredStudents> RegisteredStudentList = new ArrayList();
-         String url = "jdbc:MySql://localhost:3306/govt_school";
-          String username = "root";
-          String password = "";
+         String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+        String username = "sql8730305";
+        String password = "VGxAU93HkA";
           try{
             Connection conn = DriverManager.getConnection(url,username,password);
             //PreparedStatement pstm = conn.prepareStatement(statement);
@@ -40,10 +40,13 @@ public class SchoolRegistration extends javax.swing.JFrame {
             }}
           
           }
-          catch(SQLException ex){
-            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message, (Service Provider is unAvaliable)", JOptionPane.WARNING_MESSAGE);
-            
+          catch (SQLException exceptionMessage) {
+        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
           return RegisteredStudentList;
     }
     
@@ -276,11 +279,13 @@ public class SchoolRegistration extends javax.swing.JFrame {
                                 .addComponent(UpdateButton)))
                         .addGap(190, 190, 190)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(105, 105, 105)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -309,20 +314,19 @@ public class SchoolRegistration extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton3)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(regNum, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(regNum, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,9 +449,9 @@ public class SchoolRegistration extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "PLEASE SELECT STATE", "INVALID STATE", JOptionPane.WARNING_MESSAGE);
         return;
     }
-    String url = "jdbc:mysql://localhost:3306/govt_school";
-    String username = "root";
-    String password = "";
+   String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+    String username = "sql8730305";
+    String password = "VGxAU93HkA";
     String regNumValue = regNum.getText().toUpperCase();
     
    
@@ -492,15 +496,19 @@ public class SchoolRegistration extends javax.swing.JFrame {
             showTables();
         }
         
-    } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message", JOptionPane.WARNING_MESSAGE);
+    } catch (SQLException exceptionMessage) {
+        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
 
     void fetchDetailsByRegNum() {
-    String url = "jdbc:MySql://localhost:3306/govt_school";
-    String username = "root";
-    String password = "";
+    String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+    String username = "sql8730305";
+    String password = "VGxAU93HkA";
     
     String query = "SELECT * FROM school_registration WHERE regNum = ?";
     try (Connection conn = DriverManager.getConnection(url, username, password);
@@ -525,8 +533,12 @@ public class SchoolRegistration extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No record found with regNum: " + regNum.getText(), "Error", JOptionPane.WARNING_MESSAGE);
         }
         
-    } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message", JOptionPane.WARNING_MESSAGE);
+    } catch (SQLException exceptionMessage) {
+        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }
     private void stateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stateActionPerformed
@@ -546,9 +558,9 @@ public class SchoolRegistration extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveButtonActionPerformed
     void DeleteTableContent() {
-        String url = "jdbc:MySql://localhost:3306/govt_school";
-        String username = "root";
-        String password = "";
+        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+    String username = "sql8730305";
+    String password = "VGxAU93HkA";
         try{
             Connection conn = DriverManager.getConnection(url,username,password);
             int row = displayUserInTable.getSelectedRow();
@@ -560,16 +572,19 @@ public class SchoolRegistration extends javax.swing.JFrame {
             model.setRowCount(0);
             showTables();
             JOptionPane.showMessageDialog(this, "Deleted Successfully", "Success Message", JOptionPane.WARNING_MESSAGE);
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message", JOptionPane.WARNING_MESSAGE);
-            
+        }catch (SQLException exceptionMessage) {
+        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
     
     }
     void UpdateTableContent(){
-        String url = "jdbc:MySql://localhost:3306/govt_school";
-        String username = "root";
-        String password = "";
+       String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+    String username = "sql8730305";
+    String password = "VGxAU93HkA";
         try{
             Connection conn = DriverManager.getConnection(url,username,password);
             
@@ -606,10 +621,13 @@ public class SchoolRegistration extends javax.swing.JFrame {
             }
             
             
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(this, ex.getMessage(), "Error Message", JOptionPane.WARNING_MESSAGE);
-            
+        }catch (SQLException exceptionMessage) {
+        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
     }
     void DisplayTableContentInComponent(){
         int i = displayUserInTable.getSelectedRow();

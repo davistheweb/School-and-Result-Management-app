@@ -155,7 +155,7 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel4.setText("SEMESTER");
 
-        Semester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ST", "2ND" }));
+        Semester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2ND" }));
         Semester.setEnabled(false);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N

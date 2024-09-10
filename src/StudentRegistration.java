@@ -16,9 +16,6 @@ import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-
-
-
 /**
  *
  * @author GOI
@@ -273,65 +270,65 @@ public class StudentRegistration extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-void uploadData() {
-    if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(NumInLevel.getText()) || "".equals(gpInLevel.getText()) || "".equals(stuLevel.getText()) || "".equals(average.getText())) {
-        JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
+    void uploadData() {
+        if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(NumInLevel.getText()) || "".equals(gpInLevel.getText()) || "".equals(stuLevel.getText()) || "".equals(average.getText())) {
+            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
-    String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-    String username = "sql8730305";
-    String password = "VGxAU93HkA";
-    String checkStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
-    String statement = "INSERT INTO student_registration(session,semester,level,reg_number,name_of_student,number_in_level,gp_in_level,lvl,average,fee) VALUES(?,?,?,?,?,?,?,?,?,?)";
-    String regNumValue = StudentRegNum.getText().toUpperCase();
+        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+        String username = "sql8730305";
+        String password = "VGxAU93HkA";
+        String checkStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
+        String statement = "INSERT INTO student_registration(session,semester,level,reg_number,name_of_student,number_in_level,gp_in_level,lvl,average,fee) VALUES(?,?,?,?,?,?,?,?,?,?)";
+        String regNumValue = StudentRegNum.getText().toUpperCase();
 
-    try (Connection conn = DriverManager.getConnection(url, username, password)) {
-        // Check for existing registration number
-        try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
-            checkPstm.setString(1, regNumValue);
-            try (ResultSet rs = checkPstm.executeQuery()) {
-                if (rs.next() && rs.getInt(1) > 0) {
-                    JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
-                    return;
+        try (Connection conn = DriverManager.getConnection(url, username, password)) {
+            // Check for existing registration number
+            try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
+                checkPstm.setString(1, regNumValue);
+                try (ResultSet rs = checkPstm.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) {
+                        JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
                 }
             }
-        }
 
-        // Insert the new data
-        try (PreparedStatement psmt = conn.prepareStatement(statement)) {
-            int session = Integer.parseInt(Session.getText());
-            psmt.setInt(1, session);
-            psmt.setString(2, Semester.getSelectedItem().toString());
-            int level = Integer.parseInt(lvl.getText());
-            psmt.setInt(3, level);
-            psmt.setString(4, StudentRegNum.getText().toUpperCase());
-            psmt.setString(5, studentName.getText().toUpperCase());
-            psmt.setString(6, NumInLevel.getText());
-            double gradePoint = Double.parseDouble(gpInLevel.getText());
-            psmt.setDouble(7, gradePoint);
-            int studentLevel = Integer.parseInt(stuLevel.getText());
-            psmt.setInt(8, studentLevel);
-            double Average = Double.parseDouble(average.getText());
-            psmt.setDouble(9, Average);
-            psmt.setString(10, feesStatus.getSelectedItem().toString());
+            // Insert the new data
+            try (PreparedStatement psmt = conn.prepareStatement(statement)) {
+                int session = Integer.parseInt(Session.getText());
+                psmt.setInt(1, session);
+                psmt.setString(2, Semester.getSelectedItem().toString());
+                int level = Integer.parseInt(lvl.getText());
+                psmt.setInt(3, level);
+                psmt.setString(4, StudentRegNum.getText().toUpperCase());
+                psmt.setString(5, studentName.getText().toUpperCase());
+                psmt.setString(6, NumInLevel.getText());
+                double gradePoint = Double.parseDouble(gpInLevel.getText());
+                psmt.setDouble(7, gradePoint);
+                int studentLevel = Integer.parseInt(stuLevel.getText());
+                psmt.setInt(8, studentLevel);
+                double Average = Double.parseDouble(average.getText());
+                psmt.setDouble(9, Average);
+                psmt.setString(10, feesStatus.getSelectedItem().toString());
 
-            int updateToDB = psmt.executeUpdate();
-            if (updateToDB != 0) {
-                JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
+                int updateToDB = psmt.executeUpdate();
+                if (updateToDB != 0) {
+                    JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+
+        } catch (SQLException exceptionMessage) {
+            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+                JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-
-    } catch (SQLException exceptionMessage) {
-        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
-            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }
     }
-}
 
-    
+
     private void stuLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stuLevelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_stuLevelActionPerformed
@@ -410,5 +407,5 @@ void uploadData() {
     private javax.swing.JButton uploadAll;
     // End of variables declaration//GEN-END:variables
 byte[] photo = null;
-String filename= null;
+    String filename = null;
 }

@@ -126,22 +126,23 @@ public class AdminMenuPage extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(667, 373));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
- 
-    void openStudentRegPage(){
+
+    void openStudentRegPage() {
         StudentRegistration studentReg = new StudentRegistration();
         studentReg.setVisible(true);
         this.setVisible(false);
     }
-    void openSchoolRegPage(){
+
+    void openSchoolRegPage() {
         SchoolRegistration schoolReg = new SchoolRegistration();
         schoolReg.setVisible(true);
         this.setVisible(false);
     }
-    
-     void openLevelAnSemesterPage(){
+
+    void openLevelAnSemesterPage() {
         SelectLevelAndSemester s = new SelectLevelAndSemester();
         s.setVisible(true);
-        this.setVisible(false);    
+        this.setVisible(false);
     }
     private void studentRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentRegActionPerformed
         openStudentRegPage();
@@ -152,7 +153,7 @@ public class AdminMenuPage extends javax.swing.JFrame {
         openSchoolRegPage();
 // TODO add your handling code here:
     }//GEN-LAST:event_schoolRegActionPerformed
-    void closeMenuPage(){
+    void closeMenuPage() {
         this.dispose();
     }
     private void closeMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeMenuActionPerformed
@@ -162,7 +163,7 @@ public class AdminMenuPage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         openLevelAnSemesterPage();
-      // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

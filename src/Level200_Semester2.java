@@ -42,7 +42,7 @@ public class Level200_Semester2 extends javax.swing.JFrame {
         MAT232_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
         CSC232_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
         ECO202_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
-        
+
         //TOOTIP FOR GP
         gpInLevel.setToolTipText("GP CALCULATES AUTOMATICALLY FROM TOTAL SCORE AND UNIT!!");
     }
@@ -807,34 +807,34 @@ public class Level200_Semester2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CSC202_EXAM_SCOREActionPerformed
     public void CalScore() {
-         
-    // Check if any of the text fields are empty
-    if ("".equals(CSC206_CA_SCORE.getText().trim()) || "".equals(CSC206_EXAMSCORE.getText().trim())  ||
-        "".equals(CSC202_CA_SCORE.getText().trim()) || "".equals(CSC202_EXAM_SCORE.getText().trim()) ||
-        "".equals(CSC242_CA_SCORE.getText().trim()) || "".equals(CSC242_EXAM_SCORE.getText().trim()) ||
-        "".equals(CSC262_CA_SCORE.getText().trim()) || "".equals(CSC262_EXAM_SCORE.getText().trim()) ||
-        "".equals(MAT232_CA_SCORE.getText().trim()) || "".equals(MAT232_EXAM_SCORE.getText().trim()) ||
-        "".equals(CSC232_CA_SCORE.getText().trim()) || "".equals(CSC232_EXAM_SCORE.getText().trim()) ||
-        "".equals(ECO202_CA_SCORE.getText().trim()) || "".equals(ECO202_EXAM_SCORE.getText().trim()) ||
-        "".equals(CSC204_CA_SCORE.getText().trim()) || "".equals(CSC204_EXAM_SCORE.getText().trim())){
 
-        JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        // Check if any of the text fields are empty
+        if ("".equals(CSC206_CA_SCORE.getText().trim()) || "".equals(CSC206_EXAMSCORE.getText().trim())
+                || "".equals(CSC202_CA_SCORE.getText().trim()) || "".equals(CSC202_EXAM_SCORE.getText().trim())
+                || "".equals(CSC242_CA_SCORE.getText().trim()) || "".equals(CSC242_EXAM_SCORE.getText().trim())
+                || "".equals(CSC262_CA_SCORE.getText().trim()) || "".equals(CSC262_EXAM_SCORE.getText().trim())
+                || "".equals(MAT232_CA_SCORE.getText().trim()) || "".equals(MAT232_EXAM_SCORE.getText().trim())
+                || "".equals(CSC232_CA_SCORE.getText().trim()) || "".equals(CSC232_EXAM_SCORE.getText().trim())
+                || "".equals(ECO202_CA_SCORE.getText().trim()) || "".equals(ECO202_EXAM_SCORE.getText().trim())
+                || "".equals(CSC204_CA_SCORE.getText().trim()) || "".equals(CSC204_EXAM_SCORE.getText().trim())) {
 
-    // Check if CA_SCORE is greater than 30 or EXAMSCORE is greater than 70 for any field
-    if (Integer.parseInt(CSC206_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC206_EXAMSCORE.getText().trim()) > 70  ||
-        Integer.parseInt(CSC202_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC202_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(CSC242_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC242_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(CSC262_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC262_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(MAT232_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(MAT232_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(CSC232_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC232_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(ECO202_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(ECO202_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(CSC204_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC204_EXAM_SCORE.getText().trim()) > 70) {
+            JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-        JOptionPane.showMessageDialog(this, "CA Score can't be greater than 30 and Exam Score can't be greater than 70", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        // Check if CA_SCORE is greater than 30 or EXAMSCORE is greater than 70 for any field
+        if (Integer.parseInt(CSC206_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC206_EXAMSCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC202_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC202_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC242_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC242_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC262_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC262_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(MAT232_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(MAT232_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC232_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC232_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(ECO202_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(ECO202_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC204_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC204_EXAM_SCORE.getText().trim()) > 70) {
+
+            JOptionPane.showMessageDialog(this, "CA Score can't be greater than 30 and Exam Score can't be greater than 70", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 //    
 //    if(CSC101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || MAT101_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
 //       PHY101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || STA111_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
@@ -843,194 +843,201 @@ public class Level200_Semester2 extends javax.swing.JFrame {
 //        JOptionPane.showMessageDialog(this, "PLS FILL THE UNIT COMBO", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
 //        return;
 //    }
-                // Calculate total and set final score for each course
-int csc101Total = Integer.parseInt(CSC206_CA_SCORE.getText().trim()) + Integer.parseInt(CSC206_EXAMSCORE.getText().trim());
-CSC206_FINALSCORE.setText(String.valueOf(csc101Total));
+        // Calculate total and set final score for each course
+// Total score calculations for each subject
+        int csc206Total = Integer.parseInt(CSC206_CA_SCORE.getText().trim()) + Integer.parseInt(CSC206_EXAMSCORE.getText().trim());
+        CSC206_FINALSCORE.setText(String.valueOf(csc206Total));
 
-int mat101Total = Integer.parseInt(CSC202_CA_SCORE.getText().trim()) + Integer.parseInt(CSC202_EXAM_SCORE.getText().trim());
-CSC_202_SCORE.setText(String.valueOf(mat101Total));
+        int csc202Total = Integer.parseInt(CSC202_CA_SCORE.getText().trim()) + Integer.parseInt(CSC202_EXAM_SCORE.getText().trim());
+        CSC_202_SCORE.setText(String.valueOf(csc202Total));
 
-int phy101Total = Integer.parseInt(CSC242_CA_SCORE.getText().trim()) + Integer.parseInt(CSC242_EXAM_SCORE.getText().trim());
-CSC242_SCORE.setText(String.valueOf(phy101Total));
+        int csc242Total = Integer.parseInt(CSC242_CA_SCORE.getText().trim()) + Integer.parseInt(CSC242_EXAM_SCORE.getText().trim());
+        CSC242_SCORE.setText(String.valueOf(csc242Total));
 
-int sta111Total = Integer.parseInt(CSC262_CA_SCORE.getText().trim()) + Integer.parseInt(CSC262_EXAM_SCORE.getText().trim());
-CSC262_SCORE.setText(String.valueOf(sta111Total));
+        int csc262Total = Integer.parseInt(CSC262_CA_SCORE.getText().trim()) + Integer.parseInt(CSC262_EXAM_SCORE.getText().trim());
+        CSC262_SCORE.setText(String.valueOf(csc262Total));
 
-int gst105Total = Integer.parseInt(CSC232_CA_SCORE.getText().trim()) + Integer.parseInt(CSC232_EXAM_SCORE.getText().trim());
-CSC232_SCORE.setText(String.valueOf(gst105Total));
+        int csc232Total = Integer.parseInt(CSC232_CA_SCORE.getText().trim()) + Integer.parseInt(CSC232_EXAM_SCORE.getText().trim());
+        CSC232_SCORE.setText(String.valueOf(csc232Total));
 
-int bio101Total = Integer.parseInt(MAT232_CA_SCORE.getText().trim()) + Integer.parseInt(MAT232_EXAM_SCORE.getText().trim());
-MAT232_SCORE.setText(String.valueOf(bio101Total));
+        int mat232Total = Integer.parseInt(MAT232_CA_SCORE.getText().trim()) + Integer.parseInt(MAT232_EXAM_SCORE.getText().trim());
+        MAT232_SCORE.setText(String.valueOf(mat232Total));
 
-int mgt101Total = Integer.parseInt(ECO202_CA_SCORE.getText().trim()) + Integer.parseInt(ECO202_EXAM_SCORE.getText().trim());
-ECO202_SCORE.setText(String.valueOf(mgt101Total));
+        int eco202Total = Integer.parseInt(ECO202_CA_SCORE.getText().trim()) + Integer.parseInt(ECO202_EXAM_SCORE.getText().trim());
+        ECO202_SCORE.setText(String.valueOf(eco202Total));
 
-int phy105Total = Integer.parseInt(CSC204_CA_SCORE.getText().trim()) + Integer.parseInt(CSC204_EXAM_SCORE.getText().trim());
-CSC204_SCORE.setText(String.valueOf(phy105Total));
+        int csc204Total = Integer.parseInt(CSC204_CA_SCORE.getText().trim()) + Integer.parseInt(CSC204_EXAM_SCORE.getText().trim());
+        CSC204_SCORE.setText(String.valueOf(csc204Total));
 
-// Grade calculation for CSC101
-    if (csc101Total >= 70) {
-    CSC206_GRADE.setSelectedIndex(1);
-    } else if (csc101Total >= 60 && csc101Total <= 69) {
-    CSC206_GRADE.setSelectedIndex(2);
-    } else if (csc101Total >= 50 && csc101Total <= 59) {
-    CSC206_GRADE.setSelectedIndex(3);
-    } else if (csc101Total >= 45 && csc101Total <= 49) {
-    CSC206_GRADE.setSelectedIndex(4);
-    } else if (csc101Total >= 40 && csc101Total <= 44) {
-    CSC206_GRADE.setSelectedIndex(5);
-    } else if (csc101Total >= 0 && csc101Total <= 39) {
-    CSC206_GRADE.setSelectedIndex(6);
+        // Grade calculation for CSC206
+        if (csc206Total >= 70) {
+            CSC206_GRADE.setSelectedIndex(1); // A
+        } else if (csc206Total >= 60) {
+            CSC206_GRADE.setSelectedIndex(2); // B
+        } else if (csc206Total >= 50) {
+            CSC206_GRADE.setSelectedIndex(3); // C
+        } else if (csc206Total >= 45) {
+            CSC206_GRADE.setSelectedIndex(4); // D
+        } else if (csc206Total >= 40) {
+            CSC206_GRADE.setSelectedIndex(5); // E
+        } else {
+            CSC206_GRADE.setSelectedIndex(6); // F
+        }
+
+        // Grade calculation for CSC202
+        if (csc202Total >= 70) {
+            CSC202_GRADE.setSelectedIndex(1); // A
+        } else if (csc202Total >= 60) {
+            CSC202_GRADE.setSelectedIndex(2); // B
+        } else if (csc202Total >= 50) {
+            CSC202_GRADE.setSelectedIndex(3); // C
+        } else if (csc202Total >= 45) {
+            CSC202_GRADE.setSelectedIndex(4); // D
+        } else if (csc202Total >= 40) {
+            CSC202_GRADE.setSelectedIndex(5); // E
+        } else {
+            CSC202_GRADE.setSelectedIndex(6); // F
+        }
+
+        // Grade calculation for CSC242
+        if (csc242Total >= 70) {
+            CSC242_GRADE.setSelectedIndex(1); // A
+        } else if (csc242Total >= 60) {
+            CSC242_GRADE.setSelectedIndex(2); // B
+        } else if (csc242Total >= 50) {
+            CSC242_GRADE.setSelectedIndex(3); // C
+        } else if (csc242Total >= 45) {
+            CSC242_GRADE.setSelectedIndex(4); // D
+        } else if (csc242Total >= 40) {
+            CSC242_GRADE.setSelectedIndex(5); // E
+        } else {
+            CSC242_GRADE.setSelectedIndex(6); // F
+        }
+
+        // Grade calculation for CSC262
+        if (csc262Total >= 70) {
+            CSC262_GRADE.setSelectedIndex(1); // A
+        } else if (csc262Total >= 60) {
+            CSC262_GRADE.setSelectedIndex(2); // B
+        } else if (csc262Total >= 50) {
+            CSC262_GRADE.setSelectedIndex(3); // C
+        } else if (csc262Total >= 45) {
+            CSC262_GRADE.setSelectedIndex(4); // D
+        } else if (csc262Total >= 40) {
+            CSC262_GRADE.setSelectedIndex(5); // E
+        } else {
+            CSC262_GRADE.setSelectedIndex(6); // F
+        }
+
+        // Grade calculation for CSC232
+        if (csc232Total >= 70) {
+            CSC232_GRADE.setSelectedIndex(1); // A
+        } else if (csc232Total >= 60) {
+            CSC232_GRADE.setSelectedIndex(2); // B
+        } else if (csc232Total >= 50) {
+            CSC232_GRADE.setSelectedIndex(3); // C
+        } else if (csc232Total >= 45) {
+            CSC232_GRADE.setSelectedIndex(4); // D
+        } else if (csc232Total >= 40) {
+            CSC232_GRADE.setSelectedIndex(5); // E
+        } else {
+            CSC232_GRADE.setSelectedIndex(6); // F
+        }
+
+        // Grade calculation for MAT232
+        if (mat232Total >= 70) {
+            MAT232_GRADE.setSelectedIndex(1); // A
+        } else if (mat232Total >= 60) {
+            MAT232_GRADE.setSelectedIndex(2); // B
+        } else if (mat232Total >= 50) {
+            MAT232_GRADE.setSelectedIndex(3); // C
+        } else if (mat232Total >= 45) {
+            MAT232_GRADE.setSelectedIndex(4); // D
+        } else if (mat232Total >= 40) {
+            MAT232_GRADE.setSelectedIndex(5); // E
+        } else {
+            MAT232_GRADE.setSelectedIndex(6); // F
+        }
+
+        // Grade calculation for ECO202
+        if (eco202Total >= 70) {
+            ECO202_GRADE.setSelectedIndex(1); // A
+        } else if (eco202Total >= 60) {
+            ECO202_GRADE.setSelectedIndex(2); // B
+        } else if (eco202Total >= 50) {
+            ECO202_GRADE.setSelectedIndex(3); // C
+        } else if (eco202Total >= 45) {
+            ECO202_GRADE.setSelectedIndex(4); // D
+        } else if (eco202Total >= 40) {
+            ECO202_GRADE.setSelectedIndex(5); // E
+        } else {
+            ECO202_GRADE.setSelectedIndex(6); // F
+        }
+
+        // Grade calculation for CSC204
+        if (csc204Total >= 70) {
+            CSC204_GRADE.setSelectedIndex(1); // A
+        } else if (csc204Total >= 60) {
+            CSC204_GRADE.setSelectedIndex(2); // B
+        } else if (csc204Total >= 50) {
+            CSC204_GRADE.setSelectedIndex(3); // C
+        } else if (csc204Total >= 45) {
+            CSC204_GRADE.setSelectedIndex(4); // D
+        } else if (csc204Total >= 40) {
+            CSC204_GRADE.setSelectedIndex(5); // E
+        } else {
+            CSC204_GRADE.setSelectedIndex(6); // F
+        }
+
+        int CSC206unit = 2;
+        int CSC202unit = 2;
+        int CSC242unit = 1;
+        int CSC262Unit = 2;
+        int CSC232unit = 2;
+        int MAT232unit = 2;
+        int ECO202unit = 2;
+        int CSC204unit = 2;
+
+        // Grade calculation for CSC101
+        int CSC206pointvalue = getPointValue(CSC206_GRADE.getSelectedItem().toString());
+        int CSC202pointvalue = getPointValue(CSC202_GRADE.getSelectedItem().toString());
+        int CSC242pointvalue = getPointValue(CSC242_GRADE.getSelectedItem().toString());
+        int CSC262pointvalue = getPointValue(CSC262_GRADE.getSelectedItem().toString());
+        int CSC232pointvalue = getPointValue(CSC232_GRADE.getSelectedItem().toString());
+        int MAT232pointvalue = getPointValue(MAT232_GRADE.getSelectedItem().toString());
+        int ECO202pointvalue = getPointValue(ECO202_GRADE.getSelectedItem().toString());
+        int CSC204pointvalue = getPointValue(CSC204_GRADE.getSelectedItem().toString());
+
+        int totalPoints = (CSC206pointvalue * CSC206unit) + (CSC202pointvalue * CSC202unit)
+                + (CSC242pointvalue * CSC242unit) + (CSC262pointvalue * CSC262Unit)
+                + (CSC204pointvalue * CSC232unit) + (MAT232pointvalue * MAT232unit)
+                + (CSC232pointvalue * ECO202unit) + (ECO202pointvalue * CSC204unit);
+        int totalUnits = CSC206unit + CSC202unit + CSC242unit + CSC262Unit + CSC232unit + MAT232unit + ECO202unit + CSC204unit;
+        double gpa = (double) totalPoints / totalUnits;
+        double roundedGpa = Math.round(gpa * 100.0) / 100.0;
+        gpInLevel.setText(String.valueOf(roundedGpa));
+
     }
 
-        // Grade calculation for MAT101
-    if (mat101Total >= 70) {
-    CSC202_GRADE.setSelectedIndex(1);
-    } else if (mat101Total >= 60 && mat101Total <= 69) {
-    CSC202_GRADE.setSelectedIndex(2);
-    } else if (mat101Total >= 50 && mat101Total <= 59) {
-    CSC202_GRADE.setSelectedIndex(3);
-    } else if (mat101Total >= 45 && mat101Total <= 49) {
-    CSC202_GRADE.setSelectedIndex(4);
-    } else if (mat101Total >= 40 && mat101Total <= 44) {
-    CSC202_GRADE.setSelectedIndex(5);
-    } else if (mat101Total >= 0 && mat101Total <= 39) {
-    CSC202_GRADE.setSelectedIndex(6);
-    }
-
-// Grade calculation for PHY101
-    if (phy101Total >= 70) {
-        CSC242_GRADE.setSelectedIndex(1);
-    } else if (phy101Total >= 60 && phy101Total <= 69) {
-        CSC242_GRADE.setSelectedIndex(2);
-    } else if (phy101Total >= 50 && phy101Total <= 59) {
-        CSC242_GRADE.setSelectedIndex(3);
-    } else if (phy101Total >= 45 && phy101Total <= 49) {
-        CSC242_GRADE.setSelectedIndex(4);
-    } else if (phy101Total >= 40 && phy101Total <= 44) {
-        CSC242_GRADE.setSelectedIndex(5);
-    } else if (phy101Total >= 0 && phy101Total <= 39) {
-        CSC242_GRADE.setSelectedIndex(6);
-    }
-
-    // Grade calculation for STA111
-    if (sta111Total >= 70) {
-        CSC262_GRADE.setSelectedIndex(1);
-    } else if (sta111Total >= 60 && sta111Total <= 69) {
-        CSC262_GRADE.setSelectedIndex(2);
-    } else if (sta111Total >= 50 && sta111Total <= 59) {
-        CSC262_GRADE.setSelectedIndex(3);
-    } else if (sta111Total >= 45 && sta111Total <= 49) {
-        CSC262_GRADE.setSelectedIndex(4);
-    } else if (sta111Total >= 40 && sta111Total <= 44) {
-        CSC262_GRADE.setSelectedIndex(5);
-    } else if (sta111Total >= 0 && sta111Total <= 39) {
-        CSC262_GRADE.setSelectedIndex(6);
-    }
-
-    // Grade calculation for GST105
-    if (gst105Total >= 70) {
-        CSC232_GRADE.setSelectedIndex(1);
-    } else if (gst105Total >= 60 && gst105Total <= 69) {
-        CSC232_GRADE.setSelectedIndex(2);
-    } else if (gst105Total >= 50 && gst105Total <= 59) {
-        CSC232_GRADE.setSelectedIndex(3);
-    } else if (gst105Total >= 45 && gst105Total <= 49) {
-        CSC232_GRADE.setSelectedIndex(4);
-    } else if (gst105Total >= 40 && gst105Total <= 44) {
-        CSC232_GRADE.setSelectedIndex(5);
-    } else if (gst105Total >= 0 && gst105Total <= 39) {
-        CSC232_GRADE.setSelectedIndex(6);
-    }
-
-    // Grade calculation for BIO101
-    if (bio101Total >= 70) {
-        MAT232_GRADE.setSelectedIndex(1);
-    } else if (bio101Total >= 60 && bio101Total <= 69) {
-        MAT232_GRADE.setSelectedIndex(2);
-    } else if (bio101Total >= 50 && bio101Total <= 59) {
-        MAT232_GRADE.setSelectedIndex(3);
-    } else if (bio101Total >= 45 && bio101Total <= 49) {
-        MAT232_GRADE.setSelectedIndex(4);
-    } else if (bio101Total >= 40 && bio101Total <= 44) {
-        MAT232_GRADE.setSelectedIndex(5);
-    } else if (bio101Total >= 0 && bio101Total <= 39) {
-        MAT232_GRADE.setSelectedIndex(6);
-    }
-
-    // Grade calculation for MGT101
-    if (mgt101Total >= 70) {
-        ECO202_GRADE.setSelectedIndex(1);
-    } else if (mgt101Total >= 60 && mgt101Total <= 69) {
-        ECO202_GRADE.setSelectedIndex(2);
-    } else if (mgt101Total >= 50 && mgt101Total <= 59) {
-        ECO202_GRADE.setSelectedIndex(3);
-    } else if (mgt101Total >= 45 && mgt101Total <= 49) {
-        ECO202_GRADE.setSelectedIndex(4);
-    } else if (mgt101Total >= 40 && mgt101Total <= 44) {
-        ECO202_GRADE.setSelectedIndex(5);
-    } else if (mgt101Total >= 0 && mgt101Total <= 39) {
-        ECO202_GRADE.setSelectedIndex(6);
-    }
-
-    // Grade calculation for PHY105
-    if (phy105Total >= 70) {
-        CSC204_GRADE.setSelectedIndex(1);
-    } else if (phy105Total >= 60 && phy105Total <= 69) {
-        CSC204_GRADE.setSelectedIndex(2);
-    } else if (phy105Total >= 50 && phy105Total <= 59) {
-        CSC204_GRADE.setSelectedIndex(3);
-    } else if (phy105Total >= 45 && phy105Total <= 49) {
-        CSC204_GRADE.setSelectedIndex(4);
-    } else if (phy105Total >= 40 && phy105Total <= 44) {
-        CSC204_GRADE.setSelectedIndex(5);
-    } else if (phy105Total >= 0 && phy105Total <= 39) {
-        CSC204_GRADE.setSelectedIndex(6);
-    }
-    
-    int CSC206unit = 2;
-    int CSC202unit = 2;
-    int CSC242unit = 1;
-    int CSC262Unit = 2;
-    int CSC232unit = 2;
-    int MAT232unit = 2;
-    int ECO202unit = 2;
-    int CSC204unit = 2;
-    
-    // Grade calculation for CSC101
-    int CSC206pointvalue = getPointValue(CSC206_GRADE.getSelectedItem().toString());
-    int CSC202pointvalue = getPointValue(CSC202_GRADE.getSelectedItem().toString());
-    int CSC242pointvalue = getPointValue(CSC242_GRADE.getSelectedItem().toString());
-    int CSC262pointvalue = getPointValue(CSC262_GRADE.getSelectedItem().toString());
-    int CSC232pointvalue = getPointValue(CSC232_GRADE.getSelectedItem().toString());
-    int MAT232pointvalue = getPointValue(MAT232_GRADE.getSelectedItem().toString());
-    int ECO202pointvalue = getPointValue(ECO202_GRADE.getSelectedItem().toString());
-    int CSC204pointvalue = getPointValue(CSC204_GRADE.getSelectedItem().toString());
-    
-     int totalPoints = (CSC206pointvalue * CSC206unit) + (CSC202pointvalue * CSC202unit) +
-                        (CSC242pointvalue * CSC242unit) + (CSC262pointvalue * CSC262Unit) +
-                        (CSC204pointvalue * CSC232unit) + (MAT232pointvalue * MAT232unit) +
-                        (CSC232pointvalue * ECO202unit) + (ECO202pointvalue * CSC204unit);
-     int totalUnits = CSC206unit + CSC202unit + CSC242unit + CSC262Unit + CSC232unit + MAT232unit + ECO202unit + CSC204unit;
-     double gpa = (double) totalPoints / totalUnits;
-     double roundedGpa = Math.round(gpa * 100.0) / 100.0;
-     gpInLevel.setText(String.valueOf(roundedGpa));
-     
-}
     public int getPointValue(String grade) {
-    switch (grade) {
-        case "A": return 5;
-        case "B": return 4;
-        case "C": return 3;
-        case "D": return 2;
-        case "E": return 1;
-        case "F": return 0;
-        default: return 0;
-               
-                
-                
+        switch (grade) {
+            case "A":
+                return 5;
+            case "B":
+                return 4;
+            case "C":
+                return 3;
+            case "D":
+                return 2;
+            case "E":
+                return 1;
+            case "F":
+                return 0;
+            default:
+                return 0;
+
+        }
     }
-}
 
     private void cal_scoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cal_scoreActionPerformed
         CalScore();
@@ -1086,29 +1093,29 @@ CSC204_SCORE.setText(String.valueOf(phy105Total));
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if ("".equals(CSC206_CA_SCORE.getText().trim()) || "".equals(CSC206_EXAMSCORE.getText().trim())  ||
-        "".equals(CSC202_CA_SCORE.getText().trim()) || "".equals(CSC202_EXAM_SCORE.getText().trim()) ||
-        "".equals(CSC242_CA_SCORE.getText().trim()) || "".equals(CSC242_EXAM_SCORE.getText().trim()) ||
-        "".equals(CSC262_CA_SCORE.getText().trim()) || "".equals(CSC262_EXAM_SCORE.getText().trim()) ||
-        "".equals(MAT232_CA_SCORE.getText().trim()) || "".equals(MAT232_EXAM_SCORE.getText().trim()) ||
-        "".equals(CSC232_CA_SCORE.getText().trim()) || "".equals(CSC232_EXAM_SCORE.getText().trim()) ||
-        "".equals(ECO202_CA_SCORE.getText().trim()) || "".equals(ECO202_EXAM_SCORE.getText().trim()) ||
-        "".equals(CSC204_CA_SCORE.getText().trim()) || "".equals(CSC204_EXAM_SCORE.getText().trim())){
+        if ("".equals(CSC206_CA_SCORE.getText().trim()) || "".equals(CSC206_EXAMSCORE.getText().trim())
+                || "".equals(CSC202_CA_SCORE.getText().trim()) || "".equals(CSC202_EXAM_SCORE.getText().trim())
+                || "".equals(CSC242_CA_SCORE.getText().trim()) || "".equals(CSC242_EXAM_SCORE.getText().trim())
+                || "".equals(CSC262_CA_SCORE.getText().trim()) || "".equals(CSC262_EXAM_SCORE.getText().trim())
+                || "".equals(MAT232_CA_SCORE.getText().trim()) || "".equals(MAT232_EXAM_SCORE.getText().trim())
+                || "".equals(CSC232_CA_SCORE.getText().trim()) || "".equals(CSC232_EXAM_SCORE.getText().trim())
+                || "".equals(ECO202_CA_SCORE.getText().trim()) || "".equals(ECO202_EXAM_SCORE.getText().trim())
+                || "".equals(CSC204_CA_SCORE.getText().trim()) || "".equals(CSC204_EXAM_SCORE.getText().trim())) {
 
-        JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-         if ("".equals(CSC206_FINALSCORE.getText().trim()) || "".equals(CSC_202_SCORE.getText().trim()) ||
-        "".equals(CSC242_SCORE.getText().trim()) || "".equals(CSC262_SCORE.getText().trim()) ||
-        "".equals(MAT232_SCORE.getText().trim()) || "".equals(CSC232_SCORE.getText().trim()) ||
-        "".equals(ECO202_SCORE.getText().trim()) || "".equals(CSC204_SCORE.getText().trim())) {
+            JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if ("".equals(CSC206_FINALSCORE.getText().trim()) || "".equals(CSC_202_SCORE.getText().trim())
+                || "".equals(CSC242_SCORE.getText().trim()) || "".equals(CSC262_SCORE.getText().trim())
+                || "".equals(MAT232_SCORE.getText().trim()) || "".equals(CSC232_SCORE.getText().trim())
+                || "".equals(ECO202_SCORE.getText().trim()) || "".equals(CSC204_SCORE.getText().trim())) {
 
-        JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-         if(StudentRegNum.getText().length() != 14){
-           JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
-        return;
+            JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (StudentRegNum.getText().length() != 14) {
+            JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
         }
         String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
         String username = "sql8730305";
@@ -1136,62 +1143,62 @@ CSC204_SCORE.setText(String.valueOf(phy105Total));
             // Insert the data along with the image
             try (PreparedStatement psmt = conn.prepareStatement(statement); FileInputStream fis = new FileInputStream(filename)) {
 
-        int session = Integer.parseInt(Session.getText());
-        psmt.setInt(1, session);
-        psmt.setString(2, Semester.getSelectedItem().toString());
-        int level = Integer.parseInt(lvl.getText());
-        psmt.setInt(3, level);
-        psmt.setString(4, StudentRegNum.getText().toUpperCase());
-        psmt.setString(5, studentName.getText().toUpperCase());
-        psmt.setString(6, feesStatus.getSelectedItem().toString());
-        psmt.setBinaryStream(7, fis, (int) new File(filename).length());
-        psmt.setString(8, CSC_206.getText());
-        psmt.setString(9, CSC_202.getText());
-        psmt.setString(10, CSC_242.getText());
-        psmt.setString(11, CSC_262.getText());
-        psmt.setString(12, CSC_204.getText());
-        psmt.setString(13, MAT_232.getText());
-        psmt.setString(14, CSC_232.getText());
-        psmt.setString(15, ECO_202.getText());
-        psmt.setInt(16, Integer.parseInt(CSC206_FINALSCORE.getText().trim()));
-        psmt.setString(17, CSC206_GRADE.getSelectedItem().toString());
+                int session = Integer.parseInt(Session.getText());
+                psmt.setInt(1, session);
+                psmt.setString(2, Semester.getSelectedItem().toString());
+                int level = Integer.parseInt(lvl.getText());
+                psmt.setInt(3, level);
+                psmt.setString(4, StudentRegNum.getText().toUpperCase());
+                psmt.setString(5, studentName.getText().toUpperCase());
+                psmt.setString(6, feesStatus.getSelectedItem().toString());
+                psmt.setBinaryStream(7, fis, (int) new File(filename).length());
+                psmt.setString(8, CSC_206.getText());
+                psmt.setString(9, CSC_202.getText());
+                psmt.setString(10, CSC_242.getText());
+                psmt.setString(11, CSC_262.getText());
+                psmt.setString(12, CSC_204.getText());
+                psmt.setString(13, MAT_232.getText());
+                psmt.setString(14, CSC_232.getText());
+                psmt.setString(15, ECO_202.getText());
+                psmt.setInt(16, Integer.parseInt(CSC206_FINALSCORE.getText().trim()));
+                psmt.setString(17, CSC206_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(18, Integer.parseInt(CSC_202_SCORE.getText().trim()));
-        psmt.setString(19, CSC202_GRADE.getSelectedItem().toString());
+                psmt.setInt(18, Integer.parseInt(CSC_202_SCORE.getText().trim()));
+                psmt.setString(19, CSC202_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(20, Integer.parseInt(CSC242_SCORE.getText().trim()));
-        psmt.setString(21, CSC242_GRADE.getSelectedItem().toString());
+                psmt.setInt(20, Integer.parseInt(CSC242_SCORE.getText().trim()));
+                psmt.setString(21, CSC242_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(22, Integer.parseInt(CSC262_SCORE.getText().trim()));
-        psmt.setString(23, CSC262_GRADE.getSelectedItem().toString());
+                psmt.setInt(22, Integer.parseInt(CSC262_SCORE.getText().trim()));
+                psmt.setString(23, CSC262_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(24, Integer.parseInt(CSC204_SCORE.getText().trim()));
-        psmt.setString(25, CSC204_GRADE.getSelectedItem().toString());
+                psmt.setInt(24, Integer.parseInt(CSC204_SCORE.getText().trim()));
+                psmt.setString(25, CSC204_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(26, Integer.parseInt(MAT232_SCORE.getText().trim()));
-        psmt.setString(27, MAT232_GRADE.getSelectedItem().toString());
+                psmt.setInt(26, Integer.parseInt(MAT232_SCORE.getText().trim()));
+                psmt.setString(27, MAT232_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(28, Integer.parseInt(CSC232_SCORE.getText().trim()));
-        psmt.setString(29, CSC232_GRADE.getSelectedItem().toString());
+                psmt.setInt(28, Integer.parseInt(CSC232_SCORE.getText().trim()));
+                psmt.setString(29, CSC232_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(30, Integer.parseInt(ECO202_SCORE.getText().trim()));
-        psmt.setString(31, ECO202_GRADE.getSelectedItem().toString());
+                psmt.setInt(30, Integer.parseInt(ECO202_SCORE.getText().trim()));
+                psmt.setString(31, ECO202_GRADE.getSelectedItem().toString());
 
-        psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
+                psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
 
-        int updateToDB = psmt.executeUpdate();
-        if (updateToDB != 0) {
-            JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
+                int updateToDB = psmt.executeUpdate();
+                if (updateToDB != 0) {
+                    JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
 
         } catch (SQLException | IOException exceptionMessage) {
-        if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-            JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
+            if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
-    }
     }
 
     public void UploadPicture() {

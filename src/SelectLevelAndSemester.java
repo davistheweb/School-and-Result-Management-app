@@ -167,57 +167,57 @@ public class SelectLevelAndSemester extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         Level300_Semester1 l = new Level300_Semester1();
-            l.setVisible(true);
-            this.setVisible(false);
+        l.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            Level100_Semester1 l = new Level100_Semester1();
-            l.setVisible(true);
-            this.setVisible(false);
+        Level100_Semester1 l = new Level100_Semester1();
+        l.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Level100_Semester2 l = new Level100_Semester2();
-            l.setVisible(true);
-            this.setVisible(false);
+        l.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-            Level200_Semester1 l = new Level200_Semester1();
-            l.setVisible(true);
-            this.setVisible(false);
+        Level200_Semester1 l = new Level200_Semester1();
+        l.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-            Level200_Semester2 l = new Level200_Semester2();
-            l.setVisible(true);
-            this.setVisible(false);
+        Level200_Semester2 l = new Level200_Semester2();
+        l.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-            Level300_Semester2 l = new Level300_Semester2();
-            l.setVisible(true);
-            this.setVisible(false);
+        Level300_Semester2 l = new Level300_Semester2();
+        l.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-            Level400_Semester1 l = new Level400_Semester1();
-            l.setVisible(true);
-            this.setVisible(false);
+        Level400_Semester1 l = new Level400_Semester1();
+        l.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-         Level400_Semester2 l = new Level400_Semester2();
-            l.setVisible(true);
-            this.setVisible(false);
+        Level400_Semester2 l = new Level400_Semester2();
+        l.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 

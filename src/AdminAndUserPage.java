@@ -95,16 +95,16 @@ public class AdminAndUserPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-           AdminLogin adminLogged = new AdminLogin();
+        AdminLogin adminLogged = new AdminLogin();
         adminLogged.setVisible(true);
         this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                    Result r = new Result();
-                    r.setVisible(true);
-                    this.setVisible(false);
+        Result r = new Result();
+        r.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

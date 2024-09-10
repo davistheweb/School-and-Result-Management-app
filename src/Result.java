@@ -66,9 +66,9 @@ public class Result extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         CheckResult cr = new CheckResult();
-         cr.setVisible(true);
-         this.setVisible(false);
+        CheckResult cr = new CheckResult();
+        cr.setVisible(true);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

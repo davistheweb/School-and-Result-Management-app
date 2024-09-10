@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author GOI
@@ -115,27 +114,28 @@ public class AdminLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    void adminLogin(){
-         if ("".equals(username.getText()) || "".equals(password.getText())){
+    void adminLogin() {
+        if ("".equals(username.getText()) || "".equals(password.getText())) {
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "No empty field allowed", JOptionPane.WARNING_MESSAGE);
             return;
-         }
-         
-            String USERNAME = username.getText();
-            char[] passWrd = password.getPassword();
-            String PASSWORD = new String(passWrd);
-        
-            if(USERNAME.equals("imsuworker") && PASSWORD.equals("imsuadmin")){
-                AdminMenuPage admin = new AdminMenuPage();
-                boolean Value = true;
-                admin.setVisible(true);
-                this.setVisible(false);
-            }else{
+        }
+
+        String USERNAME = username.getText();
+        char[] passWrd = password.getPassword();
+        String PASSWORD = new String(passWrd);
+
+        if (USERNAME.equals("imsuworker") && PASSWORD.equals("imsuadmin")) {
+            AdminMenuPage admin = new AdminMenuPage();
+            boolean Value = true;
+            admin.setVisible(true);
+            this.setVisible(false);
+        } else {
             JOptionPane.showMessageDialog(this, "Unauthroized access to Admin Menu Page!!!", "Access Denied", JOptionPane.WARNING_MESSAGE);
-            }
-        
+        }
+
     }
-    void cancelAdminLogin(){
+
+    void cancelAdminLogin() {
         System.exit(0);
     }
     private void CancleLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancleLoginActionPerformed
@@ -144,7 +144,7 @@ public class AdminLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_CancleLoginActionPerformed
 
     private void loginAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginAdminActionPerformed
-       adminLogin();
+        adminLogin();
         // TODO add your handling code here:
     }//GEN-LAST:event_loginAdminActionPerformed
 

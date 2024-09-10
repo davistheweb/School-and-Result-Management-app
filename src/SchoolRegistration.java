@@ -11,8 +11,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-
-
 public class SchoolRegistration extends javax.swing.JFrame {
 
     /**
@@ -22,39 +20,41 @@ public class SchoolRegistration extends javax.swing.JFrame {
         initComponents();
         showTables();
     }
-    public ArrayList<RegisteredStudents> studentsList(){
-         ArrayList<RegisteredStudents> RegisteredStudentList = new ArrayList();
-         String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+
+    public ArrayList<RegisteredStudents> studentsList() {
+        ArrayList<RegisteredStudents> RegisteredStudentList = new ArrayList();
+        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
         String username = "sql8730305";
         String password = "VGxAU93HkA";
-          try{
-            Connection conn = DriverManager.getConnection(url,username,password);
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
             //PreparedStatement pstm = conn.prepareStatement(statement);
             String query2 = "SELECT * FROM school_registration";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(query2);
             RegisteredStudents RegisteredStudentS;
-            while(rst.next()){{
-                RegisteredStudentS = new RegisteredStudents(rst.getInt("id"), rst.getInt("age"),  rst.getString("regNum"), rst.getString("Name"),rst.getString("dob"),rst.getString("nationality"),rst.getString("date_on_entry"),rst.getString("class_on_entry"),rst.getString("state"),rst.getString("gender"),rst.getString("date_on_leaving"),rst.getString("last_class_completed"));
-                RegisteredStudentList.add(RegisteredStudentS);
-            }}
-          
-          }
-          catch (SQLException exceptionMessage) {
-        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
-            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            while (rst.next()) {
+                {
+                    RegisteredStudentS = new RegisteredStudents(rst.getInt("id"), rst.getInt("age"), rst.getString("regNum"), rst.getString("Name"), rst.getString("dob"), rst.getString("nationality"), rst.getString("date_on_entry"), rst.getString("class_on_entry"), rst.getString("state"), rst.getString("gender"), rst.getString("date_on_leaving"), rst.getString("last_class_completed"));
+                    RegisteredStudentList.add(RegisteredStudentS);
+                }
+            }
+
+        } catch (SQLException exceptionMessage) {
+            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+                JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
+        return RegisteredStudentList;
     }
-          return RegisteredStudentList;
-    }
-    
-    public void showTables(){
+
+    public void showTables() {
         ArrayList<RegisteredStudents> table = studentsList();
-        DefaultTableModel model = (DefaultTableModel)displayUserInTable.getModel();
-        Object[] row =  new Object[12];
-        for(int i = 0; i<table.size();  i++){
+        DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
+        Object[] row = new Object[12];
+        for (int i = 0; i < table.size(); i++) {
             row[0] = table.get(i).getid();
             row[1] = table.get(i).getregNum();
             row[2] = table.get(i).getName();
@@ -70,6 +70,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
             model.addRow(row);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -428,119 +429,117 @@ public class SchoolRegistration extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     public void upLoadDetails() {
-    // Check for empty fields
-    if ("".equals(regNum.getText()) || "".equals(studentName.getText()) || "".equals(dob.getText()) || "".equals(country.getText()) || "".equals(dateOnEntry.getText()) || "".equals(dateOnLeaving.getText())) {
-        JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-    if("SELECT LEVEL".equals(levelOnEntry.getSelectedItem().toString())){
-        JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL ON ENTRY", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-     if("SELECT LEVEL".equals(levelLastCompleted.getSelectedItem().toString())){
-        JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL COMPLETED", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-    if("Choose".equals(gender.getSelectedItem().toString())){
-        JOptionPane.showMessageDialog(this, "PLEASE SELECT GENDER", "INVALID GENDER", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-    if("SELECT STATE".equals(state.getSelectedItem().toString())){
-        JOptionPane.showMessageDialog(this, "PLEASE SELECT STATE", "INVALID STATE", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-   String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-    String username = "sql8730305";
-    String password = "VGxAU93HkA";
-    String regNumValue = regNum.getText().toUpperCase();
-    
-   
-    String checkStatement = "SELECT * FROM school_registration WHERE regNum = ?";
-    String insertStatement = "INSERT INTO school_registration(regNum, Name, dob, nationality, date_on_entry, class_on_entry, age, state, gender, date_on_leaving, last_class_completed) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-    
-    try (Connection conn = DriverManager.getConnection(url, username, password)) {
-        // Check for duplicate registration number
-        try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
-            checkPstm.setString(1, regNumValue);
-            try (ResultSet rs = checkPstm.executeQuery()) {
-                if (rs.next() && rs.getInt(1) > 0) {
-                    JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
-                    return;
+        // Check for empty fields
+        if ("".equals(regNum.getText()) || "".equals(studentName.getText()) || "".equals(dob.getText()) || "".equals(country.getText()) || "".equals(dateOnEntry.getText()) || "".equals(dateOnLeaving.getText())) {
+            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if ("SELECT LEVEL".equals(levelOnEntry.getSelectedItem().toString())) {
+            JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL ON ENTRY", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if ("SELECT LEVEL".equals(levelLastCompleted.getSelectedItem().toString())) {
+            JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL COMPLETED", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if ("Choose".equals(gender.getSelectedItem().toString())) {
+            JOptionPane.showMessageDialog(this, "PLEASE SELECT GENDER", "INVALID GENDER", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if ("SELECT STATE".equals(state.getSelectedItem().toString())) {
+            JOptionPane.showMessageDialog(this, "PLEASE SELECT STATE", "INVALID STATE", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+        String username = "sql8730305";
+        String password = "VGxAU93HkA";
+        String regNumValue = regNum.getText().toUpperCase();
+
+        String checkStatement = "SELECT * FROM school_registration WHERE regNum = ?";
+        String insertStatement = "INSERT INTO school_registration(regNum, Name, dob, nationality, date_on_entry, class_on_entry, age, state, gender, date_on_leaving, last_class_completed) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+
+        try (Connection conn = DriverManager.getConnection(url, username, password)) {
+            // Check for duplicate registration number
+            try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
+                checkPstm.setString(1, regNumValue);
+                try (ResultSet rs = checkPstm.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) {
+                        JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
                 }
             }
-        }
-        
-        // Insert the new record if no duplicate found
-        try (PreparedStatement insertPstm = conn.prepareStatement(insertStatement)) {
-            insertPstm.setString(1, regNumValue);
-            insertPstm.setString(2, studentName.getText().toUpperCase());
-            insertPstm.setString(3, dob.getText());
-            insertPstm.setString(4, country.getText());
-            insertPstm.setString(5, dateOnEntry.getText());
-            insertPstm.setString(6, levelOnEntry.getSelectedItem().toString());
-            int studentAge = Integer.parseInt(age.getText());
-            insertPstm.setInt(7, studentAge);
-            insertPstm.setString(8, state.getSelectedItem().toString());
-            insertPstm.setString(9, gender.getSelectedItem().toString());
-            insertPstm.setString(10, dateOnLeaving.getText());
-            insertPstm.setString(11, levelLastCompleted.getSelectedItem().toString());
-            
-            int statementReport = insertPstm.executeUpdate();
-            
-            if (statementReport > 0) {
-                JOptionPane.showMessageDialog(this, "Inserted Successfully", "Completed", JOptionPane.INFORMATION_MESSAGE);
+
+            // Insert the new record if no duplicate found
+            try (PreparedStatement insertPstm = conn.prepareStatement(insertStatement)) {
+                insertPstm.setString(1, regNumValue);
+                insertPstm.setString(2, studentName.getText().toUpperCase());
+                insertPstm.setString(3, dob.getText());
+                insertPstm.setString(4, country.getText());
+                insertPstm.setString(5, dateOnEntry.getText());
+                insertPstm.setString(6, levelOnEntry.getSelectedItem().toString());
+                int studentAge = Integer.parseInt(age.getText());
+                insertPstm.setInt(7, studentAge);
+                insertPstm.setString(8, state.getSelectedItem().toString());
+                insertPstm.setString(9, gender.getSelectedItem().toString());
+                insertPstm.setString(10, dateOnLeaving.getText());
+                insertPstm.setString(11, levelLastCompleted.getSelectedItem().toString());
+
+                int statementReport = insertPstm.executeUpdate();
+
+                if (statementReport > 0) {
+                    JOptionPane.showMessageDialog(this, "Inserted Successfully", "Completed", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+                DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
+                model.setRowCount(0);
+                showTables();
             }
-            
-            DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
-            model.setRowCount(0);
-            showTables();
-        }
-        
-    } catch (SQLException exceptionMessage) {
-        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
-            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+        } catch (SQLException exceptionMessage) {
+            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+                JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
-}
 
     void fetchDetailsByRegNum() {
-    String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-    String username = "sql8730305";
-    String password = "VGxAU93HkA";
-    
-    String query = "SELECT * FROM school_registration WHERE regNum = ?";
-    try (Connection conn = DriverManager.getConnection(url, username, password);
-         PreparedStatement pstm = conn.prepareStatement(query)) {
-         
-        pstm.setString(1, regNum.getText().toUpperCase());
-        ResultSet rs = pstm.executeQuery();
+        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+        String username = "sql8730305";
+        String password = "VGxAU93HkA";
 
-        if (rs.next()) {
-            // Assuming rs.getX() methods match the data types and columns in your table
-            studentName.setText(rs.getString("Name"));
-            dob.setText(rs.getString("dob"));
-            country.setText(rs.getString("nationality"));
-            dateOnEntry.setText(rs.getString("date_on_entry"));
-            levelOnEntry.setSelectedItem(rs.getString("class_on_entry"));
-            age.setText(String.valueOf(rs.getInt("age")));
-            state.setSelectedItem(rs.getString("state"));
-            gender.setSelectedItem(rs.getString("gender"));
-            dateOnLeaving.setText(rs.getString("date_on_leaving"));
-            levelLastCompleted.setSelectedItem(rs.getString("last_class_completed"));
-        } else {
-            JOptionPane.showMessageDialog(this, "No record found with regNum: " + regNum.getText(), "Error", JOptionPane.WARNING_MESSAGE);
-        }
-        
-    } catch (SQLException exceptionMessage) {
-        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
-            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        String query = "SELECT * FROM school_registration WHERE regNum = ?";
+        try (Connection conn = DriverManager.getConnection(url, username, password); PreparedStatement pstm = conn.prepareStatement(query)) {
+
+            pstm.setString(1, regNum.getText().toUpperCase());
+            ResultSet rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                // Assuming rs.getX() methods match the data types and columns in your table
+                studentName.setText(rs.getString("Name"));
+                dob.setText(rs.getString("dob"));
+                country.setText(rs.getString("nationality"));
+                dateOnEntry.setText(rs.getString("date_on_entry"));
+                levelOnEntry.setSelectedItem(rs.getString("class_on_entry"));
+                age.setText(String.valueOf(rs.getInt("age")));
+                state.setSelectedItem(rs.getString("state"));
+                gender.setSelectedItem(rs.getString("gender"));
+                dateOnLeaving.setText(rs.getString("date_on_leaving"));
+                levelLastCompleted.setSelectedItem(rs.getString("last_class_completed"));
+            } else {
+                JOptionPane.showMessageDialog(this, "No record found with regNum: " + regNum.getText(), "Error", JOptionPane.WARNING_MESSAGE);
+            }
+
+        } catch (SQLException exceptionMessage) {
+            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+                JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
-}
     private void stateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_stateActionPerformed
@@ -554,54 +553,55 @@ public class SchoolRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_levelOnEntryActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-            upLoadDetails();
+        upLoadDetails();
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveButtonActionPerformed
     void DeleteTableContent() {
         String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-    String username = "sql8730305";
-    String password = "VGxAU93HkA";
-        try{
-            Connection conn = DriverManager.getConnection(url,username,password);
+        String username = "sql8730305";
+        String password = "VGxAU93HkA";
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
             int row = displayUserInTable.getSelectedRow();
             String val = (displayUserInTable.getModel().getValueAt(row, 0).toString());
-            String sqlQuery = "DELETE FROM school_registration WHERE id="+val;
-            PreparedStatement pstm = conn.prepareStatement(sqlQuery); 
+            String sqlQuery = "DELETE FROM school_registration WHERE id=" + val;
+            PreparedStatement pstm = conn.prepareStatement(sqlQuery);
             pstm.executeUpdate();
-            DefaultTableModel model = (DefaultTableModel)displayUserInTable.getModel();
+            DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
             model.setRowCount(0);
             showTables();
             JOptionPane.showMessageDialog(this, "Deleted Successfully", "Success Message", JOptionPane.WARNING_MESSAGE);
-        }catch (SQLException exceptionMessage) {
-        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
-            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (SQLException exceptionMessage) {
+            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+                JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
+
     }
-    
-    }
-    void UpdateTableContent(){
-       String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-    String username = "sql8730305";
-    String password = "VGxAU93HkA";
-        try{
-            Connection conn = DriverManager.getConnection(url,username,password);
-            
+
+    void UpdateTableContent() {
+        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+        String username = "sql8730305";
+        String password = "VGxAU93HkA";
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
+
             int row = displayUserInTable.getSelectedRow();
             String value = (displayUserInTable.getModel().getValueAt(row, 0).toString());
-            String query = "UPDATE school_registration SET regNum=?, Name=?, dob=?, nationality=?, date_on_entry=?, class_on_entry=?, age=?, state=?, gender=?, date_on_leaving=?, last_class_completed=? where id = "+value;
+            String query = "UPDATE school_registration SET regNum=?, Name=?, dob=?, nationality=?, date_on_entry=?, class_on_entry=?, age=?, state=?, gender=?, date_on_leaving=?, last_class_completed=? where id = " + value;
             PreparedStatement pstm = conn.prepareStatement(query);
-            pstm.setString(1,regNum.getText());
+            pstm.setString(1, regNum.getText());
             pstm.setString(2, studentName.getText().toUpperCase());
             pstm.setString(3, dob.getText());
             pstm.setString(4, country.getText());
             pstm.setString(5, dateOnEntry.getText());
             String LevelOnEntry = levelOnEntry.getSelectedItem().toString();
-            
-            pstm.setString (6,LevelOnEntry );
+
+            pstm.setString(6, LevelOnEntry);
             int studentAge = Integer.parseInt(age.getText());
-            pstm.setInt(7,studentAge);
+            pstm.setInt(7, studentAge);
             String State = state.getSelectedItem().toString();
             pstm.setString(8, State);
             String Gender = gender.getSelectedItem().toString();
@@ -609,101 +609,148 @@ public class SchoolRegistration extends javax.swing.JFrame {
             pstm.setString(10, dateOnLeaving.getText());
             String LevelLastCompleted = levelLastCompleted.getSelectedItem().toString();
             pstm.setString(11, LevelLastCompleted);
-            
+
             int statementReport = pstm.executeUpdate();
-            DefaultTableModel model = (DefaultTableModel)displayUserInTable.getModel();
+            DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
             model.setRowCount(0);
             showTables();
-                    
-            
-            if(statementReport> 0){
+
+            if (statementReport > 0) {
                 JOptionPane.showMessageDialog(this, "Updated Successfully", "Completed", JOptionPane.INFORMATION_MESSAGE);
             }
-            
-            
-        }catch (SQLException exceptionMessage) {
-        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
-            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+        } catch (SQLException exceptionMessage) {
+            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+                JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
-    }
-    void DisplayTableContentInComponent(){
+
+    void DisplayTableContentInComponent() {
         int i = displayUserInTable.getSelectedRow();
         TableModel tableModel = displayUserInTable.getModel();
-        regNum.setText(tableModel.getValueAt(i,1).toString());
-        studentName.setText(tableModel.getValueAt(i,2).toString());
-        dob.setText(tableModel.getValueAt(i,3).toString());
-        country.setText(tableModel.getValueAt(i,4).toString());
-        dateOnEntry.setText(tableModel.getValueAt(i,5).toString());
-        String LevelOnEntry = tableModel.getValueAt(i,6).toString();
-        
-        
-        switch(LevelOnEntry){
-            case "100 LEVEL" -> levelOnEntry.setSelectedIndex(0);
-                case "200 LEVEL" -> levelOnEntry.setSelectedIndex(1);
-                case "300 LEVEL" -> levelOnEntry.setSelectedIndex(2);
-                case "400 LEVEL" -> levelOnEntry.setSelectedIndex(3);
-                case "500 LEVEL" -> levelOnEntry.setSelectedIndex(4);
-                case "600 LEVEL" -> levelOnEntry.setSelectedIndex(5);
+        regNum.setText(tableModel.getValueAt(i, 1).toString());
+        studentName.setText(tableModel.getValueAt(i, 2).toString());
+        dob.setText(tableModel.getValueAt(i, 3).toString());
+        country.setText(tableModel.getValueAt(i, 4).toString());
+        dateOnEntry.setText(tableModel.getValueAt(i, 5).toString());
+        String LevelOnEntry = tableModel.getValueAt(i, 6).toString();
+
+        switch (LevelOnEntry) {
+            case "100 LEVEL" ->
+                levelOnEntry.setSelectedIndex(0);
+            case "200 LEVEL" ->
+                levelOnEntry.setSelectedIndex(1);
+            case "300 LEVEL" ->
+                levelOnEntry.setSelectedIndex(2);
+            case "400 LEVEL" ->
+                levelOnEntry.setSelectedIndex(3);
+            case "500 LEVEL" ->
+                levelOnEntry.setSelectedIndex(4);
+            case "600 LEVEL" ->
+                levelOnEntry.setSelectedIndex(5);
         }
-        age.setText(tableModel.getValueAt(i,7).toString());
-        String studentState = tableModel.getValueAt(i,8).toString();
+        age.setText(tableModel.getValueAt(i, 7).toString());
+        String studentState = tableModel.getValueAt(i, 8).toString();
         switch (studentState) {
-        case "ABIA" -> state.setSelectedIndex(0);
-        case "ADAMAWA" -> state.setSelectedIndex(1);
-        case "AKWA-IBOM" -> state.setSelectedIndex(2);
-        case "ANAMBRA" -> state.setSelectedIndex(3);
-        case "BAUCHI" -> state.setSelectedIndex(4);
-        case "BAYELSA" -> state.setSelectedIndex(5);
-        case "BENUE" -> state.setSelectedIndex(6);
-        case "BORNO" -> state.setSelectedIndex(7);
-        case "CROSS-RIVER" -> state.setSelectedIndex(8);
-        case "DELTA" -> state.setSelectedIndex(9);
-        case "EBONYI" -> state.setSelectedIndex(10);
-        case "EDO" -> state.setSelectedIndex(11);
-        case "EKITI" -> state.setSelectedIndex(12);
-        case "ENUGU" -> state.setSelectedIndex(13);
-        case "GOMBE" -> state.setSelectedIndex(14);
-        case "IMO" -> state.setSelectedIndex(15);
-        case "JIGAWA" -> state.setSelectedIndex(16);
-        case "KADUNA" -> state.setSelectedIndex(17);
-        case "KASTINA" -> state.setSelectedIndex(18);
-        case "KEBBI" -> state.setSelectedIndex(19);
-        case "KOGI" -> state.setSelectedIndex(20);
-        case "KWARA" -> state.setSelectedIndex(21);
-        case "LAGOS" -> state.setSelectedIndex(22);
-        case "NASSARAWA" -> state.setSelectedIndex(23);
-        case "NIGER" -> state.setSelectedIndex(24);
-        case "OGUN" -> state.setSelectedIndex(25);
-        case "OSUN" -> state.setSelectedIndex(26);
-        case "OYO" -> state.setSelectedIndex(27);
-        case "PLATEAU" -> state.setSelectedIndex(28);
-        case "RIVERS" -> state.setSelectedIndex(29);
-        case "SOKOTO" -> state.setSelectedIndex(30);
-        case "TARABA" -> state.setSelectedIndex(31);
-        case "ZAMFARA" -> state.setSelectedIndex(32);
-        case "F.C.T" -> state.setSelectedIndex(33);
-        
-    }
-        String studentGender =  tableModel.getValueAt(i,9).toString();
-        
-         switch(studentGender){
-            case "MALE" -> gender.setSelectedIndex(0);
-                case "FEMALE" -> gender.setSelectedIndex(1);
-                case "CHOOSE NOT TO SAY" -> gender.setSelectedIndex(2);
-         }
-        dateOnLeaving.setText(tableModel.getValueAt(i,10).toString());
-        
-        String LastLevelCompleted = tableModel.getValueAt(i,11).toString();
-          switch(LastLevelCompleted){
-            case "100 LEVEL" -> levelLastCompleted.setSelectedIndex(0);
-                case "200 LEVEL" -> levelLastCompleted.setSelectedIndex(1);
-                case "300 LEVEL" -> levelLastCompleted.setSelectedIndex(2);
-                case "400 LEVEL" -> levelLastCompleted.setSelectedIndex(3);
-                case "500 LEVEL" -> levelLastCompleted.setSelectedIndex(4);
-                case "600 LEVEL" -> levelLastCompleted.setSelectedIndex(5);
+            case "ABIA" ->
+                state.setSelectedIndex(0);
+            case "ADAMAWA" ->
+                state.setSelectedIndex(1);
+            case "AKWA-IBOM" ->
+                state.setSelectedIndex(2);
+            case "ANAMBRA" ->
+                state.setSelectedIndex(3);
+            case "BAUCHI" ->
+                state.setSelectedIndex(4);
+            case "BAYELSA" ->
+                state.setSelectedIndex(5);
+            case "BENUE" ->
+                state.setSelectedIndex(6);
+            case "BORNO" ->
+                state.setSelectedIndex(7);
+            case "CROSS-RIVER" ->
+                state.setSelectedIndex(8);
+            case "DELTA" ->
+                state.setSelectedIndex(9);
+            case "EBONYI" ->
+                state.setSelectedIndex(10);
+            case "EDO" ->
+                state.setSelectedIndex(11);
+            case "EKITI" ->
+                state.setSelectedIndex(12);
+            case "ENUGU" ->
+                state.setSelectedIndex(13);
+            case "GOMBE" ->
+                state.setSelectedIndex(14);
+            case "IMO" ->
+                state.setSelectedIndex(15);
+            case "JIGAWA" ->
+                state.setSelectedIndex(16);
+            case "KADUNA" ->
+                state.setSelectedIndex(17);
+            case "KASTINA" ->
+                state.setSelectedIndex(18);
+            case "KEBBI" ->
+                state.setSelectedIndex(19);
+            case "KOGI" ->
+                state.setSelectedIndex(20);
+            case "KWARA" ->
+                state.setSelectedIndex(21);
+            case "LAGOS" ->
+                state.setSelectedIndex(22);
+            case "NASSARAWA" ->
+                state.setSelectedIndex(23);
+            case "NIGER" ->
+                state.setSelectedIndex(24);
+            case "OGUN" ->
+                state.setSelectedIndex(25);
+            case "OSUN" ->
+                state.setSelectedIndex(26);
+            case "OYO" ->
+                state.setSelectedIndex(27);
+            case "PLATEAU" ->
+                state.setSelectedIndex(28);
+            case "RIVERS" ->
+                state.setSelectedIndex(29);
+            case "SOKOTO" ->
+                state.setSelectedIndex(30);
+            case "TARABA" ->
+                state.setSelectedIndex(31);
+            case "ZAMFARA" ->
+                state.setSelectedIndex(32);
+            case "F.C.T" ->
+                state.setSelectedIndex(33);
+
+        }
+        String studentGender = tableModel.getValueAt(i, 9).toString();
+
+        switch (studentGender) {
+            case "MALE" ->
+                gender.setSelectedIndex(0);
+            case "FEMALE" ->
+                gender.setSelectedIndex(1);
+            case "CHOOSE NOT TO SAY" ->
+                gender.setSelectedIndex(2);
+        }
+        dateOnLeaving.setText(tableModel.getValueAt(i, 10).toString());
+
+        String LastLevelCompleted = tableModel.getValueAt(i, 11).toString();
+        switch (LastLevelCompleted) {
+            case "100 LEVEL" ->
+                levelLastCompleted.setSelectedIndex(0);
+            case "200 LEVEL" ->
+                levelLastCompleted.setSelectedIndex(1);
+            case "300 LEVEL" ->
+                levelLastCompleted.setSelectedIndex(2);
+            case "400 LEVEL" ->
+                levelLastCompleted.setSelectedIndex(3);
+            case "500 LEVEL" ->
+                levelLastCompleted.setSelectedIndex(4);
+            case "600 LEVEL" ->
+                levelLastCompleted.setSelectedIndex(5);
         }
     }
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
@@ -720,9 +767,9 @@ public class SchoolRegistration extends javax.swing.JFrame {
         DeleteTableContent();
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteButtonActionPerformed
-    
+
     private void displayUserInTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_displayUserInTableMouseClicked
-      DisplayTableContentInComponent();  
+        DisplayTableContentInComponent();
         // TODO add your handling code here:
     }//GEN-LAST:event_displayUserInTableMouseClicked
 

@@ -25,24 +25,24 @@ public class Level400_Semester2 extends javax.swing.JFrame {
      */
     public Level400_Semester2() {
         initComponents();
-        CSC101_FINALSCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
-        MAT_101_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
-        PHY101_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
-        STA111_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
-        PYH105_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
-        BIO101_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
-        GST105_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
-        MGT101_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
+        CSC412_FINALSCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
+        CSC_424_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
+        CSC_442_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
+        CSC_426_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
+        CSC_428_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
+        CSC_482_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
+        CSC_446_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
+        CSC464_SCORE.setToolTipText("TOTAL SCORE CALCULATES AUTOMATICALLY!!");
         // TOOLTIP FOR GRADE
-        CSC101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
-        MAT101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
-        PHY101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
-        STA111_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
-        PHY105_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
-        BIO101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
-        GST105_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
-        MGT101_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
-        
+        CSC_412_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        CSC_424_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        CSC_442_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        CSC_426_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        CSC_428_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        CSC_482_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        CSC_446_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+        CSC_464_GRADE.setToolTipText("GRADE CALCULATES AUTOMATICALLY FROM TOTAL SCORE!!");
+
         //TOOTIP FOR GP
         gpInLevel.setToolTipText("GP CALCULATES AUTOMATICALLY FROM TOTAL SCORE AND UNIT!!");
     }
@@ -67,61 +67,61 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         lvl = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         StudentRegNum = new javax.swing.JTextField();
-        PHY101_SCORE = new javax.swing.JTextField();
+        CSC_442_SCORE = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        STA111_SCORE = new javax.swing.JTextField();
-        PYH105_SCORE = new javax.swing.JTextField();
-        BIO101_SCORE = new javax.swing.JTextField();
+        CSC_426_SCORE = new javax.swing.JTextField();
+        CSC_428_SCORE = new javax.swing.JTextField();
+        CSC_482_SCORE = new javax.swing.JTextField();
         studentName = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         feesStatus = new javax.swing.JComboBox<>();
         uploadAll = new javax.swing.JButton();
         passport = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        CSC_201 = new javax.swing.JLabel();
-        MAT_101 = new javax.swing.JLabel();
-        PHY_101 = new javax.swing.JLabel();
-        STA_111 = new javax.swing.JLabel();
-        PHY_105 = new javax.swing.JLabel();
-        BIO_101 = new javax.swing.JLabel();
+        CSC_412 = new javax.swing.JLabel();
+        CSC_424 = new javax.swing.JLabel();
+        CSC_442 = new javax.swing.JLabel();
+        CSC_426 = new javax.swing.JLabel();
+        CSC_428 = new javax.swing.JLabel();
+        CSC_482 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        CSC101_FINALSCORE = new javax.swing.JTextField();
-        MAT_101_SCORE = new javax.swing.JTextField();
+        CSC412_FINALSCORE = new javax.swing.JTextField();
+        CSC_424_SCORE = new javax.swing.JTextField();
         uploadPhoto = new javax.swing.JButton();
-        GST_105 = new javax.swing.JLabel();
-        MGT_101 = new javax.swing.JLabel();
-        GST105_SCORE = new javax.swing.JTextField();
-        MGT101_SCORE = new javax.swing.JTextField();
+        CSC_446 = new javax.swing.JLabel();
+        CSC_464 = new javax.swing.JLabel();
+        CSC_446_SCORE = new javax.swing.JTextField();
+        CSC464_SCORE = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        CSC101_CA_SCORE = new javax.swing.JTextField();
-        MAT101_CA_SCORE = new javax.swing.JTextField();
-        PHY101_CA_SCORE = new javax.swing.JTextField();
-        STA111_CA_SCORE = new javax.swing.JTextField();
-        PHY105_CA_SCORE = new javax.swing.JTextField();
-        BIO101_CA_SCORE = new javax.swing.JTextField();
-        GST105_CA_SCORE = new javax.swing.JTextField();
-        MGT101_CA_SCORE = new javax.swing.JTextField();
-        CSC101_EXAMSCORE = new javax.swing.JTextField();
-        MAT101_EXAM_SCORE = new javax.swing.JTextField();
-        PHY101_EXAM_SCORE = new javax.swing.JTextField();
-        STA111_EXAM_SCORE = new javax.swing.JTextField();
-        PHY105_EXAM_SCORE = new javax.swing.JTextField();
-        BIO101_EXAM_SCORE = new javax.swing.JTextField();
-        GST105_EXAM_SCORE = new javax.swing.JTextField();
-        MGT101_EXAM_SCORE = new javax.swing.JTextField();
+        CSC_412_CA_SCORE = new javax.swing.JTextField();
+        CSC_424_CA_SCORE = new javax.swing.JTextField();
+        CSC_442_CA_SCORE = new javax.swing.JTextField();
+        CSC_426_CA_SCORE = new javax.swing.JTextField();
+        CSC_428_CA_SCORE = new javax.swing.JTextField();
+        CSC_482_CA_SCORE = new javax.swing.JTextField();
+        CSC_446_CA_SCORE = new javax.swing.JTextField();
+        CSC_464_CA_SCORE = new javax.swing.JTextField();
+        CSC412_EXAMSCORE = new javax.swing.JTextField();
+        CSC_424_EXAM_SCORE = new javax.swing.JTextField();
+        CSC442_EXAM_SCORE = new javax.swing.JTextField();
+        CSC_426_EXAM_SCORE = new javax.swing.JTextField();
+        CSC_428_EXAM_SCORE = new javax.swing.JTextField();
+        CSC_482_EXAM_SCORE = new javax.swing.JTextField();
+        CSC_446_EXAM_SCORE = new javax.swing.JTextField();
+        CSC464_EXAM_SCORE = new javax.swing.JTextField();
         cal_score = new javax.swing.JButton();
-        CSC101_GRADE = new javax.swing.JComboBox<>();
-        MAT101_GRADE = new javax.swing.JComboBox<>();
-        PHY101_GRADE = new javax.swing.JComboBox<>();
-        STA111_GRADE = new javax.swing.JComboBox<>();
-        PHY105_GRADE = new javax.swing.JComboBox<>();
-        BIO101_GRADE = new javax.swing.JComboBox<>();
-        GST105_GRADE = new javax.swing.JComboBox<>();
-        MGT101_GRADE = new javax.swing.JComboBox<>();
+        CSC_412_GRADE = new javax.swing.JComboBox<>();
+        CSC_424_GRADE = new javax.swing.JComboBox<>();
+        CSC_442_GRADE = new javax.swing.JComboBox<>();
+        CSC_426_GRADE = new javax.swing.JComboBox<>();
+        CSC_428_GRADE = new javax.swing.JComboBox<>();
+        CSC_482_GRADE = new javax.swing.JComboBox<>();
+        CSC_446_GRADE = new javax.swing.JComboBox<>();
+        CSC_464_GRADE = new javax.swing.JComboBox<>();
         gpInLevel = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -165,31 +165,31 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel6.setText("REG NUMBER");
 
-        PHY101_SCORE.setEnabled(false);
-        PHY101_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_442_SCORE.setEnabled(false);
+        CSC_442_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PHY101_SCOREActionPerformed(evt);
+                CSC_442_SCOREActionPerformed(evt);
             }
         });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel7.setText("NAME OF STUDENT");
 
-        STA111_SCORE.setEnabled(false);
-        STA111_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_426_SCORE.setEnabled(false);
+        CSC_426_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                STA111_SCOREActionPerformed(evt);
+                CSC_426_SCOREActionPerformed(evt);
             }
         });
 
-        PYH105_SCORE.setEnabled(false);
-        PYH105_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_428_SCORE.setEnabled(false);
+        CSC_428_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PYH105_SCOREActionPerformed(evt);
+                CSC_428_SCOREActionPerformed(evt);
             }
         });
 
-        BIO101_SCORE.setEnabled(false);
+        CSC_482_SCORE.setEnabled(false);
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel12.setText("FEES");
@@ -210,23 +210,23 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel13.setText("COURSES");
 
-        CSC_201.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        CSC_201.setText("CSC 412");
+        CSC_412.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        CSC_412.setText("CSC 412");
 
-        MAT_101.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        MAT_101.setText("CSC 424");
+        CSC_424.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        CSC_424.setText("CSC 424");
 
-        PHY_101.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        PHY_101.setText("CSC 442");
+        CSC_442.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        CSC_442.setText("CSC 442");
 
-        STA_111.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        STA_111.setText("CSC 426");
+        CSC_426.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        CSC_426.setText("CSC 426");
 
-        PHY_105.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        PHY_105.setText("CSC 428");
+        CSC_428.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        CSC_428.setText("CSC 428");
 
-        BIO_101.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        BIO_101.setText("CSC 482");
+        CSC_482.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        CSC_482.setText("CSC 482");
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setText("IMO STATE UNIVERSITY, OWERRI");
@@ -240,17 +240,17 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel21.setText("UNIT");
 
-        CSC101_FINALSCORE.setEnabled(false);
-        CSC101_FINALSCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC412_FINALSCORE.setEnabled(false);
+        CSC412_FINALSCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CSC101_FINALSCOREActionPerformed(evt);
+                CSC412_FINALSCOREActionPerformed(evt);
             }
         });
 
-        MAT_101_SCORE.setEnabled(false);
-        MAT_101_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_424_SCORE.setEnabled(false);
+        CSC_424_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MAT_101_SCOREActionPerformed(evt);
+                CSC_424_SCOREActionPerformed(evt);
             }
         });
 
@@ -262,20 +262,20 @@ public class Level400_Semester2 extends javax.swing.JFrame {
             }
         });
 
-        GST_105.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        GST_105.setText("CSC 446");
+        CSC_446.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        CSC_446.setText("CSC 446");
 
-        MGT_101.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
-        MGT_101.setText("CSC 464");
+        CSC_464.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
+        CSC_464.setText("CSC 464");
 
-        GST105_SCORE.setEnabled(false);
-        GST105_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_446_SCORE.setEnabled(false);
+        CSC_446_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GST105_SCOREActionPerformed(evt);
+                CSC_446_SCOREActionPerformed(evt);
             }
         });
 
-        MGT101_SCORE.setEnabled(false);
+        CSC464_SCORE.setEnabled(false);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel14.setText("CA SCORE");
@@ -283,57 +283,57 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel15.setText("EXAM SCORE");
 
-        CSC101_CA_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_412_CA_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CSC101_CA_SCOREActionPerformed(evt);
+                CSC_412_CA_SCOREActionPerformed(evt);
             }
         });
 
-        MAT101_CA_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_424_CA_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MAT101_CA_SCOREActionPerformed(evt);
+                CSC_424_CA_SCOREActionPerformed(evt);
             }
         });
 
-        PHY101_CA_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_442_CA_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PHY101_CA_SCOREActionPerformed(evt);
+                CSC_442_CA_SCOREActionPerformed(evt);
             }
         });
 
-        GST105_CA_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_446_CA_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GST105_CA_SCOREActionPerformed(evt);
+                CSC_446_CA_SCOREActionPerformed(evt);
             }
         });
 
-        CSC101_EXAMSCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC412_EXAMSCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CSC101_EXAMSCOREActionPerformed(evt);
+                CSC412_EXAMSCOREActionPerformed(evt);
             }
         });
 
-        MAT101_EXAM_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_424_EXAM_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MAT101_EXAM_SCOREActionPerformed(evt);
+                CSC_424_EXAM_SCOREActionPerformed(evt);
             }
         });
 
-        PHY101_EXAM_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC442_EXAM_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PHY101_EXAM_SCOREActionPerformed(evt);
+                CSC442_EXAM_SCOREActionPerformed(evt);
             }
         });
 
-        BIO101_EXAM_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_482_EXAM_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BIO101_EXAM_SCOREActionPerformed(evt);
+                CSC_482_EXAM_SCOREActionPerformed(evt);
             }
         });
 
-        MGT101_EXAM_SCORE.addActionListener(new java.awt.event.ActionListener() {
+        CSC464_EXAM_SCORE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MGT101_EXAM_SCOREActionPerformed(evt);
+                CSC464_EXAM_SCOREActionPerformed(evt);
             }
         });
 
@@ -345,39 +345,39 @@ public class Level400_Semester2 extends javax.swing.JFrame {
             }
         });
 
-        CSC101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
-        CSC101_GRADE.setEnabled(false);
-        CSC101_GRADE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_412_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        CSC_412_GRADE.setEnabled(false);
+        CSC_412_GRADE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CSC101_GRADEActionPerformed(evt);
+                CSC_412_GRADEActionPerformed(evt);
             }
         });
 
-        MAT101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
-        MAT101_GRADE.setEnabled(false);
+        CSC_424_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        CSC_424_GRADE.setEnabled(false);
 
-        PHY101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
-        PHY101_GRADE.setEnabled(false);
+        CSC_442_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        CSC_442_GRADE.setEnabled(false);
 
-        STA111_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
-        STA111_GRADE.setEnabled(false);
+        CSC_426_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        CSC_426_GRADE.setEnabled(false);
 
-        PHY105_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
-        PHY105_GRADE.setEnabled(false);
+        CSC_428_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        CSC_428_GRADE.setEnabled(false);
 
-        BIO101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
-        BIO101_GRADE.setEnabled(false);
-        BIO101_GRADE.addActionListener(new java.awt.event.ActionListener() {
+        CSC_482_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        CSC_482_GRADE.setEnabled(false);
+        CSC_482_GRADE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BIO101_GRADEActionPerformed(evt);
+                CSC_482_GRADEActionPerformed(evt);
             }
         });
 
-        GST105_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
-        GST105_GRADE.setEnabled(false);
+        CSC_446_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        CSC_446_GRADE.setEnabled(false);
 
-        MGT101_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
-        MGT101_GRADE.setEnabled(false);
+        CSC_464_GRADE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "A", "B", "C", "D", "E", "F" }));
+        CSC_464_GRADE.setEnabled(false);
 
         gpInLevel.setEnabled(false);
         gpInLevel.addActionListener(new java.awt.event.ActionListener() {
@@ -427,14 +427,14 @@ public class Level400_Semester2 extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(CSC101_FINALSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MAT_101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PHY101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(STA111_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(PYH105_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BIO101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(GST105_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MGT101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(CSC412_FINALSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CSC_424_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CSC_442_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CSC_426_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CSC_428_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CSC_482_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CSC_446_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CSC464_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(gpInLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -444,11 +444,11 @@ public class Level400_Semester2 extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MAT_101, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PHY_101, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(STA_111)
-                            .addComponent(PHY_105, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BIO_101)))
+                            .addComponent(CSC_424, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_442, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_426)
+                            .addComponent(CSC_428, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_482)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                             .addGap(18, 18, 18)
@@ -459,32 +459,32 @@ public class Level400_Semester2 extends javax.swing.JFrame {
                             .addContainerGap()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(CSC_201, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(CSC_412, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                     .addGap(6, 6, 6)
-                                    .addComponent(CSC101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(CSC_412_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel14)
-                                        .addComponent(MAT101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(PHY101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(STA111_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(PHY105_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(BIO101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(GST105_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(MGT101_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(CSC_424_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CSC_442_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CSC_426_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CSC_428_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CSC_482_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CSC_446_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CSC_464_CA_SCORE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGap(34, 34, 34)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(CSC101_EXAMSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(MAT101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(PHY101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(STA111_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(PHY105_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(BIO101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(GST105_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(MGT101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(CSC412_EXAMSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CSC_424_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CSC442_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CSC_426_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CSC_428_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CSC_482_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CSC_446_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CSC464_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(393, 393, 393)
                         .addComponent(uploadAll, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -494,7 +494,7 @@ public class Level400_Semester2 extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MGT_101)
+                            .addComponent(CSC_464)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
@@ -514,14 +514,14 @@ public class Level400_Semester2 extends javax.swing.JFrame {
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel20)
-                                                        .addComponent(CSC101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(MAT101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(PHY101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(STA111_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(PHY105_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(BIO101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(GST105_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(MGT101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(CSC_412_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(CSC_424_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(CSC_442_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(CSC_426_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(CSC_428_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(CSC_482_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(CSC_446_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(CSC_464_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                                         .addComponent(feesStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGap(32, 32, 32)))
@@ -562,7 +562,7 @@ public class Level400_Semester2 extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(40, 40, 40)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(GST_105, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(CSC_446, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -613,11 +613,11 @@ public class Level400_Semester2 extends javax.swing.JFrame {
                         .addComponent(jLabel14)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CSC101_FINALSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CSC_201, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CSC101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CSC101_EXAMSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CSC101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CSC412_FINALSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CSC_412, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CSC_412_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CSC412_EXAMSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CSC_412_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -625,74 +625,74 @@ public class Level400_Semester2 extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(MAT_101, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MAT101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(MAT101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(CSC_424, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CSC_424_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CSC_424_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(MAT_101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CSC_424_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(11, 11, 11)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PHY_101, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PHY101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PHY101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CSC_442, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_442_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC442_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(STA_111, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(STA111_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(STA111_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CSC_426, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_426_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_426_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PHY_105, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PHY105_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PHY105_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CSC_428, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_428_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_428_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(23, 23, 23)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BIO_101, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BIO101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BIO101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(CSC_482, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_482_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_482_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(MAT101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_424_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PHY101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PHY101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_442_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_442_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(STA111_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(STA111_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_426_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_426_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(PYH105_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PHY105_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_428_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_428_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BIO101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BIO101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_482_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_482_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel22))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(GST_105)
-                            .addComponent(GST105_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(GST105_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CSC_446)
+                            .addComponent(CSC_446_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_446_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(MGT_101)
-                            .addComponent(MGT101_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MGT101_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MGT101_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MGT101_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_464)
+                            .addComponent(CSC464_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_464_CA_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC464_EXAM_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC_464_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel24)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(GST105_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(GST105_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CSC_446_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CSC_446_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel23)))
                 .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -725,97 +725,97 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void GST105_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GST105_SCOREActionPerformed
+    private void CSC_446_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_446_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_GST105_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_446_SCOREActionPerformed
 
     private void uploadPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadPhotoActionPerformed
         UploadPicture();
         // TODO add your handling code here:
     }//GEN-LAST:event_uploadPhotoActionPerformed
 
-    private void CSC101_FINALSCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC101_FINALSCOREActionPerformed
+    private void CSC412_FINALSCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC412_FINALSCOREActionPerformed
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_CSC101_FINALSCOREActionPerformed
+    }//GEN-LAST:event_CSC412_FINALSCOREActionPerformed
 
     private void uploadAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadAllActionPerformed
         uploadData();
         // TODO add your handling code here:
     }//GEN-LAST:event_uploadAllActionPerformed
 
-    private void STA111_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_STA111_SCOREActionPerformed
+    private void CSC_426_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_426_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_STA111_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_426_SCOREActionPerformed
 
     private void SessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SessionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SessionActionPerformed
 
-    private void CSC101_CA_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC101_CA_SCOREActionPerformed
+    private void CSC_412_CA_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_412_CA_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CSC101_CA_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_412_CA_SCOREActionPerformed
 
-    private void PHY101_CA_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PHY101_CA_SCOREActionPerformed
+    private void CSC_442_CA_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_442_CA_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PHY101_CA_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_442_CA_SCOREActionPerformed
 
-    private void MAT101_CA_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MAT101_CA_SCOREActionPerformed
+    private void CSC_424_CA_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_424_CA_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MAT101_CA_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_424_CA_SCOREActionPerformed
 
-    private void GST105_CA_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GST105_CA_SCOREActionPerformed
+    private void CSC_446_CA_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_446_CA_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_GST105_CA_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_446_CA_SCOREActionPerformed
 
-    private void CSC101_EXAMSCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC101_EXAMSCOREActionPerformed
+    private void CSC412_EXAMSCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC412_EXAMSCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CSC101_EXAMSCOREActionPerformed
+    }//GEN-LAST:event_CSC412_EXAMSCOREActionPerformed
 
-    private void PHY101_EXAM_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PHY101_EXAM_SCOREActionPerformed
+    private void CSC442_EXAM_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC442_EXAM_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PHY101_EXAM_SCOREActionPerformed
+    }//GEN-LAST:event_CSC442_EXAM_SCOREActionPerformed
 
-    private void BIO101_EXAM_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIO101_EXAM_SCOREActionPerformed
+    private void CSC_482_EXAM_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_482_EXAM_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BIO101_EXAM_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_482_EXAM_SCOREActionPerformed
 
-    private void MGT101_EXAM_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MGT101_EXAM_SCOREActionPerformed
+    private void CSC464_EXAM_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC464_EXAM_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MGT101_EXAM_SCOREActionPerformed
+    }//GEN-LAST:event_CSC464_EXAM_SCOREActionPerformed
 
-    private void MAT101_EXAM_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MAT101_EXAM_SCOREActionPerformed
+    private void CSC_424_EXAM_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_424_EXAM_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MAT101_EXAM_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_424_EXAM_SCOREActionPerformed
     public void CalScore() {
-         
-    // Check if any of the text fields are empty
-    if ("".equals(CSC101_CA_SCORE.getText().trim()) || "".equals(CSC101_EXAMSCORE.getText().trim())  ||
-        "".equals(MAT101_CA_SCORE.getText().trim()) || "".equals(MAT101_EXAM_SCORE.getText().trim()) ||
-        "".equals(PHY101_CA_SCORE.getText().trim()) || "".equals(PHY101_EXAM_SCORE.getText().trim()) ||
-        "".equals(STA111_CA_SCORE.getText().trim()) || "".equals(STA111_EXAM_SCORE.getText().trim()) ||
-        "".equals(BIO101_CA_SCORE.getText().trim()) || "".equals(BIO101_EXAM_SCORE.getText().trim()) ||
-        "".equals(GST105_CA_SCORE.getText().trim()) || "".equals(GST105_EXAM_SCORE.getText().trim()) ||
-        "".equals(MGT101_CA_SCORE.getText().trim()) || "".equals(MGT101_EXAM_SCORE.getText().trim()) ||
-        "".equals(PHY105_CA_SCORE.getText().trim()) || "".equals(PHY105_EXAM_SCORE.getText().trim())){
 
-        JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        // Check if any of the text fields are empty
+        if ("".equals(CSC_412_CA_SCORE.getText().trim()) || "".equals(CSC412_EXAMSCORE.getText().trim())
+                || "".equals(CSC_424_CA_SCORE.getText().trim()) || "".equals(CSC_424_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_442_CA_SCORE.getText().trim()) || "".equals(CSC442_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_426_CA_SCORE.getText().trim()) || "".equals(CSC_426_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_482_CA_SCORE.getText().trim()) || "".equals(CSC_482_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_446_CA_SCORE.getText().trim()) || "".equals(CSC_446_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_464_CA_SCORE.getText().trim()) || "".equals(CSC464_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_428_CA_SCORE.getText().trim()) || "".equals(CSC_428_EXAM_SCORE.getText().trim())) {
 
-    // Check if CA_SCORE is greater than 30 or EXAMSCORE is greater than 70 for any field
-    if (Integer.parseInt(CSC101_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC101_EXAMSCORE.getText().trim()) > 70  ||
-        Integer.parseInt(MAT101_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(MAT101_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(PHY101_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(PHY101_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(STA111_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(STA111_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(BIO101_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(BIO101_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(GST105_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(GST105_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(MGT101_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(MGT101_EXAM_SCORE.getText().trim()) > 70 ||
-        Integer.parseInt(PHY105_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(PHY105_EXAM_SCORE.getText().trim()) > 70) {
+            JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-        JOptionPane.showMessageDialog(this, "CA Score can't be greater than 30 and Exam Score can't be greater than 70", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        // Check if CA_SCORE is greater than 30 or EXAMSCORE is greater than 70 for any field
+        if (Integer.parseInt(CSC_412_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC412_EXAMSCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC_424_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_424_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC_442_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC442_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC_426_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_426_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC_482_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_482_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC_446_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_446_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC_464_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC464_EXAM_SCORE.getText().trim()) > 70
+                || Integer.parseInt(CSC_428_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_428_EXAM_SCORE.getText().trim()) > 70) {
+
+            JOptionPane.showMessageDialog(this, "CA Score can't be greater than 30 and Exam Score can't be greater than 70", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 //    
 //    if(CSC101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || MAT101_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
 //       PHY101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || STA111_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
@@ -824,219 +824,225 @@ public class Level400_Semester2 extends javax.swing.JFrame {
 //        JOptionPane.showMessageDialog(this, "PLS FILL THE UNIT COMBO", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
 //        return;
 //    }
-                // Calculate total and set final score for each course
-int csc101Total = Integer.parseInt(CSC101_CA_SCORE.getText().trim()) + Integer.parseInt(CSC101_EXAMSCORE.getText().trim());
-CSC101_FINALSCORE.setText(String.valueOf(csc101Total));
+        // Calculate total and set final score for each course
+        int csc412Total = Integer.parseInt(CSC_412_CA_SCORE.getText().trim()) + Integer.parseInt(CSC412_EXAMSCORE.getText().trim());
+        CSC412_FINALSCORE.setText(String.valueOf(csc412Total));
 
-int mat101Total = Integer.parseInt(MAT101_CA_SCORE.getText().trim()) + Integer.parseInt(MAT101_EXAM_SCORE.getText().trim());
-MAT_101_SCORE.setText(String.valueOf(mat101Total));
+        int csc424Total = Integer.parseInt(CSC_424_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_424_EXAM_SCORE.getText().trim());
+        CSC_424_SCORE.setText(String.valueOf(csc424Total));
 
-int phy101Total = Integer.parseInt(PHY101_CA_SCORE.getText().trim()) + Integer.parseInt(PHY101_EXAM_SCORE.getText().trim());
-PHY101_SCORE.setText(String.valueOf(phy101Total));
+        int csc442Total = Integer.parseInt(CSC_442_CA_SCORE.getText().trim()) + Integer.parseInt(CSC442_EXAM_SCORE.getText().trim());
+        CSC_442_SCORE.setText(String.valueOf(csc442Total));
 
-int sta111Total = Integer.parseInt(STA111_CA_SCORE.getText().trim()) + Integer.parseInt(STA111_EXAM_SCORE.getText().trim());
-STA111_SCORE.setText(String.valueOf(sta111Total));
+        int csc426Total = Integer.parseInt(CSC_426_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_426_EXAM_SCORE.getText().trim());
+        CSC_426_SCORE.setText(String.valueOf(csc426Total));
 
-int gst105Total = Integer.parseInt(GST105_CA_SCORE.getText().trim()) + Integer.parseInt(GST105_EXAM_SCORE.getText().trim());
-GST105_SCORE.setText(String.valueOf(gst105Total));
+        int csc446Total = Integer.parseInt(CSC_446_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_446_EXAM_SCORE.getText().trim());
+        CSC_446_SCORE.setText(String.valueOf(csc446Total));
 
-int bio101Total = Integer.parseInt(BIO101_CA_SCORE.getText().trim()) + Integer.parseInt(BIO101_EXAM_SCORE.getText().trim());
-BIO101_SCORE.setText(String.valueOf(bio101Total));
+        int csc482Total = Integer.parseInt(CSC_482_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_482_EXAM_SCORE.getText().trim());
+        CSC_482_SCORE.setText(String.valueOf(csc482Total));
 
-int mgt101Total = Integer.parseInt(MGT101_CA_SCORE.getText().trim()) + Integer.parseInt(MGT101_EXAM_SCORE.getText().trim());
-MGT101_SCORE.setText(String.valueOf(mgt101Total));
+        int csc464Total = Integer.parseInt(CSC_464_CA_SCORE.getText().trim()) + Integer.parseInt(CSC464_EXAM_SCORE.getText().trim());
+        CSC464_SCORE.setText(String.valueOf(csc464Total));
 
-int phy105Total = Integer.parseInt(PHY105_CA_SCORE.getText().trim()) + Integer.parseInt(PHY105_EXAM_SCORE.getText().trim());
-PYH105_SCORE.setText(String.valueOf(phy105Total));
+        int csc428Total = Integer.parseInt(CSC_428_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_428_EXAM_SCORE.getText().trim());
+        CSC_428_SCORE.setText(String.valueOf(csc428Total));
 
 // Grade calculation for CSC101
-    if (csc101Total >= 70) {
-    CSC101_GRADE.setSelectedIndex(1);
-    } else if (csc101Total >= 60 && csc101Total <= 69) {
-    CSC101_GRADE.setSelectedIndex(2);
-    } else if (csc101Total >= 50 && csc101Total <= 59) {
-    CSC101_GRADE.setSelectedIndex(3);
-    } else if (csc101Total >= 45 && csc101Total <= 49) {
-    CSC101_GRADE.setSelectedIndex(4);
-    } else if (csc101Total >= 40 && csc101Total <= 44) {
-    CSC101_GRADE.setSelectedIndex(5);
-    } else if (csc101Total >= 0 && csc101Total <= 39) {
-    CSC101_GRADE.setSelectedIndex(6);
-    }
+        if (csc412Total >= 70) {
+            CSC_412_GRADE.setSelectedIndex(1);
+        } else if (csc412Total >= 60 && csc412Total <= 69) {
+            CSC_412_GRADE.setSelectedIndex(2);
+        } else if (csc412Total >= 50 && csc412Total <= 59) {
+            CSC_412_GRADE.setSelectedIndex(3);
+        } else if (csc412Total >= 45 && csc412Total <= 49) {
+            CSC_412_GRADE.setSelectedIndex(4);
+        } else if (csc412Total >= 40 && csc412Total <= 44) {
+            CSC_412_GRADE.setSelectedIndex(5);
+        } else if (csc412Total >= 0 && csc412Total <= 39) {
+            CSC_412_GRADE.setSelectedIndex(6);
+        }
 
         // Grade calculation for MAT101
-    if (mat101Total >= 70) {
-    MAT101_GRADE.setSelectedIndex(1);
-    } else if (mat101Total >= 60 && mat101Total <= 69) {
-    MAT101_GRADE.setSelectedIndex(2);
-    } else if (mat101Total >= 50 && mat101Total <= 59) {
-    MAT101_GRADE.setSelectedIndex(3);
-    } else if (mat101Total >= 45 && mat101Total <= 49) {
-    MAT101_GRADE.setSelectedIndex(4);
-    } else if (mat101Total >= 40 && mat101Total <= 44) {
-    MAT101_GRADE.setSelectedIndex(5);
-    } else if (mat101Total >= 0 && mat101Total <= 39) {
-    MAT101_GRADE.setSelectedIndex(6);
-    }
+        if (csc424Total >= 70) {
+            CSC_424_GRADE.setSelectedIndex(1);
+        } else if (csc424Total >= 60 && csc424Total <= 69) {
+            CSC_424_GRADE.setSelectedIndex(2);
+        } else if (csc424Total >= 50 && csc424Total <= 59) {
+            CSC_424_GRADE.setSelectedIndex(3);
+        } else if (csc424Total >= 45 && csc424Total <= 49) {
+            CSC_424_GRADE.setSelectedIndex(4);
+        } else if (csc424Total >= 40 && csc424Total <= 44) {
+            CSC_424_GRADE.setSelectedIndex(5);
+        } else if (csc424Total >= 0 && csc424Total <= 39) {
+            CSC_424_GRADE.setSelectedIndex(6);
+        }
 
 // Grade calculation for PHY101
-    if (phy101Total >= 70) {
-        PHY101_GRADE.setSelectedIndex(1);
-    } else if (phy101Total >= 60 && phy101Total <= 69) {
-        PHY101_GRADE.setSelectedIndex(2);
-    } else if (phy101Total >= 50 && phy101Total <= 59) {
-        PHY101_GRADE.setSelectedIndex(3);
-    } else if (phy101Total >= 45 && phy101Total <= 49) {
-        PHY101_GRADE.setSelectedIndex(4);
-    } else if (phy101Total >= 40 && phy101Total <= 44) {
-        PHY101_GRADE.setSelectedIndex(5);
-    } else if (phy101Total >= 0 && phy101Total <= 39) {
-        PHY101_GRADE.setSelectedIndex(6);
+        if (csc442Total >= 70) {
+            CSC_442_GRADE.setSelectedIndex(1);
+        } else if (csc442Total >= 60 && csc442Total <= 69) {
+            CSC_442_GRADE.setSelectedIndex(2);
+        } else if (csc442Total >= 50 && csc442Total <= 59) {
+            CSC_442_GRADE.setSelectedIndex(3);
+        } else if (csc442Total >= 45 && csc442Total <= 49) {
+            CSC_442_GRADE.setSelectedIndex(4);
+        } else if (csc442Total >= 40 && csc442Total <= 44) {
+            CSC_442_GRADE.setSelectedIndex(5);
+        } else if (csc442Total >= 0 && csc442Total <= 39) {
+            CSC_442_GRADE.setSelectedIndex(6);
+        }
+
+        // Grade calculation for STA111
+        if (csc426Total >= 70) {
+            CSC_426_GRADE.setSelectedIndex(1);
+        } else if (csc426Total >= 60 && csc426Total <= 69) {
+            CSC_426_GRADE.setSelectedIndex(2);
+        } else if (csc426Total >= 50 && csc426Total <= 59) {
+            CSC_426_GRADE.setSelectedIndex(3);
+        } else if (csc426Total >= 45 && csc426Total <= 49) {
+            CSC_426_GRADE.setSelectedIndex(4);
+        } else if (csc426Total >= 40 && csc426Total <= 44) {
+            CSC_426_GRADE.setSelectedIndex(5);
+        } else if (csc426Total >= 0 && csc426Total <= 39) {
+            CSC_426_GRADE.setSelectedIndex(6);
+        }
+
+        // Grade calculation for GST105
+        if (csc446Total >= 70) {
+            CSC_446_GRADE.setSelectedIndex(1);
+        } else if (csc446Total >= 60 && csc446Total <= 69) {
+            CSC_446_GRADE.setSelectedIndex(2);
+        } else if (csc446Total >= 50 && csc446Total <= 59) {
+            CSC_446_GRADE.setSelectedIndex(3);
+        } else if (csc446Total >= 45 && csc446Total <= 49) {
+            CSC_446_GRADE.setSelectedIndex(4);
+        } else if (csc446Total >= 40 && csc446Total <= 44) {
+            CSC_446_GRADE.setSelectedIndex(5);
+        } else if (csc446Total >= 0 && csc446Total <= 39) {
+            CSC_446_GRADE.setSelectedIndex(6);
+        }
+
+        // Grade calculation for BIO101
+        if (csc482Total >= 70) {
+            CSC_482_GRADE.setSelectedIndex(1);
+        } else if (csc482Total >= 60 && csc482Total <= 69) {
+            CSC_482_GRADE.setSelectedIndex(2);
+        } else if (csc482Total >= 50 && csc482Total <= 59) {
+            CSC_482_GRADE.setSelectedIndex(3);
+        } else if (csc482Total >= 45 && csc482Total <= 49) {
+            CSC_482_GRADE.setSelectedIndex(4);
+        } else if (csc482Total >= 40 && csc482Total <= 44) {
+            CSC_482_GRADE.setSelectedIndex(5);
+        } else if (csc482Total >= 0 && csc482Total <= 39) {
+            CSC_482_GRADE.setSelectedIndex(6);
+        }
+
+        // Grade calculation for MGT101
+        if (csc464Total >= 70) {
+            CSC_464_GRADE.setSelectedIndex(1);
+        } else if (csc464Total >= 60 && csc464Total <= 69) {
+            CSC_464_GRADE.setSelectedIndex(2);
+        } else if (csc464Total >= 50 && csc464Total <= 59) {
+            CSC_464_GRADE.setSelectedIndex(3);
+        } else if (csc464Total >= 45 && csc464Total <= 49) {
+            CSC_464_GRADE.setSelectedIndex(4);
+        } else if (csc464Total >= 40 && csc464Total <= 44) {
+            CSC_464_GRADE.setSelectedIndex(5);
+        } else if (csc464Total >= 0 && csc464Total <= 39) {
+            CSC_464_GRADE.setSelectedIndex(6);
+        }
+
+        // Grade calculation for PHY105
+        if (csc428Total >= 70) {
+            CSC_428_GRADE.setSelectedIndex(1);
+        } else if (csc428Total >= 60 && csc428Total <= 69) {
+            CSC_428_GRADE.setSelectedIndex(2);
+        } else if (csc428Total >= 50 && csc428Total <= 59) {
+            CSC_428_GRADE.setSelectedIndex(3);
+        } else if (csc428Total >= 45 && csc428Total <= 49) {
+            CSC_428_GRADE.setSelectedIndex(4);
+        } else if (csc428Total >= 40 && csc428Total <= 44) {
+            CSC_428_GRADE.setSelectedIndex(5);
+        } else if (csc428Total >= 0 && csc428Total <= 39) {
+            CSC_428_GRADE.setSelectedIndex(6);
+        }
+
+        int csc412unit = 2;
+        int csc424unit = 3;
+        int csc442unit = 3;
+        int csc426Unit = 2;
+        int csc446unit = 1;
+        int csc482unit = 3;
+        int csc428unit = 2;
+        int csc464unit = 2;
+
+        // Grade calculation for CSC101
+        int csc412pointvalue = getPointValue(CSC_412_GRADE.getSelectedItem().toString());
+        int csc424pointvalue = getPointValue(CSC_424_GRADE.getSelectedItem().toString());
+        int csc442pointvalue = getPointValue(CSC_442_GRADE.getSelectedItem().toString());
+        int csc426pointvalue = getPointValue(CSC_426_GRADE.getSelectedItem().toString());
+        int csc446pointvalue = getPointValue(CSC_446_GRADE.getSelectedItem().toString());
+        int csc482pointvalue = getPointValue(CSC_482_GRADE.getSelectedItem().toString());
+        int csc464pointvalue = getPointValue(CSC_464_GRADE.getSelectedItem().toString());
+        int csc428pointvalue = getPointValue(CSC_428_GRADE.getSelectedItem().toString());
+
+        int totalPoints = (csc412pointvalue * csc412unit) + (csc424pointvalue * csc424unit)
+                + (csc442pointvalue * csc442unit) + (csc426pointvalue * csc426Unit)
+                + (csc428pointvalue * csc446unit) + (csc482pointvalue * csc482unit)
+                + (csc446pointvalue * csc428unit) + (csc464pointvalue * csc464unit);
+        int totalUnits = csc412unit + csc424unit + csc442unit + csc426Unit + csc446unit + csc482unit + csc428unit + csc464unit;
+        double gpa = (double) totalPoints / totalUnits;
+        double roundedGpa = Math.round(gpa * 100.0) / 100.0;
+        gpInLevel.setText(String.valueOf(roundedGpa));
+
     }
 
-    // Grade calculation for STA111
-    if (sta111Total >= 70) {
-        STA111_GRADE.setSelectedIndex(1);
-    } else if (sta111Total >= 60 && sta111Total <= 69) {
-        STA111_GRADE.setSelectedIndex(2);
-    } else if (sta111Total >= 50 && sta111Total <= 59) {
-        STA111_GRADE.setSelectedIndex(3);
-    } else if (sta111Total >= 45 && sta111Total <= 49) {
-        STA111_GRADE.setSelectedIndex(4);
-    } else if (sta111Total >= 40 && sta111Total <= 44) {
-        STA111_GRADE.setSelectedIndex(5);
-    } else if (sta111Total >= 0 && sta111Total <= 39) {
-        STA111_GRADE.setSelectedIndex(6);
-    }
-
-    // Grade calculation for GST105
-    if (gst105Total >= 70) {
-        GST105_GRADE.setSelectedIndex(1);
-    } else if (gst105Total >= 60 && gst105Total <= 69) {
-        GST105_GRADE.setSelectedIndex(2);
-    } else if (gst105Total >= 50 && gst105Total <= 59) {
-        GST105_GRADE.setSelectedIndex(3);
-    } else if (gst105Total >= 45 && gst105Total <= 49) {
-        GST105_GRADE.setSelectedIndex(4);
-    } else if (gst105Total >= 40 && gst105Total <= 44) {
-        GST105_GRADE.setSelectedIndex(5);
-    } else if (gst105Total >= 0 && gst105Total <= 39) {
-        GST105_GRADE.setSelectedIndex(6);
-    }
-
-    // Grade calculation for BIO101
-    if (bio101Total >= 70) {
-        BIO101_GRADE.setSelectedIndex(1);
-    } else if (bio101Total >= 60 && bio101Total <= 69) {
-        BIO101_GRADE.setSelectedIndex(2);
-    } else if (bio101Total >= 50 && bio101Total <= 59) {
-        BIO101_GRADE.setSelectedIndex(3);
-    } else if (bio101Total >= 45 && bio101Total <= 49) {
-        BIO101_GRADE.setSelectedIndex(4);
-    } else if (bio101Total >= 40 && bio101Total <= 44) {
-        BIO101_GRADE.setSelectedIndex(5);
-    } else if (bio101Total >= 0 && bio101Total <= 39) {
-        BIO101_GRADE.setSelectedIndex(6);
-    }
-
-    // Grade calculation for MGT101
-    if (mgt101Total >= 70) {
-        MGT101_GRADE.setSelectedIndex(1);
-    } else if (mgt101Total >= 60 && mgt101Total <= 69) {
-        MGT101_GRADE.setSelectedIndex(2);
-    } else if (mgt101Total >= 50 && mgt101Total <= 59) {
-        MGT101_GRADE.setSelectedIndex(3);
-    } else if (mgt101Total >= 45 && mgt101Total <= 49) {
-        MGT101_GRADE.setSelectedIndex(4);
-    } else if (mgt101Total >= 40 && mgt101Total <= 44) {
-        MGT101_GRADE.setSelectedIndex(5);
-    } else if (mgt101Total >= 0 && mgt101Total <= 39) {
-        MGT101_GRADE.setSelectedIndex(6);
-    }
-
-    // Grade calculation for PHY105
-    if (phy105Total >= 70) {
-        PHY105_GRADE.setSelectedIndex(1);
-    } else if (phy105Total >= 60 && phy105Total <= 69) {
-        PHY105_GRADE.setSelectedIndex(2);
-    } else if (phy105Total >= 50 && phy105Total <= 59) {
-        PHY105_GRADE.setSelectedIndex(3);
-    } else if (phy105Total >= 45 && phy105Total <= 49) {
-        PHY105_GRADE.setSelectedIndex(4);
-    } else if (phy105Total >= 40 && phy105Total <= 44) {
-        PHY105_GRADE.setSelectedIndex(5);
-    } else if (phy105Total >= 0 && phy105Total <= 39) {
-        PHY105_GRADE.setSelectedIndex(6);
-    }
-    
-    int csc101unit = 2;
-    int mat101unit = 3;
-    int phy101unit = 3;
-    int sta111Unit = 2;
-    int phy105unit = 1;
-    int bio101unit = 3;
-    int gst105unit = 2;
-    int mgt101unit = 2;
-    
-    // Grade calculation for CSC101
-    int csc101pointvalue = getPointValue(CSC101_GRADE.getSelectedItem().toString());
-    int mat101pointvalue = getPointValue(MAT101_GRADE.getSelectedItem().toString());
-    int phy101pointvalue = getPointValue(PHY101_GRADE.getSelectedItem().toString());
-    int sta111pointvalue = getPointValue(STA111_GRADE.getSelectedItem().toString());
-    int gst105pointvalue = getPointValue(GST105_GRADE.getSelectedItem().toString());
-    int bio101pointvalue = getPointValue(BIO101_GRADE.getSelectedItem().toString());
-    int mgt101pointvalue = getPointValue(MGT101_GRADE.getSelectedItem().toString());
-    int phy105pointvalue = getPointValue(PHY105_GRADE.getSelectedItem().toString());
-    
-     int totalPoints = (csc101pointvalue * csc101unit) + (mat101pointvalue * mat101unit) +
-                        (phy101pointvalue * phy101unit) + (sta111pointvalue * sta111Unit) +
-                        (phy105pointvalue * phy105unit) + (bio101pointvalue * bio101unit) +
-                        (gst105pointvalue * gst105unit) + (mgt101pointvalue * mgt101unit);
-     int totalUnits = csc101unit + mat101unit + phy101unit + sta111Unit + phy105unit + bio101unit + gst105unit + mgt101unit;
-     double gpa = (double) totalPoints / totalUnits;
-     double roundedGpa = Math.round(gpa * 100.0) / 100.0;
-     gpInLevel.setText(String.valueOf(roundedGpa));
-     
-}
     public int getPointValue(String grade) {
-    switch (grade) {
-        case "A": return 5;
-        case "B": return 4;
-        case "C": return 3;
-        case "D": return 2;
-        case "E": return 1;
-        case "F": return 0;
-        default: return 0;
-               
-                
-                
+        switch (grade) {
+            case "A":
+                return 5;
+            case "B":
+                return 4;
+            case "C":
+                return 3;
+            case "D":
+                return 2;
+            case "E":
+                return 1;
+            case "F":
+                return 0;
+            default:
+                return 0;
+
+        }
     }
-}
 
     private void cal_scoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cal_scoreActionPerformed
         CalScore();
 // TODO add your handling code here:
     }//GEN-LAST:event_cal_scoreActionPerformed
 
-    private void PHY101_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PHY101_SCOREActionPerformed
+    private void CSC_442_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_442_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PHY101_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_442_SCOREActionPerformed
 
-    private void MAT_101_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MAT_101_SCOREActionPerformed
+    private void CSC_424_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_424_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MAT_101_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_424_SCOREActionPerformed
 
-    private void CSC101_GRADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC101_GRADEActionPerformed
+    private void CSC_412_GRADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_412_GRADEActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CSC101_GRADEActionPerformed
+    }//GEN-LAST:event_CSC_412_GRADEActionPerformed
 
-    private void PYH105_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PYH105_SCOREActionPerformed
+    private void CSC_428_SCOREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_428_SCOREActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PYH105_SCOREActionPerformed
+    }//GEN-LAST:event_CSC_428_SCOREActionPerformed
 
-    private void BIO101_GRADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIO101_GRADEActionPerformed
+    private void CSC_482_GRADEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSC_482_GRADEActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BIO101_GRADEActionPerformed
+    }//GEN-LAST:event_CSC_482_GRADEActionPerformed
 
     private void gpInLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gpInLevelActionPerformed
         // TODO add your handling code here:
@@ -1047,36 +1053,42 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        if ("".equals(CSC101_CA_SCORE.getText().trim()) || "".equals(CSC101_EXAMSCORE.getText().trim())  ||
-        "".equals(MAT101_CA_SCORE.getText().trim()) || "".equals(MAT101_EXAM_SCORE.getText().trim()) ||
-        "".equals(PHY101_CA_SCORE.getText().trim()) || "".equals(PHY101_EXAM_SCORE.getText().trim()) ||
-        "".equals(STA111_CA_SCORE.getText().trim()) || "".equals(STA111_EXAM_SCORE.getText().trim()) ||
-        "".equals(BIO101_CA_SCORE.getText().trim()) || "".equals(BIO101_EXAM_SCORE.getText().trim()) ||
-        "".equals(GST105_CA_SCORE.getText().trim()) || "".equals(GST105_EXAM_SCORE.getText().trim()) ||
-        "".equals(MGT101_CA_SCORE.getText().trim()) || "".equals(MGT101_EXAM_SCORE.getText().trim()) ||
-        "".equals(PHY105_CA_SCORE.getText().trim()) || "".equals(PHY105_EXAM_SCORE.getText().trim())){
+        if (StudentRegNum.getText().length() != 14) {
+            JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        if ("".equals(CSC_412_CA_SCORE.getText().trim()) || "".equals(CSC412_EXAMSCORE.getText().trim())
+                || "".equals(CSC_424_CA_SCORE.getText().trim()) || "".equals(CSC_424_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_442_CA_SCORE.getText().trim()) || "".equals(CSC442_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_426_CA_SCORE.getText().trim()) || "".equals(CSC_426_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_482_CA_SCORE.getText().trim()) || "".equals(CSC_482_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_446_CA_SCORE.getText().trim()) || "".equals(CSC_446_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_464_CA_SCORE.getText().trim()) || "".equals(CSC464_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_428_CA_SCORE.getText().trim()) || "".equals(CSC_428_EXAM_SCORE.getText().trim())) {
 
-        JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-         if ("".equals(CSC101_FINALSCORE.getText().trim()) || "".equals(MAT_101_SCORE.getText().trim()) ||
-        "".equals(PHY101_SCORE.getText().trim()) || "".equals(STA111_SCORE.getText().trim()) ||
-        "".equals(BIO101_SCORE.getText().trim()) || "".equals(GST105_SCORE.getText().trim()) ||
-        "".equals(MGT101_SCORE.getText().trim()) || "".equals(PYH105_SCORE.getText().trim())) {
+            JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if ("".equals(CSC412_FINALSCORE.getText().trim()) || "".equals(CSC_424_SCORE.getText().trim())
+                || "".equals(CSC_442_SCORE.getText().trim()) || "".equals(CSC_426_SCORE.getText().trim())
+                || "".equals(CSC_482_SCORE.getText().trim()) || "".equals(CSC_446_SCORE.getText().trim())
+                || "".equals(CSC464_SCORE.getText().trim()) || "".equals(CSC_428_SCORE.getText().trim())) {
 
-        JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
-        return;
-    }
-       String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+            JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
         String username = "sql8730305";
         String password = "VGxAU93HkA";
-        String checkStatement = "SELECT * FROM level1_semester1 WHERE reg_number = ?";
-        String statement = "INSERT INTO level1_semester1(session, semester, level, reg_number, name_of_student, "
-                + "fee, passport, csc101_score, csc101_grade, mat101_score, mat101_grade, phy101_score, phy101_grade,"
-                + " sta111_score, sta111_grade, phy105_score, phy105_grade, bio101_score, bio101_grade, gst105_score, "
-                + "gst105_grade, mgt101_score, mgt101_grade, gpa) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String checkStatement = "SELECT * FROM level4_semester2 WHERE reg_number = ?";
+        String statement = "INSERT INTO level4_semester2(session, semester, level, reg_number, name_of_student, "
+                + "fee, passport,course1, course2, course3, course4, course5, course6, course7, course8, csc412_score, "
+                + "csc412_grade, csc424_score, csc424_grade, csc442_score, csc442_grade, csc426_score, csc426_grade, "
+                + "csc446_score, csc446_grade, csc482_score, csc482_grade, csc428_score, csc428_grade, "
+                + "csc464_score, csc464_grade, gpa) "
+                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         String regNumValue = StudentRegNum.getText().toUpperCase();
-
+///202110848885eg
         try (Connection conn = DriverManager.getConnection(url, username, password)) {
             // Check for existing registration number
             try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
@@ -1092,55 +1104,62 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
             // Insert the data along with the image
             try (PreparedStatement psmt = conn.prepareStatement(statement); FileInputStream fis = new FileInputStream(filename)) {
 
-        int session = Integer.parseInt(Session.getText());
-        psmt.setInt(1, session);
-        psmt.setString(2, Semester.getSelectedItem().toString());
-        int level = Integer.parseInt(lvl.getText());
-        psmt.setInt(3, level);
-        psmt.setString(4, StudentRegNum.getText().toUpperCase());
-        psmt.setString(5, studentName.getText().toUpperCase());
-        psmt.setString(6, feesStatus.getSelectedItem().toString());
-        psmt.setBinaryStream(7, fis, (int) new File(filename).length());
+                int session = Integer.parseInt(Session.getText());
+                psmt.setInt(1, session);
+                psmt.setString(2, Semester.getSelectedItem().toString());
+                int level = Integer.parseInt(lvl.getText());
+                psmt.setInt(3, level);
+                psmt.setString(4, StudentRegNum.getText().toUpperCase());
+                psmt.setString(5, studentName.getText().toUpperCase());
+                psmt.setString(6, feesStatus.getSelectedItem().toString());
+                psmt.setBinaryStream(7, fis, (int) new File(filename).length());
+                psmt.setString(8, CSC_412.getText());
+                psmt.setString(9, CSC_424.getText());
+                psmt.setString(10, CSC_442.getText());
+                psmt.setString(11, CSC_426.getText());
+                psmt.setString(12, CSC_428.getText());
+                psmt.setString(13, CSC_482.getText());
+                psmt.setString(14, CSC_446.getText());
+                psmt.setString(15, CSC_464.getText());
+                psmt.setInt(16, Integer.parseInt(CSC412_FINALSCORE.getText().trim()));
+                psmt.setString(17, CSC_412_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(8, Integer.parseInt(CSC101_FINALSCORE.getText().trim()));
-        psmt.setString(9, CSC101_GRADE.getSelectedItem().toString());
+                psmt.setInt(18, Integer.parseInt(CSC_424_SCORE.getText().trim()));
+                psmt.setString(19, CSC_424_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(10, Integer.parseInt(MAT_101_SCORE.getText().trim()));
-        psmt.setString(11, MAT101_GRADE.getSelectedItem().toString());
+                psmt.setInt(20, Integer.parseInt(CSC_442_SCORE.getText().trim()));
+                psmt.setString(21, CSC_442_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(12, Integer.parseInt(PHY101_SCORE.getText().trim()));
-        psmt.setString(13, PHY101_GRADE.getSelectedItem().toString());
+                psmt.setInt(22, Integer.parseInt(CSC_426_SCORE.getText().trim()));
+                psmt.setString(23, CSC_426_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(14, Integer.parseInt(STA111_SCORE.getText().trim()));
-        psmt.setString(15, STA111_GRADE.getSelectedItem().toString());
+                psmt.setInt(24, Integer.parseInt(CSC_428_SCORE.getText().trim()));
+                psmt.setString(25, CSC_428_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(16, Integer.parseInt(PYH105_SCORE.getText().trim()));
-        psmt.setString(17, PHY105_GRADE.getSelectedItem().toString());
+                psmt.setInt(26, Integer.parseInt(CSC_482_SCORE.getText().trim()));
+                psmt.setString(27, CSC_482_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(18, Integer.parseInt(BIO101_SCORE.getText().trim()));
-        psmt.setString(19, BIO101_GRADE.getSelectedItem().toString());
+                psmt.setInt(28, Integer.parseInt(CSC_446_SCORE.getText().trim()));
+                psmt.setString(29, CSC_446_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(20, Integer.parseInt(GST105_SCORE.getText().trim()));
-        psmt.setString(21, GST105_GRADE.getSelectedItem().toString());
+                psmt.setInt(30, Integer.parseInt(CSC464_SCORE.getText().trim()));
+                psmt.setString(31, CSC_464_GRADE.getSelectedItem().toString());
 
-        psmt.setInt(22, Integer.parseInt(MGT101_SCORE.getText().trim()));
-        psmt.setString(23, MGT101_GRADE.getSelectedItem().toString());
+                psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
 
-        psmt.setDouble(24, Double.parseDouble(gpInLevel.getText().trim()));
-
-        int updateToDB = psmt.executeUpdate();
-        if (updateToDB != 0) {
-            JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }
+                int updateToDB = psmt.executeUpdate();
+                if (updateToDB != 0) {
+                    JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
 
         } catch (SQLException | IOException exceptionMessage) {
-        if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-            JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
+            if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
-    }
     }
 
     public void UploadPicture() {
@@ -1201,46 +1220,46 @@ PYH105_SCORE.setText(String.valueOf(phy105Total));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField BIO101_CA_SCORE;
-    private javax.swing.JTextField BIO101_EXAM_SCORE;
-    private javax.swing.JComboBox<String> BIO101_GRADE;
-    private javax.swing.JTextField BIO101_SCORE;
-    private javax.swing.JLabel BIO_101;
-    private javax.swing.JTextField CSC101_CA_SCORE;
-    private javax.swing.JTextField CSC101_EXAMSCORE;
-    private javax.swing.JTextField CSC101_FINALSCORE;
-    private javax.swing.JComboBox<String> CSC101_GRADE;
-    private javax.swing.JLabel CSC_201;
-    private javax.swing.JTextField GST105_CA_SCORE;
-    private javax.swing.JTextField GST105_EXAM_SCORE;
-    private javax.swing.JComboBox<String> GST105_GRADE;
-    private javax.swing.JTextField GST105_SCORE;
-    private javax.swing.JLabel GST_105;
-    private javax.swing.JTextField MAT101_CA_SCORE;
-    private javax.swing.JTextField MAT101_EXAM_SCORE;
-    private javax.swing.JComboBox<String> MAT101_GRADE;
-    private javax.swing.JLabel MAT_101;
-    private javax.swing.JTextField MAT_101_SCORE;
-    private javax.swing.JTextField MGT101_CA_SCORE;
-    private javax.swing.JTextField MGT101_EXAM_SCORE;
-    private javax.swing.JComboBox<String> MGT101_GRADE;
-    private javax.swing.JTextField MGT101_SCORE;
-    private javax.swing.JLabel MGT_101;
-    private javax.swing.JTextField PHY101_CA_SCORE;
-    private javax.swing.JTextField PHY101_EXAM_SCORE;
-    private javax.swing.JComboBox<String> PHY101_GRADE;
-    private javax.swing.JTextField PHY101_SCORE;
-    private javax.swing.JTextField PHY105_CA_SCORE;
-    private javax.swing.JTextField PHY105_EXAM_SCORE;
-    private javax.swing.JComboBox<String> PHY105_GRADE;
-    private javax.swing.JLabel PHY_101;
-    private javax.swing.JLabel PHY_105;
-    private javax.swing.JTextField PYH105_SCORE;
-    private javax.swing.JTextField STA111_CA_SCORE;
-    private javax.swing.JTextField STA111_EXAM_SCORE;
-    private javax.swing.JComboBox<String> STA111_GRADE;
-    private javax.swing.JTextField STA111_SCORE;
-    private javax.swing.JLabel STA_111;
+    private javax.swing.JTextField CSC412_EXAMSCORE;
+    private javax.swing.JTextField CSC412_FINALSCORE;
+    private javax.swing.JTextField CSC442_EXAM_SCORE;
+    private javax.swing.JTextField CSC464_EXAM_SCORE;
+    private javax.swing.JTextField CSC464_SCORE;
+    private javax.swing.JLabel CSC_412;
+    private javax.swing.JTextField CSC_412_CA_SCORE;
+    private javax.swing.JComboBox<String> CSC_412_GRADE;
+    private javax.swing.JLabel CSC_424;
+    private javax.swing.JTextField CSC_424_CA_SCORE;
+    private javax.swing.JTextField CSC_424_EXAM_SCORE;
+    private javax.swing.JComboBox<String> CSC_424_GRADE;
+    private javax.swing.JTextField CSC_424_SCORE;
+    private javax.swing.JLabel CSC_426;
+    private javax.swing.JTextField CSC_426_CA_SCORE;
+    private javax.swing.JTextField CSC_426_EXAM_SCORE;
+    private javax.swing.JComboBox<String> CSC_426_GRADE;
+    private javax.swing.JTextField CSC_426_SCORE;
+    private javax.swing.JLabel CSC_428;
+    private javax.swing.JTextField CSC_428_CA_SCORE;
+    private javax.swing.JTextField CSC_428_EXAM_SCORE;
+    private javax.swing.JComboBox<String> CSC_428_GRADE;
+    private javax.swing.JTextField CSC_428_SCORE;
+    private javax.swing.JLabel CSC_442;
+    private javax.swing.JTextField CSC_442_CA_SCORE;
+    private javax.swing.JComboBox<String> CSC_442_GRADE;
+    private javax.swing.JTextField CSC_442_SCORE;
+    private javax.swing.JLabel CSC_446;
+    private javax.swing.JTextField CSC_446_CA_SCORE;
+    private javax.swing.JTextField CSC_446_EXAM_SCORE;
+    private javax.swing.JComboBox<String> CSC_446_GRADE;
+    private javax.swing.JTextField CSC_446_SCORE;
+    private javax.swing.JLabel CSC_464;
+    private javax.swing.JTextField CSC_464_CA_SCORE;
+    private javax.swing.JComboBox<String> CSC_464_GRADE;
+    private javax.swing.JLabel CSC_482;
+    private javax.swing.JTextField CSC_482_CA_SCORE;
+    private javax.swing.JTextField CSC_482_EXAM_SCORE;
+    private javax.swing.JComboBox<String> CSC_482_GRADE;
+    private javax.swing.JTextField CSC_482_SCORE;
     private javax.swing.JComboBox<String> Semester;
     private javax.swing.JTextField Session;
     private javax.swing.JTextField StudentRegNum;

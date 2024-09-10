@@ -14,8 +14,7 @@ public class WelcomeMenu extends javax.swing.JFrame {
      */
     public WelcomeMenu() {
         initComponents();
-   
-        
+
     }
 
     /**
@@ -110,14 +109,14 @@ public class WelcomeMenu extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-  
-        void Continue(){
+
+    void Continue() {
         AdminAndUserPage a = new AdminAndUserPage();
         a.setVisible(true);
         this.setVisible(false);
-         }
+    }
 
-    void cancel(){
+    void cancel() {
         this.dispose();
     }
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
@@ -156,9 +155,7 @@ public class WelcomeMenu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(WelcomeMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-      
 
-       
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
 import javax.imageio.ImageIO;
+
 public class ResultProcess extends javax.swing.JFrame {
 
     /**

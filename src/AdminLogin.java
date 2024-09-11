@@ -29,7 +29,7 @@ public class AdminLogin extends javax.swing.JFrame {
 
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        iii = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         loginAdmin = new javax.swing.JButton();
@@ -43,8 +43,8 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("WELCOME TO THE ADMIN MENU, LOGIN TO CONTINUE YOUR REGISTRATION");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        jLabel2.setText("USERNAME");
+        iii.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        iii.setText("USERNAME");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel3.setText("PASSWORD");
@@ -75,7 +75,7 @@ public class AdminLogin extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(iii, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
                         .addGap(79, 79, 79)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -97,7 +97,7 @@ public class AdminLogin extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(iii, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -122,12 +122,13 @@ public class AdminLogin extends javax.swing.JFrame {
 
         String USERNAME = username.getText();
         char[] passWrd = password.getPassword();
+        
         String PASSWORD = new String(passWrd);
 
-        if (USERNAME.equals("imsuworker") && PASSWORD.equals("imsuadmin")) {
+        if (USERNAME.equals("imsustaff") && PASSWORD.equals("imsuadmin")) {
             AdminMenuPage admin = new AdminMenuPage();
             boolean Value = true;
-            admin.setVisible(true);
+            admin.setVisible(Value);
             this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(this, "Unauthroized access to Admin Menu Page!!!", "Access Denied", JOptionPane.WARNING_MESSAGE);
@@ -186,9 +187,9 @@ public class AdminLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancleLogin;
+    private javax.swing.JLabel iii;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton loginAdmin;
     private javax.swing.JPasswordField password;

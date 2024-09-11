@@ -247,7 +247,7 @@ public class CheckResult extends javax.swing.JFrame {
                 String score8 = "";
                 String grade8 = "";
                 String gpa = "";
-
+                String studentSession = "";
                 switch (selectedSemester) {
                     case "YEAR 1 1ST SEMESTER":
                         score1 = String.valueOf(rs.getInt("csc101_score"));
@@ -267,6 +267,7 @@ public class CheckResult extends javax.swing.JFrame {
                         score8 = String.valueOf(rs.getInt("mgt101_score"));
                         grade8 = rs.getString("mgt101_grade");
                         gpa = String.valueOf(rs.getDouble("gpa"));
+                        studentSession= "YEAR 1 1ST SEMESTER RESULT SLIP";
                         break;
                     case "YEAR 1 2ND SEMESTER":
                         score1 = String.valueOf(rs.getInt("csc102_score"));
@@ -286,6 +287,7 @@ public class CheckResult extends javax.swing.JFrame {
                         score8 = String.valueOf(rs.getInt("gst104_score"));
                         grade8 = rs.getString("gst104_grade");
                         gpa = String.valueOf(rs.getDouble("gpa"));
+                        studentSession= "YEAR 1 2ND SEMESTER RESULT SLIP";
                         break;
                     case "YEAR 2 1ST SEMESTER":
                         score1 = String.valueOf(rs.getInt("csc231_score"));
@@ -313,6 +315,7 @@ public class CheckResult extends javax.swing.JFrame {
                         grade8 = rs.getString("csc207_grade");
 
                         gpa = String.valueOf(rs.getDouble("gpa"));
+                        studentSession= "YEAR 2 1ST SEMESTER RESULT SLIP";
 
                         break;
                     case "YEAR 2 2ND SEMESTER":
@@ -341,6 +344,7 @@ public class CheckResult extends javax.swing.JFrame {
                         grade8 = rs.getString("csc204_grade");
 
                         gpa = String.valueOf(rs.getDouble("gpa"));
+                        studentSession= "YEAR 2 2ND SEMESTER RESULT SLIP";
 
                         break;
                     case "YEAR 3 1ST SEMESTER":
@@ -369,6 +373,7 @@ public class CheckResult extends javax.swing.JFrame {
                         grade8 = rs.getString("csc323_grade");
 
                         gpa = String.valueOf(rs.getDouble("gpa"));
+                        studentSession= "YEAR 3 1ST SEMESTER RESULT SLIP";
                         break;
                     case "YEAR 3 2ND SEMESTER":
                         // Handle scores and grades for this semester
@@ -399,6 +404,7 @@ public class CheckResult extends javax.swing.JFrame {
                         grade8 = rs.getString("csc411_grade");
 
                         gpa = String.valueOf(rs.getDouble("gpa"));
+                        studentSession= "YEAR 4 1ST SEMESTER RESULT SLIP";
 
                         break;
                     case "YEAR 4 2ND SEMESTER":
@@ -427,7 +433,7 @@ public class CheckResult extends javax.swing.JFrame {
                         grade8 = rs.getString("csc464_grade");
 
                         gpa = String.valueOf(rs.getDouble("gpa"));
-
+                        studentSession= "YEAR 4 2ND SEMESTER RESULT SLIP";
                         break;
                 }
 
@@ -453,9 +459,10 @@ public class CheckResult extends javax.swing.JFrame {
                     return;
                 }
                 ResultProcess rp = new ResultProcess();
-                rp.student_fname.setText(name);
+                rp.student_fname.setText(name+".");
                 rp.reg.setText(regNum);
                 rp.lvl.setText(level);
+                rp.Student_Session.setText(studentSession);
                 rp.course1.setText(course1);
                 rp.course2.setText(course2);
                 rp.course3.setText(course3);

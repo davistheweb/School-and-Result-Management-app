@@ -274,6 +274,7 @@ public class CheckResult extends javax.swing.JFrame {
                 // Set passport image if available
                 if (passportIcon != null) {
                     rp3.passportLabel.setIcon(passportIcon);
+                    rp3.passportLabel.setText("");
                 } else {
                     rp3.passportLabel.setIcon(null); // Optionally set a default image or placeholder
                 }
@@ -578,6 +579,7 @@ public class CheckResult extends javax.swing.JFrame {
                 // Set passport image if available
                 if (passportIcon != null) {
                     rp.passportLabel.setIcon(passportIcon);
+                    rp.passportLabel.setText("");
                 } else {
                     rp.passportLabel.setIcon(null); // Optionally set a default image or placeholder
                 }

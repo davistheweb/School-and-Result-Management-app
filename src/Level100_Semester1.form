@@ -73,12 +73,13 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jLabel19" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="gpInLevel" min="-2" pref="107" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabel19" min="-2" pref="85" max="-2" attributes="0"/>
                                           <Component id="CSC101_FINALSCORE" min="-2" pref="53" max="-2" attributes="0"/>
                                           <Component id="MAT_101_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
                                           <Component id="PHY101_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
@@ -89,12 +90,8 @@
                                           <Component id="MGT101_SCORE" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="gpInLevel" min="-2" pref="107" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
-                              <EmptySpace min="0" pref="628" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="633" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -180,45 +177,6 @@
                                           <Component id="jLabel1" min="-2" pref="551" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="CSC101_GRADE" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="MAT101_GRADE" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="PHY101_GRADE" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="STA111_GRADE" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="PHY105_GRADE" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="BIO101_GRADE" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="GST105_GRADE" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="MGT101_GRADE" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <Group type="102" alignment="1" attributes="0">
-                                                              <Component id="feesStatus" min="-2" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel10" min="-2" pref="24" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                                              <Component id="jLabel21" min="-2" pref="34" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                                  </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="Session" min="-2" pref="71" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
@@ -232,15 +190,54 @@
                                                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                                                       <Component id="jLabel6" min="-2" pref="82" max="-2" attributes="0"/>
                                                   </Group>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Component id="jLabel21" min="-2" pref="34" max="-2" attributes="0"/>
+                                                          <Group type="102" attributes="0">
+                                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="CSC101_GRADE" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="MAT101_GRADE" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="PHY101_GRADE" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="STA111_GRADE" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="PHY105_GRADE" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="BIO101_GRADE" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="GST105_GRADE" min="-2" max="-2" attributes="0"/>
+                                                                      <Component id="MGT101_GRADE" min="-2" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                                  <Group type="102" alignment="1" attributes="0">
+                                                                      <Component id="feesStatus" min="-2" max="-2" attributes="0"/>
+                                                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                                                  </Group>
+                                                              </Group>
+                                                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                                  <Component id="jLabel10" min="-2" pref="24" max="-2" attributes="0"/>
+                                                              </Group>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="passport" min="-2" pref="130" max="-2" attributes="0"/>
                                                   <Component id="StudentRegNum" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="uploadPhoto" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="uploadPhoto" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -265,7 +262,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel1" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="jLabel26" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -300,20 +300,13 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="uploadPhoto" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel13" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel13" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -358,7 +351,7 @@
                                   <Component id="PHY105_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PHY105_EXAM_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="BIO_101" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                                   <Component id="BIO101_CA_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -388,7 +381,7 @@
                                   <Component id="PHY105_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="BIO101_SCORE" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="BIO101_GRADE" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1039,6 +1032,16 @@
                   <Image iconType="3" name="/image/imsulogo.png"/>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel26">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/backnewicon.png"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel26MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

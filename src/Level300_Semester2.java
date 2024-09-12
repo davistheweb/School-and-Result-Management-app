@@ -490,9 +490,9 @@ public class Level300_Semester2 extends javax.swing.JFrame {
 //        String username = "sql8730305";
 //        String password = "VGxAU93HkA";
         
-        String url = "jdbc:MySql://localhost:3306/imo_state_university";
-        String username = "root";
-        String password = "";
+        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+        String username = "sql8730305";
+        String password = "VGxAU93HkA";
         String checkStatement = "SELECT * FROM level3_semester2 WHERE reg_number = ?";
         String statement = "INSERT INTO level3_semester2(session, semester, level, reg_number, name_of_student, "
                 + "fee, passport, course, grade, total, gpa) "

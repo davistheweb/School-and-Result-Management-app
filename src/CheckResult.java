@@ -154,6 +154,7 @@ public class CheckResult extends javax.swing.JFrame {
     private void regNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regNumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_regNumberActionPerformed
+   
     public void CheckResultSlip() {
         if ("".equals(regNumber.getText())) {
             JOptionPane.showMessageDialog(this, "Field cannot be empty!", "Error", JOptionPane.INFORMATION_MESSAGE);
@@ -207,10 +208,82 @@ public class CheckResult extends javax.swing.JFrame {
         String password = "VGxAU93HkA";
 
         // Updated to use tableName instead of selectedSemester
-        String fetchByRegNumber = "SELECT * FROM " + tableName + " WHERE reg_number = ?";
+        
+        if ("YEAR 3 2ND SEMESTER".equals(selectedSemester)){
+            
+            try (Connection conn = DriverManager.getConnection(url, username, password);){
+            String fetchByRegNumber = "SELECT * FROM " + tableName + " WHERE reg_number = ?";
+            PreparedStatement pstm = conn.prepareStatement(fetchByRegNumber);
 
-        try {
-            Connection conn = DriverManager.getConnection(url, username, password);
+            pstm.setString(1, registrationNumber);
+            ResultSet rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                String feeStatus = rs.getString("fee");
+                String semester = rs.getString("semester");
+                String level = String.valueOf(rs.getInt("level"));
+                String regNum = rs.getString("reg_number");
+                String name = rs.getString("name_of_student");
+                String course1 = rs.getString("course");
+                String gpa = String.valueOf(rs.getDouble("gpa"));
+                String total = String.valueOf(rs.getInt("total"));
+                String grade = rs.getString("grade");
+                String studentSession = "YEAR 3 2ND SEMESTER";
+         
+                Blob blob = rs.getBlob("passport");
+                ImageIcon passportIcon = null;
+                if (blob != null) {
+                    try (InputStream inputStream = blob.getBinaryStream()) {
+                        BufferedImage image = ImageIO.read(inputStream);
+                        if (image != null) {
+                            passportIcon = new ImageIcon(image);
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Image could not be read", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } catch (IOException e) {
+                        JOptionPane.showMessageDialog(this, "Error reading image: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+
+                // Now you can use each string independently or process them further
+                if ("UNPAID".equals(feeStatus)) {
+                    JOptionPane.showMessageDialog(this, "You can't check result until you Pay Your fees", "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                ResultProcess_level3 rp3 = new ResultProcess_level3();
+                
+                rp3.student_fname.setText(name+".");
+                rp3.reg.setText(regNum);
+                rp3.lvl.setText(level);
+                rp3.Student_Session.setText(studentSession);
+                rp3.course.setText(course1);
+                rp3.studentScore.setText(total);
+                rp3.studentGrade.setText(grade);
+                rp3.gpa.setText(gpa);
+
+                // Set passport image if available
+                if (passportIcon != null) {
+                    rp3.passportLabel.setIcon(passportIcon);
+                } else {
+                    rp3.passportLabel.setIcon(null); // Optionally set a default image or placeholder
+                }
+
+                rp3.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Record Not found!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (SQLException exceptionMessage) {
+            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+                JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+            return;
+        }else{
+            String fetchByRegNumber = "SELECT * FROM " + tableName + " WHERE reg_number = ?";
+        try (Connection conn = DriverManager.getConnection(url, username, password);){
+            
             PreparedStatement pstm = conn.prepareStatement(fetchByRegNumber);
 
             pstm.setString(1, registrationNumber);
@@ -375,9 +448,6 @@ public class CheckResult extends javax.swing.JFrame {
                         gpa = String.valueOf(rs.getDouble("gpa"));
                         studentSession= "YEAR 3 1ST SEMESTER RESULT SLIP";
                         break;
-                    case "YEAR 3 2ND SEMESTER":
-                        // Handle scores and grades for this semester
-                        break;
                     case "YEAR 4 1ST SEMESTER":
                         score1 = String.valueOf(rs.getInt("csc401_score"));
                         grade1 = rs.getString("csc401_grade");
@@ -458,7 +528,7 @@ public class CheckResult extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "You can't check result until you Pay Your fees", "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-                ResultProcess rp = new ResultProcess();
+                ResultProcessScript rp = new ResultProcessScript();
                 rp.student_fname.setText(name+".");
                 rp.reg.setText(regNum);
                 rp.lvl.setText(level);
@@ -504,7 +574,7 @@ public class CheckResult extends javax.swing.JFrame {
 
                 rp.setVisible(true);
             } else {
-                JOptionPane.showMessageDialog(this, "It does not exist", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Record Not found!", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } catch (SQLException exceptionMessage) {
             if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
@@ -514,7 +584,7 @@ public class CheckResult extends javax.swing.JFrame {
             }
         }
     }
-
+    }
 
     private void checkResultSlipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkResultSlipActionPerformed
         CheckResultSlip();

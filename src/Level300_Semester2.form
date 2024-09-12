@@ -274,7 +274,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="12" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="400 LEVEL 2ND SEMESTER RESULT POSTING SYSTEM"/>
+            <Property name="text" type="java.lang.String" value="300 LEVEL 2ND SEMESTER RESULT POSTING SYSTEM"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">

@@ -274,7 +274,7 @@ public class StudentRegistration extends javax.swing.JFrame {
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(feesStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(passportFileName))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE))
@@ -286,6 +286,7 @@ public class StudentRegistration extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     void uploadData() {
+        try{
         
         try{
         
@@ -353,7 +354,9 @@ public class StudentRegistration extends javax.swing.JFrame {
         });
         
         }catch(Exception e){}
-        
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
 

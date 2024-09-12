@@ -807,6 +807,7 @@ public class Level100_Semester2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MAT102_EXAM_SCOREActionPerformed
     public void CalScore() {
+        try{
 
         // Check if any of the text fields are empty
         if ("".equals(CSC102_CA_SCORE.getText().trim()) || "".equals(CSC102_EXAMSCORE.getText().trim())
@@ -1014,6 +1015,9 @@ public class Level100_Semester2 extends javax.swing.JFrame {
         double gpa = (double) totalPoints / totalUnits;
         double roundedGpa = Math.round(gpa * 100.0) / 100.0;
         gpInLevel.setText(String.valueOf(roundedGpa));
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }
 
@@ -1071,6 +1075,7 @@ public class Level100_Semester2 extends javax.swing.JFrame {
     }//GEN-LAST:event_STA112_CA_SCOREActionPerformed
 
     void uploadData() {
+           try{
         if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1183,8 +1188,10 @@ public class Level100_Semester2 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
             }
         }
+    }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
-
     public void UploadPicture() {
         JFileChooser choosePicture = new JFileChooser();
         int returnVal = choosePicture.showOpenDialog(this);

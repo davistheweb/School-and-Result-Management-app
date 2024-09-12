@@ -424,6 +424,7 @@ public class Level300_Semester2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_StudentRegNumActionPerformed
     public void CalScore() {
+        
          if("SELECT GRADE".equals(gradeLetter.getSelectedItem().toString())){
          JOptionPane.showMessageDialog(this, "Pls Select Student Grade!!", "Complete Calculation!", JOptionPane.WARNING_MESSAGE);
             return;
@@ -476,6 +477,7 @@ public class Level300_Semester2 extends javax.swing.JFrame {
     }
 
     void uploadData() {
+        try{
         if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
             return;
@@ -483,13 +485,7 @@ public class Level300_Semester2 extends javax.swing.JFrame {
         if (StudentRegNum.getText().length() != 14) {
             JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
             return;
-        }
-        
-//   
-//        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-//        String username = "sql8730305";
-//        String password = "VGxAU93HkA";
-        
+        }    
         String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
         String username = "sql8730305";
         String password = "VGxAU93HkA";
@@ -540,6 +536,9 @@ public class Level300_Semester2 extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
             }
+        }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 

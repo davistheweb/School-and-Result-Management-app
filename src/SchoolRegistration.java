@@ -429,6 +429,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     public void upLoadDetails() {
+
         // Check for empty fields
         if ("".equals(regNum.getText()) || "".equals(studentName.getText()) || "".equals(dob.getText()) || "".equals(country.getText()) || "".equals(dateOnEntry.getText()) || "".equals(dateOnLeaving.getText())) {
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
@@ -450,6 +451,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "PLEASE SELECT STATE", "INVALID STATE", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        try{
         String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
         String username = "sql8730305";
         String password = "VGxAU93HkA";
@@ -502,6 +504,9 @@ public class SchoolRegistration extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
+        }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -582,49 +587,53 @@ public class SchoolRegistration extends javax.swing.JFrame {
     }
 
     void UpdateTableContent() {
-        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-        String username = "sql8730305";
-        String password = "VGxAU93HkA";
         try {
-            Connection conn = DriverManager.getConnection(url, username, password);
+            String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+            String username = "sql8730305";
+            String password = "VGxAU93HkA";
+            try {
+                Connection conn = DriverManager.getConnection(url, username, password);
 
-            int row = displayUserInTable.getSelectedRow();
-            String value = (displayUserInTable.getModel().getValueAt(row, 0).toString());
-            String query = "UPDATE school_registration SET regNum=?, Name=?, dob=?, nationality=?, date_on_entry=?, class_on_entry=?, age=?, state=?, gender=?, date_on_leaving=?, last_class_completed=? where id = " + value;
-            PreparedStatement pstm = conn.prepareStatement(query);
-            pstm.setString(1, regNum.getText());
-            pstm.setString(2, studentName.getText().toUpperCase());
-            pstm.setString(3, dob.getText());
-            pstm.setString(4, country.getText());
-            pstm.setString(5, dateOnEntry.getText());
-            String LevelOnEntry = levelOnEntry.getSelectedItem().toString();
+                int row = displayUserInTable.getSelectedRow();
+                String value = (displayUserInTable.getModel().getValueAt(row, 0).toString());
+                String query = "UPDATE school_registration SET regNum=?, Name=?, dob=?, nationality=?, date_on_entry=?, class_on_entry=?, age=?, state=?, gender=?, date_on_leaving=?, last_class_completed=? where id = " + value;
+                PreparedStatement pstm = conn.prepareStatement(query);
+                pstm.setString(1, regNum.getText());
+                pstm.setString(2, studentName.getText().toUpperCase());
+                pstm.setString(3, dob.getText());
+                pstm.setString(4, country.getText());
+                pstm.setString(5, dateOnEntry.getText());
+                String LevelOnEntry = levelOnEntry.getSelectedItem().toString();
 
-            pstm.setString(6, LevelOnEntry);
-            int studentAge = Integer.parseInt(age.getText());
-            pstm.setInt(7, studentAge);
-            String State = state.getSelectedItem().toString();
-            pstm.setString(8, State);
-            String Gender = gender.getSelectedItem().toString();
-            pstm.setString(9, Gender);
-            pstm.setString(10, dateOnLeaving.getText());
-            String LevelLastCompleted = levelLastCompleted.getSelectedItem().toString();
-            pstm.setString(11, LevelLastCompleted);
+                pstm.setString(6, LevelOnEntry);
+                int studentAge = Integer.parseInt(age.getText());
+                pstm.setInt(7, studentAge);
+                String State = state.getSelectedItem().toString();
+                pstm.setString(8, State);
+                String Gender = gender.getSelectedItem().toString();
+                pstm.setString(9, Gender);
+                pstm.setString(10, dateOnLeaving.getText());
+                String LevelLastCompleted = levelLastCompleted.getSelectedItem().toString();
+                pstm.setString(11, LevelLastCompleted);
 
-            int statementReport = pstm.executeUpdate();
-            DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
-            model.setRowCount(0);
-            showTables();
+                int statementReport = pstm.executeUpdate();
+                DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
+                model.setRowCount(0);
+                showTables();
 
-            if (statementReport > 0) {
-                JOptionPane.showMessageDialog(this, "Updated Successfully", "Completed", JOptionPane.INFORMATION_MESSAGE);
+                if (statementReport > 0) {
+                    JOptionPane.showMessageDialog(this, "Updated Successfully", "Completed", JOptionPane.INFORMATION_MESSAGE);
+                }
+
+            } catch (SQLException exceptionMessage) {
+                if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
+                    JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
-
-        } catch (SQLException exceptionMessage) {
-            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
-                JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 

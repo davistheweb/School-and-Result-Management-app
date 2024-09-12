@@ -788,6 +788,7 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CSC_424_EXAM_SCOREActionPerformed
     public void CalScore() {
+        try{
 
         // Check if any of the text fields are empty
         if ("".equals(CSC_412_CA_SCORE.getText().trim()) || "".equals(CSC412_EXAMSCORE.getText().trim())
@@ -996,6 +997,9 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         double gpa = (double) totalPoints / totalUnits;
         double roundedGpa = Math.round(gpa * 100.0) / 100.0;
         gpInLevel.setText(String.valueOf(roundedGpa));
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }
 

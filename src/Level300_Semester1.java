@@ -809,7 +809,7 @@ public class Level300_Semester1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CSC341_EXAM_SCOREActionPerformed
     public void CalScore() {
-
+        try{
         // Check if any of the text fields are empty
         if ("".equals(CSC361_CA_SCORE.getText().trim()) || "".equals(CSC361_EXAMSCORE.getText().trim())
                 || "".equals(CSC341_CA_SCORE.getText().trim()) || "".equals(CSC341_EXAM_SCORE.getText().trim())
@@ -1017,6 +1017,9 @@ public class Level300_Semester1 extends javax.swing.JFrame {
         double gpa = (double) totalPoints / totalUnits;
         double roundedGpa = Math.round(gpa * 100.0) / 100.0;
         gpInLevel.setText(String.valueOf(roundedGpa));
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }
 
@@ -1090,6 +1093,7 @@ public class Level300_Semester1 extends javax.swing.JFrame {
     }//GEN-LAST:event_CSC323_EXAM_SCOREActionPerformed
 
     void uploadData() {
+        try{
         if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
             return;
@@ -1200,6 +1204,9 @@ public class Level300_Semester1 extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
             }
+        }
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 

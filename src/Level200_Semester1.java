@@ -18,7 +18,6 @@ import javax.swing.JOptionPane;
  *
  * @author GOI
  */
-
 public class Level200_Semester1 extends javax.swing.JFrame {
 
     /**
@@ -1089,8 +1088,13 @@ public class Level200_Semester1 extends javax.swing.JFrame {
 
     void uploadData() {
         try {
-            if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
-                JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+            if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText())) {
+                JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (filename == null) {
+                JOptionPane.showMessageDialog(this, "PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+
                 return;
             }
             if ("".equals(CSC231_CA_SCORE.getText().trim()) || "".equals(CSC231_EXAMSCORE.getText().trim())
@@ -1121,6 +1125,7 @@ public class Level200_Semester1 extends javax.swing.JFrame {
             String username = "sql8730305";
             String password = "VGxAU93HkA";
             String checkStatement = "SELECT * FROM level2_semester1 WHERE reg_number = ?";
+            String RegNumbercheckStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
             String statement = "INSERT INTO level2_semester1(session, semester, level, reg_number, name_of_student, "
                     + "fee, passport, course1, course2, course3, course4, course5, course6, course7, course8, csc231_score, csc231_grade, mat211_score, mat211_grade, csc241_score, csc241_grade, "
                     + "acc203_score, acc203_grade, gst223_score, gst223_grade, csc205_score, csc205_grade, sta201_score, "
@@ -1139,61 +1144,79 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                         }
                     }
                 }
+            } catch (SQLException exceptionMessage) {
+                if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
 
-                // Insert the data along with the image
-                try (PreparedStatement psmt = conn.prepareStatement(statement); FileInputStream fis = new FileInputStream(filename)) {
+            // Insert the data along with the image
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                PreparedStatement RegNumbercheckPstm = conn.prepareStatement(RegNumbercheckStatement);
+                RegNumbercheckPstm.setString(1, regNumValue);
+                ResultSet res = RegNumbercheckPstm.executeQuery();
 
-                    int session = Integer.parseInt(Session.getText());
-                    psmt.setInt(1, session);
-                    psmt.setString(2, Semester.getSelectedItem().toString());
-                    int level = Integer.parseInt(lvl.getText());
-                    psmt.setInt(3, level);
-                    psmt.setString(4, StudentRegNum.getText().toUpperCase());
-                    psmt.setString(5, studentName.getText().toUpperCase());
-                    psmt.setString(6, feesStatus.getSelectedItem().toString());
-                    psmt.setBinaryStream(7, fis, (int) new File(filename).length());
-                    psmt.setString(8, CSC_231.getText());
-                    psmt.setString(9, MAT_211.getText());
-                    psmt.setString(10, CSC_241.getText());
-                    psmt.setString(11, STA_201.getText());
-                    psmt.setString(12, CSC_207.getText());
-                    psmt.setString(13, CSC_205.getText());
-                    psmt.setString(14, GST_223.getText());
-                    psmt.setString(15, ACC_203.getText());
+                PreparedStatement psmt = conn.prepareStatement(statement);
+                FileInputStream fis = new FileInputStream(filename);
 
-                    // From here, the numbering starts for the scores and grades
-                    psmt.setInt(16, Integer.parseInt(CSC231_FINALSCORE.getText().trim()));
-                    psmt.setString(17, CSC231_GRADE.getSelectedItem().toString());
+                int session = Integer.parseInt(Session.getText());
+                psmt.setInt(1, session);
+                psmt.setString(2, Semester.getSelectedItem().toString());
+                int level = Integer.parseInt(lvl.getText());
+                psmt.setInt(3, level);
+                psmt.setString(4, StudentRegNum.getText().toUpperCase());
+                psmt.setString(5, studentName.getText().toUpperCase());
+                psmt.setString(6, feesStatus.getSelectedItem().toString());
+                psmt.setBinaryStream(7, fis, (int) new File(filename).length());
+                psmt.setString(8, CSC_231.getText());
+                psmt.setString(9, MAT_211.getText());
+                psmt.setString(10, CSC_241.getText());
+                psmt.setString(11, STA_201.getText());
+                psmt.setString(12, CSC_207.getText());
+                psmt.setString(13, CSC_205.getText());
+                psmt.setString(14, GST_223.getText());
+                psmt.setString(15, ACC_203.getText());
 
-                    psmt.setInt(18, Integer.parseInt(MAT211_SCORE.getText().trim()));
-                    psmt.setString(19, MAT211_GRADE.getSelectedItem().toString());
+                // From here, the numbering starts for the scores and grades
+                psmt.setInt(16, Integer.parseInt(CSC231_FINALSCORE.getText().trim()));
+                psmt.setString(17, CSC231_GRADE.getSelectedItem().toString());
 
-                    psmt.setInt(20, Integer.parseInt(CSC241_SCORE.getText().trim()));
-                    psmt.setString(21, CSC241_GRADE.getSelectedItem().toString());
+                psmt.setInt(18, Integer.parseInt(MAT211_SCORE.getText().trim()));
+                psmt.setString(19, MAT211_GRADE.getSelectedItem().toString());
 
-                    psmt.setInt(22, Integer.parseInt(STA201_SCORE.getText().trim()));
-                    psmt.setString(23, STA201_GRADE.getSelectedItem().toString());
+                psmt.setInt(20, Integer.parseInt(CSC241_SCORE.getText().trim()));
+                psmt.setString(21, CSC241_GRADE.getSelectedItem().toString());
 
-                    psmt.setInt(24, Integer.parseInt(CSC207_SCORE.getText().trim()));
-                    psmt.setString(25, CSC207_GRADE.getSelectedItem().toString());
+                psmt.setInt(22, Integer.parseInt(STA201_SCORE.getText().trim()));
+                psmt.setString(23, STA201_GRADE.getSelectedItem().toString());
 
-                    psmt.setInt(26, Integer.parseInt(CSC205_SCORE.getText().trim()));
-                    psmt.setString(27, CSC205_GRADE.getSelectedItem().toString());
+                psmt.setInt(24, Integer.parseInt(CSC207_SCORE.getText().trim()));
+                psmt.setString(25, CSC207_GRADE.getSelectedItem().toString());
 
-                    psmt.setInt(28, Integer.parseInt(GST223_SCORE.getText().trim()));
-                    psmt.setString(29, GST223_GRADE.getSelectedItem().toString());
+                psmt.setInt(26, Integer.parseInt(CSC205_SCORE.getText().trim()));
+                psmt.setString(27, CSC205_GRADE.getSelectedItem().toString());
 
-                    psmt.setInt(30, Integer.parseInt(ACC203_SCORE.getText().trim()));
-                    psmt.setString(31, ACC203_GRADE.getSelectedItem().toString());
+                psmt.setInt(28, Integer.parseInt(GST223_SCORE.getText().trim()));
+                psmt.setString(29, GST223_GRADE.getSelectedItem().toString());
 
-                    psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
+                psmt.setInt(30, Integer.parseInt(ACC203_SCORE.getText().trim()));
+                psmt.setString(31, ACC203_GRADE.getSelectedItem().toString());
 
+                psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
+
+                if (res.next()) {
                     int updateToDB = psmt.executeUpdate();
                     if (updateToDB != 0) {
                         JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
                     }
-                }
+                } else {
 
+                    JOptionPane.showMessageDialog(this, "The Registration Number " + StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
+                    return;
+
+                }
             } catch (SQLException | IOException exceptionMessage) {
                 if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
                     JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
@@ -1229,40 +1252,39 @@ public class Level200_Semester1 extends javax.swing.JFrame {
         }
     }
 
-
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-    /* Set the Nimbus look and feel */
-    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-     */
-    try {
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-            if ("Nimbus".equals(info.getName())) {
-                javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                break;
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Level200_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Level200_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Level200_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Level200_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    } catch (ClassNotFoundException ex) {
-        java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (InstantiationException ex) {
-        java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (IllegalAccessException ex) {
-        java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-        java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        //</editor-fold>
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Level200_Semester1().setVisible(true);
+            }
+        });
     }
-    //</editor-fold>
-    /* Create and display the form */
-    java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
-            new Level200_Semester1().setVisible(true);
-        }
-    });
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ACC203_CA_SCORE;
@@ -1344,6 +1366,6 @@ public class Level200_Semester1 extends javax.swing.JFrame {
     private javax.swing.JButton uploadAll;
     private javax.swing.JButton uploadPhoto;
     // End of variables declaration//GEN-END:variables
-byte[] photo = null;
+    byte[] photo = null;
     String filename = null;
 }

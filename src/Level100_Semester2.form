@@ -178,57 +178,17 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel1" min="-2" pref="551" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="Session" min="-2" pref="71" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                                      <Component id="jLabel4" min="-2" pref="62" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="Semester" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                                      <Component id="jLabel5" min="-2" pref="43" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="lvl" min="-2" pref="71" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                                      <Component id="jLabel6" min="-2" pref="82" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="jLabel21" min="-2" pref="34" max="-2" attributes="0"/>
-                                                          <Group type="102" attributes="0">
-                                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                                                      <Component id="CSC102_GRADE" min="-2" max="-2" attributes="0"/>
-                                                                      <Component id="MAT102_GRADE" min="-2" max="-2" attributes="0"/>
-                                                                      <Component id="PHY102_GRADE" min="-2" max="-2" attributes="0"/>
-                                                                      <Component id="STA112_GRADE" min="-2" max="-2" attributes="0"/>
-                                                                      <Component id="PHY152_GRADE" min="-2" max="-2" attributes="0"/>
-                                                                      <Component id="CHE102_GRADE" min="-2" max="-2" attributes="0"/>
-                                                                      <Component id="GST108_GRADE" min="-2" max="-2" attributes="0"/>
-                                                                      <Component id="GST104_GRADE" min="-2" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                                  <Group type="102" alignment="1" attributes="0">
-                                                                      <Component id="feesStatus" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                              </Group>
-                                                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel10" min="-2" pref="24" max="-2" attributes="0"/>
-                                                              </Group>
-                                                          </Group>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
+                                              <Component id="Session" min="-2" pref="71" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                              <Component id="jLabel4" min="-2" pref="62" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="Semester" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="jLabel5" min="-2" pref="43" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="lvl" min="-2" pref="71" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                                              <Component id="jLabel6" min="-2" pref="82" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Group type="102" attributes="0">
                                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -236,8 +196,45 @@
                                                   </Group>
                                                   <Component id="jLabel8" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
                                                   <Component id="StudentRegNum" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="passport" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
                                               </Group>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="jLabel21" min="-2" pref="34" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="CSC102_GRADE" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="MAT102_GRADE" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="PHY102_GRADE" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="STA112_GRADE" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="PHY152_GRADE" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="CHE102_GRADE" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="GST108_GRADE" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="GST104_GRADE" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="1" attributes="0">
+                                                              <Component id="feesStatus" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel10" min="-2" pref="24" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                              <Component id="passport" min="-2" pref="133" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="109" max="32767" attributes="0"/>

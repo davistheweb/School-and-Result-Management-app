@@ -2,6 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -137,6 +140,7 @@ public class Level300_Semester1 extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(500, 1000));
         setMinimumSize(new java.awt.Dimension(500, 1000));
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
@@ -454,27 +458,21 @@ public class Level300_Semester1 extends javax.swing.JFrame {
                 .addComponent(studentName, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(gpInLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(gpInLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CSC361_FINALSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CSC341_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CSC351_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CSC367_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CSC323_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CSC381_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CSC371_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CSC315_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(17, 17, 17)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC361_FINALSCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC341_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC351_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC367_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC323_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC381_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC371_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CSC315_SCORE, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -533,17 +531,21 @@ public class Level300_Semester1 extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(CSC_315)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(Session, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(58, 58, 58)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,6 +559,8 @@ public class Level300_Semester1 extends javax.swing.JFrame {
                                                         .addComponent(CSC371_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(CSC315_GRADE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                     .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(feesStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGap(32, 32, 32)))
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -575,11 +579,7 @@ public class Level300_Semester1 extends javax.swing.JFrame {
                                                         .addGap(50, 50, 50)
                                                         .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addGap(48, 48, 48))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                                .addComponent(Session, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(58, 58, 58)
-                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addComponent(Semester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(30, 30, 30)
                                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -619,17 +619,19 @@ public class Level300_Semester1 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Session, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Semester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(StudentRegNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Session, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Semester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lvl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(StudentRegNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel26))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -753,7 +755,7 @@ public class Level300_Semester1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -761,10 +763,10 @@ public class Level300_Semester1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 890, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(1041, 912));
+        setSize(new java.awt.Dimension(1041, 885));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -831,34 +833,34 @@ public class Level300_Semester1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CSC341_EXAM_SCOREActionPerformed
     public void CalScore() {
-        try{
-        // Check if any of the text fields are empty
-        if ("".equals(CSC361_CA_SCORE.getText().trim()) || "".equals(CSC361_EXAMSCORE.getText().trim())
-                || "".equals(CSC341_CA_SCORE.getText().trim()) || "".equals(CSC341_EXAM_SCORE.getText().trim())
-                || "".equals(CSC351_CA_SCORE.getText().trim()) || "".equals(CSC351_EXAM_SCORE.getText().trim())
-                || "".equals(CSC367_CA_SCORE.getText().trim()) || "".equals(CSC367_EXAM_SCORE.getText().trim())
-                || "".equals(CSC381_CA_SCORE.getText().trim()) || "".equals(CSC381_EXAM_SCORE.getText().trim())
-                || "".equals(CSC371_CA_SCORE.getText().trim()) || "".equals(CSC371_EXAM_SCORE.getText().trim())
-                || "".equals(CSC315_CA_SCORE.getText().trim()) || "".equals(CSC315_EXAM_SCORE.getText().trim())
-                || "".equals(CSC323_CA_SCORE.getText().trim()) || "".equals(CSC323_EXAM_SCORE.getText().trim())) {
+        try {
+            // Check if any of the text fields are empty
+            if ("".equals(CSC361_CA_SCORE.getText().trim()) || "".equals(CSC361_EXAMSCORE.getText().trim())
+                    || "".equals(CSC341_CA_SCORE.getText().trim()) || "".equals(CSC341_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC351_CA_SCORE.getText().trim()) || "".equals(CSC351_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC367_CA_SCORE.getText().trim()) || "".equals(CSC367_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC381_CA_SCORE.getText().trim()) || "".equals(CSC381_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC371_CA_SCORE.getText().trim()) || "".equals(CSC371_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC315_CA_SCORE.getText().trim()) || "".equals(CSC315_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC323_CA_SCORE.getText().trim()) || "".equals(CSC323_EXAM_SCORE.getText().trim())) {
 
-            JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+                JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-        // Check if CA_SCORE is greater than 30 or EXAMSCORE is greater than 70 for any field
-        if (Integer.parseInt(CSC361_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC361_EXAMSCORE.getText().trim()) > 70
-                || Integer.parseInt(CSC341_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC341_EXAM_SCORE.getText().trim()) > 70
-                || Integer.parseInt(CSC351_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC351_EXAM_SCORE.getText().trim()) > 70
-                || Integer.parseInt(CSC367_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC367_EXAM_SCORE.getText().trim()) > 70
-                || Integer.parseInt(CSC381_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC381_EXAM_SCORE.getText().trim()) > 70
-                || Integer.parseInt(CSC371_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC371_EXAM_SCORE.getText().trim()) > 70
-                || Integer.parseInt(CSC315_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC315_EXAM_SCORE.getText().trim()) > 70
-                || Integer.parseInt(CSC323_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC323_EXAM_SCORE.getText().trim()) > 70) {
+            // Check if CA_SCORE is greater than 30 or EXAMSCORE is greater than 70 for any field
+            if (Integer.parseInt(CSC361_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC361_EXAMSCORE.getText().trim()) > 70
+                    || Integer.parseInt(CSC341_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC341_EXAM_SCORE.getText().trim()) > 70
+                    || Integer.parseInt(CSC351_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC351_EXAM_SCORE.getText().trim()) > 70
+                    || Integer.parseInt(CSC367_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC367_EXAM_SCORE.getText().trim()) > 70
+                    || Integer.parseInt(CSC381_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC381_EXAM_SCORE.getText().trim()) > 70
+                    || Integer.parseInt(CSC371_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC371_EXAM_SCORE.getText().trim()) > 70
+                    || Integer.parseInt(CSC315_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC315_EXAM_SCORE.getText().trim()) > 70
+                    || Integer.parseInt(CSC323_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC323_EXAM_SCORE.getText().trim()) > 70) {
 
-            JOptionPane.showMessageDialog(this, "CA Score can't be greater than 30 and Exam Score can't be greater than 70", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+                JOptionPane.showMessageDialog(this, "CA Score can't be greater than 30 and Exam Score can't be greater than 70", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 //    
 //    if(CSC101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || MAT101_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
 //       PHY101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || STA111_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
@@ -867,179 +869,179 @@ public class Level300_Semester1 extends javax.swing.JFrame {
 //        JOptionPane.showMessageDialog(this, "PLS FILL THE UNIT COMBO", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
 //        return;
 //    }
-        // Calculate total and set final score for each course
-        int csc361Total = Integer.parseInt(CSC361_CA_SCORE.getText().trim()) + Integer.parseInt(CSC361_EXAMSCORE.getText().trim());
-        CSC361_FINALSCORE.setText(String.valueOf(csc361Total));
+            // Calculate total and set final score for each course
+            int csc361Total = Integer.parseInt(CSC361_CA_SCORE.getText().trim()) + Integer.parseInt(CSC361_EXAMSCORE.getText().trim());
+            CSC361_FINALSCORE.setText(String.valueOf(csc361Total));
 
-        int csc341Total = Integer.parseInt(CSC341_CA_SCORE.getText().trim()) + Integer.parseInt(CSC341_EXAM_SCORE.getText().trim());
-        CSC341_SCORE.setText(String.valueOf(csc341Total));
+            int csc341Total = Integer.parseInt(CSC341_CA_SCORE.getText().trim()) + Integer.parseInt(CSC341_EXAM_SCORE.getText().trim());
+            CSC341_SCORE.setText(String.valueOf(csc341Total));
 
-        int csc351Total = Integer.parseInt(CSC351_CA_SCORE.getText().trim()) + Integer.parseInt(CSC351_EXAM_SCORE.getText().trim());
-        CSC351_SCORE.setText(String.valueOf(csc351Total));
+            int csc351Total = Integer.parseInt(CSC351_CA_SCORE.getText().trim()) + Integer.parseInt(CSC351_EXAM_SCORE.getText().trim());
+            CSC351_SCORE.setText(String.valueOf(csc351Total));
 
-        int csc367Total = Integer.parseInt(CSC367_CA_SCORE.getText().trim()) + Integer.parseInt(CSC367_EXAM_SCORE.getText().trim());
-        CSC367_SCORE.setText(String.valueOf(csc367Total));
+            int csc367Total = Integer.parseInt(CSC367_CA_SCORE.getText().trim()) + Integer.parseInt(CSC367_EXAM_SCORE.getText().trim());
+            CSC367_SCORE.setText(String.valueOf(csc367Total));
 
-        int csc371Total = Integer.parseInt(CSC371_CA_SCORE.getText().trim()) + Integer.parseInt(CSC371_EXAM_SCORE.getText().trim());
-        CSC371_SCORE.setText(String.valueOf(csc371Total));
+            int csc371Total = Integer.parseInt(CSC371_CA_SCORE.getText().trim()) + Integer.parseInt(CSC371_EXAM_SCORE.getText().trim());
+            CSC371_SCORE.setText(String.valueOf(csc371Total));
 
-        int csc381Total = Integer.parseInt(CSC381_CA_SCORE.getText().trim()) + Integer.parseInt(CSC381_EXAM_SCORE.getText().trim());
-        CSC381_SCORE.setText(String.valueOf(csc381Total));
+            int csc381Total = Integer.parseInt(CSC381_CA_SCORE.getText().trim()) + Integer.parseInt(CSC381_EXAM_SCORE.getText().trim());
+            CSC381_SCORE.setText(String.valueOf(csc381Total));
 
-        int csc315Total = Integer.parseInt(CSC315_CA_SCORE.getText().trim()) + Integer.parseInt(CSC315_EXAM_SCORE.getText().trim());
-        CSC315_SCORE.setText(String.valueOf(csc315Total));
+            int csc315Total = Integer.parseInt(CSC315_CA_SCORE.getText().trim()) + Integer.parseInt(CSC315_EXAM_SCORE.getText().trim());
+            CSC315_SCORE.setText(String.valueOf(csc315Total));
 
-        int csc323Total = Integer.parseInt(CSC323_CA_SCORE.getText().trim()) + Integer.parseInt(CSC323_EXAM_SCORE.getText().trim());
-        CSC323_SCORE.setText(String.valueOf(csc323Total));
+            int csc323Total = Integer.parseInt(CSC323_CA_SCORE.getText().trim()) + Integer.parseInt(CSC323_EXAM_SCORE.getText().trim());
+            CSC323_SCORE.setText(String.valueOf(csc323Total));
 
-        // Grade calculation for CSC101
-        if (csc361Total >= 70) {
-            CSC361_GRADE.setSelectedIndex(1);
-        } else if (csc361Total >= 60 && csc361Total <= 69) {
-            CSC361_GRADE.setSelectedIndex(2);
-        } else if (csc361Total >= 50 && csc361Total <= 59) {
-            CSC361_GRADE.setSelectedIndex(3);
-        } else if (csc361Total >= 45 && csc361Total <= 49) {
-            CSC361_GRADE.setSelectedIndex(4);
-        } else if (csc361Total >= 40 && csc361Total <= 44) {
-            CSC361_GRADE.setSelectedIndex(5);
-        } else if (csc361Total >= 0 && csc361Total <= 39) {
-            CSC361_GRADE.setSelectedIndex(6);
-        }
+            // Grade calculation for CSC101
+            if (csc361Total >= 70) {
+                CSC361_GRADE.setSelectedIndex(1);
+            } else if (csc361Total >= 60 && csc361Total <= 69) {
+                CSC361_GRADE.setSelectedIndex(2);
+            } else if (csc361Total >= 50 && csc361Total <= 59) {
+                CSC361_GRADE.setSelectedIndex(3);
+            } else if (csc361Total >= 45 && csc361Total <= 49) {
+                CSC361_GRADE.setSelectedIndex(4);
+            } else if (csc361Total >= 40 && csc361Total <= 44) {
+                CSC361_GRADE.setSelectedIndex(5);
+            } else if (csc361Total >= 0 && csc361Total <= 39) {
+                CSC361_GRADE.setSelectedIndex(6);
+            }
 
-        // Grade calculation for MAT101
-        if (csc341Total >= 70) {
-            CSC341_GRADE.setSelectedIndex(1);
-        } else if (csc341Total >= 60 && csc341Total <= 69) {
-            CSC341_GRADE.setSelectedIndex(2);
-        } else if (csc341Total >= 50 && csc341Total <= 59) {
-            CSC341_GRADE.setSelectedIndex(3);
-        } else if (csc341Total >= 45 && csc341Total <= 49) {
-            CSC341_GRADE.setSelectedIndex(4);
-        } else if (csc341Total >= 40 && csc341Total <= 44) {
-            CSC341_GRADE.setSelectedIndex(5);
-        } else if (csc341Total >= 0 && csc341Total <= 39) {
-            CSC341_GRADE.setSelectedIndex(6);
-        }
+            // Grade calculation for MAT101
+            if (csc341Total >= 70) {
+                CSC341_GRADE.setSelectedIndex(1);
+            } else if (csc341Total >= 60 && csc341Total <= 69) {
+                CSC341_GRADE.setSelectedIndex(2);
+            } else if (csc341Total >= 50 && csc341Total <= 59) {
+                CSC341_GRADE.setSelectedIndex(3);
+            } else if (csc341Total >= 45 && csc341Total <= 49) {
+                CSC341_GRADE.setSelectedIndex(4);
+            } else if (csc341Total >= 40 && csc341Total <= 44) {
+                CSC341_GRADE.setSelectedIndex(5);
+            } else if (csc341Total >= 0 && csc341Total <= 39) {
+                CSC341_GRADE.setSelectedIndex(6);
+            }
 
-        // Grade calculation for PHY101
-        if (csc351Total >= 70) {
-            CSC351_GRADE.setSelectedIndex(1);
-        } else if (csc351Total >= 60 && csc351Total <= 69) {
-            CSC351_GRADE.setSelectedIndex(2);
-        } else if (csc351Total >= 50 && csc351Total <= 59) {
-            CSC351_GRADE.setSelectedIndex(3);
-        } else if (csc351Total >= 45 && csc351Total <= 49) {
-            CSC351_GRADE.setSelectedIndex(4);
-        } else if (csc351Total >= 40 && csc351Total <= 44) {
-            CSC351_GRADE.setSelectedIndex(5);
-        } else if (csc351Total >= 0 && csc351Total <= 39) {
-            CSC351_GRADE.setSelectedIndex(6);
-        }
+            // Grade calculation for PHY101
+            if (csc351Total >= 70) {
+                CSC351_GRADE.setSelectedIndex(1);
+            } else if (csc351Total >= 60 && csc351Total <= 69) {
+                CSC351_GRADE.setSelectedIndex(2);
+            } else if (csc351Total >= 50 && csc351Total <= 59) {
+                CSC351_GRADE.setSelectedIndex(3);
+            } else if (csc351Total >= 45 && csc351Total <= 49) {
+                CSC351_GRADE.setSelectedIndex(4);
+            } else if (csc351Total >= 40 && csc351Total <= 44) {
+                CSC351_GRADE.setSelectedIndex(5);
+            } else if (csc351Total >= 0 && csc351Total <= 39) {
+                CSC351_GRADE.setSelectedIndex(6);
+            }
 
-        // Grade calculation for STA111
-        if (csc367Total >= 70) {
-            CSC367_GRADE.setSelectedIndex(1);
-        } else if (csc367Total >= 60 && csc367Total <= 69) {
-            CSC367_GRADE.setSelectedIndex(2);
-        } else if (csc367Total >= 50 && csc367Total <= 59) {
-            CSC367_GRADE.setSelectedIndex(3);
-        } else if (csc367Total >= 45 && csc367Total <= 49) {
-            CSC367_GRADE.setSelectedIndex(4);
-        } else if (csc367Total >= 40 && csc367Total <= 44) {
-            CSC367_GRADE.setSelectedIndex(5);
-        } else if (csc367Total >= 0 && csc367Total <= 39) {
-            CSC367_GRADE.setSelectedIndex(6);
-        }
+            // Grade calculation for STA111
+            if (csc367Total >= 70) {
+                CSC367_GRADE.setSelectedIndex(1);
+            } else if (csc367Total >= 60 && csc367Total <= 69) {
+                CSC367_GRADE.setSelectedIndex(2);
+            } else if (csc367Total >= 50 && csc367Total <= 59) {
+                CSC367_GRADE.setSelectedIndex(3);
+            } else if (csc367Total >= 45 && csc367Total <= 49) {
+                CSC367_GRADE.setSelectedIndex(4);
+            } else if (csc367Total >= 40 && csc367Total <= 44) {
+                CSC367_GRADE.setSelectedIndex(5);
+            } else if (csc367Total >= 0 && csc367Total <= 39) {
+                CSC367_GRADE.setSelectedIndex(6);
+            }
 
-        // Grade calculation for GST105
-        if (csc371Total >= 70) {
-            CSC371_GRADE.setSelectedIndex(1);
-        } else if (csc371Total >= 60 && csc371Total <= 69) {
-            CSC371_GRADE.setSelectedIndex(2);
-        } else if (csc371Total >= 50 && csc371Total <= 59) {
-            CSC371_GRADE.setSelectedIndex(3);
-        } else if (csc371Total >= 45 && csc371Total <= 49) {
-            CSC371_GRADE.setSelectedIndex(4);
-        } else if (csc371Total >= 40 && csc371Total <= 44) {
-            CSC371_GRADE.setSelectedIndex(5);
-        } else if (csc371Total >= 0 && csc371Total <= 39) {
-            CSC371_GRADE.setSelectedIndex(6);
-        }
+            // Grade calculation for GST105
+            if (csc371Total >= 70) {
+                CSC371_GRADE.setSelectedIndex(1);
+            } else if (csc371Total >= 60 && csc371Total <= 69) {
+                CSC371_GRADE.setSelectedIndex(2);
+            } else if (csc371Total >= 50 && csc371Total <= 59) {
+                CSC371_GRADE.setSelectedIndex(3);
+            } else if (csc371Total >= 45 && csc371Total <= 49) {
+                CSC371_GRADE.setSelectedIndex(4);
+            } else if (csc371Total >= 40 && csc371Total <= 44) {
+                CSC371_GRADE.setSelectedIndex(5);
+            } else if (csc371Total >= 0 && csc371Total <= 39) {
+                CSC371_GRADE.setSelectedIndex(6);
+            }
 
-        // Grade calculation for BIO101
-        if (csc381Total >= 70) {
-            CSC381_GRADE.setSelectedIndex(1);
-        } else if (csc381Total >= 60 && csc381Total <= 69) {
-            CSC381_GRADE.setSelectedIndex(2);
-        } else if (csc381Total >= 50 && csc381Total <= 59) {
-            CSC381_GRADE.setSelectedIndex(3);
-        } else if (csc381Total >= 45 && csc381Total <= 49) {
-            CSC381_GRADE.setSelectedIndex(4);
-        } else if (csc381Total >= 40 && csc381Total <= 44) {
-            CSC381_GRADE.setSelectedIndex(5);
-        } else if (csc381Total >= 0 && csc381Total <= 39) {
-            CSC381_GRADE.setSelectedIndex(6);
-        }
+            // Grade calculation for BIO101
+            if (csc381Total >= 70) {
+                CSC381_GRADE.setSelectedIndex(1);
+            } else if (csc381Total >= 60 && csc381Total <= 69) {
+                CSC381_GRADE.setSelectedIndex(2);
+            } else if (csc381Total >= 50 && csc381Total <= 59) {
+                CSC381_GRADE.setSelectedIndex(3);
+            } else if (csc381Total >= 45 && csc381Total <= 49) {
+                CSC381_GRADE.setSelectedIndex(4);
+            } else if (csc381Total >= 40 && csc381Total <= 44) {
+                CSC381_GRADE.setSelectedIndex(5);
+            } else if (csc381Total >= 0 && csc381Total <= 39) {
+                CSC381_GRADE.setSelectedIndex(6);
+            }
 
-        // Grade calculation for MGT101
-        if (csc315Total >= 70) {
-            CSC315_GRADE.setSelectedIndex(1);
-        } else if (csc315Total >= 60 && csc315Total <= 69) {
-            CSC315_GRADE.setSelectedIndex(2);
-        } else if (csc315Total >= 50 && csc315Total <= 59) {
-            CSC315_GRADE.setSelectedIndex(3);
-        } else if (csc315Total >= 45 && csc315Total <= 49) {
-            CSC315_GRADE.setSelectedIndex(4);
-        } else if (csc315Total >= 40 && csc315Total <= 44) {
-            CSC315_GRADE.setSelectedIndex(5);
-        } else if (csc315Total >= 0 && csc315Total <= 39) {
-            CSC315_GRADE.setSelectedIndex(6);
-        }
+            // Grade calculation for MGT101
+            if (csc315Total >= 70) {
+                CSC315_GRADE.setSelectedIndex(1);
+            } else if (csc315Total >= 60 && csc315Total <= 69) {
+                CSC315_GRADE.setSelectedIndex(2);
+            } else if (csc315Total >= 50 && csc315Total <= 59) {
+                CSC315_GRADE.setSelectedIndex(3);
+            } else if (csc315Total >= 45 && csc315Total <= 49) {
+                CSC315_GRADE.setSelectedIndex(4);
+            } else if (csc315Total >= 40 && csc315Total <= 44) {
+                CSC315_GRADE.setSelectedIndex(5);
+            } else if (csc315Total >= 0 && csc315Total <= 39) {
+                CSC315_GRADE.setSelectedIndex(6);
+            }
 
-        // Grade calculation for PHY105
-        if (csc323Total >= 70) {
-            CSC323_GRADE.setSelectedIndex(1);
-        } else if (csc323Total >= 60 && csc323Total <= 69) {
-            CSC323_GRADE.setSelectedIndex(2);
-        } else if (csc323Total >= 50 && csc323Total <= 59) {
-            CSC323_GRADE.setSelectedIndex(3);
-        } else if (csc323Total >= 45 && csc323Total <= 49) {
-            CSC323_GRADE.setSelectedIndex(4);
-        } else if (csc323Total >= 40 && csc323Total <= 44) {
-            CSC323_GRADE.setSelectedIndex(5);
-        } else if (csc323Total >= 0 && csc323Total <= 39) {
-            CSC323_GRADE.setSelectedIndex(6);
-        }
+            // Grade calculation for PHY105
+            if (csc323Total >= 70) {
+                CSC323_GRADE.setSelectedIndex(1);
+            } else if (csc323Total >= 60 && csc323Total <= 69) {
+                CSC323_GRADE.setSelectedIndex(2);
+            } else if (csc323Total >= 50 && csc323Total <= 59) {
+                CSC323_GRADE.setSelectedIndex(3);
+            } else if (csc323Total >= 45 && csc323Total <= 49) {
+                CSC323_GRADE.setSelectedIndex(4);
+            } else if (csc323Total >= 40 && csc323Total <= 44) {
+                CSC323_GRADE.setSelectedIndex(5);
+            } else if (csc323Total >= 0 && csc323Total <= 39) {
+                CSC323_GRADE.setSelectedIndex(6);
+            }
 
-        int CSC361unit = 2;
-        int CSC341unit = 2;
-        int CSC351unit = 1;
-        int CSC367Unit = 2;
-        int CSC371unit = 2;
-        int MAT381unit = 2;
-        int ECO315unit = 2;
-        int CSC323unit = 2;
+            int CSC361unit = 2;
+            int CSC341unit = 2;
+            int CSC351unit = 1;
+            int CSC367Unit = 2;
+            int CSC371unit = 2;
+            int MAT381unit = 2;
+            int ECO315unit = 2;
+            int CSC323unit = 2;
 
-        // Grade calculation for CSC101
-        int CSC361pointvalue = getPointValue(CSC361_GRADE.getSelectedItem().toString());
-        int CSC341pointvalue = getPointValue(CSC341_GRADE.getSelectedItem().toString());
-        int CSC351pointvalue = getPointValue(CSC351_GRADE.getSelectedItem().toString());
-        int CSC367pointvalue = getPointValue(CSC367_GRADE.getSelectedItem().toString());
-        int CSC371pointvalue = getPointValue(CSC371_GRADE.getSelectedItem().toString());
-        int CSC381pointvalue = getPointValue(CSC381_GRADE.getSelectedItem().toString());
-        int CSC315pointvalue = getPointValue(CSC315_GRADE.getSelectedItem().toString());
-        int CSC323pointvalue = getPointValue(CSC323_GRADE.getSelectedItem().toString());
+            // Grade calculation for CSC101
+            int CSC361pointvalue = getPointValue(CSC361_GRADE.getSelectedItem().toString());
+            int CSC341pointvalue = getPointValue(CSC341_GRADE.getSelectedItem().toString());
+            int CSC351pointvalue = getPointValue(CSC351_GRADE.getSelectedItem().toString());
+            int CSC367pointvalue = getPointValue(CSC367_GRADE.getSelectedItem().toString());
+            int CSC371pointvalue = getPointValue(CSC371_GRADE.getSelectedItem().toString());
+            int CSC381pointvalue = getPointValue(CSC381_GRADE.getSelectedItem().toString());
+            int CSC315pointvalue = getPointValue(CSC315_GRADE.getSelectedItem().toString());
+            int CSC323pointvalue = getPointValue(CSC323_GRADE.getSelectedItem().toString());
 
-        int totalPoints = (CSC361pointvalue * CSC361unit) + (CSC341pointvalue * CSC341unit)
-                + (CSC351pointvalue * CSC351unit) + (CSC367pointvalue * CSC367Unit)
-                + (CSC323pointvalue * CSC371unit) + (CSC381pointvalue * MAT381unit)
-                + (CSC371pointvalue * ECO315unit) + (CSC315pointvalue * CSC323unit);
-        int totalUnits = CSC361unit + CSC341unit + CSC351unit + CSC367Unit + CSC371unit + MAT381unit + ECO315unit + CSC323unit;
-        double gpa = (double) totalPoints / totalUnits;
-        double roundedGpa = Math.round(gpa * 100.0) / 100.0;
-        gpInLevel.setText(String.valueOf(roundedGpa));
-        }catch(NumberFormatException e){
+            int totalPoints = (CSC361pointvalue * CSC361unit) + (CSC341pointvalue * CSC341unit)
+                    + (CSC351pointvalue * CSC351unit) + (CSC367pointvalue * CSC367Unit)
+                    + (CSC323pointvalue * CSC371unit) + (CSC381pointvalue * MAT381unit)
+                    + (CSC371pointvalue * ECO315unit) + (CSC315pointvalue * CSC323unit);
+            int totalUnits = CSC361unit + CSC341unit + CSC351unit + CSC367Unit + CSC371unit + MAT381unit + ECO315unit + CSC323unit;
+            double gpa = (double) totalPoints / totalUnits;
+            double roundedGpa = Math.round(gpa * 100.0) / 100.0;
+            gpInLevel.setText(String.valueOf(roundedGpa));
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
 
@@ -1122,61 +1124,74 @@ public class Level300_Semester1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel25MouseClicked
 
     void uploadData() {
-        try{
-        if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
-            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if ("".equals(CSC361_CA_SCORE.getText().trim()) || "".equals(CSC361_EXAMSCORE.getText().trim())
-                || "".equals(CSC341_CA_SCORE.getText().trim()) || "".equals(CSC341_EXAM_SCORE.getText().trim())
-                || "".equals(CSC351_CA_SCORE.getText().trim()) || "".equals(CSC351_EXAM_SCORE.getText().trim())
-                || "".equals(CSC367_CA_SCORE.getText().trim()) || "".equals(CSC367_EXAM_SCORE.getText().trim())
-                || "".equals(CSC381_CA_SCORE.getText().trim()) || "".equals(CSC381_EXAM_SCORE.getText().trim())
-                || "".equals(CSC371_CA_SCORE.getText().trim()) || "".equals(CSC371_EXAM_SCORE.getText().trim())
-                || "".equals(CSC315_CA_SCORE.getText().trim()) || "".equals(CSC315_EXAM_SCORE.getText().trim())
-                || "".equals(CSC323_CA_SCORE.getText().trim()) || "".equals(CSC323_EXAM_SCORE.getText().trim())) {
+        try {
+            if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
+                JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if ("".equals(CSC361_CA_SCORE.getText().trim()) || "".equals(CSC361_EXAMSCORE.getText().trim())
+                    || "".equals(CSC341_CA_SCORE.getText().trim()) || "".equals(CSC341_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC351_CA_SCORE.getText().trim()) || "".equals(CSC351_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC367_CA_SCORE.getText().trim()) || "".equals(CSC367_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC381_CA_SCORE.getText().trim()) || "".equals(CSC381_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC371_CA_SCORE.getText().trim()) || "".equals(CSC371_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC315_CA_SCORE.getText().trim()) || "".equals(CSC315_EXAM_SCORE.getText().trim())
+                    || "".equals(CSC323_CA_SCORE.getText().trim()) || "".equals(CSC323_EXAM_SCORE.getText().trim())) {
 
-            JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if ("".equals(CSC361_FINALSCORE.getText().trim()) || "".equals(CSC341_SCORE.getText().trim())
-                || "".equals(CSC351_SCORE.getText().trim()) || "".equals(CSC367_SCORE.getText().trim())
-                || "".equals(CSC381_SCORE.getText().trim()) || "".equals(CSC371_SCORE.getText().trim())
-                || "".equals(CSC315_SCORE.getText().trim()) || "".equals(CSC323_SCORE.getText().trim())) {
+                JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if ("".equals(CSC361_FINALSCORE.getText().trim()) || "".equals(CSC341_SCORE.getText().trim())
+                    || "".equals(CSC351_SCORE.getText().trim()) || "".equals(CSC367_SCORE.getText().trim())
+                    || "".equals(CSC381_SCORE.getText().trim()) || "".equals(CSC371_SCORE.getText().trim())
+                    || "".equals(CSC315_SCORE.getText().trim()) || "".equals(CSC323_SCORE.getText().trim())) {
 
-            JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if (StudentRegNum.getText().length() != 14) {
-            JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-        String username = "sql8730305";
-        String password = "VGxAU93HkA";
-        String checkStatement = "SELECT * FROM level3_semester1 WHERE reg_number = ?";
-        String statement = "INSERT INTO level3_semester1(session, semester, level, reg_number, name_of_student, "
-                + "fee, passport, course1, course2, course3, course4, course5, course6, course7, course8, "
-                + "csc361_score, csc361_grade, csc341_score, csc341_grade, csc351_score, csc351_grade, "
-                + "csc367_score, csc367_grade, csc371_score, csc371_grade, csc381_score, csc381_grade, "
-                + "csc315_score, csc315_grade, csc323_score, csc323_grade, gpa) "
-                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        String regNumValue = StudentRegNum.getText().toUpperCase();
+                JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (StudentRegNum.getText().length() != 14) {
+                JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+            String username = "sql8730305";
+            String password = "VGxAU93HkA";
+            String checkStatement = "SELECT * FROM level3_semester1 WHERE reg_number = ?";
+            String RegNumbercheckStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
+            String statement = "INSERT INTO level3_semester1(session, semester, level, reg_number, name_of_student, "
+                    + "fee, passport, course1, course2, course3, course4, course5, course6, course7, course8, "
+                    + "csc361_score, csc361_grade, csc341_score, csc341_grade, csc351_score, csc351_grade, "
+                    + "csc367_score, csc367_grade, csc371_score, csc371_grade, csc381_score, csc381_grade, "
+                    + "csc315_score, csc315_grade, csc323_score, csc323_grade, gpa) "
+                    + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String regNumValue = StudentRegNum.getText().toUpperCase();
 
-        try (Connection conn = DriverManager.getConnection(url, username, password)) {
-            // Check for existing registration number
-            try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
-                checkPstm.setString(1, regNumValue);
-                try (ResultSet rs = checkPstm.executeQuery()) {
-                    if (rs.next() && rs.getInt(1) > 0) {
-                        JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Posting!!", JOptionPane.WARNING_MESSAGE);
-                        return;
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                // Check for existing registration number
+                try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
+                    checkPstm.setString(1, regNumValue);
+                    try (ResultSet rs = checkPstm.executeQuery()) {
+                        if (rs.next() && rs.getInt(1) > 0) {
+                            JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Posting!!", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
                     }
+                }
+            } catch (SQLException exceptionMessage) {
+                if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
 
             // Insert the data along with the image
-            try (PreparedStatement psmt = conn.prepareStatement(statement); FileInputStream fis = new FileInputStream(filename)) {
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                PreparedStatement RegNumbercheckPstm = conn.prepareStatement(RegNumbercheckStatement);
+                RegNumbercheckPstm.setString(1, regNumValue);
+                ResultSet res = RegNumbercheckPstm.executeQuery();
+                PreparedStatement psmt = conn.prepareStatement(statement);
+                FileInputStream fis = new FileInputStream(filename);
 
                 int session = Integer.parseInt(Session.getText());
                 psmt.setInt(1, session);
@@ -1221,20 +1236,25 @@ public class Level300_Semester1 extends javax.swing.JFrame {
 
                 psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
 
-                int updateToDB = psmt.executeUpdate();
-                if (updateToDB != 0) {
-                    JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                if (res.next()) {
+                    int updateToDB = psmt.executeUpdate();
+                    if (updateToDB != 0) {
+                        JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                } else {
+
+                    JOptionPane.showMessageDialog(this, "The Registration Number " + StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
+
+                }
+
+            } catch (SQLException | IOException exceptionMessage) {
+                if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
-
-        } catch (SQLException | IOException exceptionMessage) {
-            if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
-            }
-        }
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -1245,20 +1265,26 @@ public class Level300_Semester1 extends javax.swing.JFrame {
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File f = choosePicture.getSelectedFile();
-            passport.setIcon(new ImageIcon(f.toString()));
             filename = f.getAbsolutePath();
-
-            // Debugging: Print the filename to ensure it's correct
             JOptionPane.showMessageDialog(this, "Selected file path: " + filename, "File Select Info", JOptionPane.INFORMATION_MESSAGE);
 
-            try (FileInputStream fis = new FileInputStream(f)) {
-                photo = fis.readAllBytes();
+            try {
+                BufferedImage originalImage = ImageIO.read(f);
+                int labelWidth = passport.getWidth();
+                int labelHeight = passport.getHeight();
+
+                Image resizedImage = originalImage.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
+
+                // Set the resized image as the icon for the label
+                passport.setIcon(new ImageIcon(resizedImage));
+                try (FileInputStream fis = new FileInputStream(f)) {
+                    photo = fis.readAllBytes();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
             JOptionPane.showMessageDialog(this, "File selection canceled.", "File Select Info", JOptionPane.INFORMATION_MESSAGE);
-
         }
     }
 
@@ -1279,13 +1305,13 @@ public class Level300_Semester1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Level300_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Level300_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Level300_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Level100_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Level300_Semester1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         /* Create and display the form */

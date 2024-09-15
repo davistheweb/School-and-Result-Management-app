@@ -446,35 +446,33 @@ public class Level300_Semester2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
     public void CalScore() {
-        
-         if("SELECT GRADE".equals(gradeLetter.getSelectedItem().toString())){
-         JOptionPane.showMessageDialog(this, "Pls Select Student Grade!!", "Complete Calculation!", JOptionPane.WARNING_MESSAGE);
-            return;
-         }
-         try{
-          if (TotalUnits.getText().trim().isEmpty()) {
-          JOptionPane.showMessageDialog(this, "Provide Units!", "Invalid Unit Count", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-          
-          if (Integer.parseInt(TotalUnits.getText()) > 15) {
-          JOptionPane.showMessageDialog(this, "Unit cannot be greater than 15", "Invalid Unit Count", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        
-        int gradeValue = getPointValue(gradeLetter.getSelectedItem().toString());
 
-        
-        int totalUnits = Integer.parseInt(TotalUnits.getText());
-        int totalPoints = totalUnits * gradeValue;
-        TOTAL.setText(String.valueOf(totalPoints));
-        double gpa = (double) totalPoints / totalUnits;
-        double roundedGpa = Math.round(gpa * 1000.0) / 1000.0;
-        gpInLevel.setText(String.valueOf(roundedGpa));
-         }catch(NumberFormatException e){
-             JOptionPane.showMessageDialog(this,e.getMessage()+"Please Enter a Valid Number", "Error", JOptionPane.ERROR_MESSAGE);
-         }
+        if ("SELECT GRADE".equals(gradeLetter.getSelectedItem().toString())) {
+            JOptionPane.showMessageDialog(this, "Pls Select Student Grade!!", "Complete Calculation!", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        try {
+            if (TotalUnits.getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Provide Units!", "Invalid Unit Count", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            if (Integer.parseInt(TotalUnits.getText()) > 15) {
+                JOptionPane.showMessageDialog(this, "Unit cannot be greater than 15", "Invalid Unit Count", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            int gradeValue = getPointValue(gradeLetter.getSelectedItem().toString());
+
+            int totalUnits = Integer.parseInt(TotalUnits.getText());
+            int totalPoints = totalUnits * gradeValue;
+            TOTAL.setText(String.valueOf(totalPoints));
+            double gpa = (double) totalPoints / totalUnits;
+            double roundedGpa = Math.round(gpa * 1000.0) / 1000.0;
+            gpInLevel.setText(String.valueOf(roundedGpa));
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage() + "Please Enter a Valid Number", "Error", JOptionPane.ERROR_MESSAGE);
+        }
 
     }
 
@@ -499,37 +497,49 @@ public class Level300_Semester2 extends javax.swing.JFrame {
     }
 
     void uploadData() {
-        try{
-        if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
-            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if (StudentRegNum.getText().length() != 14) {
-            JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }    
-        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-        String username = "sql8730305";
-        String password = "VGxAU93HkA";
-        String checkStatement = "SELECT * FROM level3_semester2 WHERE reg_number = ?";
-        String statement = "INSERT INTO level3_semester2(session, semester, level, reg_number, name_of_student, "
-                + "fee, passport, course, grade, total, gpa) "
-                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        String regNumValue = StudentRegNum.getText().toUpperCase();
-        try (Connection conn = DriverManager.getConnection(url, username, password)) {
-            // Check for existing registration number
-            try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
-                checkPstm.setString(1, regNumValue);
-                try (ResultSet rs = checkPstm.executeQuery()) {
-                    if (rs.next() && rs.getInt(1) > 0) {
-                        JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Posting!!", JOptionPane.WARNING_MESSAGE);
-                        return;
+        try {
+            if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
+                JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            if (StudentRegNum.getText().length() != 14) {
+                JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
+            String username = "sql8730305";
+            String password = "VGxAU93HkA";
+            String checkStatement = "SELECT * FROM level3_semester2 WHERE reg_number = ?";
+            String RegNumbercheckStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
+            String statement = "INSERT INTO level3_semester2(session, semester, level, reg_number, name_of_student, "
+                    + "fee, passport, course, grade, total, gpa) "
+                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String regNumValue = StudentRegNum.getText().toUpperCase();
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                // Check for existing registration number
+                try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
+                    checkPstm.setString(1, regNumValue);
+                    try (ResultSet rs = checkPstm.executeQuery()) {
+                        if (rs.next() && rs.getInt(1) > 0) {
+                            JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Posting!!", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
                     }
+                }
+            } catch (SQLException exceptionMessage) {
+                if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
 
-            // Insert the data along with the image
-            try (PreparedStatement psmt = conn.prepareStatement(statement); FileInputStream fis = new FileInputStream(filename)) {
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                PreparedStatement RegNumbercheckPstm = conn.prepareStatement(RegNumbercheckStatement);
+                RegNumbercheckPstm.setString(1, regNumValue);
+                ResultSet res = RegNumbercheckPstm.executeQuery();
+                PreparedStatement psmt = conn.prepareStatement(statement);
+                FileInputStream fis = new FileInputStream(filename);
 
                 int session = Integer.parseInt(Session.getText());
                 psmt.setInt(1, session);
@@ -543,23 +553,27 @@ public class Level300_Semester2 extends javax.swing.JFrame {
                 psmt.setString(8, I_T.getText());
                 psmt.setString(9, gradeLetter.getSelectedItem().toString());
                 psmt.setInt(10, Integer.parseInt(TOTAL.getText()));
-                
+
                 psmt.setDouble(11, Double.parseDouble(gpInLevel.getText()));
 
-                int updateToDB = psmt.executeUpdate();
-                if (updateToDB != 0) {
-                    JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                if (res.next()) {
+                    int updateToDB = psmt.executeUpdate();
+                    if (updateToDB != 0) {
+                        JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                } else {
+
+                    JOptionPane.showMessageDialog(this, "The Registration Number " + StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
+
+                }
+            } catch (SQLException | IOException exceptionMessage) {
+                if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
-
-        } catch (SQLException | IOException exceptionMessage) {
-            if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
-            }
-        }
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }

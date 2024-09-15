@@ -1179,7 +1179,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
 
                 int updateToDB = psmt.executeUpdate();
                 if (updateToDB != 0) {
-                    JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
 

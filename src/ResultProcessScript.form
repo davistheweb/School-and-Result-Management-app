@@ -162,7 +162,7 @@
                                                   <Component id="lvl" min="-2" pref="77" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
-                                              <Component id="passportLabel" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="passportLabel" min="-2" pref="133" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -223,8 +223,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="Student_Session" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="passportLabel" min="-2" pref="151" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                              <Component id="passportLabel" min="-2" pref="137" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -291,7 +291,7 @@
                           <Component id="score8" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="grade8" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="113" max="32767" attributes="0"/>
+                      <EmptySpace pref="139" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

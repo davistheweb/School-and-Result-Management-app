@@ -15,12 +15,12 @@ public class Load {
     wm.setVisible(false);
     
     try{
-        for(int i = 0; i <=100; i++){
-            Thread.sleep(110);
+        for(int i = 0; i <=50; i++){
+            Thread.sleep(100);
             SL.count.setText(Integer.toString(i)+"%");
             SL.progress.setValue(i);
             
-            if(i == 100){
+            if(i == 50){
                 SL.setVisible(false);
                 wm.setVisible(true);
             }

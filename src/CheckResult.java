@@ -245,7 +245,9 @@ public class CheckResult extends javax.swing.JFrame {
                 if (blob != null) {
                     try (InputStream inputStream = blob.getBinaryStream()) {
                         BufferedImage image = ImageIO.read(inputStream);
+                        
                         if (image != null) {
+                            
                             passportIcon = new ImageIcon(image);
                         } else {
                             JOptionPane.showMessageDialog(this, "Image could not be read", "Error", JOptionPane.ERROR_MESSAGE);

@@ -1,12 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author HP Folio 1040 G2
- */
 public class WelcomeMenu extends javax.swing.JFrame {
 
     /**
@@ -119,7 +110,7 @@ public class WelcomeMenu extends javax.swing.JFrame {
     }
 
     void cancel() {
-        this.dispose();
+        System.exit(0);
     }
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         Continue();

@@ -1,5 +1,11 @@
 ///Start
 
+/** 
+ 
+ DOCUMENTATION FOR GROUP 1 PROJECT
+ 
+ **/
+
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.Connection;

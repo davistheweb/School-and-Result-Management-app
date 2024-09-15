@@ -1154,7 +1154,7 @@ public class Level200_Semester2 extends javax.swing.JFrame {
             String username = "sql8730305";
             String password = "VGxAU93HkA";
             String checkStatement = "SELECT * FROM level2_semester2 WHERE reg_number = ?";
-            String RegNumbercheckStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
+            String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
             String statement = "INSERT INTO level2_semester2(session, semester, level, reg_number, name_of_student, "
                     + "fee, passport, course1, course2, course3, course4, course5, course6, course7, course8, csc206_score, "
                     + "csc206_grade, csc202_score, csc202_grade, csc242_score, csc242_grade, csc262_score, csc262_grade, csc232_score,"

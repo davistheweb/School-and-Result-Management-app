@@ -15,12 +15,12 @@ import javax.swing.JOptionPane;
  *
  * @author GOI
  */
-public class StudentRegistration extends javax.swing.JFrame {
+public class DepartmentRegistration extends javax.swing.JFrame {
 
     /**
      * Creates new form StudentRegistration
      */
-    public StudentRegistration() {
+    public DepartmentRegistration() {
         initComponents();
         ProgressBar.setVisible(false);
 
@@ -137,6 +137,7 @@ public class StudentRegistration extends javax.swing.JFrame {
         ProgressBar.setForeground(new java.awt.Color(51, 204, 0));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/backnewicon.png"))); // NOI18N
+        jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel13MouseClicked(evt);
@@ -287,8 +288,8 @@ public class StudentRegistration extends javax.swing.JFrame {
                 String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
                 String username = "sql8730305";
                 String password = "VGxAU93HkA";
-                String checkStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
-                String statement = "INSERT INTO student_registration(session,semester,reg_number,name_of_student,number_in_level,lvl,fee) VALUES(?,?,?,?,?,?,?)";
+                String checkStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
+                String statement = "INSERT INTO department_registration(session,semester,reg_number,name_of_student,number_in_level,lvl,fee) VALUES(?,?,?,?,?,?,?)";
                 String regNumValue = StudentRegNum.getText().toUpperCase();
                 SwingUtilities.invokeLater(() -> {
                     try (Connection conn = DriverManager.getConnection(url, username, password)) {
@@ -394,7 +395,7 @@ public class StudentRegistration extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentRegistration().setVisible(true);
+                new DepartmentRegistration().setVisible(true);
             }
         });
     }

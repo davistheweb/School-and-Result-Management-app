@@ -1125,7 +1125,7 @@ public class Level200_Semester1 extends javax.swing.JFrame {
             String username = "sql8730305";
             String password = "VGxAU93HkA";
             String checkStatement = "SELECT * FROM level2_semester1 WHERE reg_number = ?";
-            String RegNumbercheckStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
+            String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
             String statement = "INSERT INTO level2_semester1(session, semester, level, reg_number, name_of_student, "
                     + "fee, passport, course1, course2, course3, course4, course5, course6, course7, course8, csc231_score, csc231_grade, mat211_score, mat211_grade, csc241_score, csc241_grade, "
                     + "acc203_score, acc203_grade, gst223_score, gst223_grade, csc205_score, csc205_grade, sta201_score, "
@@ -1214,7 +1214,6 @@ public class Level200_Semester1 extends javax.swing.JFrame {
                 } else {
 
                     JOptionPane.showMessageDialog(this, "The Registration Number " + StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
-                    return;
 
                 }
             } catch (SQLException | IOException exceptionMessage) {

@@ -83,6 +83,7 @@ public class CheckResult extends javax.swing.JFrame {
         sessions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT SESSION", "YEAR 1 1ST SEMESTER", "YEAR 1 2ND SEMESTER", "YEAR 2 1ST SEMESTER", "YEAR 2 2ND SEMESTER", "YEAR 3 1ST SEMESTER", "YEAR 3 2ND SEMESTER", "YEAR 4 1ST SEMESTER", "YEAR 4 2ND SEMESTER" }));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/backnewicon.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);

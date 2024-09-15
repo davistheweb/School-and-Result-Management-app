@@ -421,6 +421,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/imsulogo.png"))); // NOI18N
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/backnewicon.png"))); // NOI18N
+        jLabel26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel26.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel26MouseClicked(evt);
@@ -1112,7 +1113,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
             String username = "sql8730305";
             String password = "VGxAU93HkA";
             String checkStatement = "SELECT * FROM level1_semester1 WHERE reg_number = ?";
-            String RegNumbercheckStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
+            String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
             String statement = "INSERT INTO level1_semester1(session, semester, level, reg_number, name_of_student, "
                     + "fee, passport,course1, course2, course3, course4, course5, course6, course7, course8, csc101_score, csc101_grade, mat101_score, mat101_grade, phy101_score, phy101_grade,"
                     + " sta111_score, sta111_grade, phy105_score, phy105_grade, bio101_score, bio101_grade, gst105_score, "

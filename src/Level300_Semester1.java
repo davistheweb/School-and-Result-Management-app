@@ -761,12 +761,12 @@ public class Level300_Semester1 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 890, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(1041, 885));
+        setSize(new java.awt.Dimension(1001, 885));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1157,7 +1157,7 @@ public class Level300_Semester1 extends javax.swing.JFrame {
             String username = "sql8730305";
             String password = "VGxAU93HkA";
             String checkStatement = "SELECT * FROM level3_semester1 WHERE reg_number = ?";
-            String RegNumbercheckStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
+            String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
             String statement = "INSERT INTO level3_semester1(session, semester, level, reg_number, name_of_student, "
                     + "fee, passport, course1, course2, course3, course4, course5, course6, course7, course8, "
                     + "csc361_score, csc361_grade, csc341_score, csc341_grade, csc351_score, csc351_grade, "

@@ -212,6 +212,7 @@ public class Level300_Semester2 extends javax.swing.JFrame {
         jLabel1.setText("eg:202110848885eg");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/backnewicon.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
@@ -510,7 +511,7 @@ public class Level300_Semester2 extends javax.swing.JFrame {
             String username = "sql8730305";
             String password = "VGxAU93HkA";
             String checkStatement = "SELECT * FROM level3_semester2 WHERE reg_number = ?";
-            String RegNumbercheckStatement = "SELECT * FROM student_registration WHERE reg_number = ?";
+            String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
             String statement = "INSERT INTO level3_semester2(session, semester, level, reg_number, name_of_student, "
                     + "fee, passport, course, grade, total, gpa) "
                     + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

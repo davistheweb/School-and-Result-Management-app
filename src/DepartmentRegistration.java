@@ -110,7 +110,7 @@ public class DepartmentRegistration extends javax.swing.JFrame {
         });
 
         uploadAll.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        uploadAll.setText("INSERT");
+        uploadAll.setText("Register");
         uploadAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadAllActionPerformed(evt);
@@ -262,7 +262,7 @@ public class DepartmentRegistration extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    void uploadData() {
+    void RegisterStudent() {
         try {
 
             try {
@@ -272,11 +272,11 @@ public class DepartmentRegistration extends javax.swing.JFrame {
                     ProgressBar.setValue(i);
                 }
                 ProgressBar.setVisible(true);
-                if ("".equals(Session.getText()) || 
-                        "".equals(StudentRegNum.getText()) || 
-                        "".equals(studentName.getText()) || 
-                        "".equals(NumInLevel.getText()) || 
-                        "".equals(stuLevel.getText())) {
+                if ("".equals(Session.getText())
+                        || "".equals(StudentRegNum.getText())
+                        || "".equals(studentName.getText())
+                        || "".equals(NumInLevel.getText())
+                        || "".equals(stuLevel.getText())) {
                     JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
@@ -285,10 +285,11 @@ public class DepartmentRegistration extends javax.swing.JFrame {
                     return;
                 }
 
-                String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-                String username = "sql8730305";
-                String password = "VGxAU93HkA";
+                String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+                String username = "imsustaff";
+                String password = "imsuadmin";
                 String checkStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
+                String checkIfRegistered = "SELECT * FROM school_registration WHERE regNum = ?";
                 String statement = "INSERT INTO department_registration(session,semester,reg_number,name_of_student,number_in_level,lvl,fee) VALUES(?,?,?,?,?,?,?)";
                 String regNumValue = StudentRegNum.getText().toUpperCase();
                 SwingUtilities.invokeLater(() -> {
@@ -303,29 +304,6 @@ public class DepartmentRegistration extends javax.swing.JFrame {
                                 }
                             }
                         }
-
-                        // Insert the new data
-                        try (PreparedStatement psmt = conn.prepareStatement(statement)) {
-                            int session = Integer.parseInt(Session.getText());
-                            psmt.setInt(1, session);
-                            psmt.setString(2, Semester.getSelectedItem().toString());
-
-                            psmt.setString(3, StudentRegNum.getText().toUpperCase());
-                            psmt.setString(4, studentName.getText().toUpperCase());
-                            psmt.setString(5, NumInLevel.getText());
-                            int studentLevel = Integer.parseInt(stuLevel.getText());
-                            psmt.setInt(6, studentLevel);
-                            psmt.setString(7, feesStatus.getSelectedItem().toString());
-
-                            int updateToDB = psmt.executeUpdate();
-                            if (updateToDB != 0) {
-                                for (int i = 50; i <= 100; i++) {
-                                    ProgressBar.setValue(i);
-                                }
-                                JOptionPane.showMessageDialog(this, "Successfully Inserted", "Success Message", JOptionPane.INFORMATION_MESSAGE);
-                            }
-                        }
-
                     } catch (SQLException exceptionMessage) {
                         if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
                             JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
@@ -333,10 +311,57 @@ public class DepartmentRegistration extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                         }
 
+                    }
+                    try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                        PreparedStatement ps = conn.prepareStatement(checkIfRegistered);
+                        ps.setString(1, StudentRegNum.getText().toUpperCase());
+                        ResultSet checkRegIfExists = ps.executeQuery();
+                        PreparedStatement psmt = conn.prepareStatement(statement);
+
+                        int session = Integer.parseInt(Session.getText());
+                        psmt.setInt(1, session);
+                        psmt.setString(2, Semester.getSelectedItem().toString());
+
+                        psmt.setString(3, StudentRegNum.getText().toUpperCase());
+                        psmt.setString(4, studentName.getText().toUpperCase());
+                        psmt.setString(5, NumInLevel.getText());
+                        int studentLevel = Integer.parseInt(stuLevel.getText());
+                        psmt.setInt(6, studentLevel);
+                        psmt.setString(7, feesStatus.getSelectedItem().toString());
+
+                        if (checkRegIfExists.next()) {
+                            int updateToDB = psmt.executeUpdate();
+                            if (updateToDB != 0) {
+                                for (int i = 50; i <= 100; i++) {
+                                    ProgressBar.setValue(i);
+                                }
+                                JOptionPane.showMessageDialog(this, "Registered Successfully", "Done", JOptionPane.INFORMATION_MESSAGE);
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Student Not registered in school \n Pls register student in the school registration form before registering here", "Can't register Student", JOptionPane.ERROR_MESSAGE);
+
+                        }
+
+                    } catch (SQLException exceptionMessage) {
+
+                        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
+                            JOptionPane.showMessageDialog(this,
+                                    "Failed to connect to the server. Please check your internet connection and try again."
+                                    + "\nSQL State: " + exceptionMessage.getSQLState()
+                                    + "\nError Code: " + exceptionMessage.getErrorCode(),
+                                    "Connection Error",
+                                    JOptionPane.ERROR_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(this,
+                                    exceptionMessage.getMessage(),
+                                    "Error",
+                                    JOptionPane.ERROR_MESSAGE);
+                        }
                     } finally {
                         ProgressBar.setVisible(false);
                     }
-                });
+                }
+                );
 
             } catch (Exception e) {
             }
@@ -351,7 +376,7 @@ public class DepartmentRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_stuLevelActionPerformed
 
     private void uploadAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadAllActionPerformed
-        uploadData();
+        RegisterStudent();
         // TODO add your handling code here:
     }//GEN-LAST:event_uploadAllActionPerformed
 

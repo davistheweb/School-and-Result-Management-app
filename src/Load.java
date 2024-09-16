@@ -12,7 +12,7 @@ public class Load {
     ScreenLoader SL = new ScreenLoader();
     SL.setVisible(true);
     WelcomeMenu wm = new WelcomeMenu();
-    wm.setVisible(false);
+    
     
     try{
         for(int i = 0; i <=50; i++){
@@ -26,7 +26,7 @@ public class Load {
             }
         }
         }
-    catch(Exception e){
+    catch(InterruptedException e){
     
     }
     }

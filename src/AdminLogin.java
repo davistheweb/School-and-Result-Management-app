@@ -142,13 +142,17 @@ public class AdminLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void adminLogin() {
-        if ("".equals(username.getText()) || "".equals(password.getText())) {
+         char[] passWrd = password.getPassword();
+
+           String PASSWORD = new String(passWrd);
+
+        if ("".equals(username.getText()) || "".equals(PASSWORD)) {
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "No empty field allowed", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-        String usrname = "sql8730305";
-        String passwd = "VGxAU93HkA";
+        String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+        String usrname = "imsustaff";
+        String passwd = "imsuadmin";
         try {
             Connection con = DriverManager.getConnection(url, usrname, passwd);
             String queryForLogin = "SELECT * FROM admin_login WHERE id =?";
@@ -160,9 +164,7 @@ public class AdminLogin extends javax.swing.JFrame {
             String adminPassword = rs.getString("password");
 
             String USERNAME = username.getText();
-            char[] passWrd = password.getPassword();
-
-            String PASSWORD = new String(passWrd);
+        
 
             if (USERNAME.equals(adminUsername) && PASSWORD.equals(adminPassword)) {
                 AdminMenuPage admin = new AdminMenuPage();
@@ -170,14 +172,23 @@ public class AdminLogin extends javax.swing.JFrame {
                 admin.setVisible(Value);
                 this.setVisible(false);
             } else {
-                JOptionPane.showMessageDialog(this, "Unauthroized access to Admin Menu Page!!!", "Access Denied", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Unauthroized access to Admin Menu Page!!! \n(Incorrect Username or password)", "Access Denied", JOptionPane.WARNING_MESSAGE);
             }
 
         } catch (SQLException exceptionMessage) {
-            if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+
+            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
+                JOptionPane.showMessageDialog(this,
+                        "Failed to connect to the server. Please check your internet connection and try again."
+                        + "\nSQL State: " + exceptionMessage.getSQLState()
+                        + "\nError Code: " + exceptionMessage.getErrorCode(),
+                        "Connection Error",
+                        JOptionPane.ERROR_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this,
+                        exceptionMessage.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
 
@@ -255,5 +266,3 @@ public class AdminLogin extends javax.swing.JFrame {
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
-
-

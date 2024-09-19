@@ -208,7 +208,7 @@ public class AdminLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_loginAdminActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        AdminAndUserForm aup = new AdminAndUserForm();
+        AdminAndUserFrame aup = new AdminAndUserFrame();
         aup.setVisible(true);
         this.dispose();
         // TODO add your handling code here:

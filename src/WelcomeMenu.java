@@ -1,3 +1,4 @@
+
 public class WelcomeMenu extends javax.swing.JFrame {
 
     /**
@@ -103,23 +104,35 @@ public class WelcomeMenu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    // Method to continue to the next screen
     void Continue() {
-        AdminAndUserForm a = new AdminAndUserForm();
+        // Create an instance of the AdminAndUserFrame class (presumably another window or frame)
+        AdminAndUserFrame a = new AdminAndUserFrame();
+
+        // Make the AdminAndUserFrame visible (display it)
         a.setVisible(true);
+
+        // Hide the current window/frame by setting its visibility to false
         this.setVisible(false);
     }
 
+// Method to cancel the operation and exit the program
     void cancel() {
+        // Terminates the program completely
         System.exit(0);
     }
-    private void continueButtonToNextPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonToNextPageActionPerformed
-        Continue();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_continueButtonToNextPageActionPerformed
 
+    // Event handler for the "Continue" button's action
+    private void continueButtonToNextPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonToNextPageActionPerformed
+        // Call the Continue() method to switch to the AdminAndUserFrame window
+        Continue();
+        // TODO add your handling code here: (auto-generated comment)
+    }//GEN-LAST:event_continueButtonToNextPageActionPerformed
+    // Event handler for the "Cancel" button's action
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+        // Call the cancel() method to exit the application
         cancel();
-        // TODO add your handling code here:
+        // TODO add your handling code here: (auto-generated comment)
     }//GEN-LAST:event_cancelActionPerformed
 
     /**

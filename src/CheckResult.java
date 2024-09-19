@@ -1,4 +1,5 @@
 
+import java.awt.Image;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
@@ -238,16 +239,24 @@ public class CheckResult extends javax.swing.JFrame {
                     String total = String.valueOf(rs.getInt("total"));
                     String grade = rs.getString("grade");
                     String studentSession = "YEAR 3 2ND SEMESTER";
-
+                    ResultProcess_level3 rp3 = new ResultProcess_level3();
                     Blob blob = rs.getBlob("passport");
                     ImageIcon passportIcon = null;
+
                     if (blob != null) {
                         try (InputStream inputStream = blob.getBinaryStream()) {
-                            BufferedImage image = ImageIO.read(inputStream);
+                            BufferedImage fetchedImage = ImageIO.read(inputStream);
 
-                            if (image != null) {
+                            if (fetchedImage != null) {
+                                // Resize the fetched image to fit the label dimensions
+                                int labelWidth = rp3.passportLabel.getWidth();
+                                int labelHeight = rp3.passportLabel.getHeight();
 
-                                passportIcon = new ImageIcon(image);
+                                // Resizing the fetched image
+                                Image resizedFetchedImage = fetchedImage.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
+
+                                // Set the resized image as the icon for the label
+                                passportIcon = new ImageIcon(resizedFetchedImage);
                             } else {
                                 JOptionPane.showMessageDialog(this, "Image could not be read", "Error", JOptionPane.ERROR_MESSAGE);
                             }
@@ -255,13 +264,11 @@ public class CheckResult extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(this, "Error reading image: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                         }
                     }
-
                     // Now you can use each string independently or process them further
                     if ("UNPAID".equals(feeStatus)) {
                         JOptionPane.showMessageDialog(this, "You can't check result until you Pay Your fees", "Error", JOptionPane.ERROR_MESSAGE);
                         return;
                     }
-                    ResultProcess_level3 rp3 = new ResultProcess_level3();
 
                     rp3.student_fname.setText(name + ".");
                     rp3.reg.setText(regNum);
@@ -281,6 +288,7 @@ public class CheckResult extends javax.swing.JFrame {
                     }
 
                     rp3.setVisible(true);
+                    this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(this, "Record Not found!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -518,15 +526,25 @@ public class CheckResult extends javax.swing.JFrame {
                             studentSession = "YEAR 4 2ND SEMESTER RESULT SLIP";
                             break;
                     }
-
+                    ResultProcessScript rp = new ResultProcessScript();
                     // Retrieve passport image
                     Blob blob = rs.getBlob("passport");
                     ImageIcon passportIcon = null;
+
                     if (blob != null) {
                         try (InputStream inputStream = blob.getBinaryStream()) {
-                            BufferedImage image = ImageIO.read(inputStream);
-                            if (image != null) {
-                                passportIcon = new ImageIcon(image);
+                            BufferedImage fetchedImage = ImageIO.read(inputStream);
+
+                            if (fetchedImage != null) {
+                                // Resize the fetched image to fit the label dimensions
+                                int labelWidth = rp.passportLabel.getWidth();
+                                int labelHeight = rp.passportLabel.getHeight();
+
+                                // Resizing the fetched image
+                                Image resizedFetchedImage = fetchedImage.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
+
+                                // Set the resized image as the icon for the label
+                                passportIcon = new ImageIcon(resizedFetchedImage);
                             } else {
                                 JOptionPane.showMessageDialog(this, "Image could not be read", "Error", JOptionPane.ERROR_MESSAGE);
                             }
@@ -540,7 +558,7 @@ public class CheckResult extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "You can't check result until you Pay Your fees", "Error", JOptionPane.ERROR_MESSAGE);
                         return;
                     }
-                    ResultProcessScript rp = new ResultProcessScript();
+                    //ResultProcessScript rp = new ResultProcessScript();
                     rp.student_fname.setText(name + ".");
                     rp.reg.setText(regNum);
                     rp.lvl.setText(level);
@@ -586,6 +604,7 @@ public class CheckResult extends javax.swing.JFrame {
                     }
 
                     rp.setVisible(true);
+                    this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(this, "Record Not found!", "Error", JOptionPane.ERROR_MESSAGE);
                 }

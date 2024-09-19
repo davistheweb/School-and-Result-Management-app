@@ -7,18 +7,6 @@
  *
  * @author GOI
  */
-import javax.swing.JOptionPane;
-import java.sql.ResultSet;
-import java.sql.PreparedStatement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import javax.swing.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.Blob;
-import javax.imageio.ImageIO;
 
 public class ResultProcess_level3 extends javax.swing.JFrame {
 
@@ -62,6 +50,7 @@ public class ResultProcess_level3 extends javax.swing.JFrame {
         studentGrade = new javax.swing.JLabel();
         course = new javax.swing.JLabel();
         studentScore = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,6 +113,13 @@ public class ResultProcess_level3 extends javax.swing.JFrame {
 
         studentScore.setText("score");
 
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/backnewicon.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout scoreLayout = new javax.swing.GroupLayout(score);
         score.setLayout(scoreLayout);
         scoreLayout.setHorizontalGroup(
@@ -184,6 +180,10 @@ public class ResultProcess_level3 extends javax.swing.JFrame {
                 .addGap(195, 195, 195)
                 .addComponent(Student_Session, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, scoreLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(396, 396, 396))
         );
         scoreLayout.setVerticalGroup(
             scoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +234,9 @@ public class ResultProcess_level3 extends javax.swing.JFrame {
                     .addComponent(studentGrade)
                     .addComponent(course)
                     .addComponent(studentScore))
-                .addContainerGap(427, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(354, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(score);
@@ -259,6 +261,13 @@ public class ResultProcess_level3 extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        CheckResult cr = new CheckResult();
+           cr.setVisible(true);
+           this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -311,12 +320,13 @@ public class ResultProcess_level3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JLabel lvl;
     public javax.swing.JLabel passportLabel;
     public javax.swing.JLabel reg;
-    private javax.swing.JPanel score;
+    public javax.swing.JPanel score;
     public javax.swing.JLabel studentGrade;
     public javax.swing.JLabel studentScore;
     public javax.swing.JLabel student_fname;

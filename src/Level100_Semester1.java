@@ -16,8 +16,7 @@ import java.sql.SQLException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.*;
-
+import javax.swing.SwingUtilities;
 /**
  *
  * @author GOI
@@ -527,7 +526,6 @@ public class Level100_Semester1 extends javax.swing.JFrame {
                                                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                                 .addGap(48, 48, 48)))
                                         .addGroup(jpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(StudentRegNum, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jpanel1Layout.createSequentialGroup()
                                                 .addGap(6, 6, 6)
@@ -535,7 +533,8 @@ public class Level100_Semester1 extends javax.swing.JFrame {
                                                     .addComponent(jLabel26)
                                                     .addGroup(jpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(uploadPhoto)
-                                                        .addComponent(jLabel8))))))))
+                                                        .addComponent(jLabel8))))
+                                            .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(jpanel1Layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -607,7 +606,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
                         .addComponent(jLabel2))
                     .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
-                .addGroup(jpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpanel1Layout.createSequentialGroup()
                         .addGroup(jpanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -625,9 +624,10 @@ public class Level100_Semester1 extends javax.swing.JFrame {
                             .addComponent(studentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(feesStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(110, 110, 110))
-                    .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(feesStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jpanel1Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(uploadPhoto)
                 .addGap(29, 29, 29)
@@ -1096,7 +1096,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
     void uploadData() {
         try {
             try {
-                for (int i = 0; i <= 50; i++) {
+                for (int i = 0; i <= 100; i++) {
                     Thread.sleep(110);
                     ProgressBar.setValue(i);
                 }
@@ -1281,7 +1281,6 @@ public class Level100_Semester1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "File selection canceled.", "File Select Info", JOptionPane.INFORMATION_MESSAGE);
         }
     }
-
     /**
      * @param args the command line arguments
      */

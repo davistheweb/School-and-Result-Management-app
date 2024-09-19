@@ -48,6 +48,7 @@ public class ScreenLoader extends javax.swing.JFrame {
         count.setForeground(new java.awt.Color(255, 255, 255));
         count.setText("0%");
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("IMO STATE UNIVERISTY");
 

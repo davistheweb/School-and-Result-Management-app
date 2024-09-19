@@ -1153,9 +1153,9 @@ public class Level300_Semester1 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-            String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-            String username = "sql8730305";
-            String password = "VGxAU93HkA";
+            String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+            String username = "imsustaff";
+            String password = "imsuadmin";
             String checkStatement = "SELECT * FROM level3_semester1 WHERE reg_number = ?";
             String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
             String statement = "INSERT INTO level3_semester1(session, semester, level, reg_number, name_of_student, "
@@ -1179,7 +1179,12 @@ public class Level300_Semester1 extends javax.swing.JFrame {
                 }
             } catch (SQLException exceptionMessage) {
                 if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this,
+                            "Failed to connect to the server. Please check your internet connection and try again."
+                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                            "Connection Error",
+                            JOptionPane.ERROR_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -1249,7 +1254,12 @@ public class Level300_Semester1 extends javax.swing.JFrame {
 
             } catch (SQLException | IOException exceptionMessage) {
                 if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this,
+                            "Failed to connect to the server. Please check your internet connection and try again."
+                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                            "Connection Error",
+                            JOptionPane.ERROR_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }

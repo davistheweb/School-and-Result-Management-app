@@ -385,7 +385,7 @@ public class DepartmentRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_SessionActionPerformed
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        AdminMenuPage M = new AdminMenuPage();
+        AdminMenuForm M = new AdminMenuForm();
         M.setVisible(true);
         this.dispose();
         // TODO add your handling code here:

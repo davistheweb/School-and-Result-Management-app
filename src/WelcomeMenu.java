@@ -22,7 +22,7 @@ public class WelcomeMenu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        login = new javax.swing.JButton();
+        continueButtonToNextPage = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
@@ -37,11 +37,11 @@ public class WelcomeMenu extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("CLICK CONTINUE TO PROCEED");
 
-        login.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        login.setText("CONTINUE");
-        login.addActionListener(new java.awt.event.ActionListener() {
+        continueButtonToNextPage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        continueButtonToNextPage.setText("CONTINUE");
+        continueButtonToNextPage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
+                continueButtonToNextPageActionPerformed(evt);
             }
         });
 
@@ -61,7 +61,7 @@ public class WelcomeMenu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(60, 60, 60)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(continueButtonToNextPage, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(72, 72, 72)
                         .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -84,7 +84,7 @@ public class WelcomeMenu extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(continueButtonToNextPage, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(85, 85, 85))
         );
 
@@ -104,7 +104,7 @@ public class WelcomeMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     void Continue() {
-        AdminAndUserPage a = new AdminAndUserPage();
+        AdminAndUserForm a = new AdminAndUserForm();
         a.setVisible(true);
         this.setVisible(false);
     }
@@ -112,10 +112,10 @@ public class WelcomeMenu extends javax.swing.JFrame {
     void cancel() {
         System.exit(0);
     }
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+    private void continueButtonToNextPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonToNextPageActionPerformed
         Continue();
         // TODO add your handling code here:
-    }//GEN-LAST:event_loginActionPerformed
+    }//GEN-LAST:event_continueButtonToNextPageActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         cancel();
@@ -159,11 +159,11 @@ public class WelcomeMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel;
+    private javax.swing.JButton continueButtonToNextPage;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton login;
     // End of variables declaration//GEN-END:variables
 }

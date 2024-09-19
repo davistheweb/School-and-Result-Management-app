@@ -912,7 +912,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_genderActionPerformed
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        AdminMenuPage adminPage = new AdminMenuPage();
+        AdminMenuForm adminPage = new AdminMenuForm();
         adminPage.setVisible(true);
         this.dispose();
         // TODO add your handling code here:

@@ -286,7 +286,7 @@ public class CheckResult extends javax.swing.JFrame {
                 }
             } catch (SQLException exceptionMessage) {
                 if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
-                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Failed to connect to the server. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.ERROR_MESSAGE);
                 }
@@ -605,7 +605,7 @@ public class CheckResult extends javax.swing.JFrame {
     }//GEN-LAST:event_checkResultSlipActionPerformed
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        AdminAndUserPage page = new AdminAndUserPage();
+        AdminAndUserForm page = new AdminAndUserForm();
         page.setVisible(true);
         this.dispose();
         // TODO add your handling code here:

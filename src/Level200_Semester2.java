@@ -2,6 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -1150,9 +1153,9 @@ public class Level200_Semester2 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
-            String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-            String username = "sql8730305";
-            String password = "VGxAU93HkA";
+            String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+            String username = "imsustaff";
+            String password = "imsuadmin";
             String checkStatement = "SELECT * FROM level2_semester2 WHERE reg_number = ?";
             String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
             String statement = "INSERT INTO level2_semester2(session, semester, level, reg_number, name_of_student, "
@@ -1175,7 +1178,12 @@ public class Level200_Semester2 extends javax.swing.JFrame {
                 }
             } catch (SQLException exceptionMessage) {
                 if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this,
+                            "Failed to connect to the server. Please check your internet connection and try again."
+                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                            "Connection Error",
+                            JOptionPane.ERROR_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -1240,13 +1248,18 @@ public class Level200_Semester2 extends javax.swing.JFrame {
                     }
                 } else {
 
-                    JOptionPane.showMessageDialog(this, "The Registration Number " +StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "The Registration Number " + StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
 
                 }
 
             } catch (SQLException | IOException exceptionMessage) {
                 if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this,
+                            "Failed to connect to the server. Please check your internet connection and try again."
+                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                            "Connection Error",
+                            JOptionPane.ERROR_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -1263,20 +1276,26 @@ public class Level200_Semester2 extends javax.swing.JFrame {
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File f = choosePicture.getSelectedFile();
-            passport.setIcon(new ImageIcon(f.toString()));
             filename = f.getAbsolutePath();
-
-            // Debugging: Print the filename to ensure it's correct
             JOptionPane.showMessageDialog(this, "Selected file path: " + filename, "File Select Info", JOptionPane.INFORMATION_MESSAGE);
 
-            try (FileInputStream fis = new FileInputStream(f)) {
-                photo = fis.readAllBytes();
+            try {
+                BufferedImage originalImage = ImageIO.read(f);
+                int labelWidth = passport.getWidth();
+                int labelHeight = passport.getHeight();
+
+                Image resizedImage = originalImage.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
+
+                // Set the resized image as the icon for the label
+                passport.setIcon(new ImageIcon(resizedImage));
+                try (FileInputStream fis = new FileInputStream(f)) {
+                    photo = fis.readAllBytes();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
             JOptionPane.showMessageDialog(this, "File selection canceled.", "File Select Info", JOptionPane.INFORMATION_MESSAGE);
-
         }
     }
 
@@ -1284,7 +1303,7 @@ public class Level200_Semester2 extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-      
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

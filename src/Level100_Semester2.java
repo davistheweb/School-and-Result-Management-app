@@ -1141,9 +1141,9 @@ public class Level100_Semester2 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
                 return;
             }
-            String url = "jdbc:MySql://sql8.freesqldatabase.com:3306/sql8730305";
-            String username = "sql8730305";
-            String password = "VGxAU93HkA";
+            String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+            String username = "imsustaff";
+            String password = "imsuadmin";
             String checkStatement = "SELECT * FROM level1_semester2 WHERE reg_number = ?";
             String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
             String statement = "INSERT INTO level1_semester2(session, semester, level, reg_number, name_of_student, "
@@ -1168,7 +1168,12 @@ public class Level100_Semester2 extends javax.swing.JFrame {
                 }
             } catch (SQLException exceptionMessage) {
                 if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this,
+                            "Failed to connect to the server. Please check your internet connection and try again."
+                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                            "Connection Error",
+                            JOptionPane.ERROR_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -1237,7 +1242,12 @@ public class Level100_Semester2 extends javax.swing.JFrame {
                 }
             } catch (SQLException | IOException exceptionMessage) {
                 if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this, "Failed to connect to the database. Please check your internet connection and try again.", "Connection Error", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this,
+                            "Failed to connect to the server. Please check your internet connection and try again."
+                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                            "Connection Error",
+                            JOptionPane.ERROR_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -1391,6 +1401,6 @@ public class Level100_Semester2 extends javax.swing.JFrame {
     private javax.swing.JButton uploadAll;
     private javax.swing.JButton uploadPhoto;
     // End of variables declaration//GEN-END:variables
-byte[] photo = null;
+ byte[] photo = null;
     String filename = null;
 }

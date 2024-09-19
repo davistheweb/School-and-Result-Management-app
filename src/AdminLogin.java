@@ -167,12 +167,12 @@ public class AdminLogin extends javax.swing.JFrame {
         
 
             if (USERNAME.equals(adminUsername) && PASSWORD.equals(adminPassword)) {
-                AdminMenuPage admin = new AdminMenuPage();
+                AdminMenuForm admin = new AdminMenuForm();
                 boolean Value = true;
                 admin.setVisible(Value);
                 this.setVisible(false);
             } else {
-                JOptionPane.showMessageDialog(this, "Unauthroized access to Admin Menu Page!!! \n(Incorrect Username or password)", "Access Denied", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Unauthorized access to Admin Menu Page!!! \n(Incorrect Username or password)", "Access Denied", JOptionPane.WARNING_MESSAGE);
             }
 
         } catch (SQLException exceptionMessage) {
@@ -208,7 +208,7 @@ public class AdminLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_loginAdminActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        AdminAndUserPage aup = new AdminAndUserPage();
+        AdminAndUserForm aup = new AdminAndUserForm();
         aup.setVisible(true);
         this.dispose();
         // TODO add your handling code here:

@@ -17,6 +17,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+
 /**
  *
  * @author GOI
@@ -1101,152 +1102,159 @@ public class Level100_Semester1 extends javax.swing.JFrame {
                     ProgressBar.setValue(i);
                 }
                 ProgressBar.setVisible(true);
-            
-            if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
-                JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-            if (StudentRegNum.getText().length() != 14) {
-                JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
-                return;
-            }
-            if ("".equals(CSC101_CA_SCORE.getText().trim()) || "".equals(CSC101_EXAMSCORE.getText().trim())
-                    || "".equals(MAT101_CA_SCORE.getText().trim()) || "".equals(MAT101_EXAM_SCORE.getText().trim())
-                    || "".equals(PHY101_CA_SCORE.getText().trim()) || "".equals(PHY101_EXAM_SCORE.getText().trim())
-                    || "".equals(STA111_CA_SCORE.getText().trim()) || "".equals(STA111_EXAM_SCORE.getText().trim())
-                    || "".equals(BIO101_CA_SCORE.getText().trim()) || "".equals(BIO101_EXAM_SCORE.getText().trim())
-                    || "".equals(GST105_CA_SCORE.getText().trim()) || "".equals(GST105_EXAM_SCORE.getText().trim())
-                    || "".equals(MGT101_CA_SCORE.getText().trim()) || "".equals(MGT101_EXAM_SCORE.getText().trim())
-                    || "".equals(PHY105_CA_SCORE.getText().trim()) || "".equals(PHY105_EXAM_SCORE.getText().trim())) {
 
-                JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if ("".equals(CSC101_FINALSCORE.getText().trim()) || "".equals(MAT_101_SCORE.getText().trim())
-                    || "".equals(PHY101_SCORE.getText().trim()) || "".equals(STA111_SCORE.getText().trim())
-                    || "".equals(BIO101_SCORE.getText().trim()) || "".equals(GST105_SCORE.getText().trim())
-                    || "".equals(MGT101_SCORE.getText().trim()) || "".equals(PYH105_SCORE.getText().trim())) {
+                if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
+                    JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                if (StudentRegNum.getText().length() != 14) {
+                    JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+                    return;
+                }
+                if ("".equals(CSC101_CA_SCORE.getText().trim()) || "".equals(CSC101_EXAMSCORE.getText().trim())
+                        || "".equals(MAT101_CA_SCORE.getText().trim()) || "".equals(MAT101_EXAM_SCORE.getText().trim())
+                        || "".equals(PHY101_CA_SCORE.getText().trim()) || "".equals(PHY101_EXAM_SCORE.getText().trim())
+                        || "".equals(STA111_CA_SCORE.getText().trim()) || "".equals(STA111_EXAM_SCORE.getText().trim())
+                        || "".equals(BIO101_CA_SCORE.getText().trim()) || "".equals(BIO101_EXAM_SCORE.getText().trim())
+                        || "".equals(GST105_CA_SCORE.getText().trim()) || "".equals(GST105_EXAM_SCORE.getText().trim())
+                        || "".equals(MGT101_CA_SCORE.getText().trim()) || "".equals(MGT101_EXAM_SCORE.getText().trim())
+                        || "".equals(PHY105_CA_SCORE.getText().trim()) || "".equals(PHY105_EXAM_SCORE.getText().trim())) {
 
-                JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-            String url = "jdbc:MySql://db4free.net:3306/imsu_db";
-            String username = "imsustaff";
-            String password = "imsuadmin";
-            String checkStatement = "SELECT * FROM level1_semester1 WHERE reg_number = ?";
-            String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
-            String statement = "INSERT INTO level1_semester1(session, semester, level, reg_number, name_of_student, "
-                    + "fee, passport,course1, course2, course3, course4, course5, course6, course7, course8, csc101_score, csc101_grade, mat101_score, mat101_grade, phy101_score, phy101_grade,"
-                    + " sta111_score, sta111_grade, phy105_score, phy105_grade, bio101_score, bio101_grade, gst105_score, "
-                    + "gst105_grade, mgt101_score, mgt101_grade, gpa) "
-                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            String regNumValue = StudentRegNum.getText().toUpperCase();
-            SwingUtilities.invokeLater(() -> {
-            try (Connection conn = DriverManager.getConnection(url, username, password)) {
-                // Check for existing registration number
-                try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
-                    checkPstm.setString(1, regNumValue);
-                    try (ResultSet rs = checkPstm.executeQuery()) {
-                        if (rs.next() && rs.getInt(1) > 0) {
-                            JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Posting!!", JOptionPane.WARNING_MESSAGE);
-                            return;
+                    JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                if ("".equals(CSC101_FINALSCORE.getText().trim()) || "".equals(MAT_101_SCORE.getText().trim())
+                        || "".equals(PHY101_SCORE.getText().trim()) || "".equals(STA111_SCORE.getText().trim())
+                        || "".equals(BIO101_SCORE.getText().trim()) || "".equals(GST105_SCORE.getText().trim())
+                        || "".equals(MGT101_SCORE.getText().trim()) || "".equals(PYH105_SCORE.getText().trim())) {
+
+                    JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+                String username = "imsustaff";
+                String password = "imsuadmin";
+                String checkStatement = "SELECT * FROM level1_semester1 WHERE reg_number = ?";
+                String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
+                String statement = "INSERT INTO level1_semester1(session, semester, level, reg_number, name_of_student, "
+                        + "fee, passport,course1, course2, course3, course4, course5, course6, course7, course8, csc101_score, csc101_grade, mat101_score, mat101_grade, phy101_score, phy101_grade,"
+                        + " sta111_score, sta111_grade, phy105_score, phy105_grade, bio101_score, bio101_grade, gst105_score, "
+                        + "gst105_grade, mgt101_score, mgt101_grade, gpa) "
+                        + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String regNumValue = StudentRegNum.getText().toUpperCase();
+                SwingUtilities.invokeLater(() -> {
+                    try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                        // Check for existing registration number
+                        try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
+                            checkPstm.setString(1, regNumValue);
+                            try (ResultSet rs = checkPstm.executeQuery()) {
+                                if (rs.next() && rs.getInt(1) > 0) {
+                                    JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Posting!!", JOptionPane.WARNING_MESSAGE);
+                                    return;
+                                }
+                            }
+                        }
+                    } catch (SQLException exceptionMessage) {
+                        if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                            JOptionPane.showMessageDialog(this,
+                                    "Failed to connect to the server. Please check your internet connection and try again."
+                                    + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                                    + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                                    "Connection Error",
+                                    JOptionPane.ERROR_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
                         }
                     }
-                }
-            } catch (SQLException exceptionMessage) {
-                if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this,
-                            "Failed to connect to the server. Please check your internet connection and try again."
-                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
-                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
-                            "Connection Error",
-                            JOptionPane.ERROR_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-            // Insert the data along with the image
-            try (Connection conn = DriverManager.getConnection(url, username, password)) {
-                PreparedStatement RegNumbercheckPstm = conn.prepareStatement(RegNumbercheckStatement);
-                RegNumbercheckPstm.setString(1, regNumValue);
-                ResultSet res = RegNumbercheckPstm.executeQuery();
-                PreparedStatement psmt = conn.prepareStatement(statement);
-                FileInputStream fis = new FileInputStream(filename);
+                    // Insert the data along with the image
+                    try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                        PreparedStatement RegNumbercheckPstm = conn.prepareStatement(RegNumbercheckStatement);
+                        RegNumbercheckPstm.setString(1, regNumValue);
+                        ResultSet res = RegNumbercheckPstm.executeQuery();
+                        PreparedStatement psmt = conn.prepareStatement(statement);
+                        FileInputStream fis = new FileInputStream(filename);
 
-                int session = Integer.parseInt(Session.getText());
-                psmt.setInt(1, session);
-                psmt.setString(2, Semester.getSelectedItem().toString());
-                int level = Integer.parseInt(lvl.getText());
-                psmt.setInt(3, level);
-                psmt.setString(4, StudentRegNum.getText().toUpperCase());
-                psmt.setString(5, studentName.getText().toUpperCase());
-                psmt.setString(6, feesStatus.getSelectedItem().toString());
-                psmt.setBinaryStream(7, fis, (int) new File(filename).length());
-                psmt.setString(8, CSC_101.getText());
-                psmt.setString(9, MAT_101.getText());
-                psmt.setString(10, PHY_101.getText());
-                psmt.setString(11, STA_111.getText());
-                psmt.setString(12, PHY_105.getText());
-                psmt.setString(13, BIO_101.getText());
-                psmt.setString(14, GST_105.getText());
-                psmt.setString(15, MGT_101.getText());
-                psmt.setInt(16, Integer.parseInt(CSC101_FINALSCORE.getText().trim()));
-                psmt.setString(17, CSC101_GRADE.getSelectedItem().toString());
+                        int session = Integer.parseInt(Session.getText());
+                        psmt.setInt(1, session);
+                        psmt.setString(2, Semester.getSelectedItem().toString());
+                        int level = Integer.parseInt(lvl.getText());
+                        psmt.setInt(3, level);
+                        psmt.setString(4, StudentRegNum.getText().toUpperCase());
+                        psmt.setString(5, studentName.getText().toUpperCase());
+                        psmt.setString(6, feesStatus.getSelectedItem().toString());
+                        psmt.setBinaryStream(7, fis, (int) new File(filename).length());
+                        psmt.setString(8, CSC_101.getText());
+                        psmt.setString(9, MAT_101.getText());
+                        psmt.setString(10, PHY_101.getText());
+                        psmt.setString(11, STA_111.getText());
+                        psmt.setString(12, PHY_105.getText());
+                        psmt.setString(13, BIO_101.getText());
+                        psmt.setString(14, GST_105.getText());
+                        psmt.setString(15, MGT_101.getText());
+                        psmt.setInt(16, Integer.parseInt(CSC101_FINALSCORE.getText().trim()));
+                        psmt.setString(17, CSC101_GRADE.getSelectedItem().toString());
 
-                psmt.setInt(18, Integer.parseInt(MAT_101_SCORE.getText().trim()));
-                psmt.setString(19, MAT101_GRADE.getSelectedItem().toString());
+                        psmt.setInt(18, Integer.parseInt(MAT_101_SCORE.getText().trim()));
+                        psmt.setString(19, MAT101_GRADE.getSelectedItem().toString());
 
-                psmt.setInt(20, Integer.parseInt(PHY101_SCORE.getText().trim()));
-                psmt.setString(21, PHY101_GRADE.getSelectedItem().toString());
+                        psmt.setInt(20, Integer.parseInt(PHY101_SCORE.getText().trim()));
+                        psmt.setString(21, PHY101_GRADE.getSelectedItem().toString());
 
-                psmt.setInt(22, Integer.parseInt(STA111_SCORE.getText().trim()));
-                psmt.setString(23, STA111_GRADE.getSelectedItem().toString());
+                        psmt.setInt(22, Integer.parseInt(STA111_SCORE.getText().trim()));
+                        psmt.setString(23, STA111_GRADE.getSelectedItem().toString());
 
-                psmt.setInt(24, Integer.parseInt(PYH105_SCORE.getText().trim()));
-                psmt.setString(25, PHY105_GRADE.getSelectedItem().toString());
+                        psmt.setInt(24, Integer.parseInt(PYH105_SCORE.getText().trim()));
+                        psmt.setString(25, PHY105_GRADE.getSelectedItem().toString());
 
-                psmt.setInt(26, Integer.parseInt(BIO101_SCORE.getText().trim()));
-                psmt.setString(27, BIO101_GRADE.getSelectedItem().toString());
+                        psmt.setInt(26, Integer.parseInt(BIO101_SCORE.getText().trim()));
+                        psmt.setString(27, BIO101_GRADE.getSelectedItem().toString());
 
-                psmt.setInt(28, Integer.parseInt(GST105_SCORE.getText().trim()));
-                psmt.setString(29, GST105_GRADE.getSelectedItem().toString());
+                        psmt.setInt(28, Integer.parseInt(GST105_SCORE.getText().trim()));
+                        psmt.setString(29, GST105_GRADE.getSelectedItem().toString());
 
-                psmt.setInt(30, Integer.parseInt(MGT101_SCORE.getText().trim()));
-                psmt.setString(31, MGT101_GRADE.getSelectedItem().toString());
+                        psmt.setInt(30, Integer.parseInt(MGT101_SCORE.getText().trim()));
+                        psmt.setString(31, MGT101_GRADE.getSelectedItem().toString());
 
-                psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
+                        psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
 
-                if (res.next()) {
-                    int updateToDB = psmt.executeUpdate();
-                    if (updateToDB != 0) {
-                        for (int i = 50; i <= 100; i++) {
+                        if (res.next()) {
+                            int updateToDB = psmt.executeUpdate();
+                            if (updateToDB != 0) {
+                                for (int i = 50; i <= 100; i++) {
                                     ProgressBar.setValue(i);
                                 }
-                        JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    }
-                } else {
+                                JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                                int adminResponse = JOptionPane.showConfirmDialog(this, "Would you like to close the form?", "Close Form Option", JOptionPane.YES_NO_OPTION);
 
-                    JOptionPane.showMessageDialog(this, "The Registration Number " + StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
-                    return;
+                                if (adminResponse == JOptionPane.YES_OPTION) {
+                                    AdminMenuFrame a = new AdminMenuFrame();
+                                    a.setVisible(true);
+                                    this.dispose();
+                                }
+                            }
+                        } else {
 
-                }
-            } catch (SQLException | IOException exceptionMessage) {
-                if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this,
-                            "Failed to connect to the server. Please check your internet connection and try again."
-                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
-                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
-                            "Connection Error",
-                            JOptionPane.ERROR_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }finally {
+                            JOptionPane.showMessageDialog(this, "The Registration Number " + StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
+                            return;
+
+                        }
+                    } catch (SQLException | IOException exceptionMessage) {
+                        if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                            JOptionPane.showMessageDialog(this,
+                                    "Failed to connect to the server. Please check your internet connection and try again."
+                                    + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                                    + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                                    "Connection Error",
+                                    JOptionPane.ERROR_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                    } finally {
                         ProgressBar.setVisible(false);
                     }
-             }
+                }
                 );
-            }catch(Exception e){
+            } catch (Exception e) {
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -1281,6 +1289,7 @@ public class Level100_Semester1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "File selection canceled.", "File Select Info", JOptionPane.INFORMATION_MESSAGE);
         }
     }
+
     /**
      * @param args the command line arguments
      */

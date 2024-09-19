@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 09, 2024 at 08:08 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: 127.0.0.1:3306
+-- Generation Time: Sep 19, 2024 at 12:18 PM
+-- Server version: 8.3.0
+-- PHP Version: 8.1.2-1ubuntu2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `imo_state_university`
+-- Database: `imsu_db`
 --
 
 -- --------------------------------------------------------
@@ -28,18 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `school_registration` (
-  `id` int(11) NOT NULL,
-  `regNum` text NOT NULL,
-  `Name` text NOT NULL,
-  `dob` text NOT NULL,
-  `nationality` text NOT NULL,
-  `date_on_entry` text NOT NULL,
-  `class_on_entry` varchar(127) NOT NULL,
-  `age` int(127) NOT NULL,
-  `state` text NOT NULL,
-  `gender` text NOT NULL,
-  `date_on_leaving` varchar(127) NOT NULL,
-  `last_class_completed` text NOT NULL
+  `id` int NOT NULL,
+  `regNum` text COLLATE utf8mb4_general_ci NOT NULL,
+  `Name` text COLLATE utf8mb4_general_ci NOT NULL,
+  `dob` text COLLATE utf8mb4_general_ci NOT NULL,
+  `nationality` text COLLATE utf8mb4_general_ci NOT NULL,
+  `date_on_entry` text COLLATE utf8mb4_general_ci NOT NULL,
+  `class_on_entry` varchar(127) COLLATE utf8mb4_general_ci NOT NULL,
+  `age` int NOT NULL,
+  `state` text COLLATE utf8mb4_general_ci NOT NULL,
+  `gender` text COLLATE utf8mb4_general_ci NOT NULL,
+  `date_on_leaving` varchar(127) COLLATE utf8mb4_general_ci NOT NULL,
+  `last_class_completed` text COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -60,7 +60,7 @@ ALTER TABLE `school_registration`
 -- AUTO_INCREMENT for table `school_registration`
 --
 ALTER TABLE `school_registration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=314;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

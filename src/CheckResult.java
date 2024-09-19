@@ -617,7 +617,34 @@ public class CheckResult extends javax.swing.JFrame {
             }
         }
     }
+        /**
+         Here is a brief explanation of the CheckResultSlip method
+         * Input Validation:
 
+Ensures the registration number field is not empty and is exactly 14 characters long.
+Checks if a session has been selected from the dropdown.
+Semester Mapping:
+
+Maps the selected semester to a corresponding database table.
+Database Query:
+
+Connects to the database and queries for the student's results based on the registration number and selected semester.
+Result Processing:
+
+Retrieves the student’s scores, grades, and GPA from the result set.
+Retrieves and processes the student's passport image if available.
+Fee Status Check:
+
+Displays an error if the student's fees are unpaid.
+Display Results:
+
+Fills in the result data (scores, grades, GPA) and passport image into the result processing interface.
+Shows the result processing window and closes the current one.
+Error Handling:
+
+Catches and displays appropriate error messages for issues such as failed database connections or unreadable images.
+         
+         */
     private void checkResultSlipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkResultSlipActionPerformed
         CheckResultSlip();
         // TODO add your handling code here:

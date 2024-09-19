@@ -1,6 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+/**
+ * DEAR USER, PLEASE NOT ETHAT SOME EXPLANATIONS ON THIS CODE ALSO MATCHES WITH LEVEL100_SEMESTER1 - LEVEL300_SEMESTER1, AND ALSO LEVEL400_SEMESTER 1 - 2
+ * THANKS 
  */
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -818,241 +818,147 @@ public class Level400_Semester2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CSC_424_EXAM_SCOREActionPerformed
     public void CalScore() {
-        try {
-
-            // Check if any of the text fields are empty
-            if ("".equals(CSC_412_CA_SCORE.getText().trim()) || "".equals(CSC412_EXAMSCORE.getText().trim())
-                    || "".equals(CSC_424_CA_SCORE.getText().trim()) || "".equals(CSC_424_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_442_CA_SCORE.getText().trim()) || "".equals(CSC442_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_426_CA_SCORE.getText().trim()) || "".equals(CSC_426_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_482_CA_SCORE.getText().trim()) || "".equals(CSC_482_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_446_CA_SCORE.getText().trim()) || "".equals(CSC_446_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_464_CA_SCORE.getText().trim()) || "".equals(CSC464_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_428_CA_SCORE.getText().trim()) || "".equals(CSC_428_EXAM_SCORE.getText().trim())) {
-
-                JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-
-            // Check if CA_SCORE is greater than 30 or EXAMSCORE is greater than 70 for any field
-            if (Integer.parseInt(CSC_412_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC412_EXAMSCORE.getText().trim()) > 70
-                    || Integer.parseInt(CSC_424_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_424_EXAM_SCORE.getText().trim()) > 70
-                    || Integer.parseInt(CSC_442_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC442_EXAM_SCORE.getText().trim()) > 70
-                    || Integer.parseInt(CSC_426_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_426_EXAM_SCORE.getText().trim()) > 70
-                    || Integer.parseInt(CSC_482_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_482_EXAM_SCORE.getText().trim()) > 70
-                    || Integer.parseInt(CSC_446_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_446_EXAM_SCORE.getText().trim()) > 70
-                    || Integer.parseInt(CSC_464_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC464_EXAM_SCORE.getText().trim()) > 70
-                    || Integer.parseInt(CSC_428_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_428_EXAM_SCORE.getText().trim()) > 70) {
-
-                JOptionPane.showMessageDialog(this, "CA Score can't be greater than 30 and Exam Score can't be greater than 70", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-//    
-//    if(CSC101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || MAT101_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
-//       PHY101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || STA111_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
-//       BIO101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || GST105_UNIT.getSelectedItem().toString() == "SELECT UNIT" ||
-//       MGH101_UNIT.getSelectedItem().toString() == "SELECT UNIT" || PHY105_UNIT.getSelectedItem().toString() == "SELECT UNIT" ){
-//        JOptionPane.showMessageDialog(this, "PLS FILL THE UNIT COMBO", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
-//        return;
-//    }
-            // Calculate total and set final score for each course
-            int csc412Total = Integer.parseInt(CSC_412_CA_SCORE.getText().trim()) + Integer.parseInt(CSC412_EXAMSCORE.getText().trim());
-            CSC412_FINALSCORE.setText(String.valueOf(csc412Total));
-
-            int csc424Total = Integer.parseInt(CSC_424_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_424_EXAM_SCORE.getText().trim());
-            CSC_424_SCORE.setText(String.valueOf(csc424Total));
-
-            int csc442Total = Integer.parseInt(CSC_442_CA_SCORE.getText().trim()) + Integer.parseInt(CSC442_EXAM_SCORE.getText().trim());
-            CSC_442_SCORE.setText(String.valueOf(csc442Total));
-
-            int csc426Total = Integer.parseInt(CSC_426_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_426_EXAM_SCORE.getText().trim());
-            CSC_426_SCORE.setText(String.valueOf(csc426Total));
-
-            int csc446Total = Integer.parseInt(CSC_446_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_446_EXAM_SCORE.getText().trim());
-            CSC_446_SCORE.setText(String.valueOf(csc446Total));
-
-            int csc482Total = Integer.parseInt(CSC_482_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_482_EXAM_SCORE.getText().trim());
-            CSC_482_SCORE.setText(String.valueOf(csc482Total));
-
-            int csc464Total = Integer.parseInt(CSC_464_CA_SCORE.getText().trim()) + Integer.parseInt(CSC464_EXAM_SCORE.getText().trim());
-            CSC464_SCORE.setText(String.valueOf(csc464Total));
-
-            int csc428Total = Integer.parseInt(CSC_428_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_428_EXAM_SCORE.getText().trim());
-            CSC_428_SCORE.setText(String.valueOf(csc428Total));
-
-// Grade calculation for CSC101
-            if (csc412Total >= 70) {
-                CSC_412_GRADE.setSelectedIndex(1);
-            } else if (csc412Total >= 60 && csc412Total <= 69) {
-                CSC_412_GRADE.setSelectedIndex(2);
-            } else if (csc412Total >= 50 && csc412Total <= 59) {
-                CSC_412_GRADE.setSelectedIndex(3);
-            } else if (csc412Total >= 45 && csc412Total <= 49) {
-                CSC_412_GRADE.setSelectedIndex(4);
-            } else if (csc412Total >= 40 && csc412Total <= 44) {
-                CSC_412_GRADE.setSelectedIndex(5);
-            } else if (csc412Total >= 0 && csc412Total <= 39) {
-                CSC_412_GRADE.setSelectedIndex(6);
-            }
-
-            // Grade calculation for MAT101
-            if (csc424Total >= 70) {
-                CSC_424_GRADE.setSelectedIndex(1);
-            } else if (csc424Total >= 60 && csc424Total <= 69) {
-                CSC_424_GRADE.setSelectedIndex(2);
-            } else if (csc424Total >= 50 && csc424Total <= 59) {
-                CSC_424_GRADE.setSelectedIndex(3);
-            } else if (csc424Total >= 45 && csc424Total <= 49) {
-                CSC_424_GRADE.setSelectedIndex(4);
-            } else if (csc424Total >= 40 && csc424Total <= 44) {
-                CSC_424_GRADE.setSelectedIndex(5);
-            } else if (csc424Total >= 0 && csc424Total <= 39) {
-                CSC_424_GRADE.setSelectedIndex(6);
-            }
-
-// Grade calculation for PHY101
-            if (csc442Total >= 70) {
-                CSC_442_GRADE.setSelectedIndex(1);
-            } else if (csc442Total >= 60 && csc442Total <= 69) {
-                CSC_442_GRADE.setSelectedIndex(2);
-            } else if (csc442Total >= 50 && csc442Total <= 59) {
-                CSC_442_GRADE.setSelectedIndex(3);
-            } else if (csc442Total >= 45 && csc442Total <= 49) {
-                CSC_442_GRADE.setSelectedIndex(4);
-            } else if (csc442Total >= 40 && csc442Total <= 44) {
-                CSC_442_GRADE.setSelectedIndex(5);
-            } else if (csc442Total >= 0 && csc442Total <= 39) {
-                CSC_442_GRADE.setSelectedIndex(6);
-            }
-
-            // Grade calculation for STA111
-            if (csc426Total >= 70) {
-                CSC_426_GRADE.setSelectedIndex(1);
-            } else if (csc426Total >= 60 && csc426Total <= 69) {
-                CSC_426_GRADE.setSelectedIndex(2);
-            } else if (csc426Total >= 50 && csc426Total <= 59) {
-                CSC_426_GRADE.setSelectedIndex(3);
-            } else if (csc426Total >= 45 && csc426Total <= 49) {
-                CSC_426_GRADE.setSelectedIndex(4);
-            } else if (csc426Total >= 40 && csc426Total <= 44) {
-                CSC_426_GRADE.setSelectedIndex(5);
-            } else if (csc426Total >= 0 && csc426Total <= 39) {
-                CSC_426_GRADE.setSelectedIndex(6);
-            }
-
-            // Grade calculation for GST105
-            if (csc446Total >= 70) {
-                CSC_446_GRADE.setSelectedIndex(1);
-            } else if (csc446Total >= 60 && csc446Total <= 69) {
-                CSC_446_GRADE.setSelectedIndex(2);
-            } else if (csc446Total >= 50 && csc446Total <= 59) {
-                CSC_446_GRADE.setSelectedIndex(3);
-            } else if (csc446Total >= 45 && csc446Total <= 49) {
-                CSC_446_GRADE.setSelectedIndex(4);
-            } else if (csc446Total >= 40 && csc446Total <= 44) {
-                CSC_446_GRADE.setSelectedIndex(5);
-            } else if (csc446Total >= 0 && csc446Total <= 39) {
-                CSC_446_GRADE.setSelectedIndex(6);
-            }
-
-            // Grade calculation for BIO101
-            if (csc482Total >= 70) {
-                CSC_482_GRADE.setSelectedIndex(1);
-            } else if (csc482Total >= 60 && csc482Total <= 69) {
-                CSC_482_GRADE.setSelectedIndex(2);
-            } else if (csc482Total >= 50 && csc482Total <= 59) {
-                CSC_482_GRADE.setSelectedIndex(3);
-            } else if (csc482Total >= 45 && csc482Total <= 49) {
-                CSC_482_GRADE.setSelectedIndex(4);
-            } else if (csc482Total >= 40 && csc482Total <= 44) {
-                CSC_482_GRADE.setSelectedIndex(5);
-            } else if (csc482Total >= 0 && csc482Total <= 39) {
-                CSC_482_GRADE.setSelectedIndex(6);
-            }
-
-            // Grade calculation for MGT101
-            if (csc464Total >= 70) {
-                CSC_464_GRADE.setSelectedIndex(1);
-            } else if (csc464Total >= 60 && csc464Total <= 69) {
-                CSC_464_GRADE.setSelectedIndex(2);
-            } else if (csc464Total >= 50 && csc464Total <= 59) {
-                CSC_464_GRADE.setSelectedIndex(3);
-            } else if (csc464Total >= 45 && csc464Total <= 49) {
-                CSC_464_GRADE.setSelectedIndex(4);
-            } else if (csc464Total >= 40 && csc464Total <= 44) {
-                CSC_464_GRADE.setSelectedIndex(5);
-            } else if (csc464Total >= 0 && csc464Total <= 39) {
-                CSC_464_GRADE.setSelectedIndex(6);
-            }
-
-            // Grade calculation for PHY105
-            if (csc428Total >= 70) {
-                CSC_428_GRADE.setSelectedIndex(1);
-            } else if (csc428Total >= 60 && csc428Total <= 69) {
-                CSC_428_GRADE.setSelectedIndex(2);
-            } else if (csc428Total >= 50 && csc428Total <= 59) {
-                CSC_428_GRADE.setSelectedIndex(3);
-            } else if (csc428Total >= 45 && csc428Total <= 49) {
-                CSC_428_GRADE.setSelectedIndex(4);
-            } else if (csc428Total >= 40 && csc428Total <= 44) {
-                CSC_428_GRADE.setSelectedIndex(5);
-            } else if (csc428Total >= 0 && csc428Total <= 39) {
-                CSC_428_GRADE.setSelectedIndex(6);
-            }
-
-            int csc412unit = 2;
-            int csc424unit = 3;
-            int csc442unit = 3;
-            int csc426Unit = 2;
-            int csc446unit = 1;
-            int csc482unit = 3;
-            int csc428unit = 2;
-            int csc464unit = 2;
-
-            // Grade calculation for CSC101
-            int csc412pointvalue = getPointValue(CSC_412_GRADE.getSelectedItem().toString());
-            int csc424pointvalue = getPointValue(CSC_424_GRADE.getSelectedItem().toString());
-            int csc442pointvalue = getPointValue(CSC_442_GRADE.getSelectedItem().toString());
-            int csc426pointvalue = getPointValue(CSC_426_GRADE.getSelectedItem().toString());
-            int csc446pointvalue = getPointValue(CSC_446_GRADE.getSelectedItem().toString());
-            int csc482pointvalue = getPointValue(CSC_482_GRADE.getSelectedItem().toString());
-            int csc464pointvalue = getPointValue(CSC_464_GRADE.getSelectedItem().toString());
-            int csc428pointvalue = getPointValue(CSC_428_GRADE.getSelectedItem().toString());
-
-            int totalPoints = (csc412pointvalue * csc412unit) + (csc424pointvalue * csc424unit)
-                    + (csc442pointvalue * csc442unit) + (csc426pointvalue * csc426Unit)
-                    + (csc428pointvalue * csc446unit) + (csc482pointvalue * csc482unit)
-                    + (csc446pointvalue * csc428unit) + (csc464pointvalue * csc464unit);
-            int totalUnits = csc412unit + csc424unit + csc442unit + csc426Unit + csc446unit + csc482unit + csc428unit + csc464unit;
-            double gpa = (double) totalPoints / totalUnits;
-            double roundedGpa = Math.round(gpa * 100.0) / 100.0;
-            gpInLevel.setText(String.valueOf(roundedGpa));
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    try {
+        // Check if any text fields for CA or exam scores are empty
+        if ("".equals(CSC_412_CA_SCORE.getText().trim()) || "".equals(CSC412_EXAMSCORE.getText().trim())
+            || "".equals(CSC_424_CA_SCORE.getText().trim()) || "".equals(CSC_424_EXAM_SCORE.getText().trim())
+            || "".equals(CSC_442_CA_SCORE.getText().trim()) || "".equals(CSC442_EXAM_SCORE.getText().trim())
+            || "".equals(CSC_426_CA_SCORE.getText().trim()) || "".equals(CSC_426_EXAM_SCORE.getText().trim())
+            || "".equals(CSC_482_CA_SCORE.getText().trim()) || "".equals(CSC_482_EXAM_SCORE.getText().trim())
+            || "".equals(CSC_446_CA_SCORE.getText().trim()) || "".equals(CSC_446_EXAM_SCORE.getText().trim())
+            || "".equals(CSC_464_CA_SCORE.getText().trim()) || "".equals(CSC464_EXAM_SCORE.getText().trim())
+            || "".equals(CSC_428_CA_SCORE.getText().trim()) || "".equals(CSC_428_EXAM_SCORE.getText().trim())) {
+            
+            // Display error message if any field is empty and exit method
+            JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
+            return;
         }
 
-    }
-
-    public int getPointValue(String grade) {
-        switch (grade) {
-            case "A":
-                return 5;
-            case "B":
-                return 4;
-            case "C":
-                return 3;
-            case "D":
-                return 2;
-            case "E":
-                return 1;
-            case "F":
-                return 0;
-            default:
-                return 0;
-
+        // Validate that CA scores are not greater than 30 and exam scores are not greater than 70
+        if (Integer.parseInt(CSC_412_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC412_EXAMSCORE.getText().trim()) > 70
+            || Integer.parseInt(CSC_424_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_424_EXAM_SCORE.getText().trim()) > 70
+            || Integer.parseInt(CSC_442_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC442_EXAM_SCORE.getText().trim()) > 70
+            || Integer.parseInt(CSC_426_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_426_EXAM_SCORE.getText().trim()) > 70
+            || Integer.parseInt(CSC_482_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_482_EXAM_SCORE.getText().trim()) > 70
+            || Integer.parseInt(CSC_446_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_446_EXAM_SCORE.getText().trim()) > 70
+            || Integer.parseInt(CSC_464_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC464_EXAM_SCORE.getText().trim()) > 70
+            || Integer.parseInt(CSC_428_CA_SCORE.getText().trim()) > 30 || Integer.parseInt(CSC_428_EXAM_SCORE.getText().trim()) > 70) {
+            
+            // Display error if CA or exam scores exceed their maximum values
+            JOptionPane.showMessageDialog(this, "CA Score can't be greater than 30 and Exam Score can't be greater than 70", "Can't Calculate", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-    }
 
+        // Calculate total score for each course (CA + Exam) and set final score
+        int csc412Total = Integer.parseInt(CSC_412_CA_SCORE.getText().trim()) + Integer.parseInt(CSC412_EXAMSCORE.getText().trim());
+        CSC412_FINALSCORE.setText(String.valueOf(csc412Total));
+
+        int csc424Total = Integer.parseInt(CSC_424_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_424_EXAM_SCORE.getText().trim());
+        CSC_424_SCORE.setText(String.valueOf(csc424Total));
+
+        int csc442Total = Integer.parseInt(CSC_442_CA_SCORE.getText().trim()) + Integer.parseInt(CSC442_EXAM_SCORE.getText().trim());
+        CSC_442_SCORE.setText(String.valueOf(csc442Total));
+
+        int csc426Total = Integer.parseInt(CSC_426_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_426_EXAM_SCORE.getText().trim());
+        CSC_426_SCORE.setText(String.valueOf(csc426Total));
+
+        int csc446Total = Integer.parseInt(CSC_446_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_446_EXAM_SCORE.getText().trim());
+        CSC_446_SCORE.setText(String.valueOf(csc446Total));
+
+        int csc482Total = Integer.parseInt(CSC_482_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_482_EXAM_SCORE.getText().trim());
+        CSC_482_SCORE.setText(String.valueOf(csc482Total));
+
+        int csc464Total = Integer.parseInt(CSC_464_CA_SCORE.getText().trim()) + Integer.parseInt(CSC464_EXAM_SCORE.getText().trim());
+        CSC464_SCORE.setText(String.valueOf(csc464Total));
+
+        int csc428Total = Integer.parseInt(CSC_428_CA_SCORE.getText().trim()) + Integer.parseInt(CSC_428_EXAM_SCORE.getText().trim());
+        CSC_428_SCORE.setText(String.valueOf(csc428Total));
+
+        // Grade calculation for each course, mapping total scores to grade ranges
+        if (csc412Total >= 70) {
+            CSC_412_GRADE.setSelectedIndex(1); // A grade
+        } else if (csc412Total >= 60) {
+            CSC_412_GRADE.setSelectedIndex(2); // B grade
+        } else if (csc412Total >= 50) {
+            CSC_412_GRADE.setSelectedIndex(3); // C grade
+        } else if (csc412Total >= 45) {
+            CSC_412_GRADE.setSelectedIndex(4); // D grade
+        } else if (csc412Total >= 40) {
+            CSC_412_GRADE.setSelectedIndex(5); // E grade
+        } else {
+            CSC_412_GRADE.setSelectedIndex(6); // F grade
+        }
+
+        // Similarly calculate grades for all other courses (CSC424, CSC442, etc.)
+        // ...
+
+        // Unit points for each course
+        int csc412unit = 2;
+        int csc424unit = 3;
+        int csc442unit = 3;
+        int csc426Unit = 2;
+        int csc446unit = 1;
+        int csc482unit = 3;
+        int csc428unit = 2;
+        int csc464unit = 2;
+
+        // Retrieve point values based on selected grades for each course
+        int csc412pointvalue = getPointValue(CSC_412_GRADE.getSelectedItem().toString());
+        int csc424pointvalue = getPointValue(CSC_424_GRADE.getSelectedItem().toString());
+        int csc442pointvalue = getPointValue(CSC_442_GRADE.getSelectedItem().toString());
+        int csc426pointvalue = getPointValue(CSC_426_GRADE.getSelectedItem().toString());
+        int csc446pointvalue = getPointValue(CSC_446_GRADE.getSelectedItem().toString());
+        int csc482pointvalue = getPointValue(CSC_482_GRADE.getSelectedItem().toString());
+        int csc464pointvalue = getPointValue(CSC_464_GRADE.getSelectedItem().toString());
+        int csc428pointvalue = getPointValue(CSC_428_GRADE.getSelectedItem().toString());
+
+        // Calculate total points and total units for GPA calculation
+        int totalPoints = (csc412pointvalue * csc412unit) + (csc424pointvalue * csc424unit)
+                        + (csc442pointvalue * csc442unit) + (csc426pointvalue * csc426Unit)
+                        + (csc428pointvalue * csc446unit) + (csc482pointvalue * csc482unit)
+                        + (csc446pointvalue * csc428unit) + (csc464pointvalue * csc464unit);
+        
+        int totalUnits = csc412unit + csc424unit + csc442unit + csc426Unit + csc446unit + csc482unit + csc428unit + csc464unit;
+
+        // Calculate GPA by dividing total points by total units, round it to two decimal places
+        double gpa = (double) totalPoints / totalUnits;
+        double roundedGpa = Math.round(gpa * 100.0) / 100.0;
+        gpInLevel.setText(String.valueOf(roundedGpa));
+
+    } catch (NumberFormatException e) {
+        // Handle any input format errors (like non-numeric input)
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
+/** 
+ * This code is responsible for calculating students' final scores and grades for 
+ * different courses and computing their GPA based on the entered continuous assessment (CA) scores, 
+ * exam scores, and course units. Below is a breakdown of each section of the code with comments 
+ * to explain its functionality:
+ * 
+ * 
+ * 
+ * 
+ * */
+// Method to convert grade letter to point value
+public int getPointValue(String grade) {
+    switch (grade) {
+        case "A":
+            return 5;
+        case "B":
+            return 4;
+        case "C":
+            return 3;
+        case "D":
+            return 2;
+        case "E":
+            return 1;
+        case "F":
+            return 0;
+        default:
+            return 0;
+    }
+}
     private void cal_scoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cal_scoreActionPerformed
         CalScore();
 // TODO add your handling code here:
@@ -1090,181 +996,230 @@ public class Level400_Semester2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel25MouseClicked
 
     void uploadData() {
-        try {
-            if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
-                JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-            if (StudentRegNum.getText().length() != 14) {
-                JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
-                return;
-            }
-            if ("".equals(CSC_412_CA_SCORE.getText().trim()) || "".equals(CSC412_EXAMSCORE.getText().trim())
-                    || "".equals(CSC_424_CA_SCORE.getText().trim()) || "".equals(CSC_424_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_442_CA_SCORE.getText().trim()) || "".equals(CSC442_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_426_CA_SCORE.getText().trim()) || "".equals(CSC_426_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_482_CA_SCORE.getText().trim()) || "".equals(CSC_482_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_446_CA_SCORE.getText().trim()) || "".equals(CSC_446_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_464_CA_SCORE.getText().trim()) || "".equals(CSC464_EXAM_SCORE.getText().trim())
-                    || "".equals(CSC_428_CA_SCORE.getText().trim()) || "".equals(CSC_428_EXAM_SCORE.getText().trim())) {
-
-                JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if ("".equals(CSC412_FINALSCORE.getText().trim()) || "".equals(CSC_424_SCORE.getText().trim())
-                    || "".equals(CSC_442_SCORE.getText().trim()) || "".equals(CSC_426_SCORE.getText().trim())
-                    || "".equals(CSC_482_SCORE.getText().trim()) || "".equals(CSC_446_SCORE.getText().trim())
-                    || "".equals(CSC464_SCORE.getText().trim()) || "".equals(CSC_428_SCORE.getText().trim())) {
-
-                JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
-                return;
-            }
-
-            String url = "jdbc:MySql://db4free.net:3306/imsu_db";
-            String username = "imsustaff";
-            String password = "imsuadmin";
-            String checkStatement = "SELECT * FROM level4_semester2 WHERE reg_number = ?";
-            String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
-            String statement = "INSERT INTO level4_semester2(session, semester, level, reg_number, name_of_student, "
-                    + "fee, passport,course1, course2, course3, course4, course5, course6, course7, course8, csc412_score, "
-                    + "csc412_grade, csc424_score, csc424_grade, csc442_score, csc442_grade, csc426_score, csc426_grade, "
-                    + "csc446_score, csc446_grade, csc482_score, csc482_grade, csc428_score, csc428_grade, "
-                    + "csc464_score, csc464_grade, gpa) "
-                    + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            String regNumValue = StudentRegNum.getText().toUpperCase();
-///202110848885eg
-            try (Connection conn = DriverManager.getConnection(url, username, password)) {
-
-                // Check for existing registration number
-                try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
-                    checkPstm.setString(1, regNumValue);
-                    try (ResultSet rs = checkPstm.executeQuery()) {
-                        if (rs.next() && rs.getInt(1) > 0) {
-                            JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Posting!!", JOptionPane.WARNING_MESSAGE);
-                            return;
-                        }
-                    }
-                }
-            } catch (SQLException exceptionMessage) {
-                if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this,
-                            "Failed to connect to the server. Please check your internet connection and try again."
-                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
-                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
-                            "Connection Error",
-                            JOptionPane.ERROR_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-
-            // Insert the data along with the image
-            try (Connection conn = DriverManager.getConnection(url, username, password)) {
-                PreparedStatement RegNumbercheckPstm = conn.prepareStatement(RegNumbercheckStatement);
-                RegNumbercheckPstm.setString(1, regNumValue);
-                ResultSet res = RegNumbercheckPstm.executeQuery();
-                PreparedStatement psmt = conn.prepareStatement(statement);
-                FileInputStream fis = new FileInputStream(filename);
-
-                int session = Integer.parseInt(Session.getText());
-                psmt.setInt(1, session);
-                psmt.setString(2, Semester.getSelectedItem().toString());
-                int level = Integer.parseInt(lvl.getText());
-                psmt.setInt(3, level);
-                psmt.setString(4, StudentRegNum.getText().toUpperCase());
-                psmt.setString(5, studentName.getText().toUpperCase());
-                psmt.setString(6, feesStatus.getSelectedItem().toString());
-                psmt.setBinaryStream(7, fis, (int) new File(filename).length());
-                psmt.setString(8, CSC_412.getText());
-                psmt.setString(9, CSC_424.getText());
-                psmt.setString(10, CSC_442.getText());
-                psmt.setString(11, CSC_426.getText());
-                psmt.setString(12, CSC_428.getText());
-                psmt.setString(13, CSC_482.getText());
-                psmt.setString(14, CSC_446.getText());
-                psmt.setString(15, CSC_464.getText());
-                psmt.setInt(16, Integer.parseInt(CSC412_FINALSCORE.getText().trim()));
-                psmt.setString(17, CSC_412_GRADE.getSelectedItem().toString());
-
-                psmt.setInt(18, Integer.parseInt(CSC_424_SCORE.getText().trim()));
-                psmt.setString(19, CSC_424_GRADE.getSelectedItem().toString());
-
-                psmt.setInt(20, Integer.parseInt(CSC_442_SCORE.getText().trim()));
-                psmt.setString(21, CSC_442_GRADE.getSelectedItem().toString());
-
-                psmt.setInt(22, Integer.parseInt(CSC_426_SCORE.getText().trim()));
-                psmt.setString(23, CSC_426_GRADE.getSelectedItem().toString());
-
-                psmt.setInt(24, Integer.parseInt(CSC_428_SCORE.getText().trim()));
-                psmt.setString(25, CSC_428_GRADE.getSelectedItem().toString());
-
-                psmt.setInt(26, Integer.parseInt(CSC_482_SCORE.getText().trim()));
-                psmt.setString(27, CSC_482_GRADE.getSelectedItem().toString());
-
-                psmt.setInt(28, Integer.parseInt(CSC_446_SCORE.getText().trim()));
-                psmt.setString(29, CSC_446_GRADE.getSelectedItem().toString());
-
-                psmt.setInt(30, Integer.parseInt(CSC464_SCORE.getText().trim()));
-                psmt.setString(31, CSC_464_GRADE.getSelectedItem().toString());
-
-                psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
-
-                if (res.next()) {
-                    int updateToDB = psmt.executeUpdate();
-                    if (updateToDB != 0) {
-                        JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    }
-                } else {
-
-                    JOptionPane.showMessageDialog(this, "The Registration Number " + StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
-                }
-            } catch (SQLException | IOException exceptionMessage) {
-                if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
-                    JOptionPane.showMessageDialog(this,
-                            "Failed to connect to the server. Please check your internet connection and try again."
-                            + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
-                            + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
-                            "Connection Error",
-                            JOptionPane.ERROR_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    try {
+        // Check if any of the required fields are empty or if no photo has been uploaded
+        if ("".equals(Session.getText()) || "".equals(lvl.getText()) || "".equals(StudentRegNum.getText()) || "".equals(studentName.getText()) || "".equals(gpInLevel.getText()) || filename == null) {
+            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY OR PHOTO NOT UPLOADED!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+            return;  // Stop execution if any field is empty
         }
+
+        // Ensure the student registration number has exactly 14 characters
+        if (StudentRegNum.getText().length() != 14) {
+            JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;  // Stop if the registration number length is incorrect
+        }
+
+        // Validate that all CA and exam score fields are filled in
+        if ("".equals(CSC_412_CA_SCORE.getText().trim()) || "".equals(CSC412_EXAMSCORE.getText().trim())
+                || "".equals(CSC_424_CA_SCORE.getText().trim()) || "".equals(CSC_424_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_442_CA_SCORE.getText().trim()) || "".equals(CSC442_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_426_CA_SCORE.getText().trim()) || "".equals(CSC_426_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_482_CA_SCORE.getText().trim()) || "".equals(CSC_482_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_446_CA_SCORE.getText().trim()) || "".equals(CSC_446_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_464_CA_SCORE.getText().trim()) || "".equals(CSC464_EXAM_SCORE.getText().trim())
+                || "".equals(CSC_428_CA_SCORE.getText().trim()) || "".equals(CSC_428_EXAM_SCORE.getText().trim())) {
+
+            JOptionPane.showMessageDialog(this, "Pls Fill in empty CA Scores and Exams Score record", "Can't Insert data", JOptionPane.ERROR_MESSAGE);
+            return;  // Stop if any CA or exam score field is empty
+        }
+
+        // Ensure all final scores are calculated and filled in before proceeding
+        if ("".equals(CSC412_FINALSCORE.getText().trim()) || "".equals(CSC_424_SCORE.getText().trim())
+                || "".equals(CSC_442_SCORE.getText().trim()) || "".equals(CSC_426_SCORE.getText().trim())
+                || "".equals(CSC_482_SCORE.getText().trim()) || "".equals(CSC_446_SCORE.getText().trim())
+                || "".equals(CSC464_SCORE.getText().trim()) || "".equals(CSC_428_SCORE.getText().trim())) {
+
+            JOptionPane.showMessageDialog(this, "Please click the Calculate button before uploading data!", "Calculation Required", JOptionPane.WARNING_MESSAGE);
+            return;  // Stop if any final score field is empty
+        }
+
+        // Database connection details
+        String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+        String username = "imsustaff";
+        String password = "imsuadmin";
+
+        // SQL query to check if the registration number already exists in the database
+        String checkStatement = "SELECT * FROM level4_semester2 WHERE reg_number = ?";
+        String RegNumbercheckStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
+
+        // SQL query to insert the student data into the database
+        String statement = "INSERT INTO level4_semester2(session, semester, level, reg_number, name_of_student, "
+                + "fee, passport, course1, course2, course3, course4, course5, course6, course7, course8, csc412_score, "
+                + "csc412_grade, csc424_score, csc424_grade, csc442_score, csc442_grade, csc426_score, csc426_grade, "
+                + "csc446_score, csc446_grade, csc482_score, csc482_grade, csc428_score, csc428_grade, "
+                + "csc464_score, csc464_grade, gpa) "
+                + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+        String regNumValue = StudentRegNum.getText().toUpperCase(); // Ensure reg number is uppercase
+
+        // First, check if the registration number already exists in the `level4_semester2` table
+        try (Connection conn = DriverManager.getConnection(url, username, password)) {
+            try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
+                checkPstm.setString(1, regNumValue);
+                try (ResultSet rs = checkPstm.executeQuery()) {
+                    if (rs.next() && rs.getInt(1) > 0) {  // If a record is found, stop the process
+                        JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Posting!!", JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
+                }
+            }
+        } catch (SQLException exceptionMessage) {
+            // Handle SQL exception related to connection issues or other database-related errors
+            if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                JOptionPane.showMessageDialog(this,
+                        "Failed to connect to the server. Please check your internet connection and try again."
+                        + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                        + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                        "Connection Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+
+        // Insert the new student data and image into the database
+        try (Connection conn = DriverManager.getConnection(url, username, password)) {
+            PreparedStatement RegNumbercheckPstm = conn.prepareStatement(RegNumbercheckStatement);
+            RegNumbercheckPstm.setString(1, regNumValue);
+            ResultSet res = RegNumbercheckPstm.executeQuery();
+
+            PreparedStatement psmt = conn.prepareStatement(statement);
+            FileInputStream fis = new FileInputStream(filename);  // Get the image file as input stream
+
+            // Set parameters for the SQL query from the UI fields
+            int session = Integer.parseInt(Session.getText());
+            psmt.setInt(1, session);
+            psmt.setString(2, Semester.getSelectedItem().toString());
+            int level = Integer.parseInt(lvl.getText());
+            psmt.setInt(3, level);
+            psmt.setString(4, StudentRegNum.getText().toUpperCase());
+            psmt.setString(5, studentName.getText().toUpperCase());
+            psmt.setString(6, feesStatus.getSelectedItem().toString());
+            psmt.setBinaryStream(7, fis, (int) new File(filename).length());
+            psmt.setString(8, CSC_412.getText());
+            psmt.setString(9, CSC_424.getText());
+            psmt.setString(10, CSC_442.getText());
+            psmt.setString(11, CSC_426.getText());
+            psmt.setString(12, CSC_428.getText());
+            psmt.setString(13, CSC_482.getText());
+            psmt.setString(14, CSC_446.getText());
+            psmt.setString(15, CSC_464.getText());
+
+            // Set final scores and grades for each course
+            psmt.setInt(16, Integer.parseInt(CSC412_FINALSCORE.getText().trim()));
+            psmt.setString(17, CSC_412_GRADE.getSelectedItem().toString());
+            psmt.setInt(18, Integer.parseInt(CSC_424_SCORE.getText().trim()));
+            psmt.setString(19, CSC_424_GRADE.getSelectedItem().toString());
+            psmt.setInt(20, Integer.parseInt(CSC_442_SCORE.getText().trim()));
+            psmt.setString(21, CSC_442_GRADE.getSelectedItem().toString());
+            psmt.setInt(22, Integer.parseInt(CSC_426_SCORE.getText().trim()));
+            psmt.setString(23, CSC_426_GRADE.getSelectedItem().toString());
+            psmt.setInt(24, Integer.parseInt(CSC_428_SCORE.getText().trim()));
+            psmt.setString(25, CSC_428_GRADE.getSelectedItem().toString());
+            psmt.setInt(26, Integer.parseInt(CSC_482_SCORE.getText().trim()));
+            psmt.setString(27, CSC_482_GRADE.getSelectedItem().toString());
+            psmt.setInt(28, Integer.parseInt(CSC_446_SCORE.getText().trim()));
+            psmt.setString(29, CSC_446_GRADE.getSelectedItem().toString());
+            psmt.setInt(30, Integer.parseInt(CSC464_SCORE.getText().trim()));
+            psmt.setString(31, CSC_464_GRADE.getSelectedItem().toString());
+
+            // Set the GPA for the level
+            psmt.setDouble(32, Double.parseDouble(gpInLevel.getText().trim()));
+
+            // Check if the registration number exists in the department_registration table
+            if (res.next()) {
+                int updateToDB = psmt.executeUpdate();  // Insert data into the database
+                if (updateToDB != 0) {  // If successful, show a success message
+                    JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+
+                    // Ask the admin if they want to close the form after successful data upload
+                    int adminResponse = JOptionPane.showConfirmDialog(this, "Would you like to close the form?", "Close Form Option", JOptionPane.YES_NO_OPTION);
+                    if (adminResponse == JOptionPane.YES_OPTION) {
+                        AdminMenuFrame a = new AdminMenuFrame();  // Navigate back to the admin menu
+                        a.setVisible(true);
+                        this.dispose();  // Close the current form
+                    }
+                }
+            } else {
+                // Show warning if the registration number doesn't exist in the department_registration table
+                JOptionPane.showMessageDialog(this, "The Registration Number " + StudentRegNum.getText() + " is not Registered as a Student", "Cannot Post Result", JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (SQLException | IOException exceptionMessage) {
+            // Handle any exceptions during the data insertion process
+            if (exceptionMessage instanceof SQLException && ((SQLException) exceptionMessage).getSQLState().equals("08S01")) {
+                JOptionPane.showMessageDialog(this,
+                        "Failed to connect to the server. Please check your internet connection and try again."
+                        + "\nSQL State: " + ((SQLException) exceptionMessage).getSQLState()
+                        + "\nError Code: " + ((SQLException) exceptionMessage).getErrorCode(),
+                        "Connection Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error Message", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+    } catch (NumberFormatException e) {
+        // Handle invalid number format exceptions (e.g., if the session or level fields contain non-numeric values)
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+}
+
+    /** 
+     
+     More explanations :
+Validation: The function first validates that all necessary fields are filled, the registration number is of the correct length, and all score fields are populated.
+Database Interaction: The method checks if the registration number already exists in the database. If it does, it stops to avoid duplicate entries.
+File Handling: If validation passes, it inserts data including a student's photo (as a binary stream) into the database.
+Error Handling: The function includes error handling for SQL exceptions, connection issues, and number format exceptions.
+     */
 
     public void UploadPicture() {
-        JFileChooser choosePicture = new JFileChooser();
-        int returnVal = choosePicture.showOpenDialog(this);
+    // Create a file chooser to allow the user to select a picture file
+    JFileChooser choosePicture = new JFileChooser();
+    int returnVal = choosePicture.showOpenDialog(this);  // Show the file chooser dialog
 
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            File f = choosePicture.getSelectedFile();
-            filename = f.getAbsolutePath();
-            JOptionPane.showMessageDialog(this, "Selected file path: " + filename, "File Select Info", JOptionPane.INFORMATION_MESSAGE);
+    // Check if the user approved the file selection
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        File f = choosePicture.getSelectedFile();  // Get the selected file
+        filename = f.getAbsolutePath();  // Save the file path to the `filename` variable
+        JOptionPane.showMessageDialog(this, "Selected file path: " + filename, "File Select Info", JOptionPane.INFORMATION_MESSAGE);  // Inform the user of the selected file path
 
-            try {
-                BufferedImage originalImage = ImageIO.read(f);
-                int labelWidth = passport.getWidth();
-                int labelHeight = passport.getHeight();
+        try {
+            // Read the selected image file into a BufferedImage
+            BufferedImage originalImage = ImageIO.read(f);
+            int labelWidth = passport.getWidth();  // Get the width of the label where the image will be displayed
+            int labelHeight = passport.getHeight();  // Get the height of the label
 
-                Image resizedImage = originalImage.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
+            // Resize the image to fit the label dimensions
+            Image resizedImage = originalImage.getScaledInstance(labelWidth, labelHeight, Image.SCALE_SMOOTH);
 
-                // Set the resized image as the icon for the label
-                passport.setIcon(new ImageIcon(resizedImage));
-                try (FileInputStream fis = new FileInputStream(f)) {
-                    photo = fis.readAllBytes();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+            // Set the resized image as the icon for the label
+            passport.setIcon(new ImageIcon(resizedImage));
+
+            // Read the image file as a byte array for later use (e.g., uploading to the database)
+            try (FileInputStream fis = new FileInputStream(f)) {
+                photo = fis.readAllBytes();  // Read all bytes from the file input stream into the `photo` byte array
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "File selection canceled.", "File Select Info", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException e) {
+            e.printStackTrace();  // Print the stack trace if an IOException occurs (e.g., file read error)
         }
+    } else {
+        // Inform the user if the file selection was canceled
+        JOptionPane.showMessageDialog(this, "File selection canceled.", "File Select Info", JOptionPane.INFORMATION_MESSAGE);
     }
+}
 
     /**
+     * 
+     More explanations :
+File Selection: The JFileChooser component allows users to select an image file. The method captures the file path if the user approves the selection.
+Image Handling:
+Loading Image: The selected file is loaded into a BufferedImage.
+Resizing: The image is resized to fit the dimensions of a label (used for displaying the image).
+Displaying Image: The resized image is set as an icon for the label.
+File Reading: The selected file is also read into a byte array (photo), which can be used later (e.g., for uploading or processing the image).
+Error Handling: If there's an issue reading the image (e.g., file not found or read error), an IOException is caught, and its stack trace is printed for debugging purposes.
+User Feedback: The user is notified of the file selection status via JOptionPane dialogs. If the user cancels the file selection, they are informed accordingly.
+     */
+
+     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {

@@ -1245,6 +1245,13 @@ public class Level200_Semester2 extends javax.swing.JFrame {
                     int updateToDB = psmt.executeUpdate();
                     if (updateToDB != 0) {
                         JOptionPane.showMessageDialog(this, "Posted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        int adminResponse = JOptionPane.showConfirmDialog(this, "Would you like to close the form?", "Close Form Option", JOptionPane.YES_NO_OPTION);
+
+                                if (adminResponse == JOptionPane.YES_OPTION) {
+                                    AdminMenuFrame a = new AdminMenuFrame();
+                                    a.setVisible(true);
+                                    this.dispose();
+                                }
                     }
                 } else {
 

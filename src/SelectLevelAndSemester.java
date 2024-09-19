@@ -111,61 +111,104 @@ public class SelectLevelAndSemester extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void OpenFrame() {
+        // Get the selected session from the dropdown (ComboBox)
         String session = semester_and_session.getSelectedItem().toString();
+
+        // Switch based on the selected session
         switch (session) {
+            // If no session is selected, show an error dialog
             case "SELECT SESSION" ->
-                JOptionPane.showMessageDialog(this, "Please Select A Session To Open it's form", "Session Not Selected", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please Select A Session To Open its form", "Session Not Selected", JOptionPane.ERROR_MESSAGE);
+
+            // If "100 LEVEL 1ST SEMESTER" is selected
             case "100 LEVEL 1ST SEMESTER" -> {
+                // Create an instance of the Level100_Semester1 frame and make it visible
                 Level100_Semester1 l = new Level100_Semester1();
                 l.setVisible(true);
-                this.dispose();
-            }
-            case "100 LEVEL 2ND SEMESTER" -> {
-                Level100_Semester2 l = new Level100_Semester2();
-                l.setVisible(true);
-                this.dispose();
-            }
-            case "200 LEVEL 1ST SEMESTER" -> {
-                Level200_Semester1 l = new Level200_Semester1();
-                l.setVisible(true);
-                this.dispose();
-            }
-            case "200 LEVEL 2ND SEMESTER" -> {
-                Level200_Semester2 l = new Level200_Semester2();
-                l.setVisible(true);
-                this.dispose();
-            }
-            case "300 LEVEL 1ST SEMESTER" -> {
-                Level300_Semester1 l = new Level300_Semester1();
-                l.setVisible(true);
-                this.dispose();
-            }
-            case "300 LEVEL 2ND SEMESTER" -> {
-                Level300_Semester2 l = new Level300_Semester2();
-                l.setVisible(true);
-                this.dispose();
-            }
-            case "400 LEVEL 1ST SEMESTER" -> {
-                Level400_Semester1 l = new Level400_Semester1();
-                l.setVisible(true);
-                this.dispose();
-            }
-            case "400 LEVEL 2ND SEMESTER" -> {
-                Level400_Semester2 l = new Level400_Semester2();
-                l.setVisible(true);
+                // Close the current frame
                 this.dispose();
             }
 
+            // If "100 LEVEL 2ND SEMESTER" is selected
+            case "100 LEVEL 2ND SEMESTER" -> {
+                // Create an instance of the Level100_Semester2 frame and make it visible
+                Level100_Semester2 l = new Level100_Semester2();
+                l.setVisible(true);
+                // Close the current frame
+                this.dispose();
+            }
+
+            // If "200 LEVEL 1ST SEMESTER" is selected
+            case "200 LEVEL 1ST SEMESTER" -> {
+                // Create an instance of the Level200_Semester1 frame and make it visible
+                Level200_Semester1 l = new Level200_Semester1();
+                l.setVisible(true);
+                // Close the current frame
+                this.dispose();
+            }
+
+            // If "200 LEVEL 2ND SEMESTER" is selected
+            case "200 LEVEL 2ND SEMESTER" -> {
+                // Create an instance of the Level200_Semester2 frame and make it visible
+                Level200_Semester2 l = new Level200_Semester2();
+                l.setVisible(true);
+                // Close the current frame
+                this.dispose();
+            }
+
+            // If "300 LEVEL 1ST SEMESTER" is selected
+            case "300 LEVEL 1ST SEMESTER" -> {
+                // Create an instance of the Level300_Semester1 frame and make it visible
+                Level300_Semester1 l = new Level300_Semester1();
+                l.setVisible(true);
+                // Close the current frame
+                this.dispose();
+            }
+
+            // If "300 LEVEL 2ND SEMESTER" is selected
+            case "300 LEVEL 2ND SEMESTER" -> {
+                // Create an instance of the Level300_Semester2 frame and make it visible
+                Level300_Semester2 l = new Level300_Semester2();
+                l.setVisible(true);
+                // Close the current frame
+                this.dispose();
+            }
+
+            // If "400 LEVEL 1ST SEMESTER" is selected
+            case "400 LEVEL 1ST SEMESTER" -> {
+                // Create an instance of the Level400_Semester1 frame and make it visible
+                Level400_Semester1 l = new Level400_Semester1();
+                l.setVisible(true);
+                // Close the current frame
+                this.dispose();
+            }
+
+            // If "400 LEVEL 2ND SEMESTER" is selected
+            case "400 LEVEL 2ND SEMESTER" -> {
+                // Create an instance of the Level400_Semester2 frame and make it visible
+                Level400_Semester2 l = new Level400_Semester2();
+                l.setVisible(true);
+                // Close the current frame
+                this.dispose();
+            }
+
+            // Optional: You can add a default case if none of the above options match
+            default ->
+                JOptionPane.showMessageDialog(this, "Invalid Selection", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // Open the AdminMenuFrame when the label is clicked
         AdminMenuFrame aMenu = new AdminMenuFrame();
         aMenu.setVisible(true);
+        // Close the current frame
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2MouseClicked
-
+// Method to handle the "Open Form" button click event
     private void openFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openFormActionPerformed
+        // Call the OpenFrame() method when the button is clicked
         OpenFrame();
         // TODO add your handling code here:
     }//GEN-LAST:event_openFormActionPerformed

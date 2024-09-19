@@ -263,112 +263,129 @@ public class DepartmentRegistration extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     void RegisterStudent() {
+    try {
+        // Start by displaying the progress bar and simulating progress
         try {
-
-            try {
-
-                for (int i = 0; i <= 50; i++) {
-                    Thread.sleep(110);
-                    ProgressBar.setValue(i);
-                }
-                ProgressBar.setVisible(true);
-                if ("".equals(Session.getText())
-                        || "".equals(StudentRegNum.getText())
-                        || "".equals(studentName.getText())
-                        || "".equals(NumInLevel.getText())
-                        || "".equals(stuLevel.getText())) {
-                    JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
-                    return;
-                }
-                if (StudentRegNum.getText().length() != 14) {
-                    JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
-                    return;
-                }
-
-                String url = "jdbc:MySql://db4free.net:3306/imsu_db";
-                String username = "imsustaff";
-                String password = "imsuadmin";
-                String checkStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
-                String checkIfRegistered = "SELECT * FROM school_registration WHERE regNum = ?";
-                String statement = "INSERT INTO department_registration(session,semester,reg_number,name_of_student,number_in_level,lvl,fee) VALUES(?,?,?,?,?,?,?)";
-                String regNumValue = StudentRegNum.getText().toUpperCase();
-                SwingUtilities.invokeLater(() -> {
-                    try (Connection conn = DriverManager.getConnection(url, username, password)) {
-                        // Check for existing registration number
-                        try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
-                            checkPstm.setString(1, regNumValue);
-                            try (ResultSet rs = checkPstm.executeQuery()) {
-                                if (rs.next() && rs.getInt(1) > 0) {
-                                    JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
-                                    return;
-                                }
-                            }
-                        }
-                    } catch (SQLException exceptionMessage) {
-                        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // SQLState 08S01 refers to a communication link failure
-                            JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
-                        } else {
-                            JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                        }
-
-                    }
-                    try (Connection conn = DriverManager.getConnection(url, username, password)) {
-                        PreparedStatement ps = conn.prepareStatement(checkIfRegistered);
-                        ps.setString(1, StudentRegNum.getText().toUpperCase());
-                        ResultSet checkRegIfExists = ps.executeQuery();
-                        PreparedStatement psmt = conn.prepareStatement(statement);
-
-                        int session = Integer.parseInt(Session.getText());
-                        psmt.setInt(1, session);
-                        psmt.setString(2, Semester.getSelectedItem().toString());
-
-                        psmt.setString(3, StudentRegNum.getText().toUpperCase());
-                        psmt.setString(4, studentName.getText().toUpperCase());
-                        psmt.setString(5, NumInLevel.getText());
-                        int studentLevel = Integer.parseInt(stuLevel.getText());
-                        psmt.setInt(6, studentLevel);
-                        psmt.setString(7, feesStatus.getSelectedItem().toString());
-
-                        if (checkRegIfExists.next()) {
-                            int updateToDB = psmt.executeUpdate();
-                            if (updateToDB != 0) {
-                                for (int i = 50; i <= 100; i++) {
-                                    ProgressBar.setValue(i);
-                                }
-                                JOptionPane.showMessageDialog(this, "Registered Successfully", "Done", JOptionPane.INFORMATION_MESSAGE);
-                            }
-                        } else {
-                            JOptionPane.showMessageDialog(this, "Student Not registered in school \n Pls register student in the school registration form before registering here", "Can't register Student", JOptionPane.ERROR_MESSAGE);
-
-                        }
-
-                    } catch (SQLException exceptionMessage) {
-
-                        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
-                            JOptionPane.showMessageDialog(this,
-                                    "Failed to connect to the server. Please check your internet connection and try again."
-                                    + "\nSQL State: " + exceptionMessage.getSQLState()
-                                    + "\nError Code: " + exceptionMessage.getErrorCode(),
-                                    "Connection Error",
-                                    JOptionPane.ERROR_MESSAGE);
-                        } else {
-                            JOptionPane.showMessageDialog(this,
-                                    exceptionMessage.getMessage(),
-                                    "Error",
-                                    JOptionPane.ERROR_MESSAGE);
-                        }
-                    } finally {
-                        ProgressBar.setVisible(false);
-                    }
-                }
-                );
-
-            } catch (Exception e) {
+            // Simulate progress in the progress bar
+            for (int i = 0; i <= 50; i++) {
+                Thread.sleep(110); // Pause for a short duration to simulate loading
+                ProgressBar.setValue(i); // Update progress bar value
             }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            ProgressBar.setVisible(true); // Make progress bar visible
+
+            // Validate that no required fields are empty
+            if ("".equals(Session.getText())
+                    || "".equals(StudentRegNum.getText())
+                    || "".equals(studentName.getText())
+                    || "".equals(NumInLevel.getText())
+                    || "".equals(stuLevel.getText())) {
+                JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+                return; // Exit if any field is empty
+            }
+
+            // Validate that the registration number is exactly 14 characters long
+            if (StudentRegNum.getText().length() != 14) {
+                JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+                return; // Exit if the length is incorrect
+            }
+
+            // Database connection details
+            String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+            String username = "imsustaff";
+            String password = "imsuadmin";
+            
+            // SQL queries for checking existing records and inserting new records
+            String checkStatement = "SELECT * FROM department_registration WHERE reg_number = ?";
+            String checkIfRegistered = "SELECT * FROM school_registration WHERE regNum = ?";
+            String statement = "INSERT INTO department_registration(session, semester, reg_number, name_of_student, number_in_level, lvl, fee) VALUES(?,?,?,?,?,?,?)";
+            
+            // Convert registration number to uppercase for consistency
+            String regNumValue = StudentRegNum.getText().toUpperCase();
+            
+            // Use SwingUtilities.invokeLater to run database operations on the Event Dispatch Thread (EDT)
+            SwingUtilities.invokeLater(() -> {
+                try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                    // Check if the registration number already exists in department_registration
+                    try (PreparedStatement checkPstm = conn.prepareStatement(checkStatement)) {
+                        checkPstm.setString(1, regNumValue); // Set parameter for query
+                        try (ResultSet rs = checkPstm.executeQuery()) {
+                            if (rs.next() && rs.getInt(1) > 0) { // If record exists
+                                JOptionPane.showMessageDialog(this, "Registration number already exists!", "Duplicate Entry", JOptionPane.WARNING_MESSAGE);
+                                return; // Exit if duplicate found
+                            }
+                        }
+                    }
+                } catch (SQLException exceptionMessage) {
+                    // Handle database connection errors
+                    if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) { // Communication link failure
+                        JOptionPane.showMessageDialog(this, "Failed to connect to server. Please check your internet connection and try again.", "Connection Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(this, exceptionMessage.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+                
+                // Continue with registration if no errors
+                try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                    PreparedStatement ps = conn.prepareStatement(checkIfRegistered);
+                    ps.setString(1, StudentRegNum.getText().toUpperCase()); // Set parameter for query
+                    ResultSet checkRegIfExists = ps.executeQuery();
+                    
+                    // Prepare SQL statement for inserting new record
+                    PreparedStatement psmt = conn.prepareStatement(statement);
+                    int session = Integer.parseInt(Session.getText()); // Get session value
+                    psmt.setInt(1, session); // Set parameter
+                    psmt.setString(2, Semester.getSelectedItem().toString()); // Set parameter
+                    psmt.setString(3, StudentRegNum.getText().toUpperCase()); // Set parameter
+                    psmt.setString(4, studentName.getText().toUpperCase()); // Set parameter
+                    psmt.setString(5, NumInLevel.getText()); // Set parameter
+                    int studentLevel = Integer.parseInt(stuLevel.getText()); // Get student level
+                    psmt.setInt(6, studentLevel); // Set parameter
+                    psmt.setString(7, feesStatus.getSelectedItem().toString()); // Set parameter
+                    
+                    // If the student is already registered in school_registration, insert the new record
+                    if (checkRegIfExists.next()) {
+                        int updateToDB = psmt.executeUpdate(); // Execute insert statement
+                        if (updateToDB != 0) { // Check if insert was successful
+                            // Update progress bar to 100% and show success message
+                            for (int i = 50; i <= 100; i++) {
+                               
+                                ProgressBar.setValue(i); // Update progress bar value
+                            }
+                            JOptionPane.showMessageDialog(this, "Registered Successfully", "Done", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                    } else {
+                        // Show error if student is not registered in school_registration
+                        JOptionPane.showMessageDialog(this, "Student Not registered in school \n Pls register student in the school registration form before registering here", "Can't register Student", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (SQLException exceptionMessage) {
+                    // Handle database connection errors
+                    if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
+                        JOptionPane.showMessageDialog(this,
+                                "Failed to connect to the server. Please check your internet connection and try again."
+                                + "\nSQL State: " + exceptionMessage.getSQLState()
+                                + "\nError Code: " + exceptionMessage.getErrorCode(),
+                                "Connection Error",
+                                JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(this,
+                                exceptionMessage.getMessage(),
+                                "Error",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+                } finally {
+                    // Hide the progress bar once operations are complete
+                    ProgressBar.setVisible(false);
+                }
+            });
+        } catch (Exception e) {
+            // Catch any other exceptions and display the error message
         }
+    } catch (NumberFormatException e) {
+        // Handle cases where numeric fields contain invalid data
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+}
+
 
 
     private void stuLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stuLevelActionPerformed
@@ -385,7 +402,7 @@ public class DepartmentRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_SessionActionPerformed
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        AdminMenuForm M = new AdminMenuForm();
+        AdminMenuFrame M = new AdminMenuFrame();
         M.setVisible(true);
         this.dispose();
         // TODO add your handling code here:

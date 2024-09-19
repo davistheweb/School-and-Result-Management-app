@@ -22,30 +22,45 @@ public class SchoolRegistration extends javax.swing.JFrame {
      */
     public SchoolRegistration() {
         initComponents();
-        showTables();
+        showTables();  // Display registered students when the page loads
     }
 
     public ArrayList<RegisteredStudents> studentsList() {
-        ArrayList<RegisteredStudents> RegisteredStudentList = new ArrayList();
+        // Create a list to hold RegisteredStudents objects
+        ArrayList<RegisteredStudents> RegisteredStudentList = new ArrayList<>();
         String url = "jdbc:MySql://db4free.net:3306/imsu_db";
         String username = "imsustaff";
         String password = "imsuadmin";
+
         try {
+            // Establish connection to the MySQL database
             Connection conn = DriverManager.getConnection(url, username, password);
-            //PreparedStatement pstm = conn.prepareStatement(statement);
             String query2 = "SELECT * FROM school_registration";
             Statement st = conn.createStatement();
             ResultSet rst = st.executeQuery(query2);
             RegisteredStudents RegisteredStudentS;
+
+            // Iterate through result set and create RegisteredStudents objects
             while (rst.next()) {
-                {
-                    RegisteredStudentS = new RegisteredStudents(rst.getInt("id"), rst.getInt("age"), rst.getString("regNum"), rst.getString("Name"), rst.getString("dob"), rst.getString("nationality"), rst.getString("date_on_entry"), rst.getString("class_on_entry"), rst.getString("state"), rst.getString("gender"), rst.getString("date_on_leaving"), rst.getString("last_class_completed"));
-                    RegisteredStudentList.add(RegisteredStudentS);
-                }
+                RegisteredStudentS = new RegisteredStudents(
+                        rst.getInt("id"),
+                        rst.getInt("age"),
+                        rst.getString("regNum"),
+                        rst.getString("Name"),
+                        rst.getString("dob"),
+                        rst.getString("nationality"),
+                        rst.getString("date_on_entry"),
+                        rst.getString("class_on_entry"),
+                        rst.getString("state"),
+                        rst.getString("gender"),
+                        rst.getString("date_on_leaving"),
+                        rst.getString("last_class_completed")
+                );
+                RegisteredStudentList.add(RegisteredStudentS);
             }
 
         } catch (SQLException exceptionMessage) {
-
+            // Handle SQL exceptions and connection issues
             if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
                 JOptionPane.showMessageDialog(this,
                         "Failed to connect to the server. Please check your internet connection and try again."
@@ -65,9 +80,12 @@ public class SchoolRegistration extends javax.swing.JFrame {
     }
 
     public void showTables() {
+        // Display student information in a table
         ArrayList<RegisteredStudents> table = studentsList();
         DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
         Object[] row = new Object[12];
+
+        // Populate table model with student data
         for (int i = 0; i < table.size(); i++) {
             row[0] = table.get(i).getid();
             row[1] = table.get(i).getregNum();
@@ -472,8 +490,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     public void RegisterStudent() {
-
-        // Check for empty fields
+        // Validate input fields
         if ("".equals(regNum.getText()) || "".equals(studentName.getText()) || "".equals(dob.getText()) || "".equals(country.getText()) || "".equals(dateOnEntry.getText()) || "".equals(dateOnLeaving.getText())) {
             JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
             return;
@@ -504,6 +521,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
             String password = "imsuadmin";
             String regNumValue = regNum.getText().toUpperCase().trim();
 
+            // SQL statements for checking duplicates and inserting data
             String checkStatement = "SELECT * FROM school_registration WHERE regNum = ?";
             String insertStatement = "INSERT INTO school_registration(regNum, Name, dob, nationality, date_on_entry, class_on_entry, age, state, gender, date_on_leaving, last_class_completed) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -519,7 +537,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
                     }
                 }
 
-                // Insert the new record if no duplicate found
+                // Insert the new student record
                 try (PreparedStatement insertPstm = conn.prepareStatement(insertStatement)) {
                     insertPstm.setString(1, regNumValue);
                     insertPstm.setString(2, studentName.getText().toUpperCase());
@@ -540,28 +558,30 @@ public class SchoolRegistration extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "Registered Successfully", "Done", JOptionPane.INFORMATION_MESSAGE);
                     }
 
+                    // Refresh the table to show the new data
                     DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
                     model.setRowCount(0);
                     showTables();
                 }
 
             } catch (SQLException exceptionMessage) {
-
-            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
-                JOptionPane.showMessageDialog(this,
-                        "Failed to connect to the server. Please check your internet connection and try again."
-                        + "\nSQL State: " + exceptionMessage.getSQLState()
-                        + "\nError Code: " + exceptionMessage.getErrorCode(),
-                        "Connection Error",
-                        JOptionPane.ERROR_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this,
-                        exceptionMessage.getMessage(),
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
+                // Handle SQL exceptions and connection issues
+                if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
+                    JOptionPane.showMessageDialog(this,
+                            "Failed to connect to the server. Please check your internet connection and try again."
+                            + "\nSQL State: " + exceptionMessage.getSQLState()
+                            + "\nError Code: " + exceptionMessage.getErrorCode(),
+                            "Connection Error",
+                            JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this,
+                            exceptionMessage.getMessage(),
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
             }
-        }
         } catch (NumberFormatException e) {
+            // Handle errors related to number format conversion
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -574,11 +594,12 @@ public class SchoolRegistration extends javax.swing.JFrame {
         String query = "SELECT * FROM school_registration WHERE regNum = ?";
         try (Connection conn = DriverManager.getConnection(url, username, password); PreparedStatement pstm = conn.prepareStatement(query)) {
 
+            // Set the registration number for the query
             pstm.setString(1, regNum.getText().toUpperCase());
             ResultSet rs = pstm.executeQuery();
 
+            // Populate fields if a record is found
             if (rs.next()) {
-                // Assuming rs.getX() methods match the data types and columns in your table
                 studentName.setText(rs.getString("Name"));
                 dob.setText(rs.getString("dob"));
                 country.setText(rs.getString("nationality"));
@@ -594,7 +615,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
             }
 
         } catch (SQLException exceptionMessage) {
-
+            // Handle SQL exceptions and connection issues
             if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
                 JOptionPane.showMessageDialog(this,
                         "Failed to connect to the server. Please check your internet connection and try again."
@@ -626,259 +647,182 @@ public class SchoolRegistration extends javax.swing.JFrame {
         RegisterStudent();
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveButtonActionPerformed
-    public void Delete() {
+    void Delete() {
+    String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+    String username = "imsustaff";
+    String password = "imsuadmin";
+    try {
+        // Establish connection to the database
+        Connection conn = DriverManager.getConnection(url, username, password);
+        int row = displayUserInTable.getSelectedRow(); // Get selected row index
+        String val = (displayUserInTable.getModel().getValueAt(row, 0).toString()); // Get ID from the selected row
+        String sqlQuery = "DELETE FROM school_registration WHERE id=" + val; // SQL DELETE query
+        PreparedStatement pstm = conn.prepareStatement(sqlQuery); // Prepare the statement
+        pstm.executeUpdate(); // Execute the query
+
+        // Refresh table data
+        DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
+        model.setRowCount(0); // Clear the table
+        showTables(); // Reload the table data
+
+        JOptionPane.showMessageDialog(this, "Deleted Successfully", "Success Message", JOptionPane.WARNING_MESSAGE);
+
+    } catch (SQLException exceptionMessage) {
+        // Handle SQL exceptions
+        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
+            JOptionPane.showMessageDialog(this,
+                "Failed to connect to the server. Please check your internet connection and try again."
+                + "\nSQL State: " + exceptionMessage.getSQLState()
+                + "\nError Code: " + exceptionMessage.getErrorCode(),
+                "Connection Error",
+                JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this,
+                exceptionMessage.getMessage(),
+                "Error",
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }
+}
+
+
+    void DeleteTableContent() {
+    int adminResponse = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this registered Student?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+
+    if (adminResponse == JOptionPane.YES_OPTION) {
+        Delete(); // Call the Delete method if confirmed
+    }
+}
+
+
+    void UpdateTableContent() {
+    // Validate input fields
+    if ("".equals(regNum.getText()) || "".equals(studentName.getText()) || "".equals(dob.getText()) || "".equals(country.getText()) || "".equals(dateOnEntry.getText()) || "".equals(dateOnLeaving.getText())) {
+        JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if (regNum.getText().trim().length() != 14) {
+        JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
+        return;
+    }
+    if ("SELECT LEVEL".equals(levelOnEntry.getSelectedItem().toString())) {
+        JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL ON ENTRY", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if ("SELECT LEVEL".equals(levelLastCompleted.getSelectedItem().toString())) {
+        JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL COMPLETED", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if ("Choose".equals(gender.getSelectedItem().toString())) {
+        JOptionPane.showMessageDialog(this, "PLEASE SELECT GENDER", "INVALID GENDER", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    if ("SELECT STATE".equals(state.getSelectedItem().toString())) {
+        JOptionPane.showMessageDialog(this, "PLEASE SELECT STATE", "INVALID STATE", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    try {
         String url = "jdbc:MySql://db4free.net:3306/imsu_db";
         String username = "imsustaff";
         String password = "imsuadmin";
+
         try {
+            // Establish connection to the database
             Connection conn = DriverManager.getConnection(url, username, password);
-            int row = displayUserInTable.getSelectedRow();
-            String val = (displayUserInTable.getModel().getValueAt(row, 0).toString());
-            String sqlQuery = "DELETE FROM school_registration WHERE id=" + val;
-            PreparedStatement pstm = conn.prepareStatement(sqlQuery);
-            pstm.executeUpdate();
+
+            int row = displayUserInTable.getSelectedRow(); // Get selected row index
+            String value = (displayUserInTable.getModel().getValueAt(row, 0).toString()); // Get ID from the selected row
+            String query = "UPDATE school_registration SET regNum=?, Name=?, dob=?, nationality=?, date_on_entry=?, class_on_entry=?, age=?, state=?, gender=?, date_on_leaving=?, last_class_completed=? where id = " + value; // SQL UPDATE query
+            PreparedStatement pstm = conn.prepareStatement(query);
+
+            // Set parameters for the SQL query
+            pstm.setString(1, regNum.getText());
+            pstm.setString(2, studentName.getText().toUpperCase());
+            pstm.setString(3, dob.getText());
+            pstm.setString(4, country.getText());
+            pstm.setString(5, dateOnEntry.getText());
+            pstm.setString(6, levelOnEntry.getSelectedItem().toString());
+            int studentAge = Integer.parseInt(age.getText());
+            pstm.setInt(7, studentAge);
+            pstm.setString(8, state.getSelectedItem().toString());
+            pstm.setString(9, gender.getSelectedItem().toString());
+            pstm.setString(10, dateOnLeaving.getText());
+            pstm.setString(11, levelLastCompleted.getSelectedItem().toString());
+
+            int statementReport = pstm.executeUpdate(); // Execute the update
+
+            // Refresh table data
             DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
-            model.setRowCount(0);
-            showTables();
-            JOptionPane.showMessageDialog(this, "Deleted Successfully", "Success Message", JOptionPane.WARNING_MESSAGE);
+            model.setRowCount(0); // Clear the table
+            showTables(); // Reload the table data
+
+            if (statementReport > 0) {
+                JOptionPane.showMessageDialog(this, "Updated Successfully", "Completed", JOptionPane.INFORMATION_MESSAGE);
+            }
+
         } catch (SQLException exceptionMessage) {
-
+            // Handle SQL exceptions
             if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
                 JOptionPane.showMessageDialog(this,
-                        "Failed to connect to the server. Please check your internet connection and try again."
-                        + "\nSQL State: " + exceptionMessage.getSQLState()
-                        + "\nError Code: " + exceptionMessage.getErrorCode(),
-                        "Connection Error",
-                        JOptionPane.ERROR_MESSAGE);
+                    "Failed to connect to the server. Please check your internet connection and try again."
+                    + "\nSQL State: " + exceptionMessage.getSQLState()
+                    + "\nError Code: " + exceptionMessage.getErrorCode(),
+                    "Connection Error",
+                    JOptionPane.ERROR_MESSAGE);
             } else {
                 JOptionPane.showMessageDialog(this,
-                        exceptionMessage.getMessage(),
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
+                    exceptionMessage.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
             }
         }
+    } catch (NumberFormatException e) {
+        // Handle number format exceptions
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+}
+void DisplayTableContentInComponent() {
+    // Get the selected row index
+    int i = displayUserInTable.getSelectedRow();
+
+    // Check if a row is selected
+    if (i < 0) {
+        JOptionPane.showMessageDialog(this, "No row selected!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
     }
 
-    void DeleteTableContent() {
+    TableModel tableModel = displayUserInTable.getModel();
 
-        int adminResponse = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this registered Student?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
+    // Set the text fields from the selected row's data
+    regNum.setText(tableModel.getValueAt(i, 1).toString());
+    studentName.setText(tableModel.getValueAt(i, 2).toString());
+    dob.setText(tableModel.getValueAt(i, 3).toString());
+    country.setText(tableModel.getValueAt(i, 4).toString());
+    dateOnEntry.setText(tableModel.getValueAt(i, 5).toString());
 
-        if (adminResponse == JOptionPane.YES_OPTION) {
-            Delete();
-        }
+    // Set level on entry
+    String levelOnEntryValue = tableModel.getValueAt(i, 6).toString();
+    levelOnEntry.setSelectedItem(levelOnEntryValue);
 
-    }
+    // Set age
+    age.setText(tableModel.getValueAt(i, 7).toString());
 
-    void UpdateTableContent() {
-        if ("".equals(regNum.getText()) || "".equals(studentName.getText()) || "".equals(dob.getText()) || "".equals(country.getText()) || "".equals(dateOnEntry.getText()) || "".equals(dateOnLeaving.getText())) {
-            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "Please Fill Empty Field", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if (regNum.getText().trim().length() != 14) {
-            JOptionPane.showMessageDialog(this, "REG NUMBER MUST BE 14 CHARACTERS", "Error", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-        if ("SELECT LEVEL".equals(levelOnEntry.getSelectedItem().toString())) {
-            JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL ON ENTRY", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if ("SELECT LEVEL".equals(levelLastCompleted.getSelectedItem().toString())) {
-            JOptionPane.showMessageDialog(this, "PLEASE SELECT LAST LEVEL COMPLETED", "INVALID LEVEL", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if ("Choose".equals(gender.getSelectedItem().toString())) {
-            JOptionPane.showMessageDialog(this, "PLEASE SELECT GENDER", "INVALID GENDER", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if ("SELECT STATE".equals(state.getSelectedItem().toString())) {
-            JOptionPane.showMessageDialog(this, "PLEASE SELECT STATE", "INVALID STATE", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        try {
-            String url = "jdbc:MySql://db4free.net:3306/imsu_db";
-            String username = "imsustaff";
-            String password = "imsuadmin";
-            try {
-                Connection conn = DriverManager.getConnection(url, username, password);
+    // Set state
+    String stateValue = tableModel.getValueAt(i, 8).toString();
+    state.setSelectedItem(stateValue);
 
-                int row = displayUserInTable.getSelectedRow();
-                String value = (displayUserInTable.getModel().getValueAt(row, 0).toString());
-                String query = "UPDATE school_registration SET regNum=?, Name=?, dob=?, nationality=?, date_on_entry=?, class_on_entry=?, age=?, state=?, gender=?, date_on_leaving=?, last_class_completed=? where id = " + value;
-                PreparedStatement pstm = conn.prepareStatement(query);
-                pstm.setString(1, regNum.getText());
-                pstm.setString(2, studentName.getText().toUpperCase());
-                pstm.setString(3, dob.getText());
-                pstm.setString(4, country.getText());
-                pstm.setString(5, dateOnEntry.getText());
-                String LevelOnEntry = levelOnEntry.getSelectedItem().toString();
+    // Set gender
+    String genderValue = tableModel.getValueAt(i, 9).toString();
+    gender.setSelectedItem(genderValue);
 
-                pstm.setString(6, LevelOnEntry);
-                int studentAge = Integer.parseInt(age.getText());
-                pstm.setInt(7, studentAge);
-                String State = state.getSelectedItem().toString();
-                pstm.setString(8, State);
-                String Gender = gender.getSelectedItem().toString();
-                pstm.setString(9, Gender);
-                pstm.setString(10, dateOnLeaving.getText());
-                String LevelLastCompleted = levelLastCompleted.getSelectedItem().toString();
-                pstm.setString(11, LevelLastCompleted);
+    // Set date on leaving
+    dateOnLeaving.setText(tableModel.getValueAt(i, 10).toString());
 
-                int statementReport = pstm.executeUpdate();
-                DefaultTableModel model = (DefaultTableModel) displayUserInTable.getModel();
-                model.setRowCount(0);
-                showTables();
+    // Set last level completed
+    String lastLevelCompletedValue = tableModel.getValueAt(i, 11).toString();
+    levelLastCompleted.setSelectedItem(lastLevelCompletedValue);
+}
 
-                if (statementReport > 0) {
-                    JOptionPane.showMessageDialog(this, "Updated Successfully", "Completed", JOptionPane.INFORMATION_MESSAGE);
-                }
-
-            } catch (SQLException exceptionMessage) {
-
-            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
-                JOptionPane.showMessageDialog(this,
-                        "Failed to connect to the server. Please check your internet connection and try again."
-                        + "\nSQL State: " + exceptionMessage.getSQLState()
-                        + "\nError Code: " + exceptionMessage.getErrorCode(),
-                        "Connection Error",
-                        JOptionPane.ERROR_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this,
-                        exceptionMessage.getMessage(),
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-            }
-        }
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
-    void DisplayTableContentInComponent() {
-        int i = displayUserInTable.getSelectedRow();
-        TableModel tableModel = displayUserInTable.getModel();
-        regNum.setText(tableModel.getValueAt(i, 1).toString());
-        studentName.setText(tableModel.getValueAt(i, 2).toString());
-        dob.setText(tableModel.getValueAt(i, 3).toString());
-        country.setText(tableModel.getValueAt(i, 4).toString());
-        dateOnEntry.setText(tableModel.getValueAt(i, 5).toString());
-        String LevelOnEntry = tableModel.getValueAt(i, 6).toString();
-
-        switch (LevelOnEntry) {
-            case "100 LEVEL" ->
-                levelOnEntry.setSelectedIndex(1);
-            case "200 LEVEL" ->
-                levelOnEntry.setSelectedIndex(2);
-            case "300 LEVEL" ->
-                levelOnEntry.setSelectedIndex(3);
-            case "400 LEVEL" ->
-                levelOnEntry.setSelectedIndex(4);
-            case "500 LEVEL" ->
-                levelOnEntry.setSelectedIndex(5);
-            case "600 LEVEL" ->
-                levelOnEntry.setSelectedIndex(6);
-        }
-        age.setText(tableModel.getValueAt(i, 7).toString());
-        String studentState = tableModel.getValueAt(i, 8).toString();
-        switch (studentState) {
-            case "ABIA" ->
-                state.setSelectedIndex(1);
-            case "ADAMAWA" ->
-                state.setSelectedIndex(2);
-            case "AKWA-IBOM" ->
-                state.setSelectedIndex(3);
-            case "ANAMBRA" ->
-                state.setSelectedIndex(4);
-            case "BAUCHI" ->
-                state.setSelectedIndex(5);
-            case "BAYELSA" ->
-                state.setSelectedIndex(6);
-            case "BENUE" ->
-                state.setSelectedIndex(7);
-            case "BORNO" ->
-                state.setSelectedIndex(8);
-            case "CROSS-RIVER" ->
-                state.setSelectedIndex(9);
-            case "DELTA" ->
-                state.setSelectedIndex(10);
-            case "EBONYI" ->
-                state.setSelectedIndex(11);
-            case "EDO" ->
-                state.setSelectedIndex(12);
-            case "EKITI" ->
-                state.setSelectedIndex(13);
-            case "ENUGU" ->
-                state.setSelectedIndex(14);
-            case "GOMBE" ->
-                state.setSelectedIndex(15);
-            case "IMO" ->
-                state.setSelectedIndex(16);
-            case "JIGAWA" ->
-                state.setSelectedIndex(17);
-            case "KADUNA" ->
-                state.setSelectedIndex(18);
-            case "KASTINA" ->
-                state.setSelectedIndex(19);
-            case "KEBBI" ->
-                state.setSelectedIndex(20);
-            case "KOGI" ->
-                state.setSelectedIndex(21);
-            case "KWARA" ->
-                state.setSelectedIndex(22);
-            case "LAGOS" ->
-                state.setSelectedIndex(23);
-            case "NASSARAWA" ->
-                state.setSelectedIndex(24);
-            case "NIGER" ->
-                state.setSelectedIndex(25);
-            case "OGUN" ->
-                state.setSelectedIndex(26);
-            case "OSUN" ->
-                state.setSelectedIndex(27);
-            case "OYO" ->
-                state.setSelectedIndex(28);
-            case "PLATEAU" ->
-                state.setSelectedIndex(29);
-            case "RIVERS" ->
-                state.setSelectedIndex(30);
-            case "SOKOTO" ->
-                state.setSelectedIndex(31);
-            case "TARABA" ->
-                state.setSelectedIndex(32);
-            case "ZAMFARA" ->
-                state.setSelectedIndex(33);
-            case "F.C.T" ->
-                state.setSelectedIndex(34);
-
-        }
-        String studentGender = tableModel.getValueAt(i, 9).toString();
-
-        switch (studentGender) {
-            case "MALE" ->
-                gender.setSelectedIndex(1);
-            case "FEMALE" ->
-                gender.setSelectedIndex(2);
-            case "CHOOSE NOT TO SAY" ->
-                gender.setSelectedIndex(3);
-        }
-        dateOnLeaving
-                .setText(tableModel.getValueAt(i, 10).toString());
-
-        String LastLevelCompleted = tableModel.getValueAt(i, 11).toString();
-        switch (LastLevelCompleted) {
-            case "100 LEVEL" ->
-                levelLastCompleted.setSelectedIndex(1);
-            case "200 LEVEL" ->
-                levelLastCompleted.setSelectedIndex(2);
-            case "300 LEVEL" ->
-                levelLastCompleted.setSelectedIndex(3);
-            case "400 LEVEL" ->
-                levelLastCompleted.setSelectedIndex(4);
-            case "500 LEVEL" ->
-                levelLastCompleted.setSelectedIndex(5);
-            case "600 LEVEL" ->
-                levelLastCompleted.setSelectedIndex(6);
-        }
-    }
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
         UpdateTableContent();
         // TODO add your handling code here:
@@ -912,7 +856,7 @@ public class SchoolRegistration extends javax.swing.JFrame {
     }//GEN-LAST:event_genderActionPerformed
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        AdminMenuForm adminPage = new AdminMenuForm();
+        AdminMenuFrame adminPage = new AdminMenuFrame();
         adminPage.setVisible(true);
         this.dispose();
         // TODO add your handling code here:

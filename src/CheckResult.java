@@ -624,7 +624,7 @@ public class CheckResult extends javax.swing.JFrame {
     }//GEN-LAST:event_checkResultSlipActionPerformed
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        AdminAndUserFrame page = new AdminAndUserFrame();
+        AdminAndStudentFrame page = new AdminAndStudentFrame();
         page.setVisible(true);
         this.dispose();
         // TODO add your handling code here:

@@ -141,62 +141,88 @@ public class AdminLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void adminLogin() {
-         char[] passWrd = password.getPassword();
+    // Method to handle admin login
+private void adminLogin() {
+    
+    // Retrieve the password from the password field as a char array
+    char[] passWrd = password.getPassword();
 
-           String PASSWORD = new String(passWrd);
+    // Convert the char array into a String
+    String PASSWORD = new String(passWrd);
 
-        if ("".equals(username.getText()) || "".equals(PASSWORD)) {
-            JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "No empty field allowed", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        String url = "jdbc:MySql://db4free.net:3306/imsu_db";
-        String usrname = "imsustaff";
-        String passwd = "imsuadmin";
-        try {
-            Connection con = DriverManager.getConnection(url, usrname, passwd);
-            String queryForLogin = "SELECT * FROM admin_login WHERE id =?";
-            PreparedStatement ps = con.prepareStatement(queryForLogin);
-            ps.setInt(1, 1);
-            ResultSet rs = ps.executeQuery();
-            rs.next();
-            String adminUsername = rs.getString("username");
-            String adminPassword = rs.getString("password");
+    // Check if the username or password fields are empty
+    if ("".equals(username.getText()) || "".equals(PASSWORD)) {
+        // Show a warning message if any of the fields are empty
+        JOptionPane.showMessageDialog(this, "FIELD CANNOT BE EMPTY!!", "No empty field allowed", JOptionPane.WARNING_MESSAGE);
+        return; // Exit the method to prevent further execution
+    }
 
-            String USERNAME = username.getText();
+    // Database connection details (remote MySQL database)
+    String url = "jdbc:MySql://db4free.net:3306/imsu_db";
+    String usrname = "imsustaff";   // Database username
+    String passwd = "imsuadmin";    // Database password
+
+    try {
+        // Establish a connection to the MySQL database
+        Connection con = DriverManager.getConnection(url, usrname, passwd);
+
+        // SQL query to select login information from the 'admin_login' table for a specific admin (id = 1)
+        String queryForLogin = "SELECT * FROM admin_login WHERE id =?";
+        PreparedStatement ps = con.prepareStatement(queryForLogin);
         
+        // Set the ID parameter in the query to 1 (assuming you're always looking up the first admin)
+        ps.setInt(1, 1);
+        
+        // Execute the query and get the result set
+        ResultSet rs = ps.executeQuery();
+        rs.next(); // Move the cursor to the first row of the result set
+        
+        // Retrieve the admin's username and password from the result set
+        String adminUsername = rs.getString("username");
+        String adminPassword = rs.getString("password");
 
-            if (USERNAME.equals(adminUsername) && PASSWORD.equals(adminPassword)) {
-                AdminMenuForm admin = new AdminMenuForm();
-                boolean Value = true;
-                admin.setVisible(Value);
-                this.setVisible(false);
-            } else {
-                JOptionPane.showMessageDialog(this, "Unauthorized access to Admin Menu Page!!! \n(Incorrect Username or password)", "Access Denied", JOptionPane.WARNING_MESSAGE);
-            }
-
-        } catch (SQLException exceptionMessage) {
-
-            if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
-                JOptionPane.showMessageDialog(this,
-                        "Failed to connect to the server. Please check your internet connection and try again."
-                        + "\nSQL State: " + exceptionMessage.getSQLState()
-                        + "\nError Code: " + exceptionMessage.getErrorCode(),
-                        "Connection Error",
-                        JOptionPane.ERROR_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this,
-                        exceptionMessage.getMessage(),
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE);
-            }
+        // Get the username entered by the user in the login form
+        String USERNAME = username.getText();
+        
+        // Check if the entered username and password match the stored admin credentials
+        if (USERNAME.equals(adminUsername) && PASSWORD.equals(adminPassword)) {
+            // If credentials are valid, open the AdminMenuFrame (admin dashboard)
+            AdminMenuFrame admin = new AdminMenuFrame();
+            boolean Value = true;
+            admin.setVisible(Value);  // Make the admin menu visible
+            this.setVisible(false);   // Hide the current login window
+        } else {
+            // If the credentials don't match, show an access denied message
+            JOptionPane.showMessageDialog(this, "Unauthorized access to Admin Menu Page!!! \n(Incorrect Username or password)", "Access Denied", JOptionPane.WARNING_MESSAGE);
         }
 
+    } catch (SQLException exceptionMessage) {
+        // Handle SQL exceptions and connection issues
+        // Check for a specific SQL state or error code indicating a connection issue
+        if (exceptionMessage.getSQLState().equals("08S01") || exceptionMessage.getErrorCode() == 0) {
+            // Display a message for connection failure, suggesting an internet issue
+            JOptionPane.showMessageDialog(this,
+                "Failed to connect to the server. Please check your internet connection and try again."
+                + "\nSQL State: " + exceptionMessage.getSQLState()
+                + "\nError Code: " + exceptionMessage.getErrorCode(),
+                "Connection Error",
+                JOptionPane.ERROR_MESSAGE);
+        } else {
+            // Display any other SQL error that might have occurred
+            JOptionPane.showMessageDialog(this,
+                exceptionMessage.getMessage(),
+                "Error",
+                JOptionPane.ERROR_MESSAGE);
+        }
     }
+}
 
-    void cancelAdminLogin() {
-        System.exit(0);
-    }
+// Method to handle the cancellation of admin login
+void cancelAdminLogin() {
+    // Exit the program when the user cancels the login attempt
+    System.exit(0);
+}
+
     private void CancleLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancleLoginActionPerformed
         cancelAdminLogin();
 // TODO add your handling code here:
@@ -208,7 +234,7 @@ public class AdminLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_loginAdminActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        AdminAndUserFrame aup = new AdminAndUserFrame();
+        AdminAndStudentFrame aup = new AdminAndStudentFrame();
         aup.setVisible(true);
         this.dispose();
         // TODO add your handling code here:

@@ -107,7 +107,7 @@ public class WelcomeMenu extends javax.swing.JFrame {
     // Method to continue to the next screen
     void Continue() {
         // Create an instance of the AdminAndUserFrame class (presumably another window or frame)
-        AdminAndUserFrame a = new AdminAndUserFrame();
+        AdminAndStudentFrame a = new AdminAndStudentFrame();
 
         // Make the AdminAndUserFrame visible (display it)
         a.setVisible(true);

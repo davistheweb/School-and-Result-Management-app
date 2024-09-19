@@ -11,9 +11,11 @@
  */
 public class RegisteredStudents {
 
+    // Fields representing student's data
     private int id, age;
     private String regNum, Name, dob, nationality, date_on_entry, class_on_entry, state, gender, date_on_leaving, last_class_completed;
 
+    // Constructor to initialize all fields
     public RegisteredStudents(int id, int age, String regNum, String Name, String dob, String nationality, String date_on_entry, String class_on_entry, String state, String gender, String date_on_leaving, String last_class_completed) {
         this.id = id;
         this.age = age;
@@ -29,52 +31,17 @@ public class RegisteredStudents {
         this.last_class_completed = last_class_completed;
     }
 
-    public int getid() {
-        return id;
-    }
-
-    public int getage() {
-        return age;
-    }
-
-    public String getregNum() {
-        return regNum;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public String getdob() {
-        return dob;
-    }
-
-    public String getnationality() {
-        return nationality;
-    }
-
-    public String getdate_on_entry() {
-        return date_on_entry;
-    }
-
-    public String getclass_on_entry() {
-        return class_on_entry;
-    }
-
-    public String getstate() {
-        return state;
-    }
-
-    public String getgender() {
-        return gender;
-    }
-
-    public String getdate_on_leaving() {
-        return date_on_leaving;
-    }
-
-    public String getlast_class_completed() {
-        return last_class_completed;
-    }
-
+    // Getter methods to access each field of RegisteredStudents
+    public int getid() { return id; }
+    public int getage() { return age; }
+    public String getregNum() { return regNum; }
+    public String getName() { return Name; }
+    public String getdob() { return dob; }
+    public String getnationality() { return nationality; }
+    public String getdate_on_entry() { return date_on_entry; }
+    public String getclass_on_entry() { return class_on_entry; }
+    public String getstate() { return state; }
+    public String getgender() { return gender; }
+    public String getdate_on_leaving() { return date_on_leaving; }
+    public String getlast_class_completed() { return last_class_completed; }
 }

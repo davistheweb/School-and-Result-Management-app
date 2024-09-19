@@ -7,12 +7,12 @@
  *
  * @author GOI
  *///final
-public class AdminAndUserFrame extends javax.swing.JFrame {
+public class AdminAndStudentFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminAndUserPage
      */
-    public AdminAndUserFrame() {
+    public AdminAndStudentFrame() {
         initComponents();
     }
 
@@ -117,26 +117,47 @@ public class AdminAndUserFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    // Event handler for when jButton1 (Admin Login button) is clicked
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        // Create an instance of the AdminLogin frame (presumably for admin login)
         AdminLogin adminLogged = new AdminLogin();
+
+        // Make the AdminLogin frame visible (display it)
         adminLogged.setVisible(true);
-        this.setVisible(false);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        StudentMenu r = new StudentMenu();
-        r.setVisible(true);
+        // Hide the current window/frame by setting its visibility to false
         this.setVisible(false);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here: (auto-generated comment for future code additions)
+    }
+
+// Event handler for when jButton2 (Student Menu button) is clicked
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        // Create an instance of the StudentMenu frame (presumably for student interactions)
+        StudentMenu sm = new StudentMenu();
+
+        // Make the StudentMenu frame visible (display it)
+        sm.setVisible(true);
+
+        // Hide the current window/frame by setting its visibility to false
+        this.setVisible(false);
+
+        // TODO add your handling code here: (auto-generated comment for future code additions)
+    }
+
+// Event handler for when jLabel3 (label, likely a clickable text or image) is clicked
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {
+        // Create an instance of the WelcomeMenu frame (presumably a welcome screen)
         WelcomeMenu wm = new WelcomeMenu();
+
+        // Make the WelcomeMenu frame visible (display it)
         wm.setVisible(true);
-        this.dispose();;
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3MouseClicked
+
+        // Dispose of the current window, meaning it closes and releases resources
+        this.dispose();
+
+        // TODO add your handling code here: (auto-generated comment for future code additions)
+    }
 
     /**
      * @param args the command line arguments
@@ -155,14 +176,18 @@ public class AdminAndUserFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminAndUserFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAndStudentFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminAndUserFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAndStudentFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminAndUserFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAndStudentFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminAndUserFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminAndStudentFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -171,7 +196,7 @@ public class AdminAndUserFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminAndUserFrame().setVisible(true);
+                new AdminAndStudentFrame().setVisible(true);
             }
         });
     }

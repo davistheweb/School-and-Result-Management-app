@@ -7,12 +7,12 @@
  *
  * @author GOI
  */
-public class AdminMenuForm extends javax.swing.JFrame {
+public class AdminMenuFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form AdminMenuPage
      */
-    public AdminMenuForm() {
+    public AdminMenuFrame() {
         initComponents();
     }
 
@@ -64,7 +64,7 @@ public class AdminMenuForm extends javax.swing.JFrame {
         });
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("POST RESULT (LEVEL AND SEMESTER) PAGE");
+        jButton1.setText("POST RESULT (LEVEL AND SEMESTER) FORM");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -97,8 +97,9 @@ public class AdminMenuForm extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(closeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(123, 123, 123)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(134, 134, 134)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8))
                             .addComponent(jLabel1))))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
@@ -107,19 +108,17 @@ public class AdminMenuForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(studentReg, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
+                .addGap(40, 40, 40)
                 .addComponent(schoolReg, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(studentReg, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(closeMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,51 +141,89 @@ public class AdminMenuForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    void openStudentRegPage() {
-        DepartmentRegistration studentReg = new DepartmentRegistration();
-        studentReg.setVisible(true);
-        this.setVisible(false);
-    }
 
-    void openSchoolRegPage() {
-        SchoolRegistration schoolReg = new SchoolRegistration();
-        schoolReg.setVisible(true);
-        this.setVisible(false);
-    }
 
-    void openLevelAnSemesterPage() {
-        SelectLevelAndSemester s = new SelectLevelAndSemester();
-        s.setVisible(true);
-        this.setVisible(false);
-    }
-    private void studentRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentRegActionPerformed
-        openStudentRegPage();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_studentRegActionPerformed
+// Method to open the SchoolRegistration page for school registration
+void openSchoolRegPage() {
+    // Create an instance of the SchoolRegistration frame
+    SchoolRegistration schoolReg = new SchoolRegistration();
+    
+    // Make the SchoolRegistration frame visible
+    schoolReg.setVisible(true);
+    
+    // Hide the current window/frame by setting its visibility to false
+    this.setVisible(false);
+}
+   // Method to open the DepartmentRegistration page for student registration
+void openDepartmentRegPage() {
+    // Create an instance of the DepartmentRegistration frame (for student registration)
+    DepartmentRegistration departmentReg = new DepartmentRegistration();
+    
+    // Make the DepartmentRegistration frame visible
+    departmentReg.setVisible(true);
+    
+    // Hide the current window/frame by setting its visibility to false
+    this.setVisible(false);
+}
 
-    private void schoolRegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_schoolRegActionPerformed
-        openSchoolRegPage();
-// TODO add your handling code here:
-    }//GEN-LAST:event_schoolRegActionPerformed
-    void closeMenuPage() {
-        this.dispose();
-    }
-    private void closeMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeMenuActionPerformed
-        closeMenuPage();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_closeMenuActionPerformed
+// Method to open the SelectLevelAndSemester page
+void openLevelAnSemesterPage() {
+    // Create an instance of the SelectLevelAndSemester frame (to select levels and semesters)
+    SelectLevelAndSemester s = new SelectLevelAndSemester();
+    
+    // Make the SelectLevelAndSemester frame visible
+    s.setVisible(true);
+    
+    // Hide the current window/frame by setting its visibility to false
+    this.setVisible(false);
+}
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        openLevelAnSemesterPage();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+// Event handler for the student registration button's action
+private void studentRegActionPerformed(java.awt.event.ActionEvent evt) {                                           
+    // Call the method to open the student registration page
+    openDepartmentRegPage();
+    // TODO add your handling code here: (auto-generated comment for future code)
+}                                          
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        WelcomeMenu menu = new WelcomeMenu();
-        menu.setVisible(true);
-        this.dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel2MouseClicked
+// Event handler for the school registration button's action
+private void schoolRegActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    // Call the method to open the school registration page
+    openSchoolRegPage();
+    // TODO add your handling code here: (auto-generated comment for future code)
+}                                         
+
+// Method to close the current menu page
+void closeMenuPage() {
+    // Dispose of the current window, effectively closing it
+    this.dispose();
+}
+
+// Event handler for the "close menu" button's action
+private void closeMenuActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    // Call the method to close the current menu page
+    closeMenuPage();
+    // TODO add your handling code here: (auto-generated comment for future code)
+}                                         
+
+// Event handler for jButton1 (likely a button to open the Level and Semester page)
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    // Call the method to open the Level and Semester selection page
+    openLevelAnSemesterPage();
+    // TODO add your handling code here: (auto-generated comment for future code)
+}                                        
+
+// Event handler for when jLabel2 (label, likely a clickable text or image) is clicked
+private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {                                     
+    // Create an instance of the WelcomeMenu frame (presumably the main menu or welcome screen)
+    WelcomeMenu menu = new WelcomeMenu();
+    
+    // Make the WelcomeMenu frame visible
+    menu.setVisible(true);
+    
+    // Dispose of the current window, effectively closing it
+    this.dispose();
+    // TODO add your handling code here: (auto-generated comment for future code)
+}                                    
 
     /**
      * @param args the command line arguments
@@ -205,21 +242,23 @@ public class AdminMenuForm extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminMenuForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminMenuForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminMenuForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminMenuForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminMenuForm().setVisible(true);
+                new AdminMenuFrame().setVisible(true);
             }
         });
     }
